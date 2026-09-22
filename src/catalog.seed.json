@@ -1,0 +1,1615 @@
+[
+  {
+    "_id": "tee-classic",
+    "type": "physical",
+    "category": "apparel",
+    "name": "Classic T-shirt",
+    "description": "Heavyweight cotton. Comes in three colours and four sizes.",
+    "images": [
+      "https://placehold.co/600x600/1f2937/ffffff?text=T-shirt"
+    ],
+    "currency": "eur",
+    "variants": [
+      {
+        "id": "yellow-s",
+        "unit_amount": 2500,
+        "purchasable": true,
+        "in_stock": 20,
+        "images": [
+          "https://placehold.co/600x600/ca8a04/ffffff?text=yellow"
+        ],
+        "metadata": {
+          "colour": "yellow",
+          "size": "S",
+          "etichetta": "Classic T-shirt, yellow, size S"
+        }
+      },
+      {
+        "id": "yellow-m",
+        "unit_amount": 2500,
+        "purchasable": true,
+        "in_stock": 20,
+        "images": [
+          "https://placehold.co/600x600/ca8a04/ffffff?text=yellow"
+        ],
+        "metadata": {
+          "colour": "yellow",
+          "size": "M",
+          "etichetta": "Classic T-shirt, yellow, size M"
+        }
+      },
+      {
+        "id": "yellow-l",
+        "unit_amount": 2500,
+        "purchasable": true,
+        "in_stock": 1,
+        "images": [
+          "https://placehold.co/600x600/ca8a04/ffffff?text=yellow"
+        ],
+        "metadata": {
+          "colour": "yellow",
+          "size": "L",
+          "etichetta": "Classic T-shirt, yellow, size L"
+        }
+      },
+      {
+        "id": "yellow-xl",
+        "unit_amount": 2900,
+        "purchasable": true,
+        "in_stock": 20,
+        "images": [
+          "https://placehold.co/600x600/ca8a04/ffffff?text=yellow"
+        ],
+        "metadata": {
+          "colour": "yellow",
+          "size": "XL",
+          "etichetta": "Classic T-shirt, yellow, size XL"
+        }
+      },
+      {
+        "id": "blue-s",
+        "unit_amount": 2500,
+        "purchasable": true,
+        "in_stock": 20,
+        "images": [
+          "https://placehold.co/600x600/1d4ed8/ffffff?text=blue"
+        ],
+        "metadata": {
+          "colour": "blue",
+          "size": "S",
+          "etichetta": "Classic T-shirt, blue, size S"
+        }
+      },
+      {
+        "id": "blue-m",
+        "unit_amount": 2500,
+        "purchasable": true,
+        "in_stock": 20,
+        "images": [
+          "https://placehold.co/600x600/1d4ed8/ffffff?text=blue"
+        ],
+        "metadata": {
+          "colour": "blue",
+          "size": "M",
+          "etichetta": "Classic T-shirt, blue, size M"
+        }
+      },
+      {
+        "id": "blue-l",
+        "unit_amount": 2500,
+        "purchasable": true,
+        "in_stock": 20,
+        "images": [
+          "https://placehold.co/600x600/1d4ed8/ffffff?text=blue"
+        ],
+        "metadata": {
+          "colour": "blue",
+          "size": "L",
+          "etichetta": "Classic T-shirt, blue, size L"
+        }
+      },
+      {
+        "id": "blue-xl",
+        "unit_amount": 2900,
+        "purchasable": true,
+        "in_stock": 20,
+        "images": [
+          "https://placehold.co/600x600/1d4ed8/ffffff?text=blue"
+        ],
+        "metadata": {
+          "colour": "blue",
+          "size": "XL",
+          "etichetta": "Classic T-shirt, blue, size XL"
+        }
+      },
+      {
+        "id": "black-s",
+        "unit_amount": 2500,
+        "purchasable": false,
+        "in_stock": 20,
+        "images": [
+          "https://placehold.co/600x600/171717/ffffff?text=black"
+        ],
+        "metadata": {
+          "colour": "black",
+          "size": "S",
+          "etichetta": "Classic T-shirt, black, size S"
+        }
+      },
+      {
+        "id": "black-m",
+        "unit_amount": 2500,
+        "purchasable": true,
+        "in_stock": 20,
+        "images": [
+          "https://placehold.co/600x600/171717/ffffff?text=black"
+        ],
+        "metadata": {
+          "colour": "black",
+          "size": "M",
+          "etichetta": "Classic T-shirt, black, size M"
+        }
+      },
+      {
+        "id": "black-l",
+        "unit_amount": 2500,
+        "purchasable": true,
+        "in_stock": 20,
+        "images": [
+          "https://placehold.co/600x600/171717/ffffff?text=black"
+        ],
+        "metadata": {
+          "colour": "black",
+          "size": "L",
+          "etichetta": "Classic T-shirt, black, size L"
+        }
+      },
+      {
+        "id": "black-xl",
+        "unit_amount": 2900,
+        "purchasable": true,
+        "in_stock": 20,
+        "images": [
+          "https://placehold.co/600x600/171717/ffffff?text=black"
+        ],
+        "metadata": {
+          "colour": "black",
+          "size": "XL",
+          "etichetta": "Classic T-shirt, black, size XL"
+        }
+      }
+    ]
+  },
+  {
+    "_id": "mug-enamel-set",
+    "type": "physical",
+    "category": "kitchen",
+    "name": "Enamel mug",
+    "description": "Holds 350ml of anything hot. Two sizes, four colours.",
+    "images": [
+      "https://placehold.co/600x600/0f766e/ffffff?text=Mug"
+    ],
+    "currency": "eur",
+    "variants": [
+      {
+        "id": "cream-350ml",
+        "unit_amount": 1450,
+        "purchasable": true,
+        "images": [
+          "https://placehold.co/600x600/d6d3d1/ffffff?text=cream"
+        ],
+        "metadata": {
+          "colour": "cream",
+          "capacity": "350ml",
+          "etichetta": "Enamel mug, cream, 350ml"
+        }
+      },
+      {
+        "id": "cream-500ml",
+        "unit_amount": 1800,
+        "purchasable": true,
+        "images": [
+          "https://placehold.co/600x600/d6d3d1/ffffff?text=cream"
+        ],
+        "metadata": {
+          "colour": "cream",
+          "capacity": "500ml",
+          "etichetta": "Enamel mug, cream, 500ml"
+        }
+      },
+      {
+        "id": "green-350ml",
+        "unit_amount": 1450,
+        "purchasable": true,
+        "images": [
+          "https://placehold.co/600x600/15803d/ffffff?text=green"
+        ],
+        "metadata": {
+          "colour": "green",
+          "capacity": "350ml",
+          "etichetta": "Enamel mug, green, 350ml"
+        }
+      },
+      {
+        "id": "green-500ml",
+        "unit_amount": 1800,
+        "purchasable": true,
+        "images": [
+          "https://placehold.co/600x600/15803d/ffffff?text=green"
+        ],
+        "metadata": {
+          "colour": "green",
+          "capacity": "500ml",
+          "etichetta": "Enamel mug, green, 500ml"
+        }
+      }
+    ]
+  },
+  {
+    "_id": "pocket-thundercloud",
+    "type": "physical",
+    "category": "curiosities",
+    "name": "Pocket thundercloud",
+    "description": "Small, grey, occasionally damp. Keep away from paperwork.",
+    "images": [
+      "https://placehold.co/600x600/7c3aed/ffffff?text=Pocket+thunderclou"
+    ],
+    "unit_amount": 3400,
+    "currency": "eur",
+    "purchasable": true,
+    "in_stock": 1
+  },
+  {
+    "_id": "jar-of-last-monday",
+    "type": "physical",
+    "category": "curiosities",
+    "name": "Jar of last Monday",
+    "description": "Sealed at 4pm. Do not open on a Sunday.",
+    "images": [
+      "https://placehold.co/600x600/7c3aed/ffffff?text=Jar+of+last+Monday"
+    ],
+    "unit_amount": 900,
+    "currency": "eur",
+    "purchasable": true,
+    "in_stock": 0
+  },
+  {
+    "_id": "left-handed-compass",
+    "type": "physical",
+    "category": "curiosities",
+    "name": "Left-handed compass",
+    "description": "Points north, eventually, from the other side.",
+    "images": [
+      "https://placehold.co/600x600/7c3aed/ffffff?text=Left-handed+compas"
+    ],
+    "unit_amount": 2600,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "bottled-fog-scottish",
+    "type": "physical",
+    "category": "curiosities",
+    "name": "Bottled fog, Scottish",
+    "description": "Collected at dawn near a loch nobody names.",
+    "images": [
+      "https://placehold.co/600x600/7c3aed/ffffff?text=Bottled+fog"
+    ],
+    "unit_amount": 1500,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "very-small-door",
+    "type": "physical",
+    "category": "curiosities",
+    "name": "Very small door",
+    "description": "Fits nothing you own. Hangs beautifully.",
+    "images": [
+      "https://placehold.co/600x600/7c3aed/ffffff?text=Very+small+door"
+    ],
+    "unit_amount": 1900,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "certificate-of-nothing",
+    "type": "physical",
+    "category": "curiosities",
+    "name": "Certificate of nothing",
+    "description": "Officially confirms that nothing has occurred.",
+    "images": [
+      "https://placehold.co/600x600/7c3aed/ffffff?text=Certificate+of+not"
+    ],
+    "unit_amount": 500,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "spare-afternoon",
+    "type": "physical",
+    "category": "curiosities",
+    "name": "Spare afternoon",
+    "description": "Three hours, unaccounted for. Non-transferable.",
+    "images": [
+      "https://placehold.co/600x600/7c3aed/ffffff?text=Spare+afternoon"
+    ],
+    "unit_amount": 4200,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "rock-that-has-seen-things",
+    "type": "physical",
+    "category": "curiosities",
+    "name": "Rock that has seen things",
+    "description": "Weathered, discreet, will not be drawn on the subject.",
+    "images": [
+      "https://placehold.co/600x600/7c3aed/ffffff?text=Rock+that+has+seen"
+    ],
+    "unit_amount": 1200,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "second-best-telescope",
+    "type": "physical",
+    "category": "curiosities",
+    "name": "Second-best telescope",
+    "description": "Finds the moon reliably. Struggles with anything smaller.",
+    "images": [
+      "https://placehold.co/600x600/7c3aed/ffffff?text=Second-best+telesc"
+    ],
+    "unit_amount": 8900,
+    "currency": "eur",
+    "purchasable": false
+  },
+  {
+    "_id": "envelope-of-quiet",
+    "type": "physical",
+    "category": "curiosities",
+    "name": "Envelope of quiet",
+    "description": "Open in a loud room. Results vary.",
+    "images": [
+      "https://placehold.co/600x600/7c3aed/ffffff?text=Envelope+of+quiet"
+    ],
+    "unit_amount": 700,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "map-to-somewhere-near",
+    "type": "physical",
+    "category": "curiosities",
+    "name": "Map to somewhere near",
+    "description": "Scale 1:1. Fits the room it describes.",
+    "images": [
+      "https://placehold.co/600x600/7c3aed/ffffff?text=Map+to+somewhere+n"
+    ],
+    "unit_amount": 2100,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "retired-lighthouse-bulb",
+    "type": "physical",
+    "category": "curiosities",
+    "name": "Retired lighthouse bulb",
+    "description": "Forty years of service. Sold as a lamp, not a warning.",
+    "images": [
+      "https://placehold.co/600x600/7c3aed/ffffff?text=Retired+lighthouse"
+    ],
+    "unit_amount": 6400,
+    "currency": "eur",
+    "purchasable": false
+  },
+  {
+    "_id": "drawer-of-odd-keys",
+    "type": "physical",
+    "category": "curiosities",
+    "name": "Drawer of odd keys",
+    "description": "Eleven keys. No locks included, or known.",
+    "images": [
+      "https://placehold.co/600x600/7c3aed/ffffff?text=Drawer+of+odd+keys"
+    ],
+    "unit_amount": 1800,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "ladder-to-the-first-step",
+    "type": "physical",
+    "category": "curiosities",
+    "name": "Ladder to the first step",
+    "description": "One rung. Ambitious for its size.",
+    "images": [
+      "https://placehold.co/600x600/7c3aed/ffffff?text=Ladder+to+the+firs"
+    ],
+    "unit_amount": 2300,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "notebook-with-opinions",
+    "type": "physical",
+    "category": "desk",
+    "name": "Notebook with opinions",
+    "description": "Ruled, bound, and quietly disapproving of margins.",
+    "images": [
+      "https://placehold.co/600x600/1f2937/ffffff?text=Notebook+with+opin"
+    ],
+    "unit_amount": 1600,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "pen-that-runs-out-politely",
+    "type": "physical",
+    "category": "desk",
+    "name": "Pen that runs out politely",
+    "description": "Warns you two sentences before the end.",
+    "images": [
+      "https://placehold.co/600x600/1f2937/ffffff?text=Pen+that+runs+out+"
+    ],
+    "unit_amount": 800,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "paperweight-honest",
+    "type": "physical",
+    "category": "desk",
+    "name": "Paperweight, honest",
+    "description": "Heavy enough for paper. Admits to nothing else.",
+    "images": [
+      "https://placehold.co/600x600/1f2937/ffffff?text=Paperweight"
+    ],
+    "unit_amount": 2200,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "ruler-for-crooked-lines",
+    "type": "physical",
+    "category": "desk",
+    "name": "Ruler for crooked lines",
+    "description": "Thirty centimetres, none of them straight.",
+    "images": [
+      "https://placehold.co/600x600/1f2937/ffffff?text=Ruler+for+crooked+"
+    ],
+    "unit_amount": 950,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "stapler-retired",
+    "type": "physical",
+    "category": "desk",
+    "name": "Stapler, retired",
+    "description": "Full working order. Declines to work.",
+    "images": [
+      "https://placehold.co/600x600/1f2937/ffffff?text=Stapler"
+    ],
+    "unit_amount": 1400,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "ink-in-an-unnamed-colour",
+    "type": "physical",
+    "category": "desk",
+    "name": "Ink in an unnamed colour",
+    "description": "Between blue and something else. 30ml.",
+    "images": [
+      "https://placehold.co/600x600/1f2937/ffffff?text=Ink+in+an+unnamed+"
+    ],
+    "unit_amount": 1100,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "index-cards-pre-filed",
+    "type": "physical",
+    "category": "desk",
+    "name": "Index cards, pre-filed",
+    "description": "Two hundred cards, already in an order. Not yours.",
+    "images": [
+      "https://placehold.co/600x600/1f2937/ffffff?text=Index+cards"
+    ],
+    "unit_amount": 1300,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "desk-lamp-with-moods",
+    "type": "physical",
+    "category": "desk",
+    "name": "Desk lamp with moods",
+    "description": "Warm, cold, and one setting nobody has explained.",
+    "images": [
+      "https://placehold.co/600x600/1f2937/ffffff?text=Desk+lamp+with+moo"
+    ],
+    "unit_amount": 4900,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "eraser-for-good-ideas",
+    "type": "physical",
+    "category": "desk",
+    "name": "Eraser for good ideas",
+    "description": "Works best on the ones you were fond of.",
+    "images": [
+      "https://placehold.co/600x600/1f2937/ffffff?text=Eraser+for+good+id"
+    ],
+    "unit_amount": 600,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "blotter-well-travelled",
+    "type": "physical",
+    "category": "desk",
+    "name": "Blotter, well travelled",
+    "description": "Leather corners. Has absorbed three careers.",
+    "images": [
+      "https://placehold.co/600x600/1f2937/ffffff?text=Blotter"
+    ],
+    "unit_amount": 2400,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "tape-that-lets-go",
+    "type": "physical",
+    "category": "desk",
+    "name": "Tape that lets go",
+    "description": "Sticks firmly for about a week.",
+    "images": [
+      "https://placehold.co/600x600/1f2937/ffffff?text=Tape+that+lets+go"
+    ],
+    "unit_amount": 750,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "letter-opener-blunt",
+    "type": "physical",
+    "category": "desk",
+    "name": "Letter opener, blunt",
+    "description": "Ceremonial. Envelopes remain sealed.",
+    "images": [
+      "https://placehold.co/600x600/1f2937/ffffff?text=Letter+opener"
+    ],
+    "unit_amount": 1700,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "chair-one-leg-shorter",
+    "type": "physical",
+    "category": "desk",
+    "name": "Chair, one leg shorter",
+    "description": "Ideal for rooms that also lean.",
+    "images": [
+      "https://placehold.co/600x600/1f2937/ffffff?text=Chair"
+    ],
+    "unit_amount": 3900,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "enamel-mug",
+    "type": "physical",
+    "category": "kitchen",
+    "name": "Enamel mug",
+    "description": "Holds 350ml of anything hot. Chips with dignity.",
+    "images": [
+      "https://placehold.co/600x600/0f766e/ffffff?text=Enamel+mug"
+    ],
+    "unit_amount": 1450,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "kettle-that-whistles-in-tune",
+    "type": "physical",
+    "category": "kitchen",
+    "name": "Kettle that whistles in tune",
+    "description": "Boils in four minutes, in the key of G.",
+    "images": [
+      "https://placehold.co/600x600/0f766e/ffffff?text=Kettle+that+whistl"
+    ],
+    "unit_amount": 5400,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "spoon-for-stirring-gently",
+    "type": "physical",
+    "category": "kitchen",
+    "name": "Spoon for stirring gently",
+    "description": "Long handle. Discourages haste.",
+    "images": [
+      "https://placehold.co/600x600/0f766e/ffffff?text=Spoon+for+stirring"
+    ],
+    "unit_amount": 900,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "chopping-board-with-grain",
+    "type": "physical",
+    "category": "kitchen",
+    "name": "Chopping board with grain",
+    "description": "End-grain oak. Remembers every onion.",
+    "images": [
+      "https://placehold.co/600x600/0f766e/ffffff?text=Chopping+board+wit"
+    ],
+    "unit_amount": 3200,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "jar-of-salt-from-a-bad-harvest",
+    "type": "physical",
+    "category": "kitchen",
+    "name": "Jar of salt from a bad harvest",
+    "description": "Coarse, briny, faintly disappointed.",
+    "images": [
+      "https://placehold.co/600x600/0f766e/ffffff?text=Jar+of+salt+from+a"
+    ],
+    "unit_amount": 1100,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "timer-that-rounds-down",
+    "type": "physical",
+    "category": "kitchen",
+    "name": "Timer that rounds down",
+    "description": "Sixty minutes, generously interpreted.",
+    "images": [
+      "https://placehold.co/600x600/0f766e/ffffff?text=Timer+that+rounds+"
+    ],
+    "unit_amount": 1900,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "bowl-for-one",
+    "type": "physical",
+    "category": "kitchen",
+    "name": "Bowl for one",
+    "description": "Exactly one portion. No negotiation.",
+    "images": [
+      "https://placehold.co/600x600/0f766e/ffffff?text=Bowl+for+one"
+    ],
+    "unit_amount": 1600,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "grater-forgiving",
+    "type": "physical",
+    "category": "kitchen",
+    "name": "Grater, forgiving",
+    "description": "Four sides, none of them sharp enough to worry.",
+    "images": [
+      "https://placehold.co/600x600/0f766e/ffffff?text=Grater"
+    ],
+    "unit_amount": 2100,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "tea-towel-patterned-oddly",
+    "type": "physical",
+    "category": "kitchen",
+    "name": "Tea towel, patterned oddly",
+    "description": "Linen. The pattern resolves at a distance.",
+    "images": [
+      "https://placehold.co/600x600/0f766e/ffffff?text=Tea+towel"
+    ],
+    "unit_amount": 1200,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "pepper-mill-coarse-only",
+    "type": "physical",
+    "category": "kitchen",
+    "name": "Pepper mill, coarse only",
+    "description": "One grind setting, firmly held.",
+    "images": [
+      "https://placehold.co/600x600/0f766e/ffffff?text=Pepper+mill"
+    ],
+    "unit_amount": 3600,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "tin-of-biscuits-mostly",
+    "type": "physical",
+    "category": "kitchen",
+    "name": "Tin of biscuits, mostly",
+    "description": "Assorted. Two have already been eaten.",
+    "images": [
+      "https://placehold.co/600x600/0f766e/ffffff?text=Tin+of+biscuits"
+    ],
+    "unit_amount": 1500,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "cork-well-fitted",
+    "type": "physical",
+    "category": "kitchen",
+    "name": "Cork, well fitted",
+    "description": "Fits a bottle you probably own.",
+    "images": [
+      "https://placehold.co/600x600/0f766e/ffffff?text=Cork"
+    ],
+    "unit_amount": 400,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "ladle-with-reach",
+    "type": "physical",
+    "category": "kitchen",
+    "name": "Ladle with reach",
+    "description": "For pots deeper than expected.",
+    "images": [
+      "https://placehold.co/600x600/0f766e/ffffff?text=Ladle+with+reach"
+    ],
+    "unit_amount": 2000,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "classic-t-shirt",
+    "type": "physical",
+    "category": "apparel",
+    "name": "Classic T-shirt",
+    "description": "Heavyweight cotton, unisex fit, survives washing.",
+    "images": [
+      "https://placehold.co/600x600/b45309/ffffff?text=Classic+T-shirt"
+    ],
+    "unit_amount": 2500,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "hoodie-weather-agnostic",
+    "type": "physical",
+    "category": "apparel",
+    "name": "Hoodie, weather-agnostic",
+    "description": "Too warm for spring, not enough for winter.",
+    "images": [
+      "https://placehold.co/600x600/b45309/ffffff?text=Hoodie"
+    ],
+    "unit_amount": 5900,
+    "currency": "eur",
+    "purchasable": false
+  },
+  {
+    "_id": "socks-that-stay-paired",
+    "type": "physical",
+    "category": "apparel",
+    "name": "Socks that stay paired",
+    "description": "Sold in threes, for reasons that become clear.",
+    "images": [
+      "https://placehold.co/600x600/b45309/ffffff?text=Socks+that+stay+pa"
+    ],
+    "unit_amount": 1200,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "cap-for-indoor-use",
+    "type": "physical",
+    "category": "apparel",
+    "name": "Cap for indoor use",
+    "description": "Unstructured. No brim to speak of.",
+    "images": [
+      "https://placehold.co/600x600/b45309/ffffff?text=Cap+for+indoor+use"
+    ],
+    "unit_amount": 2200,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "scarf-one-season-only",
+    "type": "physical",
+    "category": "apparel",
+    "name": "Scarf, one season only",
+    "description": "Lambswool. Ages visibly and well.",
+    "images": [
+      "https://placehold.co/600x600/b45309/ffffff?text=Scarf"
+    ],
+    "unit_amount": 3400,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "apron-with-pockets",
+    "type": "physical",
+    "category": "apparel",
+    "name": "Apron with pockets",
+    "description": "Four pockets, two of them useful.",
+    "images": [
+      "https://placehold.co/600x600/b45309/ffffff?text=Apron+with+pockets"
+    ],
+    "unit_amount": 2900,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "gloves-for-typing",
+    "type": "physical",
+    "category": "apparel",
+    "name": "Gloves for typing",
+    "description": "Fingerless. For cold rooms and long drafts.",
+    "images": [
+      "https://placehold.co/600x600/b45309/ffffff?text=Gloves+for+typing"
+    ],
+    "unit_amount": 1800,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "jumper-slightly-too-warm",
+    "type": "physical",
+    "category": "apparel",
+    "name": "Jumper, slightly too warm",
+    "description": "Merino. Best worn while standing near a door.",
+    "images": [
+      "https://placehold.co/600x600/b45309/ffffff?text=Jumper"
+    ],
+    "unit_amount": 6200,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "belt-of-adjustable-opinion",
+    "type": "physical",
+    "category": "apparel",
+    "name": "Belt of adjustable opinion",
+    "description": "Seven holes. You will use two.",
+    "images": [
+      "https://placehold.co/600x600/b45309/ffffff?text=Belt+of+adjustable"
+    ],
+    "unit_amount": 2600,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "raincoat-optimistic",
+    "type": "physical",
+    "category": "apparel",
+    "name": "Raincoat, optimistic",
+    "description": "Waterproof to a point it declines to specify.",
+    "images": [
+      "https://placehold.co/600x600/b45309/ffffff?text=Raincoat"
+    ],
+    "unit_amount": 7900,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "shirt-with-a-spare-button",
+    "type": "physical",
+    "category": "apparel",
+    "name": "Shirt with a spare button",
+    "description": "Oxford cotton. The button is sewn inside the hem.",
+    "images": [
+      "https://placehold.co/600x600/b45309/ffffff?text=Shirt+with+a+spare"
+    ],
+    "unit_amount": 4400,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "slippers-silent",
+    "type": "physical",
+    "category": "apparel",
+    "name": "Slippers, silent",
+    "description": "Felt soles. Alarming to housemates.",
+    "images": [
+      "https://placehold.co/600x600/b45309/ffffff?text=Slippers"
+    ],
+    "unit_amount": 3100,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "hat-brim-negotiable",
+    "type": "physical",
+    "category": "apparel",
+    "name": "Hat, brim negotiable",
+    "description": "Wire-edged. Shape it and it stays shaped.",
+    "images": [
+      "https://placehold.co/600x600/b45309/ffffff?text=Hat"
+    ],
+    "unit_amount": 3300,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "the-restheart-guide-pdf",
+    "type": "digital",
+    "category": "books",
+    "name": "The RESTHeart guide (PDF)",
+    "description": "Downloadable, 180 pages, no index.",
+    "images": [
+      "https://placehold.co/600x600/be123c/ffffff?text=The+RESTHeart+guid"
+    ],
+    "unit_amount": 1990,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "field-notes-on-nothing",
+    "type": "physical",
+    "category": "books",
+    "name": "Field notes on nothing",
+    "description": "Ninety pages of careful observation.",
+    "images": [
+      "https://placehold.co/600x600/be123c/ffffff?text=Field+notes+on+not"
+    ],
+    "unit_amount": 1400,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "a-short-history-of-tuesday",
+    "type": "physical",
+    "category": "books",
+    "name": "A short history of Tuesday",
+    "description": "Longer than expected. Illustrated.",
+    "images": [
+      "https://placehold.co/600x600/be123c/ffffff?text=A+short+history+of"
+    ],
+    "unit_amount": 1700,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "zine-objects-and-their-moods",
+    "type": "digital",
+    "category": "books",
+    "name": "Zine: Objects and their moods",
+    "description": "Stapled, 24 pages, risograph.",
+    "images": [
+      "https://placehold.co/600x600/be123c/ffffff?text=Zine:+Objects+and+"
+    ],
+    "unit_amount": 800,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "manual-for-a-lost-appliance",
+    "type": "physical",
+    "category": "books",
+    "name": "Manual for a lost appliance",
+    "description": "Complete instructions. Appliance discontinued.",
+    "images": [
+      "https://placehold.co/600x600/be123c/ffffff?text=Manual+for+a+lost+"
+    ],
+    "unit_amount": 1100,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "poems-about-queues",
+    "type": "physical",
+    "category": "books",
+    "name": "Poems about queues",
+    "description": "Forty-one poems. Patient throughout.",
+    "images": [
+      "https://placehold.co/600x600/be123c/ffffff?text=Poems+about+queues"
+    ],
+    "unit_amount": 1300,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "the-atlas-of-near-misses",
+    "type": "physical",
+    "category": "books",
+    "name": "The atlas of near misses",
+    "description": "Maps of places almost reached.",
+    "images": [
+      "https://placehold.co/600x600/be123c/ffffff?text=The+atlas+of+near+"
+    ],
+    "unit_amount": 2400,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "recipes-without-endings",
+    "type": "physical",
+    "category": "books",
+    "name": "Recipes without endings",
+    "description": "Each stops before the oven.",
+    "images": [
+      "https://placehold.co/600x600/be123c/ffffff?text=Recipes+without+en"
+    ],
+    "unit_amount": 1600,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "letters-never-sent-pdf",
+    "type": "digital",
+    "category": "books",
+    "name": "Letters never sent (PDF)",
+    "description": "Collected correspondence, one-sided.",
+    "images": [
+      "https://placehold.co/600x600/be123c/ffffff?text=Letters+never+sent"
+    ],
+    "unit_amount": 990,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "dictionary-of-small-regrets",
+    "type": "physical",
+    "category": "books",
+    "name": "Dictionary of small regrets",
+    "description": "Alphabetical. Cross-referenced.",
+    "images": [
+      "https://placehold.co/600x600/be123c/ffffff?text=Dictionary+of+smal"
+    ],
+    "unit_amount": 2200,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "almanac-next-year",
+    "type": "physical",
+    "category": "books",
+    "name": "Almanac, next year",
+    "description": "Weather, tides, and confident guesses.",
+    "images": [
+      "https://placehold.co/600x600/be123c/ffffff?text=Almanac"
+    ],
+    "unit_amount": 1800,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "instructions-translated-twice",
+    "type": "digital",
+    "category": "books",
+    "name": "Instructions, translated twice",
+    "description": "English to Finnish to English. Mostly intact.",
+    "images": [
+      "https://placehold.co/600x600/be123c/ffffff?text=Instructions"
+    ],
+    "unit_amount": 1200,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "catalogue-of-unopened-doors",
+    "type": "digital",
+    "category": "books",
+    "name": "Catalogue of unopened doors",
+    "description": "Photographic. 112 plates.",
+    "images": [
+      "https://placehold.co/600x600/be123c/ffffff?text=Catalogue+of+unope"
+    ],
+    "unit_amount": 2600,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "bell-with-a-soft-opinion",
+    "type": "physical",
+    "category": "sound",
+    "name": "Bell with a soft opinion",
+    "description": "Brass. Rings once, then thinks better of it.",
+    "images": [
+      "https://placehold.co/600x600/0369a1/ffffff?text=Bell+with+a+soft+o"
+    ],
+    "unit_amount": 2800,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "metronome-unreliable",
+    "type": "physical",
+    "category": "sound",
+    "name": "Metronome, unreliable",
+    "description": "Keeps time in a general sense.",
+    "images": [
+      "https://placehold.co/600x600/0369a1/ffffff?text=Metronome"
+    ],
+    "unit_amount": 3400,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "tuning-fork-in-d",
+    "type": "physical",
+    "category": "sound",
+    "name": "Tuning fork in D",
+    "description": "Steel. Accurate to within a good mood.",
+    "images": [
+      "https://placehold.co/600x600/0369a1/ffffff?text=Tuning+fork+in+D"
+    ],
+    "unit_amount": 1600,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "rain-recording-side-a",
+    "type": "digital",
+    "category": "sound",
+    "name": "Rain recording, side A",
+    "description": "Forty minutes. Side B is also rain.",
+    "images": [
+      "https://placehold.co/600x600/0369a1/ffffff?text=Rain+recording"
+    ],
+    "unit_amount": 1200,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "speaker-for-one-room",
+    "type": "physical",
+    "category": "sound",
+    "name": "Speaker for one room",
+    "description": "Loud enough for that room and no further.",
+    "images": [
+      "https://placehold.co/600x600/0369a1/ffffff?text=Speaker+for+one+ro"
+    ],
+    "unit_amount": 8800,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "harmonica-second-hand",
+    "type": "physical",
+    "category": "sound",
+    "name": "Harmonica, second-hand",
+    "description": "Key of C. Previously loved, audibly.",
+    "images": [
+      "https://placehold.co/600x600/0369a1/ffffff?text=Harmonica"
+    ],
+    "unit_amount": 2600,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "wind-chime-discreet",
+    "type": "physical",
+    "category": "sound",
+    "name": "Wind chime, discreet",
+    "description": "Sounds only in weather you would notice anyway.",
+    "images": [
+      "https://placehold.co/600x600/0369a1/ffffff?text=Wind+chime"
+    ],
+    "unit_amount": 3100,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "cassette-of-a-quiet-street",
+    "type": "digital",
+    "category": "sound",
+    "name": "Cassette of a quiet street",
+    "description": "Recorded at 6am. Nothing happens.",
+    "images": [
+      "https://placehold.co/600x600/0369a1/ffffff?text=Cassette+of+a+quie"
+    ],
+    "unit_amount": 900,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "whistle-for-calling-nobody",
+    "type": "physical",
+    "category": "sound",
+    "name": "Whistle for calling nobody",
+    "description": "Carries half a mile. No one comes.",
+    "images": [
+      "https://placehold.co/600x600/0369a1/ffffff?text=Whistle+for+callin"
+    ],
+    "unit_amount": 700,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "music-box-half-a-tune",
+    "type": "physical",
+    "category": "sound",
+    "name": "Music box, half a tune",
+    "description": "Winds fully. Stops at the interesting part.",
+    "images": [
+      "https://placehold.co/600x600/0369a1/ffffff?text=Music+box"
+    ],
+    "unit_amount": 4200,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "headphones-over-ear-under-loud",
+    "type": "physical",
+    "category": "sound",
+    "name": "Headphones, over-ear, under-loud",
+    "description": "Comfortable for hours. Quiet by design.",
+    "images": [
+      "https://placehold.co/600x600/0369a1/ffffff?text=Headphones"
+    ],
+    "unit_amount": 9900,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "drum-hand-sized",
+    "type": "physical",
+    "category": "sound",
+    "name": "Drum, hand-sized",
+    "description": "Goatskin. Louder than its size suggests.",
+    "images": [
+      "https://placehold.co/600x600/0369a1/ffffff?text=Drum"
+    ],
+    "unit_amount": 3700,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "reed-replacement",
+    "type": "physical",
+    "category": "sound",
+    "name": "Reed, replacement",
+    "description": "For an instrument you may not have.",
+    "images": [
+      "https://placehold.co/600x600/0369a1/ffffff?text=Reed"
+    ],
+    "unit_amount": 800,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "seeds-unlabelled",
+    "type": "physical",
+    "category": "garden",
+    "name": "Seeds, unlabelled",
+    "description": "Something will come up. Probably.",
+    "images": [
+      "https://placehold.co/600x600/15803d/ffffff?text=Seeds"
+    ],
+    "unit_amount": 600,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "watering-can-slow",
+    "type": "physical",
+    "category": "garden",
+    "name": "Watering can, slow",
+    "description": "Two litres, delivered unhurriedly.",
+    "images": [
+      "https://placehold.co/600x600/15803d/ffffff?text=Watering+can"
+    ],
+    "unit_amount": 3200,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "trowel-with-history",
+    "type": "physical",
+    "category": "garden",
+    "name": "Trowel with history",
+    "description": "Ash handle, worn to a hand that was not yours.",
+    "images": [
+      "https://placehold.co/600x600/15803d/ffffff?text=Trowel+with+histor"
+    ],
+    "unit_amount": 1900,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "pot-for-a-stubborn-plant",
+    "type": "physical",
+    "category": "garden",
+    "name": "Pot for a stubborn plant",
+    "description": "Terracotta, 14cm. Drains reluctantly.",
+    "images": [
+      "https://placehold.co/600x600/15803d/ffffff?text=Pot+for+a+stubborn"
+    ],
+    "unit_amount": 1400,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "gravel-sorted-by-size",
+    "type": "physical",
+    "category": "garden",
+    "name": "Gravel, sorted by size",
+    "description": "Five kilos, graded by somebody patient.",
+    "images": [
+      "https://placehold.co/600x600/15803d/ffffff?text=Gravel"
+    ],
+    "unit_amount": 1100,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "fence-post-decorative",
+    "type": "physical",
+    "category": "garden",
+    "name": "Fence post, decorative",
+    "description": "Supports nothing. Looks the part.",
+    "images": [
+      "https://placehold.co/600x600/15803d/ffffff?text=Fence+post"
+    ],
+    "unit_amount": 2700,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "bird-feeder-unpopular",
+    "type": "physical",
+    "category": "garden",
+    "name": "Bird feeder, unpopular",
+    "description": "Well made. Birds undecided.",
+    "images": [
+      "https://placehold.co/600x600/15803d/ffffff?text=Bird+feeder"
+    ],
+    "unit_amount": 3400,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "gloves-for-thorns",
+    "type": "physical",
+    "category": "garden",
+    "name": "Gloves for thorns",
+    "description": "Goatskin, gauntlet cuff, roses in mind.",
+    "images": [
+      "https://placehold.co/600x600/15803d/ffffff?text=Gloves+for+thorns"
+    ],
+    "unit_amount": 1600,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "twine-generous-length",
+    "type": "physical",
+    "category": "garden",
+    "name": "Twine, generous length",
+    "description": "Jute, 80 metres. More than any garden needs.",
+    "images": [
+      "https://placehold.co/600x600/15803d/ffffff?text=Twine"
+    ],
+    "unit_amount": 800,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "bulbs-for-a-late-spring",
+    "type": "physical",
+    "category": "garden",
+    "name": "Bulbs for a late spring",
+    "description": "Plant in November. Wait.",
+    "images": [
+      "https://placehold.co/600x600/15803d/ffffff?text=Bulbs+for+a+late+s"
+    ],
+    "unit_amount": 1300,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "bench-slat-spare",
+    "type": "physical",
+    "category": "garden",
+    "name": "Bench slat, spare",
+    "description": "Teak. For the bench that will need it.",
+    "images": [
+      "https://placehold.co/600x600/15803d/ffffff?text=Bench+slat"
+    ],
+    "unit_amount": 2900,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "rain-gauge-hopeful",
+    "type": "physical",
+    "category": "garden",
+    "name": "Rain gauge, hopeful",
+    "description": "Marked to 40mm. Rarely troubled above 5.",
+    "images": [
+      "https://placehold.co/600x600/15803d/ffffff?text=Rain+gauge"
+    ],
+    "unit_amount": 2100,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "label-blank",
+    "type": "physical",
+    "category": "garden",
+    "name": "Label, blank",
+    "description": "Zinc. Write on it in pencil, once.",
+    "images": [
+      "https://placehold.co/600x600/15803d/ffffff?text=Label"
+    ],
+    "unit_amount": 300,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "dice-that-prefer-sixes",
+    "type": "physical",
+    "category": "games",
+    "name": "Dice that prefer sixes",
+    "description": "Five dice. Statistically unremarkable, allegedly.",
+    "images": [
+      "https://placehold.co/600x600/a21caf/ffffff?text=Dice+that+prefer+s"
+    ],
+    "unit_amount": 1200,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "deck-missing-one-card",
+    "type": "physical",
+    "category": "games",
+    "name": "Deck missing one card",
+    "description": "Fifty-one cards. You will not notice which.",
+    "images": [
+      "https://placehold.co/600x600/a21caf/ffffff?text=Deck+missing+one+c"
+    ],
+    "unit_amount": 900,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "puzzle-of-a-plain-wall",
+    "type": "physical",
+    "category": "games",
+    "name": "Puzzle of a plain wall",
+    "description": "One thousand pieces, all magnolia.",
+    "images": [
+      "https://placehold.co/600x600/a21caf/ffffff?text=Puzzle+of+a+plain+"
+    ],
+    "unit_amount": 2400,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "board-game-no-board",
+    "type": "physical",
+    "category": "games",
+    "name": "Board game, no board",
+    "description": "Cards, counters, and a rug you already own.",
+    "images": [
+      "https://placehold.co/600x600/a21caf/ffffff?text=Board+game"
+    ],
+    "unit_amount": 3600,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "marbles-one-favourite",
+    "type": "physical",
+    "category": "games",
+    "name": "Marbles, one favourite",
+    "description": "Twenty glass marbles. One is better.",
+    "images": [
+      "https://placehold.co/600x600/a21caf/ffffff?text=Marbles"
+    ],
+    "unit_amount": 1500,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "chess-set-short-match",
+    "type": "physical",
+    "category": "games",
+    "name": "Chess set, short match",
+    "description": "Full set. Board is five by five.",
+    "images": [
+      "https://placehold.co/600x600/a21caf/ffffff?text=Chess+set"
+    ],
+    "unit_amount": 5400,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "card-game-for-two-strangers",
+    "type": "physical",
+    "category": "games",
+    "name": "Card game for two strangers",
+    "description": "Twenty minutes. No conversation required.",
+    "images": [
+      "https://placehold.co/600x600/a21caf/ffffff?text=Card+game+for+two+"
+    ],
+    "unit_amount": 1800,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "spinning-top-patient",
+    "type": "physical",
+    "category": "games",
+    "name": "Spinning top, patient",
+    "description": "Turned beech. Spins for ninety seconds.",
+    "images": [
+      "https://placehold.co/600x600/a21caf/ffffff?text=Spinning+top"
+    ],
+    "unit_amount": 1000,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "dominoes-uneven",
+    "type": "physical",
+    "category": "games",
+    "name": "Dominoes, uneven",
+    "description": "Double six, hand-cut, faintly wrong.",
+    "images": [
+      "https://placehold.co/600x600/a21caf/ffffff?text=Dominoes"
+    ],
+    "unit_amount": 2200,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "rules-to-a-forgotten-game",
+    "type": "digital",
+    "category": "games",
+    "name": "Rules to a forgotten game",
+    "description": "Four pages. Equipment not included.",
+    "images": [
+      "https://placehold.co/600x600/a21caf/ffffff?text=Rules+to+a+forgott"
+    ],
+    "unit_amount": 700,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "counters-mismatched",
+    "type": "physical",
+    "category": "games",
+    "name": "Counters, mismatched",
+    "description": "Sixty pieces from nine different games.",
+    "images": [
+      "https://placehold.co/600x600/a21caf/ffffff?text=Counters"
+    ],
+    "unit_amount": 1300,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "sand-timer-generous",
+    "type": "physical",
+    "category": "games",
+    "name": "Sand timer, generous",
+    "description": "Sold as three minutes. Runs nearer five.",
+    "images": [
+      "https://placehold.co/600x600/a21caf/ffffff?text=Sand+timer"
+    ],
+    "unit_amount": 1700,
+    "currency": "eur",
+    "purchasable": true
+  },
+  {
+    "_id": "scorepad-optimistic",
+    "type": "physical",
+    "category": "games",
+    "name": "Scorepad, optimistic",
+    "description": "Columns for six players and a long evening.",
+    "images": [
+      "https://placehold.co/600x600/a21caf/ffffff?text=Scorepad"
+    ],
+    "unit_amount": 600,
+    "currency": "eur",
+    "purchasable": true
+  }
+]
