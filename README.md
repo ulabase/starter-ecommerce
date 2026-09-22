@@ -36,7 +36,7 @@ apiUrl: 'https://xxxxxx.eu-central-1-free-1.restheart.com',
 
 ### 3. Set the service up
 
-This installs the payment plugin, creates the collections, opens the shop to visitors without an
+This installs the payment feature, creates the collections, opens the shop to visitors without an
 account, turns on sign-up, login and password reset, and puts a few demo products in the
 catalogue.
 

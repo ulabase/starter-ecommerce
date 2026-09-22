@@ -20,7 +20,7 @@
  */
 import { defineSetup, step, fromEnv, isRedacted } from '@restheart-cloud/cli';
 import { isApiError } from '@restheart-cloud/cli';
-import type { AdminClient, PluginConfig, ServiceClient } from '@restheart-cloud/cli';
+import type { AdminClient, FeatureConfig, ServiceClient } from '@restheart-cloud/cli';
 import { DEMO_PRODUCTS } from './src/catalog.seed.ts';
 import { TOS_VERSION, PP_VERSION } from './src/legal-versions.ts';
 import { environment } from './src/environments/environment.ts';
@@ -69,7 +69,7 @@ const ORDERS = 'orders';
 
 const origin = APP_ORIGIN.replace(/\/$/, '');
 
-// Stripe substitutes only {CHECKOUT_SESSION_ID}; RESTHeart's plugin also
+// Stripe substitutes only {CHECKOUT_SESSION_ID}; RESTHeart also
 // interpolates {ORDER_ID} and {ORDER_SECRET}. They go in the **fragment** so the
 // secret never reaches a server log or a Referer header — OrderReturn.tsx reads
 // it with readOrderRef() and strips it from the address bar at once.
@@ -80,7 +80,7 @@ const origin = APP_ORIGIN.replace(/\/$/, '');
  * notification is absent or disabled, so a shop that never configures these
  * takes people's money and sends them nothing — which is what this one did.
  *
- * The templates are the plugin's own built-ins; a tenant that wants its own
+ * The templates are the feature's own built-ins; a tenant that wants its own
  * puts a path under `products.templates` keyed by the same names.
  */
 /**
@@ -101,9 +101,9 @@ const NOTIFICATIONS = {
   'order-refunded': { enabled: true },
 };
 
-const notificationsOn = (p: PluginConfig): boolean =>
+const notificationsOn = (p: FeatureConfig): boolean =>
   Object.keys(NOTIFICATIONS).every(
-    name => ((p['notifications'] as PluginConfig | undefined)?.[name] as PluginConfig | undefined)?.['enabled'] === true
+    name => ((p['notifications'] as FeatureConfig | undefined)?.[name] as FeatureConfig | undefined)?.['enabled'] === true
   );
 
 const SUCCESS_URL = `${origin}/orders#order={ORDER_ID}&secret={ORDER_SECRET}`;
@@ -113,8 +113,8 @@ const CANCEL_URL = `${origin}/cart`;
 const configured = (value: unknown) =>
   isRedacted(value) || (typeof value === 'string' && value.length > 0);
 
-const section = (config: PluginConfig, key: string): PluginConfig =>
-  (config[key] as PluginConfig | undefined) ?? {};
+const section = (config: FeatureConfig, key: string): FeatureConfig =>
+  (config[key] as FeatureConfig | undefined) ?? {};
 
 /**
  * The value to write for a secret: the environment variable when it is set,
@@ -164,8 +164,8 @@ const secret = (name: string, stored: unknown) => {
   return fromEnv(name);
 };
 
-const products = (config: PluginConfig): PluginConfig =>
-  (config['products'] as PluginConfig | undefined) ?? {};
+const products = (config: FeatureConfig): FeatureConfig =>
+  (config['products'] as FeatureConfig | undefined) ?? {};
 
 /**
  * A few demo products, so the shop has something to show.
@@ -304,13 +304,13 @@ const CONDITION = [
 // token carries.
 const CLAIMS = ['latestConsents/tos', 'latestConsents/pp', 'team'];
 
-const rules = (config: PluginConfig): unknown[] =>
+const rules = (config: FeatureConfig): unknown[] =>
   (config['rules'] as unknown[] | undefined) ?? [];
 
 /**
- * Install a plugin, treating "already installed" as the success it is.
+ * Install a feature, treating "already installed" as the success it is.
  *
- * The step's desired state is that the plugin is there. `409 Plugin already
+ * The step's desired state is that the feature is there. `409 Plugin already
  * installed` says it is, so failing on it reports a problem that does not
  * exist — which is exactly what a forced run does, since the apply then runs
  * against a service where the check would have said yes.
@@ -335,23 +335,23 @@ const permissionGrants = async (service: ServiceClient, id: string, roles: strin
   }
 };
 
-const install = async (admin: AdminClient, srvId: string, pluginId: string) => {
+const install = async (admin: AdminClient, srvId: string, featureId: string) => {
   try {
-    await admin.installPlugin(srvId, pluginId);
+    await admin.installFeature(srvId, featureId);
   } catch (err) {
     if (!isApiError(err) || err.status !== 409) throw err;
   }
 };
 
 export default defineSetup('Ecommerce', [
-  step('stripe plugin installed', {
-    check: ({ admin, srvId }) => admin.isPluginInstalled(srvId, 'stripe'),
+  step('stripe feature installed', {
+    check: ({ admin, srvId }) => admin.isFeatureInstalled(srvId, 'stripe'),
     apply: ({ admin, srvId }) => install(admin, srvId, 'stripe'),
   }),
 
   step('stripe products mode configured', {
     async check({ admin, srvId }) {
-      const config = await admin.getPluginConfig(srvId, 'stripe');
+      const config = await admin.getFeatureConfig(srvId, 'stripe');
       const p = products(config);
       return (
         p['enabled'] === true &&
@@ -374,16 +374,16 @@ export default defineSetup('Ecommerce', [
       );
     },
     async apply({ admin, srvId }) {
-      const current = await admin.getPluginConfig(srvId, 'stripe');
+      const current = await admin.getFeatureConfig(srvId, 'stripe');
       // Read-modify-write with the redaction placeholders passed straight back:
       // the server replaces the whole document and restores the stored value for
       // any field still holding one. Diffing or stripping "empty-looking" fields
       // here would write bullets over the real Stripe key.
-      // No `enabled` here: it is not a field of the plugin's config schema, and
-      // enabling lives on the plugin document rather than inside its config —
-      // `installPlugin` already set it. Writing one here stored a key that did
+      // No `enabled` here: it is not a field of the feature's config schema, and
+      // enabling lives on the feature document rather than inside its config —
+      // `installFeature` already set it. Writing one here stored a key that did
       // nothing and read, to anyone opening the config, as the switch.
-      await admin.updatePluginConfig(srvId, 'stripe', {
+      await admin.updateFeatureConfig(srvId, 'stripe', {
         ...current,
         'secret-key': secret('STRIPE_SECRET_KEY', current['secret-key']),
         'webhook-secret': secret('STRIPE_WEBHOOK_SECRET', current['webhook-secret']),
@@ -415,7 +415,7 @@ export default defineSetup('Ecommerce', [
     check: async ({ service }) =>
       (await service.collectionExists(ORDERS)) &&
       (await service.collectionExists('transactions')),
-    apply: ({ admin, srvId }) => admin.initPlugin(srvId, 'stripe', 'products'),
+    apply: ({ admin, srvId }) => admin.initFeature(srvId, 'stripe', 'products'),
   }),
 
   step('anyone may read the catalog', {
@@ -545,21 +545,21 @@ export default defineSetup('Ecommerce', [
 
   // ── Accounts ───────────────────────────────────────────────────────────
   // The shop sells to guests, but it also has sign-up, login and password
-  // reset, and every one of those is the `accounts` plugin. Nothing here
+  // reset, and every one of those is the `accounts` feature. Nothing here
   // installed it, so the console reported it NOT CONFIGURED and the app's
   // sign-up form posted at a service that had never been told to accept one.
   //
   // These come before the consents steps below on purpose: the schema and the
-  // permission are written against the `users` collection this plugin owns.
+  // permission are written against the `users` collection this feature owns.
 
-  step('accounts plugin installed', {
-    check: ({ admin, srvId }) => admin.isPluginInstalled(srvId, 'accounts'),
+  step('accounts feature installed', {
+    check: ({ admin, srvId }) => admin.isFeatureInstalled(srvId, 'accounts'),
     apply: ({ admin, srvId }) => install(admin, srvId, 'accounts'),
   }),
 
   step('accounts configured to match the shop', {
     async check({ admin, srvId }) {
-      const config = await admin.getPluginConfig(srvId, 'accounts');
+      const config = await admin.getFeatureConfig(srvId, 'accounts');
       const current = section(config, 'features');
       return (
         config['app-name'] === APP_NAME &&
@@ -568,11 +568,11 @@ export default defineSetup('Ecommerce', [
       );
     },
     async apply({ admin, srvId }) {
-      const current = await admin.getPluginConfig(srvId, 'accounts');
+      const current = await admin.getFeatureConfig(srvId, 'accounts');
       // Read-modify-write with the redaction placeholders passed straight back:
       // the server replaces the whole document and restores the stored value
       // for any field still holding one.
-      await admin.updatePluginConfig(srvId, 'accounts', {
+      await admin.updateFeatureConfig(srvId, 'accounts', {
         ...current,
         'app-name': APP_NAME,
         // Where the links in verification and reset emails point. Wrong, and
@@ -591,8 +591,8 @@ export default defineSetup('Ecommerce', [
     ? [
         step('google oauth credentials', {
           async check({ admin, srvId }) {
-            const oauth = section(await admin.getPluginConfig(srvId, 'accounts'), 'oauth');
-            const google = (oauth['google'] as PluginConfig | undefined) ?? {};
+            const oauth = section(await admin.getFeatureConfig(srvId, 'accounts'), 'oauth');
+            const google = (oauth['google'] as FeatureConfig | undefined) ?? {};
             return (
               google['enabled'] === true &&
               configured(google['client-id']) &&
@@ -600,10 +600,10 @@ export default defineSetup('Ecommerce', [
             );
           },
           async apply({ admin, srvId }) {
-            const current = await admin.getPluginConfig(srvId, 'accounts');
+            const current = await admin.getFeatureConfig(srvId, 'accounts');
             const oauth = section(current, 'oauth');
-            const google = (oauth['google'] as PluginConfig | undefined) ?? {};
-            await admin.updatePluginConfig(srvId, 'accounts', {
+            const google = (oauth['google'] as FeatureConfig | undefined) ?? {};
+            await admin.updateFeatureConfig(srvId, 'accounts', {
               ...current,
               oauth: {
                 ...oauth,
@@ -720,17 +720,17 @@ export default defineSetup('Ecommerce', [
     },
   }),
 
-  step('guards plugin installed', {
-    check: ({ admin, srvId }) => admin.isPluginInstalled(srvId, 'guards'),
+  step('guards feature installed', {
+    check: ({ admin, srvId }) => admin.isFeatureInstalled(srvId, 'guards'),
     apply: ({ admin, srvId }) => install(admin, srvId, 'guards'),
   }),
 
   step('the gate blocks users who have not accepted', {
     async check({ admin, srvId }) {
-      // Asked first, because reading the config of a plugin that is not
+      // Asked first, because reading the config of a feature that is not
       // installed is a 404 — and a check must answer the question, not throw.
-      if (!(await admin.isPluginInstalled(srvId, 'guards'))) return false;
-      const config = await admin.getPluginConfig(srvId, 'guards');
+      if (!(await admin.isFeatureInstalled(srvId, 'guards'))) return false;
+      const config = await admin.getFeatureConfig(srvId, 'guards');
       const rule = rules(config).find(r => (r as { id?: string }).id === RULE_ID) as
         | { condition?: string; status_code?: number }
         | undefined;
@@ -739,9 +739,9 @@ export default defineSetup('Ecommerce', [
       return rule?.condition === CONDITION && rule.status_code === 451;
     },
     async apply({ admin, srvId }) {
-      const config = await admin.getPluginConfig(srvId, 'guards');
+      const config = await admin.getFeatureConfig(srvId, 'guards');
       const others = rules(config).filter(r => (r as { id?: string }).id !== RULE_ID);
-      await admin.updatePluginConfig(srvId, 'guards', {
+      await admin.updateFeatureConfig(srvId, 'guards', {
         ...config,
         rules: [
           ...others,
