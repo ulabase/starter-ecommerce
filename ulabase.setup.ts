@@ -1,5 +1,5 @@
 /**
- * What this shop needs from its RESTHeart Cloud service.
+ * What this shop needs from its Ulabase service.
  *
  * The Open points section of the README used to be a checklist: three settings
  * that "have to line up or the flow breaks in ways that are not obvious from
@@ -7,8 +7,8 @@
  * afterwards. This is the same knowledge as code — runnable, re-runnable, and
  * diffable when it changes.
  *
- *   npx @restheart-cloud/cli setup --srv <srvId>
- *   npx @restheart-cloud/cli setup --srv <srvId> --dry-run
+ *   npx @ulabase/cli setup --srv <srvId>
+ *   npx @ulabase/cli setup --srv <srvId> --dry-run
  *
  * Every step is a `check` and an `apply`: run it against a configured service
  * and it writes nothing and reports each step satisfied. `--dry-run` runs the
@@ -18,9 +18,9 @@
  * the value is not already stored, so a re-run against a configured service
  * needs no secrets in the environment at all.
  */
-import { defineSetup, step, fromEnv, isRedacted } from '@restheart-cloud/cli';
-import { isApiError } from '@restheart-cloud/cli';
-import type { AdminClient, FeatureConfig, ServiceClient } from '@restheart-cloud/cli';
+import { defineSetup, step, fromEnv, isRedacted } from '@ulabase/cli';
+import { isApiError } from '@ulabase/cli';
+import type { AdminClient, FeatureConfig, ServiceClient } from '@ulabase/cli';
 import { DEMO_PRODUCTS } from './src/catalog.seed.ts';
 import { TOS_VERSION, PP_VERSION } from './src/legal-versions.ts';
 import { environment } from './src/environments/environment.ts';
@@ -29,7 +29,7 @@ import { environment } from './src/environments/environment.ts';
 const APP_ORIGIN = process.env.SHOP_ORIGIN ?? 'http://localhost:5173';
 
 /** Shown in verification, reset and invitation emails. */
-const APP_NAME = process.env.APP_NAME ?? 'RESTHeart Cloud Shop';
+const APP_NAME = process.env.APP_NAME ?? 'Ulabase Shop';
 
 const f = environment.features;
 
@@ -172,7 +172,7 @@ const products = (config: FeatureConfig): FeatureConfig =>
  *
  * Lifted from `scripts/seed-catalog.mjs`, which this step replaces. That script
  * needed `RH_API_URL` and the service's **root password**; a setup step needs
- * neither, because `service` arrives already authenticated with the JWT `rhc`
+ * neither, because `service` arrives already authenticated with the JWT `ulabase`
  * mints for itself. One manual step fewer, and one password fewer.
  *
  * ── Field names are the server's, not the kit's ──────────────────────────────

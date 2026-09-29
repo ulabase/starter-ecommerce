@@ -1,6 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { Navigate, type RouteObject } from 'react-router-dom';
-import { AuthGuard, PublicGuard } from '@restheart-cloud/kit-react';
+import { AuthGuard, PublicGuard } from '@ulabase/kit-react';
 import { environment } from './environments/environment';
 
 const Login = lazy(() => import('./pages/auth/login/Login'));

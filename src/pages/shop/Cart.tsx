@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { formatPrice, useAuth, useCart, usePayments } from '@restheart-cloud/kit-react';
+import { formatPrice, useAuth, useCart, usePayments } from '@ulabase/kit-react';
 import { environment } from '../../environments/environment';
 import { rememberPendingOrder } from '../../shop/pending-order';
 import './Shop.css';

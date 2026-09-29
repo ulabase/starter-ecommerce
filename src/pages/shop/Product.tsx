@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { formatPrice, useCart, usePayments } from '@restheart-cloud/kit-react';
+import { formatPrice, useCart, usePayments } from '@ulabase/kit-react';
 import { fromPrice, pick, stock, type ShopItem, type Variant } from '../../shop/types';
 import { applySeo, productJsonLd } from '../../seo';
 import { environment } from '../../environments/environment';

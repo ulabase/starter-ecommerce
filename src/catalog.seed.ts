@@ -1,7 +1,7 @@
 /**
  * A hundred invented products, so the shop has something to page through and
  * something to filter. They live in `catalog.seed.json`, one file that the
- * setup imports and that the RESTHeart Cloud console loads into an empty
+ * setup imports and that the Ulabase console loads into an empty
  * `catalog` too, so the shop and the console never disagree on what a product
  * looks like.
  *

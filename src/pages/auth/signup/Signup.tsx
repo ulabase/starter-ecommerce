@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from 'react';
 import { Link } from 'react-router-dom';
-import { useAuth } from '@restheart-cloud/kit-react';
+import { useAuth } from '@ulabase/kit-react';
 import { environment } from '../../../environments/environment';
 import { OAuthButtons } from '../oauth-buttons/OAuthButtons';
 import { Alert } from '../../../ui/alert/Alert';

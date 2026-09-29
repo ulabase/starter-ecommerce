@@ -6,20 +6,20 @@ export function ConfigPage({ apiUrl }: ConfigPageProps) {
   return (
     <main className="config-page">
       <div className="config-card">
-        <p className="eyebrow">RESTHeart Cloud Starter</p>
+        <p className="eyebrow">Ulabase Starter</p>
         <h1>Connect your service</h1>
 
         <p>
           Sign-up, login, email verification, password reset, invitations and team
           management are already built and wired up. One step to go: point the app
-          at a RESTHeart Cloud service.
+          at a Ulabase service.
         </p>
 
         <div className="config-status">
           {apiUrl ? (
             <p>
               <code>apiUrl</code> is set to <code>{apiUrl}</code>, which isn't a
-              RESTHeart Cloud service — it must be a <code>.restheart.com</code> address.
+              Ulabase service — it must be an <code>https://</code> address.
             </p>
           ) : (
             <p><code>apiUrl</code> isn't set yet.</p>
@@ -42,7 +42,7 @@ export function ConfigPage({ apiUrl }: ConfigPageProps) {
               <strong>Copy its URL into your environment file</strong>
               <p>
                 Edit <code>src/environments/environment.ts</code> and set{' '}
-                <code>apiUrl</code> to your RESTHeart Cloud service URL.
+                <code>apiUrl</code> to your Ulabase service URL.
               </p>
             </div>
           </li>

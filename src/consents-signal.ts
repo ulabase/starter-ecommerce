@@ -1,4 +1,4 @@
-import type { ApiError } from '@restheart-cloud/kit-react';
+import type { ApiError } from '@ulabase/kit-react';
 
 /**
  * The consents gate, client side.

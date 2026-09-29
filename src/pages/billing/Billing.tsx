@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '@restheart-cloud/kit-react';
-import type { TeamMembership } from '@restheart-cloud/kit-react';
+import { useAuth } from '@ulabase/kit-react';
+import type { TeamMembership } from '@ulabase/kit-react';
 import './Billing.css';
 
 export default function Billing() {

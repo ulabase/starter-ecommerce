@@ -1,4 +1,4 @@
-import type { CatalogItem, Order } from '@restheart-cloud/kit-react';
+import type { CatalogItem, Order } from '@ulabase/kit-react';
 
 /**
  * A variant: one buyable combination of a product.

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { clearOrderRef, formatPrice, readOrderRef, type OrderRef, useAuth, useCart, usePayments } from '@restheart-cloud/kit-react';
+import { clearOrderRef, formatPrice, readOrderRef, type OrderRef, useAuth, useCart, usePayments } from '@ulabase/kit-react';
 import { environment } from '../../environments/environment';
 import type { ShopOrder } from '../../shop/types';
 import { clearPendingOrder, readPendingOrder } from '../../shop/pending-order';
@@ -170,7 +170,7 @@ export default function Orders() {
         setOrders([]);
         setListError(
           err.status === 403
-            ? 'The service ACL does not allow reading your orders. Re-run `rhc setup`.'
+            ? 'The service ACL does not allow reading your orders. Re-run `ulabase setup`.'
             : (err.message ?? 'Could not load your orders.')
         );
       });

@@ -6,7 +6,7 @@
  * being the one nobody could check, because it lived in a static HTML file the
  * setup never read.
  *
- * `rhc.setup.ts` imports these, and so do the pages. Publish new documents by
+ * `ulabase.setup.ts` imports these, and so do the pages. Publish new documents by
  * editing these two strings and re-running the setup: every user meets the
  * acceptance form again on their next request, and the version they accept is
  * the version the pages show.

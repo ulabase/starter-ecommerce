@@ -14,7 +14,7 @@
  * is what turns a result into one with a price and an availability under it.
  */
 
-const SITE = 'RESTHeart Cloud Shop';
+const SITE = 'Ulabase Shop';
 
 function meta(selector: string, attr: 'name' | 'property', key: string, content: string) {
   let tag = document.head.querySelector<HTMLMetaElement>(selector);

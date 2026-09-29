@@ -6,7 +6,7 @@ this becomes a real shop.
 
 ## Working on the kit itself
 
-**Skip this unless you are changing `@restheart-cloud/kit` or `@restheart-cloud/kit-react`.**
+**Skip this unless you are changing `@ulabase/kit` or `@ulabase/kit-react`.**
 Both are on npm, and `npm install` gets them; this section is for running the app against a
 kit checkout you are editing.
 
@@ -16,14 +16,14 @@ cd ../restheart-cloud-kit/packages/kit       && npm link
 cd ../kit-react                              && npm link
 
 # 2. Point this app at them
-cd ../../../restheart-cloud-starter-ecommerce
-npm link @restheart-cloud/kit @restheart-cloud/kit-react
+cd ../../../ulabase-starter-ecommerce
+npm link @ulabase/kit @ulabase/kit-react
 ```
 
 **`npm install` undoes this.** It resolves the published versions and replaces the symlinks
 with real directories — the app then runs against the release, silently, with no error to
 notice. Re-run the `npm link` line after any install, and check with
-`ls -l node_modules/@restheart-cloud/`: symlinks, not directories.
+`ls -l node_modules/@ulabase/`: symlinks, not directories.
 
 **After every change to the kit, rebuild it** — this app consumes `dist/`, not the
 TypeScript sources:
@@ -42,7 +42,7 @@ normally. Linking needs them again:
 
 ```ts
 resolve:     { dedupe: ['react', 'react-dom', 'react-router-dom'] },
-optimizeDeps:{ exclude: ['@restheart-cloud/kit', '@restheart-cloud/kit-react'] },
+optimizeDeps:{ exclude: ['@ulabase/kit', '@ulabase/kit-react'] },
 server:      { fs: { allow: ['..'] } },
 ```
 
@@ -104,7 +104,7 @@ src/
 `AuthGuard` because the whole of guest checkout is that it works without an account. Everything
 needing one lives under `/app`.
 
-`/order` must match the service's configured `success-url` — `rhc.setup.ts` writes both from the
+`/order` must match the service's configured `success-url` — `ulabase.setup.ts` writes both from the
 same constant, so they cannot disagree.
 
 A path that matches nothing redirects to the shop. It used to render the authenticated home page
@@ -121,7 +121,7 @@ links to it.
 
 `src/styles.css` holds two things: **design tokens** (section 1) and a **disposable
 default skin** (sections 3–5). The look is deliberately a *mockup* — cohesive and
-intentional, but obviously a scaffold. `@restheart-cloud/kit-react` ships no UI at all, so
+intentional, but obviously a scaffold. `@ulabase/kit-react` ships no UI at all, so
 the components and this one stylesheet are the only places styling lives.
 
 Two ways forward. Pick one:
@@ -176,8 +176,8 @@ those. For your application's own collections, use `auth.api`: it applies the se
 way out, so you never attach the bearer token by hand.
 
 ```tsx
-import { useAuth } from '@restheart-cloud/kit-react';
-import type { ApiError } from '@restheart-cloud/kit-react';
+import { useAuth } from '@ulabase/kit-react';
+import type { ApiError } from '@ulabase/kit-react';
 
 function Notes() {
   const auth = useAuth();
@@ -253,12 +253,12 @@ The collection names are configurable server-side (`products.catalog-collection`
 
 #### The same list, as something you can run
 
-[`rhc.setup.ts`](./rhc.setup.ts) is that table as a setup, plus the collections, the indexes and
+[`ulabase.setup.ts`](./ulabase.setup.ts) is that table as a setup, plus the collections, the indexes and
 the `stripe` plugin's install and init:
 
 ```bash
-npx @restheart-cloud/cli setup --srv <srvId> --dry-run   # what is missing
-npx @restheart-cloud/cli setup --srv <srvId>             # make it so
+npx @ulabase/cli setup --srv <srvId> --dry-run   # what is missing
+npx @ulabase/cli setup --srv <srvId>             # make it so
 ```
 
 Every step is a check and an apply, so running it against a service that is already configured
@@ -270,7 +270,7 @@ The table above is the *why*; the setup is the *how*, and the two live in the sa
 they change in the same commit as the code they configure — which is the whole reason for it not
 being a checklist.
 
-> `@restheart-cloud/cli` ships with the next kit release. Until it is on npm, install it from a
+> `@ulabase/cli` ships with the next kit release. Until it is on npm, install it from a
 > checkout of `restheart-cloud-kit` with `npm link`.
 
 ### Configure the success URL to carry the order reference
@@ -340,7 +340,7 @@ has one left, `jar-of-last-monday` is for sale with none, and the enamel mug cou
 
 - **Restocking** — `in_stock` goes down when an order is paid and nothing puts it back up. That is
   on purpose, not a gap: the count is a field in a Mongo collection like any other, so restocking
-  is done from the RESTHeart Cloud console today, and the planned back-office screens will take it
+  is done from the Ulabase console today, and the planned back-office screens will take it
   over. The shop has no page for it because the shop is not where it belongs.
 - **Shipping** — Stripe collects the address on its own page, for the countries named in
   `products.shipping-address-countries`; the webhook writes it onto the order. **Tax** — left to
@@ -350,8 +350,8 @@ has one left, `jar-of-last-monday` is for sale with none, and the enamel mug cou
 
 ## Packages used
 
-- [`@restheart-cloud/kit`](https://github.com/SoftInstigate/restheart-cloud-kit/tree/main/packages/kit) — TypeScript auth logic (framework-agnostic)
-- [`@restheart-cloud/kit-react`](https://github.com/SoftInstigate/restheart-cloud-kit/tree/main/packages/kit-react) — React context, hooks, and guards
+- [`@ulabase/kit`](https://github.com/ulabase/kit/tree/main/packages/kit) — TypeScript auth logic (framework-agnostic)
+- [`@ulabase/kit-react`](https://github.com/ulabase/kit/tree/main/packages/kit-react) — React context, hooks, and guards
 
 ## SEO
 

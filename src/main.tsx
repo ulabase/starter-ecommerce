@@ -1,7 +1,7 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-import { RhAuthProvider, RhCartProvider, RhPaymentsProvider } from '@restheart-cloud/kit-react';
+import { RhAuthProvider, RhCartProvider, RhPaymentsProvider } from '@ulabase/kit-react';
 import { App } from './App';
 import { consentsOnError } from './consents-signal';
 import { environment } from './environments/environment';

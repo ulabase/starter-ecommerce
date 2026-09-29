@@ -1,7 +1,7 @@
 import { useEffect, useMemo } from 'react';
 import { trackViewportHeight } from './viewport-height';
 import { useRoutes } from 'react-router-dom';
-import { isValidApiBaseUrl, setToken, scheduleRefresh } from '@restheart-cloud/kit-react';
+import { isValidApiBaseUrl, setToken, scheduleRefresh } from '@ulabase/kit-react';
 import { environment } from './environments/environment';
 import { setJustSignedUp } from './just-signed-up';
 import { routes } from './routes';
@@ -44,7 +44,7 @@ export function App() {
   useEffect(() => {
     if (!apiConfigured) {
       console.error(
-        `[app] apiUrl must point to a RESTHeart Cloud service (*.restheart.com), got "${environment.apiUrl}". ` +
+        `[app] apiUrl must point to a Ulabase service (an https:// URL), got "${environment.apiUrl}". ` +
           'Set it in src/environments/environment.ts.'
       );
       return;

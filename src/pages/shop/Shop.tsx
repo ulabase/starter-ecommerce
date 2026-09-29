@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { formatPrice, useCart, usePayments } from '@restheart-cloud/kit-react';
+import { formatPrice, useCart, usePayments } from '@ulabase/kit-react';
 import { fromPrice, pick, stock, type ShopItem } from '../../shop/types';
 import { applySeo } from '../../seo';
 import { environment } from '../../environments/environment';
@@ -249,7 +249,7 @@ export default function Shop() {
           err.status === 404
             ? `No collection "${environment.catalogCollection}" on the service. Check the stripe plugin is enabled and the collection name matches.`
             : err.status === 403
-              ? 'The service ACL does not allow reading the catalog. Re-run `rhc setup` — the permission has to cover signed-in customers as well as guests.'
+              ? 'The service ACL does not allow reading the catalog. Re-run `ulabase setup` — the permission has to cover signed-in customers as well as guests.'
               : (err.message ?? 'Could not load the catalog.')
         );
       });
@@ -348,7 +348,7 @@ export default function Shop() {
 
       {items && items.length === 0 && !q.category && !q.search && (
         <p className="muted">
-          The catalog has no purchasable products yet. Run <code>rhc setup --srv &lt;srvId&gt;</code>.
+          The catalog has no purchasable products yet. Run <code>ulabase setup --srv &lt;srvId&gt;</code>.
         </p>
       )}
 

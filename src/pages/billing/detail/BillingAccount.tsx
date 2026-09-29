@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, type FormEvent } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
-import { useAuth } from '@restheart-cloud/kit-react';
-import type { TeamMembership, TeamMember, PendingInvitation } from '@restheart-cloud/kit-react';
+import { useAuth } from '@ulabase/kit-react';
+import type { TeamMembership, TeamMember, PendingInvitation } from '@ulabase/kit-react';
 import { Alert } from '../../../ui/alert/Alert';
 import './BillingAccount.css';
 

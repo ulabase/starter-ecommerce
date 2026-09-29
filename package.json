@@ -1,5 +1,5 @@
 {
-  "name": "restheart-cloud-starter-ecommerce",
+  "name": "ulabase-starter-ecommerce",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -10,18 +10,23 @@
   },
   "private": true,
   "dependencies": {
-    "@restheart-cloud/kit-react": "^0.10.0",
+    "@ulabase/kit-react": "^0.12.0",
     "react": "^18.3.0",
     "react-dom": "^18.3.0",
     "react-router-dom": "^6.28.0"
   },
   "devDependencies": {
-    "@restheart-cloud/cli": "^0.11.0",
+    "@ulabase/cli": "^0.12.0",
     "@types/react": "^18.3.0",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.0",
     "typescript": "~5.6.0",
     "vite": "^6.0.0",
     "vitest": "^2.0.0"
+  },
+  "allowScripts": {
+    "esbuild@0.21.5": true,
+    "esbuild@0.25.12": true,
+    "fsevents@2.3.3": true
   }
 }

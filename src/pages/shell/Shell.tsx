@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { Outlet, Link, NavLink, useNavigate, useLocation } from 'react-router-dom';
-import { useAuth, useCart } from '@restheart-cloud/kit-react';
+import { useAuth, useCart } from '@ulabase/kit-react';
 import { isJustSignedUp, setJustSignedUp } from '../../just-signed-up';
-import { usePayments } from '@restheart-cloud/kit-react';
+import { usePayments } from '@ulabase/kit-react';
 import './Shell.css';
 
 const STORAGE_KEY = 'rh-theme';
@@ -159,7 +159,7 @@ export default function Shell() {
         err.status === 402
           ? 'Nothing to show yet — this opens once you have bought something.'
           : err.status === 403
-            ? 'The service ACL does not allow opening the billing portal. Re-run `rhc setup`.'
+            ? 'The service ACL does not allow opening the billing portal. Re-run `ulabase setup`.'
             : (err.message ?? 'Could not open the billing portal.')
       );
     }
@@ -183,7 +183,7 @@ export default function Shell() {
         )}
 
         <header className="header">
-          <Link to="/" className="logo">RESTHeart Cloud</Link>
+          <Link to="/" className="logo">Ulabase</Link>
 
           <nav className="nav" aria-label="Main">
             <NavLink to="/" end className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}>Shop</NavLink>

@@ -89,7 +89,7 @@ function head(item, url) {
   };
 
   return [
-    `<title>${escape(item.name)} · RESTHeart Cloud Shop</title>`,
+    `<title>${escape(item.name)} · Ulabase Shop</title>`,
     `<meta name="description" content="${escape(item.description ?? item.name)}" />`,
     `<link rel="canonical" href="${escape(url)}" />`,
     `<meta property="og:type" content="product" />`,
