@@ -207,7 +207,7 @@ knowing about in advance.
 Registered users must accept the current Terms of Service and Privacy Policy before the app
 serves them anything. This is on by default here (it came from the starter's
 `feat/consents-gate` branch), with the server-side setup in
-[the tutorial](https://cloud.restheart.com/blog).
+[the tutorial](https://ulabase.com/blog).
 
 How it works, in three pieces:
 

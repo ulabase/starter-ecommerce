@@ -28,7 +28,7 @@ every product.
 image and structured data already in the `<head>` — plus `sitemap.xml` and `robots.txt`.
 
 ```bash
-SHOP_API_URL=https://xxxxxx.eu-central-1-free-1.restheart.com \
+SHOP_API_URL=https://xxxxxx.ulabase.app \
 SHOP_PUBLIC_URL=https://ilmionegozio.com \
 npm run build
 ```
@@ -61,7 +61,7 @@ refresh needs no `npm install` and no `vite build`:
 
 ```bash
 SHOP_SHELL=remote \
-SHOP_API_URL=https://xxxxxx.eu-central-1-free-1.restheart.com \
+SHOP_API_URL=https://xxxxxx.ulabase.app \
 SHOP_PUBLIC_URL=https://ilmionegozio.com \
 node scripts/prerender.mjs
 ```

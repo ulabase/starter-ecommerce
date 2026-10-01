@@ -1,11 +1,11 @@
 # Backoffice — catalogo, ordini, inventario
 
 **Status:** bozza. Nessuna riga scritta. Serve a non perdere i pezzi, non a decidere tutto.
-**Repo:** `restheart-cloud-starter-ecommerce`. Tocca anche `rhc.setup.ts`, non solo il frontend.
+**Repo:** `restheart-cloud-starter-ecommerce`. Tocca anche `ulabase.setup.ts`, non solo il frontend.
 
 ## Perché
 
-Oggi il negozio vende e basta. Chi lo gestisce apre la console di RESTHeart Cloud e modifica
+Oggi il negozio vende e basta. Chi lo gestisce apre la console di Ulabase e modifica
 documenti a mano: aggiungere un prodotto, vedere gli ordini, segnare che il 23 è partito. Va bene
 per provare, non per usare — e la console è uno strumento da sviluppatore, non da chi imballa
 pacchi.
@@ -51,7 +51,7 @@ Serve un ruolo — `staff`, o `shop-admin` — e le regole ACL che gli danno:
 - scrittura sul **solo** sotto-documento `fulfilment`, con `bson-request-whitelist`, mai su
   `status` né sugli importi.
 
-Tutto questo va in `rhc.setup.ts`, così chi clona lo starter se lo ritrova configurato.
+Tutto questo va in `ulabase.setup.ts`, così chi clona lo starter se lo ritrova configurato.
 
 ### 2. Catalogo
 

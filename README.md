@@ -4,7 +4,7 @@ A real online shop: product catalogue, cart, card payments through Stripe, and o
 look up afterwards. People can buy without creating an account, and the ones who do get sign-up,
 login, password reset and teams.
 
-It is a React app plus a [Ulabase](https://cloud.restheart.com) service. There is no
+It is a React app plus a [Ulabase](https://ulabase.com) service. There is no
 server of yours to write, deploy or pay for.
 
 ![The shop, with the demo catalogue](./starter-shop.png)
@@ -24,15 +24,15 @@ npm install
 
 ### 2. Point it at your service
 
-Create a **free service** at [cloud.restheart.com](https://cloud.restheart.com) and copy its URL
+Create a **free service** at [ulabase.com](https://ulabase.com) and copy its URL
 from the service's *Connect* page. Put it in `src/environments/environment.ts`:
 
 ```ts
-apiUrl: 'https://xxxxxx.eu-central-1-free-1.restheart.com',
+apiUrl: 'https://xxxxxx.ulabase.app',
 ```
 
-> Use the URL of **your service**, not `cloud-api.restheart.com`. That second one is RESTHeart
-> Cloud's own control panel, and pointing the app at it makes every request fail.
+> Use the URL of **your service**, not `api.ulabase.com`. That second one is Ulabase's
+> own control panel, and pointing the app at it makes every request fail.
 
 ### 3. Set the service up
 
@@ -66,7 +66,7 @@ In [Developers → Webhooks](https://dashboard.stripe.com/test/webhooks), add an
 2. **Destination type** — *Webhook endpoint*.
 3. **Destination** — the URL is your service plus `/stripe/webhook`:
    ```
-   https://xxxxxx.eu-central-1-free-1.restheart.com/stripe/webhook
+   https://xxxxxx.ulabase.app/stripe/webhook
    ```
 
 Save it, then reveal the **signing secret** on the destination you just made. It starts `whsec_`.
@@ -85,7 +85,7 @@ ulabase setup --srv <srvId>
 ```
 
 `ulabase login` asks for a **personal access token**, which you create first: in
-[cloud.restheart.com](https://cloud.restheart.com), open your profile and issue one. It is not
+[ulabase.com](https://ulabase.com), open your profile and issue one. It is not
 your account password — the CLI has no way to accept one. A token carries the `cli` role rather
 than yours, so it configures services and cannot buy one, and revoking it touches nothing else.
 
@@ -109,8 +109,8 @@ Three things change, and nothing else:
 
 1. **Real Stripe keys.** Swap the test keys for live ones and run `ulabase setup --srv <srvId>`
    again. Take payments only once you have tested the whole flow.
-2. **Your own products.** Replace the demo ones in the `catalog` collection, from the RESTHeart
-   Cloud console. A product needs a name, a price and `purchasable: true` to be sold.
+2. **Your own products.** Replace the demo ones in the `catalog` collection, from the Ulabase
+   console. A product needs a name, a price and `purchasable: true` to be sold.
 3. **Your own look.** Everything visual is in `src/styles.css` and is meant to be replaced.
 
 ## Making it yours
@@ -128,7 +128,7 @@ Three things change, and nothing else:
 `ulabase setup --srv <srvId>` to add the demo ones.
 
 **Everything fails, or you see a login page you did not ask for.** `apiUrl` is probably pointing
-at `cloud-api.restheart.com` instead of your own service — see step 2.
+at `api.ulabase.com` instead of your own service — see step 2.
 
 **Payment goes through but the order stays "pending".** The webhook is not arriving. In Stripe,
 open your event destination and look at the recent deliveries: a `401` or `404` means the URL is
@@ -144,6 +144,6 @@ the things worth knowing before this becomes a real shop.
 [SEO.md](./SEO.md) has how product pages get their own title, price and preview image — what a
 single-page app cannot do on its own, and what this one does about it.
 
-- [Ulabase documentation](https://restheart.org/docs/cloud/)
-- [The `ulabase` command line](https://restheart.org/docs/cloud/cli)
-- [Stripe on Ulabase](https://restheart.org/docs/cloud/stripe)
+- [Ulabase documentation](https://ulabase.com/docs/)
+- [The `ulabase` command line](https://ulabase.com/docs/cli)
+- [Stripe on Ulabase](https://ulabase.com/docs/stripe)
