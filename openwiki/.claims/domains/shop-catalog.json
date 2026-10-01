@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:d4a3c06dd4ce46a0fc27142a3b746db0778b9c127d6411368cca307177951fd1",
+  "claims": [
+    {
+      "id": "claim_490fddb982a24d929db66a61614a1432",
+      "statement": "The shop catalog uses a two-level product model where ShopItem extends CatalogItem with category, images, variants, and in_stock fields, and Variant represents purchasable combinations with id, unit_amount, currency, purchasable, in_stock, images, and metadata fields.",
+      "evidence": [
+        {
+          "resource": "repo://src/shop/types.ts#L1-L50",
+          "version": "repo-lines-v1:sha256:8f7a9c9b534aeae269048a1f64988b289c61ca7f6fda94c5d7198b6df95fc66d:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5NzI4YzJlOTU4YmU2M2YzNmI4NzUzNmE1N2M5NzRmM2JjZWQzZmNhNDZkYTUxMDc3OWQ5YWQzMWI4NjhlZmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3OTI5ZTkxZTBmOTljM2U4MjVkZTY5YjQzNWZiNjQ4NGQxYjBhMWRmMmY0NjU2MWFiZjFhMjlmMDQxODhiODgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fa61c92f695847a8ae0f8826f28b1c4e",
+      "statement": "The pick() function implements variant inheritance where variants inherit values from their parent product when not specified, with images being replaced rather than merged.",
+      "evidence": [
+        {
+          "resource": "repo://src/shop/types.ts#L39-L51",
+          "version": "repo-lines-v1:sha256:0521300f0305e31f06ede7836e9aa0e69f14a6485e000ee9ea9b28c0895631b6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM1ZjcwMWIxN2JlMDMzMTYzNTAyNzgwYmY4NDNmYzIxOTNlZjA2ZmNmMjkzNTNjNGIxZjZmN2JiMjQ0YzY4YjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAxNDI3YTQzMTI1NTJlNDUwODRlY2IyYTZjMDg1MzhlOTE1ODAxOTFkZDM1NWY0OTQ5OGE0NmI2NjIxYmI0NjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVjODIyZGY2YWFmYWY1ZTYxNjFiZjVjOWI3ZjY5ZjEyYmVkZjhlYjAzYTc3ZjQ4ZWI4ZGMzMDA4OGNiNDI5YWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e57d250228b143d1b4a53601f7c9daf7",
+      "statement": "The stock() function determines sellability based on purchasable flag and in_stock count, where absent in_stock means nobody is counting (default for most items).",
+      "evidence": [
+        {
+          "resource": "repo://src/shop/types.ts#L53-L73",
+          "version": "repo-lines-v1:sha256:dbfeda6cf025c54bb42668cde0e667056f35623578a0de610643c20b371be169:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkyMDQwZTA5NWE5NGUyYWRhNzRlNDIxZjM3MTg3NTFhOTFhODEwYmZkNjZmNDhmNGU5MzljN2I3NDgwZWI2NzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjViNTJmODdjZGEwMTM1MDUxNmFlOGMwMzUyMDE2Yzg2YTBjOWM3YzMxYjYxYWRkNTcwZTFhMzZjYTgxZDY1M2IifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5a64d71a0e8d49c2a72619b417bf8541",
+      "statement": "The Product page fetches products by ID via payments.getCatalog with a filter, not from grid state, because URLs must work standalone.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/shop/Product.tsx#L88-L119",
+          "version": "repo-lines-v1:sha256:32973432f665f1d23e6001cb69a9d8618a5e1138e7abf2844187cd8c3a1a61c2:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5NjZmYmZhODg5OThkYTc0NjU2YzUwMTk0OTU2YzI1ZjA4NDk0NTc2NjBjMDA5ZmU2M2QxZTlmYTlkYzkzMWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYxYTIwNDI2YTNiNzFmMDFmZDc4ZDE5MjUwZmIxZDE2OTU1MmQ4ODY3MzU1YzE3YTBjOGM5NjNiNTY5NTQxMDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZlZTcxYTJiOTg3MDEyMDFkNTc2NjM5ZWRjYjhmZjE4NTAxMDI2NDA4OWFhODdhY2NjZjZhNmJhNzgxOTM3M2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgyYmQxZjE4MmJlZmExZWZlMmM4NDM1ZmE1ZjJhNWE4YzI5Y2NmOGE2OTNkNWZjYzA3ZjRmZmE0MDM3ZjBmMTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f29ffff3aa9346598b7c1ea1343c1879",
+      "statement": "Variant selection auto-selects the first purchasable variant and extracts options from variant metadata keys, excluding 'etichetta' which is used for email labels.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/shop/Product.tsx#L54-L86",
+          "version": "repo-lines-v1:sha256:ca1d7ba95b9da22ed671caae3e0fcd3a2d691b0c9f6674186cd0037dcdce089e:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYwYjcxZTA1NjdmMTk2ZGZkZTgxMTI2ZjE2OTBkYmExOTJkN2EwMjM1NGE5NDMzYzFhNTRhMDc3ZmRjMmY4N2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE0MTdlNjNhZjc5YmRmZGQzMjAxMDEwZmU4ZjkyN2Y2ZTA4NTgwMDYwMDY3ZmNmY2YzNjFiMzk0OGQ5NDk1NjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA5ZmVlZTJlYTIyN2ZhYmFlNDZhMTVhZjdmZTFkMTEwYzJjYjc0OGFkYmY3MTk1NDgyZTJlYWVmNzE4NTU5NTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZhYTU4Y2M0Njk5ZjIzOTNiZDM2ZWM5Mjc2M2NlMzRjNjgzZjVlOTkzOWIyZmZlZjk5NGY1NDk5ZDJhZDllOTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8d90fc0b712341febcef7f5805d015fa",
+      "statement": "The Shop page uses URL search params for category and search filters, enabling back button, URL sharing, and reload preservation.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/shop/Shop.tsx#L85-L133",
+          "version": "repo-lines-v1:sha256:5c4a6027ddc36a5c00520f931d8bfb0edf15042a79ac75d84c716a05989eebd0:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRmMmEyZjk5NmYwOGU2ODBiZDI5MjEzNWE2ZmE0OTc4YmRhMjZlNjAyZDg0ZjMzY2IxZDU5NDc3NWQ0MzA0YjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY1ZDdjNmQ2OGE1MTcyMzg3Mjk3NDQ5MzQwZjlhZGNlNjAxZTEyMDU5MjJlZTI2MzE4Y2I0MWRiN2Y5MTA3MDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMwMzYxNzgyNzdhNmIyODkwMjQ5ZGVmY2IwOTY5M2U3MDViY2M3MzFiMTI3NTc0Y2RmOGU5OWIyYzk5OTU5ODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjViNDc0ZWY4ZDJlMTJkODExMzEyNzNhOTQwMDNjYWE4MDJmMmRmNTZkNjk3M2E0ZDlmMzkzYzdiM2M4YWY2MjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8de06d77f0314f0884ce2867249f3b47",
+      "statement": "Infinite scroll uses IntersectionObserver with a sentinel element and 600px rootMargin, detecting end by short page count.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/shop/Shop.tsx#L262-L277",
+          "version": "repo-lines-v1:sha256:a6a633533dbdfa5a26ea61dfca83ab52e703f7b28f2c3774820fe72b53347f26:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxYTIzNmQ5MTcyMjMxOTg3NWJhZGY4NTUzYTY1Y2U1ZGM1ZDc5MDliZmQzMzQ5M2RlZDc2ODA5ZTg1ZGUxYTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlhMzdjMDU0YmNkNjNiMjFiOTUxNzFmZjY1NTgyMDIxYzJlZTg0YzQyNjc1YTJhOWZjNmU5MjhhY2Q0MWEwZmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVkMDhkZDU2Mjc5N2ZjYWFjODYxNzQzMGQ2MTE5MTZmYWNkNzBlMDgyOGE3YTU4MWY4ZjIzN2ZhYjM2NDVlNjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNjZjA3NmI3MzI5YzQ3YjU3MGU2Mjg3MWJhZGE3ZDZkYWIxZmQ4MjJlYTlhMjMyNTg0ZWZmNTY1MjUzOWIxMDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2c7c5b199a844e94a6b6849e7c1293a3",
+      "statement": "Scroll position is persisted in sessionStorage keyed by filter (category|search), saved on every scroll event and restored by fetching pages 1..N in one request.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/shop/Shop.tsx#L13-L160",
+          "version": "repo-lines-v1:sha256:a1f3336df5142c0a39a91d14c67c62b710e5f57fb5bad5d8eea9a156778b0a04:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQ4LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJlYWYyMmNmMDczMjU5MmMyNDcxNDFjYmU2MWVmYTExMDEyNjEyZjVhMzEyMmI5YWY5YmJhZjUyZjU3MjRkMTk0IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIzOGVlZTJkYTcyZGEwZjk0MDk0ZjEzMGExMTdjYjY1ODFiYmQyNTAwMjI0YTA4ZWE0MzE2MjE1MDE3NjI1MDY3IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIyNjg4MmM0NDA0NTZiZmUyYzY2MzVmZGVlYTZjZGVjNjlkZGJhOGQyNDc4ODM5N2ZkNDE2MzQyZjQ4NTY3ZjAzIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIwZTdkZDZmYzBlOGE1Y2VjMjA1OTZhMGY4ZDIwZmMxZjE4ZDQ3ZmYyMWEwODE1NWUxN2U2Zjc0ZTE1YWEzZTI1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_e51d3a12b12a44238e93f51288cc0901",
+      "statement": "The catalog ACL readFilter ensures only products where purchasable is true OR variants have purchasable not false are visible to clients.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/shop/Product.tsx#L13-L19",
+          "version": "repo-lines-v1:sha256:1f9baa86b3a5a0c206d48fadfde54d6660efcf74e16e8bd261596275ae9322de:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjY2ODk1NmY5NWIyNWI1MmNkNzg2YTQ4ZjI2YWZmYjE1MjVhOTI5ZjNjYmQ4NWVjYzE0NzFkOGE2YWNjYzdkYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWM3YjAyODY3ZmEwZTY2YmRlYzI1N2RlZWJlNGFlZWFmYWJmODU4Mzg2MWEzYzQyZDdmYTc5NjYzYTU2ZTdmZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGY4OTk2NDA2OWY1NGIzMTk2NGFkYTI5YzY3MWViOThiZjg0ODhiYWQ1Mzg3NTNlZTJlNDdmMDUxNTQ3MTFhOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWNiMGM0MTNkZWQ4NGVjODI0MmQzYjE3MmU1NTJmYTdkN2VmOTFkYzAxMGZhYzFiODI3NTQ3OTBmMTlmM2I0NSJ9"
+        },
+        {
+          "resource": "repo://src/pages/shop/Shop.tsx#L175-L185",
+          "version": "repo-lines-v1:sha256:169c20a5ae469bf275ee2931b0aa1426661a478a92c18911786f59c5b2fad58b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJlMjdmY2E4OGM3OGVmZTcyMmM0MWQ5YjljNGM2ZWNkN2RkZGRjOTIzNWNjZWMwODY3YjNhYTYyZmY2ZDRhMjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlNzExMjdmN2Y1ZjE3MTdiOTZlN2U5NzY5MGE3ZDE4MWE1MDcyMzdmY2FkMTg4NDBiYmIwOTM0MDIyYTkyMGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjViM2QwYjcyYjQ0ODdmM2U0MGZmM2RmZjBiNTVhMzFjMmRmMzQzNWY3OTVlMjEwYTBlZjBlMzYwMDFmMmIzZjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMyNGU5NDhmN2RiOTEwODg1OTk4NjMzNjY4MjRjM2QyNjdhMjkxOTU2OTc0ODAzOGM3ZGE2N2RmZGQyMmRmMWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9c7291be2ffe45a9bfcf2859bd2f6b7b",
+      "statement": "SEO implementation uses applySeo() for per-page metadata and productJsonLd() for schema.org Product structured data, with cleanup on page change.",
+      "evidence": [
+        {
+          "resource": "repo://src/seo.ts#L54-L117",
+          "version": "repo-lines-v1:sha256:e41aed30f1802d380a84d1b2b96a0812821a305180492ca6f1abb37ef82ba216:eyJzZWxlY3RlZExpbmVDb3VudCI6NjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM4ZjU0OWJiODg2OGZmNjc5NTBjOTQyMjU4OTliYjVlNzhhNWNmYzQwYTVhYjYxMTk1YTY1MTQyYWUyYWRiODgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5YzgyNjRjYjZmYTVkODQ1YWFjYjg0NzVjNGZmMWYyMDY4ZjQzZmQ4MDU0ZDE3MjU2YzYwNDE0ZjRiYWIwYWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_15cf0fde5e464bfaabb8ee9cb017a185",
+      "statement": "Text search uses case-insensitive regex on product name with escapeRegex() to prevent regex injection.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/shop/Shop.tsx#L199-L204",
+          "version": "repo-lines-v1:sha256:ce6d1f65c82189d636ed35544fb27635e2e4809444588ce9b6c8d40bcfe0fff5:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDIwZjdiOWUyNjkxMjlhOGI1MzQ5ZDQzYTZjMDJkOTQyNTY2NzY0OWU2Mzk2MGQyZjY4ZTUyOGI2MDFkMmE5YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmRkYzk3ZTViMDY3NDg5OGQ3MDFiNWRkZTY5YjJiN2I0NzE0MDQ3MTI4N2U0MzFlOTdmNGYzZGU0ZDJiODdmYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWRlOWQ5ZTZlNDAyMWU3OGJiNDgxYTBkNjRhNmY0ZTNkOGI4MWI2OTZmMDUwNTQ4NThmN2EwZjA5ZmQ2ZjllNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDkyZDZhYmJkZDZmMzFjYjhlYjU3MmJlMzdjODhjNDNhNTc4MGJjNzRhNmQwNTEwOWQ2YmFmZjI2MmZiNDA3MyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ca1ee75f7e6c4d1a842f14e66b09f577",
+      "statement": "Related products fetch 4 items from same category after main product loads, with silent failure if fetch fails.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/shop/Product.tsx#L137-L158",
+          "version": "repo-lines-v1:sha256:7a8b9318590ba3c49f23e0c58c0146098cf6629ab0c52a78a5b72ff9f365698d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5NjZmYmZhODg5OThkYTc0NjU2YzUwMTk0OTU2YzI1ZjA4NDk0NTc2NjBjMDA5ZmU2M2QxZTlmYTlkYzkzMWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJkYmY2YmQxOThhZTY0ZWFhZWJlNGE4MzgzNmViZjMxYWNjNjE4YTU3MWI0NDc5ZjUzZjNjZWFkOWI5ZGZjNzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU0NGYzNDZhY2ExZTQ3MjNjNjQ2Y2U3OTIyZmFkMTZmMThjMjkwZTViNGIzN2RkYjg1ZjFmMmU5NWY0NTU3YzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFkMDkyYWM2ZTE2OGM1ZDM2NDFiZjEzMGIwYWUyN2Q1NzhhNDA0NDBkMjVkNTAyM2E1NjNjNGRiMjMzMjAxYTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d70189a1f3ca46f7ba88eb8a8371ca9e",
+      "statement": "Categories are defined as a fixed array: curiosities, desk, kitchen, apparel, books, sound, garden, games.",
+      "evidence": [
+        {
+          "resource": "repo://src/catalog.seed.ts#L44-L53",
+          "version": "repo-lines-v1:sha256:4f923302a8f1da8927a47dcab40fe8eda7c0e6278902d10739dbf85278a25b05:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBkYjk2MGNmNzdhNTU5MWZjNWJjZWUyM2IwZTdjZDM5OTAzNzZlNTM2YWY0YjJlMjNkOGI0ZTY2ODlhMjRjODgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZjZGM3NmQxMmU1MzA0ZDMwNzllZGI1Zjg5MDAwN2VhMDVmMjI2ZTRkOTNiNjk1Njg0NjBjYWZhZjgwMDc0NGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkzOGQ1ZDRjNTA3YThiMDI5Yjk0NmQ5ZjhlNDI1NTdhNzgzZGZmNmMyNGI5ZjQ1OWIzNmU2YzZmMWQ5ZmJkZDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjljZDgwOTM3MzAzM2ZiZmY2ZmU0NDI2NzY0NWEyZjgxOTFjMTNjODIyMTNmZDQ1OThjODIzMzhkZDI0ZTFlMTcifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.1",
+    "at": "2026-10-01T12:11:43.532Z"
+  }
+}

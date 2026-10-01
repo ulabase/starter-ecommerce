@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:85639d5e710a37f447f825946712bce9ed3ab4a29617184f150f04ce90ec2586",
+  "claims": [
+    {
+      "id": "claim_36777a266b5f46efa20fd82cd50b6ace",
+      "statement": "The environment.ts file exports an environment object containing apiUrl, catalogCollection, catalogOrdersCollection, and a features block with boolean flags for emailRegistration, passwordReset, oauthLogin, and teamInvitations.",
+      "evidence": [
+        {
+          "resource": "repo://src/environments/environment.ts#L1-L33",
+          "version": "repo-lines-v1:sha256:50c1d9f6f2014fb17f60203b66a25549ccc66652252f8a7dfe30b266363acb20:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzMjM4ZDEyYjRkZGZlOTg2NmI3N2M0ZTc4ZWU3NWI4Y2QzZjhlZmM2MjZiMTI2ZmY0NzM2OTU1NGZlY2NlOTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhMWQxYTYzMzkwMjI5Yzc5ODM0N2U4M2EwNDA1NDQxYzk0MDAwMzUyODRhZDE2OGMxYmY2Y2RmMWQ3MGEzNzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0514eabed5704380aede7c04837f175b",
+      "statement": "The app validates apiUrl at startup using isValidApiBaseUrl(); if empty or not HTTPS, App.tsx renders ConfigPage instead of the router, and no API calls are made.",
+      "evidence": [
+        {
+          "resource": "repo://src/App.tsx#L36-L60",
+          "version": "repo-lines-v1:sha256:3aa517f0f87e792dc541d63cf6e49962da3a734407476ded28267e0cbb3a0485:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5MWM0YjllYzZkNTY0MzFiM2JkNDZjYjE3YTg5NTJjNGI1M2EwNjc2NzVjOTcwMjYyNjRkMzUyMTUwNzVmZDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY2YzA3NGFkYTcyODEzZTIwM2Y4NjQwYjcyZmU1NWU0MTE3OThhNDE5MjVjODQ3M2VlYjE4YWU0YmQ1ZWJjNmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNmNzI0ZDhkNzIyOTIxOTE5MjIyMTVmZWIzOTU5YzcyOTYwMzEzZGM3YzY4ZTZkZTQ2MGM2MjYyZjllNDIwZWIifQ"
+        },
+        {
+          "resource": "repo://src/ConfigPage.tsx#L1-L59",
+          "version": "repo-lines-v1:sha256:518909ec08e851d8e803e414195f631af6af7c00197f7cf117626c425ae58353:eyJzZWxlY3RlZExpbmVDb3VudCI6NTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVmMWU4Nzg4NmQzNTkwOWVlZGEwMGQxY2YwOTE5ZmViYzQyOGI2YmZhODFkODEwZTNjOWY3ZTk5OTIxNmM2MzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0072c5c46f004426ad5c2951930d9e9a",
+      "statement": "apiUrl must point to the tenant service (https://<id>.ulabase.app), NOT https://api.ulabase.com (the admin node), because the admin node serves no tenant collections.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L34-L35",
+          "version": "repo-lines-v1:sha256:6dc6a330f412c877e5ca334735dd5b1bd6e1f2d9487692ee3f3eb1dbd60f956f:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTUxYmRlYzExYmM1MWJhZDA0MDQ2M2Q2YjQ3ZjkzNDcxYWQwZmM2NDJjYTAwZGRiNTA1ZDAzM2U3MmFiMmJiZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODYwMDYyOWMwZTE3OGQ1NzliMzViZTkzN2YzMTY5NjQ4ZWJkMmE5M2UxNWVmOGQ2OTYwNTAxMWI3NzU2ZjNjOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmY1M2Y2MGRiYTcwZjdmOGJmM2VkMThkNDRhNDlhMjk3MmYwOWNiMDExMmUxODcxYjBiMTJlNzBiNGZiMzQ1YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGVkMWY4OWQzMDlkYzdjZmY5NTBiYmZmMjk0ZWViZTliMjYzMWNmMGYwMWNlMzVkYjQzNzcwMzdkOTg2MzNkNSJ9"
+        },
+        {
+          "resource": "repo://src/environments/environment.ts#L3-L9",
+          "version": "repo-lines-v1:sha256:3da4c2a4cee1a2f6e23024138809196ba14b4ee5143b859efafb18ee473ab13e:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDUyMmFkMmYxMGYxOGQ1ODE3OWQ1NTI3MWU4MjcwY2ZjNTFiOTIwOTYzMzVkYzVlZWE4ZGFjZDdjNDRjMTVkZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmZjMjYzMjhiY2ZlNjMwODQ1YWIzMmI1ZWRmYTU5M2M3YzliZGY5MWZhZjkwZmJkOTVmZDZmMjBhZTRjOGZjYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjIsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTQ1ZTI2NGVkNDExZTA2NDJiMGY3NDE0OTYzMGM0OTU1MjUxZjk1OTY3MTRmNmRhM2QwMDI1MzAxZDQyYjY0YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDZiMzYwYTlmOGFhODA0MjgyNDhjZDUyMzQ1ZGQyNWMzZWIwNDk0OGU1ZmYyMTM3N2FiZDY3NDlmMDg4MTZlNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4d175f1d206647278748d580965ef542",
+      "statement": "Feature flags in environment.ts must match the service's 'Sign-up Mgmt Features' toggles; a mismatch causes silent failures where routes exist but API calls fail.",
+      "evidence": [
+        {
+          "resource": "repo://NOTES.md#L114-L116",
+          "version": "repo-lines-v1:sha256:af3bbcba86fd06731d6547b45d7661b33116eef14766a7af85eb3e7bbbfdf31e:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGRlZDQ3NWRmMDk5ZGQ5YjcyMDFiZTRhN2E3MDJjN2I2NDMwMmQ0OTE2NTg0ZTNjNmFlNzhiYzgxZTNlZWM4ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmVkM2ZiNDI2MTllNTMwYzliNGUxOGU1MjQxZTVkNGZhZjJiZjM0Nzk4YWY2ZGQ3MmUwYmE3MjFhNzE1MmVmMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmY2ZWU1ZmQyMWJlN2QwMzAxZjY4YmFmOGQ0YzY0ZDkxNGUwYTZjYzkxNTBkODZiMDkxODgwZDdjMjU1ZGVjMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDg1ZDZjMDYzMjdiMjNjMmVkNDJhMWE5MWNmN2ZlZmY3NDU4ZDQwYzU1NmVjMzRkZWI2MGQzYTcxMGRlYzQ4MSJ9"
+        },
+        {
+          "resource": "repo://ulabase.setup.ts#L34-L48",
+          "version": "repo-lines-v1:sha256:d208b5eefe6d7e1de3fd48d176cca65774a413cb8b7ae3bf81eddf3b94f015ec:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3MGU0ZDk0MmJkYjRkYzg4Y2ZmNzFjM2ZjZTQ5YWM1MDliYTg5MTQzMmU1NWE2YWI2MTAzYmEwYzYxMWQ1NzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhMWQxYTYzMzkwMjI5Yzc5ODM0N2U4M2EwNDA1NDQxYzk0MDAwMzUyODRhZDE2OGMxYmY2Y2RmMWQ3MGEzNzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFjMDZkZDc1N2IwMmQ0ZjBlYzAxOTA1YTE1Mzg1NzE2YmE1ZjlmYmUxNGFlYjYzNzZmZDZiM2E2MmNmNWI0NzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRiZmZmZmQwYTU2YmE5NTg3ZTgwM2I2YTU2NjA2NjBjODgyNWJhOWRkODRlMzIzZjc0MDFlMjZmZmM1NzU2ZWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_24da3b700ff343db91ff481c51265830",
+      "statement": "routes.tsx destructures feature flags from environment.features and uses spread-operator ternaries to conditionally include/exclude auth and invitation routes.",
+      "evidence": [
+        {
+          "resource": "repo://src/routes.tsx#L24-L119",
+          "version": "repo-lines-v1:sha256:dc71dd882f0797f5ce35df07244cc1b546f1e5d545e819f7b5838f8a5c3e7c73:eyJzZWxlY3RlZExpbmVDb3VudCI6OTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0NjUzZmFjZmE0MjJhYTEwOGFjMzFhYTVhMDJhOTIwNzc5YTM2MDNiOTI4ZWJiNzAwMjRjOWVjYzU0YWE2NWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhMTFlMDg5MDA4OGYzMThmZTMzMGFiOGE2MThlYjRlOTI5NmNhN2RkYzA4NDY0NzFmM2I2ZTVkZjc2MWI4N2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZjNmJlMzQ3MzBlZGQ2NGEzMTYwMTI1YWFmMTYxZmVhM2NlMDQ3MGM0NGZkMjQ4NGMxZTQ1NzU1ZjYxZWZjZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZhODg0MmU1OTNkNmZiOWNmNDY2MTU0N2QyMGNjMDFlZDFiNmU2NjQxNDY4OWYwMWYxYjUyZTU0M2M0OTFiZmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a031657f39f04974a41dd9697ac6e6ce",
+      "statement": "When a feature flag is disabled, both the route and any UI linking to it are completely removed from the application.",
+      "evidence": [
+        {
+          "resource": "repo://src/routes.tsx#L56-L119",
+          "version": "repo-lines-v1:sha256:1db228b75220b54b99b75ac4c2e54c5c94361d88674b3d3e1498bd3bd3fc936a:eyJzZWxlY3RlZExpbmVDb3VudCI6NjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZkYTU4MWRkZWUxZGY2ZmY4OGI4NTI0MmI4NjUyMWNjOTc0NWZmODZkYzAyZmVjYWNmMGVjZTAxZTg2OGNmNjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhMTFlMDg5MDA4OGYzMThmZTMzMGFiOGE2MThlYjRlOTI5NmNhN2RkYzA4NDY0NzFmM2I2ZTVkZjc2MWI4N2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2MmMwOThiMWFlNTMwZTAwNGMyOWI0MmE3ZjY0MmM5NTE3ZDRjZjgzNjViNzI3MjdmNGFlZWQzYTM2YWI1MzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZhODg0MmU1OTNkNmZiOWNmNDY2MTU0N2QyMGNjMDFlZDFiNmU2NjQxNDY4OWYwMWYxYjUyZTU0M2M0OTFiZmUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.1",
+    "at": "2026-10-01T12:11:43.532Z"
+  }
+}

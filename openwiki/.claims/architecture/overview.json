@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:f0b886cb7079de77ce596e828b1867852670ac1ea86ddcd42b51ea34e6589902",
+  "claims": [
+    {
+      "id": "claim_466fb5dd1fcf4ac5b044769046237a16",
+      "statement": "The application uses a nested provider structure: BrowserRouter → RhAuthProvider → RhPaymentsProvider → RhCartProvider → App, establishing contexts for routing, authentication, payments, and cart functionality.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.tsx#L25-L37",
+          "version": "repo-lines-v1:sha256:90bfc0618d3394bc681a82ea99538b53f308edc72532edc7a5c45c026b78296d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjYWZmMjU0NDJlNjlkM2NkMDYwZWEwNGY2MDU3ZDZkZWZmMmVkNGZkMjFlZTEwNGFlZThkMDA4ZGM1MGM5YmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNjY2UwYmFhN2RmMWNlNWQ3YjNjMzEzYmJkNDljODhiNjM2MzI0NGJlZWE3NDlmZjA2NjQ2MTFmZDNiN2FmMWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ2MWY1NzYxNWEzOTg1MDIyMGI2NGExNjU3MzFmNjlhMTkxMTEzNTUzOGVmYzE0NTg3YTBiMDgxNWE5Y2MxODAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ5OTY3ZWMxZWQzODM2ZjhlYjE3YWZmMTcyYjViZmVmN2RlNjA0ODVhNDM5YzZjYTExYzU5MWUxNzU1NzM5YWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f3ca76f45aa84af2b67e9965db7a5dcc",
+      "statement": "The ConsentsGate component sits above the router in the component tree because a blocked user cannot pass AuthGuard, since session restoration (/users/me) is one of the requests refused by the server-side Guards rule.",
+      "evidence": [
+        {
+          "resource": "repo://src/App.tsx#L62-L68",
+          "version": "repo-lines-v1:sha256:c5a7167cf864817cc96698fc3d889aa2e80312ef5e48158b7d3d7d540180eeb9:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTVjY2NhM2JmOTMwODYwZjhiN2NiOTgzY2I3ZmRhNmVkMjIzMzAwOTc2NjljYmQ3NWQzMmE2MjUyMjJlZmJiYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWY0MWFkNmYzODRkM2MxYzQzMDA5NWI0MTNhNmJlMzM2Yjk5ZDljZWI2MWVjZmFhMTYxNjU4NzkzNTUxNjlkNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODJiMWE0MmE3N2YzYTVjNjVjYmZiYjNkZDUyNTkzMWI1M2YwNjg1ZTAyNTY0N2Y1YzVhN2FjYmYxNjYyYjQxNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTkwNDhiMzVjOWUxZmNlNjQ3MWEzNDJmZThjMTFlMGE4OTJmMjNjODkyNTUyODcwOWVkYzAzYzRlYjgyNzJmZiJ9"
+        },
+        {
+          "resource": "repo://src/ConsentsGate.tsx#L7-L18",
+          "version": "repo-lines-v1:sha256:c352e9546d9ac4dfa257d713d6cf7a0c21a95834886f0aedb6df221932cb91c0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3MmE0MjkzODJiMmUxNDcxOGUwZTM3YjA1NzBhOGExNzAyOTkxZmNkODQ5OGNkODQwNjBhOGJmNGYwNTAxN2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM3OTQ2NTA2MDZkMzgwYWVlMjM4ZGZkN2VmMmViNGU1NWUwOGU4NWUzMmQ3MDcxYjhmZDE3ZmI3ZTQ5ZTBiNTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM5M2MzZjUwMzA2NDkzYjA3MTI0NzVjNjcxOGRkNmE3YWUyNDFmNzk4NmQ4MGQ2NjRhOTYzYTc1NDk3MjE5ZDYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a35a0154aa2447ee88930aac9b35c78d",
+      "statement": "The shop routes (/, /product/:id, /cart, /orders) are intentionally outside AuthGuard to allow guest browsing and purchasing without requiring an account.",
+      "evidence": [
+        {
+          "resource": "repo://NOTES.md#L99-L105",
+          "version": "repo-lines-v1:sha256:560dad4253127ab53fc702759418ebf4f4f34bac6566ff63426dfde5c37c1ee5:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjg4NzdkNDY5MjNlYzEyZjllYWEyN2U1MDliYWIwZjkyMTZjODIzOWM5MmM4ODkzMjBiNzNmMDMyNGQ1OGM5YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzEzNzYzNTQxMDI1MmEzYzVkMDUyMzFmZTQ5ZmVjYjA1YjY2YzA3NjZiODI4YmYwZDI4MmU4MTg3ZjFkNzZlMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmM3NWY1Yzk5NjVmM2FkODVlZmY0MjAxMGU5OTllMzJlMDY2YjVkOTk5NTIyOWYwYTM5YzNlM2RjZDUxNGI2NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2JhZWZkM2RlMGViZTA2NDUwOWMwZWU4MzVmZjcwYmE4NzM4NTdmMjZiNWQ0M2E5MDE5M2I4ZjZlNWUyMTJiNSJ9"
+        },
+        {
+          "resource": "repo://src/routes.tsx#L120-L135",
+          "version": "repo-lines-v1:sha256:8682bc37021addb7e357337eb7f8c41226a3e77fa5f533cfb1653a190a3a0a12:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZlNTY5YWNjYzUzNjgxYTI1YzlhYTIzMDA0ZDUwNTZiNTI3NzMxMjE3MTI2MWVkOTEwMGZkNGJhNmQwYmZiOWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM4YjU4ZjI5OWFjMzIyYzQ5OWI5YzkyNmUwZThkZDI2YTYwODMzNTY3MWUzNmM3OWQxNjQyZjkxZWU2MmMyNDkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI1MjI4YTlkNzY0ZDhhOWIwM2E4MmY0MWJmNGE3ZTE0YWQ2NWU0YjI2M2RmNDU1MWExNzVlYzA2MTFiNTNhODEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVlMzdiZDYwMzI3NDZiYzk0YWE5NDU3NDY4NjJkNGRkMGM2MDZkMDExOTc0N2ZjZTFiYmY1ZDlhOWQ5OTdkYjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_84e7bef632cf447cbb278c7cc5a9681d",
+      "statement": "The Shell component wraps all routes except auth pages, providing header, navigation, theme toggle, and user menu for both guests and authenticated users.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/shell/Shell.tsx#L176-L278",
+          "version": "repo-lines-v1:sha256:fa92ce96bce08d1c71c2d201cd3d09b950f8354a45c599f3bd0376e37522d7ab:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAzLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJlNzIxNmU4ZTljMGExYTY4ZDA2YzJmYmFhNWZkMjEzOTQ4MmI4ZWZkMGExOTMxNWI5MTVlNmNjZTg0OWQ4OWRjIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0NzM2OTU2ODM5YzYzNWJhZDc0ZmUzNzZmOTg4ZjNmNWVjYjkwMjJkZmZmNzM1MmU4ODM2ZDEwNzdkNTJlMjdiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI4ODlmMzkxYmNkZjc3OTExMjZmZWZlNmQ2Y2Y5Y2I2MzgxNDM0NGI5ODllOGIzMWVlY2U4Y2Y4NTMzNTE1YzUyIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MiwiZm9sbG93aW5nQ29udGV4dEhhc2giOiI3YjhiNjAwYTViNDQ4YjFlNGQwMmRmMDk3NDZlZDNjYTMxNzJmNzVjNGFhYmIwMWRkZTA4MGUzNmNhYjA3NGI0In0"
+        },
+        {
+          "resource": "repo://src/pages/shell/Shell.tsx#L32-L41",
+          "version": "repo-lines-v1:sha256:7e6628d1dbb2b57cb764536df1b81524808b64832ee5eb3b4b0fa50e5c504449:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3MmE0MjkzODJiMmUxNDcxOGUwZTM3YjA1NzBhOGExNzAyOTkxZmNkODQ5OGNkODQwNjBhOGJmNGYwNTAxN2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIwZDlmMjNlMTZmMDEzNTU1YWIwOGY2Y2FiY2RmYzYzM2Q0MGQ2NjA1ZTcyMmVlM2EzZDQzNmMyMzQ4M2QwMmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ0NWEzNmI0M2YwNTc3ZDkyYjFhODE4NzNmYTUyZjdiYTJlODc3NzE2NmFkNzliY2NlMGI5MDhlZTViODJiNjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f60be046dfdf4b5b91c6c49f8b3619cb",
+      "statement": "Feature flags in environment.ts control route availability: when a flag is disabled, both the route and any UI linking to it are removed from the application.",
+      "evidence": [
+        {
+          "resource": "repo://src/environments/environment.ts#L26-L32",
+          "version": "repo-lines-v1:sha256:e0c09c50abf5287407f3a473d775c4b3d6aa5796cb202935980d529c1b428e51:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjRjNjE5ZmZkNmI5MjFjNTI3OTExZWRlMTQ3MWM5MTQ5YTFkZTg2NTUzNDE4NWIwOWY2Nzg1MGRjMzMwZDU2MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGQ1Y2QyZmI0ZjNkZjg4NDUxNTI1NWIzOTUyM2YyZjhiNTQ3MmJlZWE5ZjU2NmZmY2EyMDRkYjgwMjU2MTA0MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzBlMDQ1YzUwZjBlY2Y5ZDQ2NDg3NmIwYTJhM2NiZWEzMDg4Y2ZmMTRlZDFjMzIzZTg2YTdjY2JiNjk4ZmY3ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWExZDFhNjMzOTAyMjljNzk4MzQ3ZTgzYTA0MDU0NDFjOTQwMDAzNTI4NGFkMTY4YzFiZjZjZGYxZDcwYTM3MCJ9"
+        },
+        {
+          "resource": "repo://src/routes.tsx#L24-L25",
+          "version": "repo-lines-v1:sha256:07ff8717935e12b34e4e7a79aef76d8b154369f93e2bde0bd5460198e6b055b1:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTQ2NTNmYWNmYTQyMmFhMTA4YWMzMWFhNWEwMmE5MjA3NzlhMzYwM2I5MjhlYmI3MDAyNGM5ZWNjNTRhYTY1YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmM2YmUzNDczMGVkZDY0YTMxNjAxMjVhYWYxNjFmZWEzY2UwNDcwYzQ0ZmQyNDg0YzFlNDU3NTVmNjFlZmNkOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGY0Y2UyMGZmNzRhNjAzYmM4ZDJmYzUwODhkMzYzN2NiZjhhMzUzNWE2YjNlNGEzOTkwNjBmZjkwNDgzY2ZmMCJ9"
+        },
+        {
+          "resource": "repo://src/routes.tsx#L56-L119",
+          "version": "repo-lines-v1:sha256:1db228b75220b54b99b75ac4c2e54c5c94361d88674b3d3e1498bd3bd3fc936a:eyJzZWxlY3RlZExpbmVDb3VudCI6NjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZkYTU4MWRkZWUxZGY2ZmY4OGI4NTI0MmI4NjUyMWNjOTc0NWZmODZkYzAyZmVjYWNmMGVjZTAxZTg2OGNmNjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhMTFlMDg5MDA4OGYzMThmZTMzMGFiOGE2MThlYjRlOTI5NmNhN2RkYzA4NDY0NzFmM2I2ZTVkZjc2MWI4N2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2MmMwOThiMWFlNTMwZTAwNGMyOWI0MmE3ZjY0MmM5NTE3ZDRjZjgzNjViNzI3MjdmNGFlZWQzYTM2YWI1MzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZhODg0MmU1OTNkNmZiOWNmNDY2MTU0N2QyMGNjMDFlZDFiNmU2NjQxNDY4OWYwMWYxYjUyZTU0M2M0OTFiZmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c6c8333d145c46bfb94ab0d0924fe75b",
+      "statement": "All route components use React's lazy loading with a SuspenseWrapper that shows a minimal 'Loading...' message instead of a spinner, reducing initial bundle size.",
+      "evidence": [
+        {
+          "resource": "repo://src/routes.tsx#L39-L43",
+          "version": "repo-lines-v1:sha256:ba500e9efe171338c3e5df2ab346d5955ba26c5a0d3191138c5129299ed3c58e:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODY2YmI1ZmQ3ODc5MDYzYjZjZDg4NTY1YTI3Y2YyMGMwMGRkZWZhNTkxZWQ4ODRiMDY1NmViYjhhNjI2MjNlZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODAxOGRhOGU5YmViMGFjZDMwNzI5Y2YwY2Y1ZDFlMTE3MWI1MjNhNTRjZjI2ZGMzYTg0YzBlZTMyZGVmMDlhNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWM4MGE2MmYxOWQ2ZjY1ZjZjZWU3MmY0OTJiZTE3MzljNzUxYzVjNTlkNzkxOWI4ZDU0OGUxMTk1NDE1N2NhNyJ9"
+        },
+        {
+          "resource": "repo://src/routes.tsx#L6-L23",
+          "version": "repo-lines-v1:sha256:c65da6d462573d75edc3361e835c46ec1d44b40a8a6efe26cc85a8895240c850:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI0YzQxMjNjNTRkNGY2NGVlMmQ3NzE2NmZjZDUxYTAxYTZkZjM5YzE1ZjUyOGQ3YWMwYzZhMDg5MDllMDJiNTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmNzc0Yzk1YWMzN2Q4MmNmZjQyNjBkZTE5MDczMGU1OGFiMzQzMjg0YzUxNDM0ZDNkYjc0ZDIyMGIyZDcxYzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ4ZWU4OGFmZDZkY2ZlNTNiYWI1NjkwMDY1YzE5MzUzMTM4Njk1YTQ1NTcxMGYzYzU3MGQ3MWZlZWQ0MTA0ZWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_082c9a3b16cf4700b5a1b89d4aa4806c",
+      "statement": "If apiUrl is not configured or invalid, the app renders a ConfigPage instead of the router, showing setup instructions and preventing any API calls.",
+      "evidence": [
+        {
+          "resource": "repo://src/App.tsx#L36-L59",
+          "version": "repo-lines-v1:sha256:028926a820d32cbe81d5a9073b229892d6cf35ededafbeb6b96370eabd388a05:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5MWM0YjllYzZkNTY0MzFiM2JkNDZjYjE3YTg5NTJjNGI1M2EwNjc2NzVjOTcwMjYyNjRkMzUyMTUwNzVmZDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3ZWM3YTRlNDVlNTc5ODkwNzExYjkyZjNjYzQ1MTUyYWE2NTVlZjRlODE5Y2UwMDFhMTZkZTQyMzFkMTY1MWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY2YzA3NGFkYTcyODEzZTIwM2Y4NjQwYjcyZmU1NWU0MTE3OThhNDE5MjVjODQ3M2VlYjE4YWU0YmQ1ZWJjNmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFjZWJiYzMzNjU4NGU1N2E3ZDBjNDQ3NDcxYTNmZTNhYTZmMDcyYjNlMDAyN2IwMTI2OTZkYTE4NDdhMmY1YjIifQ"
+        },
+        {
+          "resource": "repo://src/ConfigPage.tsx#L1-L59",
+          "version": "repo-lines-v1:sha256:518909ec08e851d8e803e414195f631af6af7c00197f7cf117626c425ae58353:eyJzZWxlY3RlZExpbmVDb3VudCI6NTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVmMWU4Nzg4NmQzNTkwOWVlZGEwMGQxY2YwOTE5ZmViYzQyOGI2YmZhODFkODEwZTNjOWY3ZTk5OTIxNmM2MzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cfb1dcdf713047ee89a1768d181d9748",
+      "statement": "App.tsx captures access_token from URL fragments for OAuth flows, stores it via setToken, and strips the fragment from browser history.",
+      "evidence": [
+        {
+          "resource": "repo://src/App.tsx#L12-L34",
+          "version": "repo-lines-v1:sha256:8bdf5a6e8f2537e40e4711ac165e6796ca60ad417b5de47dba4f5fb781e123a5:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNjN2Q0ODQ4ODQ3OWQ4MWQ1NTg5NzhmZDk5MWM1M2Y3MjdhZTJhMzlmMGIxYjFiZTMzYTk5Y2IxMWM0YjY3ZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEzNGZjODY5ZTcxMTc0YzBkYzExM2IyM2QyNDIwOTIwZThkMzc5NjQ1ZmY5MDdmZGFhY2YyYzU2YjRkZWU1NjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI4Yzc4MzAzYjE3YjQ2NTVmZGQyMzdmYjcyZDk2MjZhYmRlZTdjOWJjZjE3ZDdjMjliNWI4MjNkY2QzZjYwNzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0503d647c2ba4e1db1dff33e3c4d3d49",
+      "statement": "The consents-signal.ts module listens for 451 responses from the Ulabase service and raises a flag that triggers the ConsentsGate overlay for authenticated users.",
+      "evidence": [
+        {
+          "resource": "repo://src/ConsentsGate.tsx#L22-L33",
+          "version": "repo-lines-v1:sha256:b96acbf168e93e1951815cac5adc79652a3d36eb33f25b401559f46aa57596b6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhmOTVjZGE4ZWNhZWZhZWVkZDc4MTdkNjY3NjNjODI0YjQyNWNkN2Y5MzNjMmFkNjQzOTE0NWVkMDI4NWQ4MjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAyMmYzZmQzMjA3M2UyNDg0YzdmNDZlY2ZjNmZkNmVkOGZmNDZmYzMxMzcwNjFlODkxMzQxZTNlZjY4ZDIyMTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM5M2MzZjUwMzA2NDkzYjA3MTI0NzVjNjcxOGRkNmE3YWUyNDFmNzk4NmQ4MGQ2NjRhOTYzYTc1NDk3MjE5ZDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRlZDA3OTgwOGRlNjJkZThkYmM0MWVjMWNkYzQ2OTAwMjhmZTMxNjEwOGJlMjc0ZmZiMDZhNGJlOWUwYjFhMzMifQ"
+        },
+        {
+          "resource": "repo://src/consents-signal.ts#L39-L48",
+          "version": "repo-lines-v1:sha256:678a3a4e62ae0ee0e0faec946a9774586b6bad8b02507b2f8a7ccc46738539b7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyMWY5MjUxOGZlYzI3YTI5OTZmOTIxNWJjMzljZWZlYTMzNzk0YjQ5ODY5MjRiMjdmNjE5MDQzYmQxZWZhMzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkyMDQwZTA5NWE5NGUyYWRhNzRlNDIxZjM3MTg3NTFhOTFhODEwYmZkNjZmNDhmNGU5MzljN2I3NDgwZWI2NzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFhMWQxYTYzMzkwMjI5Yzc5ODM0N2U4M2EwNDA1NDQxYzk0MDAwMzUyODRhZDE2OGMxYmY2Y2RmMWQ3MGEzNzAifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.1",
+    "at": "2026-10-01T12:11:43.532Z"
+  }
+}

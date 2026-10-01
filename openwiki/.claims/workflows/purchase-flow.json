@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:500cb408441e352415546c697e908ac3df78feaaa92b35e1740e4b3cbeff5199",
+  "claims": [
+    {
+      "id": "claim_a041200c99984fbd8258df1cb2e58a6a",
+      "statement": "The purchase flow follows a complete sequence: browser fetches catalog, adds to cart, calls payments.createOrder, Ulabase creates Stripe session, browser redirects to Stripe, Stripe redirects back to success URL, Orders page polls waitForOrder, webhook updates order status, and UI shows paid.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/shop/Cart.tsx#L40-L56",
+          "version": "repo-lines-v1:sha256:34fbd055039281b90ee5cb68288021893a76215268ae784936e5dd05363c776d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjExZGY4N2E0NzMxNmM3MDhjNTUwMjA5OGU5YWY2YzQ0NTM0ZWI4MGJlYWRjZjYwNjMwMjhlZmNhODU5MzdhYmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJkM2NkY2E2YTViNjFhMTUxNjU0Mjg2MjU1YWFkNTg3MjFiZmVlMWJkMWI3MzJhMzJlMWM0MDMwMjkzMWE5MmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk1Yzk0NGVmMGQ2NDMyMGFhNmM3ZGY4ZThhN2ZlM2I3YmRhMWRkZTFkOGEwMTM5OGE1NzM0YWIyZWVjMTZkZGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY4ZTBhMzk2NjgxZGVkNzY2MWQ0YzRmY2ExZmRhMWMwNWJlMWY3Yzc1NzczMjc4MTA3MDUwNDI1ODJjYjkyYWYifQ"
+        },
+        {
+          "resource": "repo://src/pages/shop/Orders.tsx#L90-L101",
+          "version": "repo-lines-v1:sha256:fd1bfc019da330932867606f15679eb2bc78a3b0da8b699e14a83b7cc4a7216e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkMWEzNjRhMGVmMjE1ZWQ2OWQ2N2QwNmI5MzU0N2MwMTc1YjYwZWQ3OWY1MmExYmE0YjI5ZDc0ZTE4NGIwMTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5MWNmNDBmY2RkZTgyOGJlODI1OGE1ZTU4NzQ2NWI1M2NhNmUxMTRmODllNjI0NmFhZjA5MDZkMTRlZjM3MDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU5MGJjNjdkM2FhMWExYWJlMTQ1ZWFlNmYwZmYwYzJiYjliNzYzMzM5ZDBhMGE4NzQyZDI1YTEyYTk2ZGUxODYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcwNzY2NGYxN2I0MmFhYjA0ZjJlOGRlMGRkNDhjZmFiMGY2OWFjOTQ2ZWQ1ODMwMjNiNzczMjUzM2FlNTg1ZDgifQ"
+        },
+        {
+          "resource": "repo://src/pages/shop/Shop.tsx#L186-L260",
+          "version": "repo-lines-v1:sha256:c997c1ea83e291e937e687c8449757e39c9e7b62a6e8a59d356c7a6a434c2a01:eyJzZWxlY3RlZExpbmVDb3VudCI6NzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5NjZmYmZhODg5OThkYTc0NjU2YzUwMTk0OTU2YzI1ZjA4NDk0NTc2NjBjMDA5ZmU2M2QxZTlmYTlkYzkzMWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRhMzg2MGExMmZiMTUxY2ZmY2I4ZDBhZjQ5NjBjMTZhMGI5YjA0MzZlMjk5NzZiYjI3YjY5YjM3NTRkZjFlYjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdkYzYxN2U2NGI1MDRiNGVjMDJiMjMyNGE0MGE0NWRhNjFkMGJiZGJhYWMwN2E3NDc5MWI0NDI3Y2NjMzM0Y2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFkMTFmZjE4NDQwMmU0N2Y5MTc3NDlmZDRkNWFjMzZiZGY3YzYwMzY0ZWNjZTE4OTMyN2I2OTViMjFlMTU4MTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fd37867b4e3444a8b90827de2614695b",
+      "statement": "Cart is NOT cleared at checkout start. It remains intact until payment is confirmed on the Orders page when result.status === 'paid', preserving the cart for users who abandon checkout or use Stripe's cancel link.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/shop/Cart.tsx#L50-L55",
+          "version": "repo-lines-v1:sha256:7362cefffd524fe17010bb51b19c6867ea5538da01e73b3306e44e7a56e69a7d:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmU0YmFkY2IxOTE1YjMyNWUzN2Y1OWQxYzY3ZmI2Mzc0YWM0MzM1NGYzYjExN2MwMTY3YmIwOTMyYzQxMWZkYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWRiY2ZkMzFmZjc3NWQwOTY3Y2RlYjMzYmExMDYxMzgyNzkxOTVkNTczNWM0MjcyODk1Yjk4ZWFhMjJkYzhiOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDY3ZjE5ZTQwYjgzZWFkNWM5N2IxMmIzODc0OWY5ZDkwNTBkMGQ0MzA3YjBmMTkxNzllYmIxZWVlOWFjNWNiNSJ9"
+        },
+        {
+          "resource": "repo://src/pages/shop/Orders.tsx#L110-L115",
+          "version": "repo-lines-v1:sha256:1284dc766db244a07d3d7a4f4ca4341fe43b2aa287fd0895dda6ec85b40909bc:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWI3M2EyYzY3MmZjNDUyZjIyMTIzYWJiYzhlZDA5NmMzYjVjYmIxMzBmYzNlODRiMWQ4ZWQwOTlhZDhjZjRhZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmYwMzJlM2EwNjZmNzI0ZmIwNjEyZDRjNjU5NmFiYjU2OGVkMzVhYmNhNTc3ZjA4OTU3Yjc4NThkMzg3Nzk2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTBhM2E0MTRmMTZlNDliZjlkMWJiMzA4MTYxNDAxNWI3YmZlNWVmYzQ5NTQ5OWZiMGU3MjVhZWFlYWRkNjdmYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmMzODc4NWFlN2RhMDY3YTdmZTMzM2ZjYTBkNGFkMDc0OTM0MzM3NGRlNDYyN2Q3NzJhNzEwZGQxMTQyZTY5YiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b6d2f753e8794f0e9c2fe2b8a3019895",
+      "statement": "Guest users have no session and prove order ownership via the order secret in the URL fragment, while authenticated users have orders filtered by payer.id (billing account) and can view order history.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/shop/Cart.tsx#L144-L151",
+          "version": "repo-lines-v1:sha256:e0e548904e49935311f9a5d2bff8a50e2c1a7a46714a0e0a2c87785b6ab8c29f:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjEwODNjNTAxODY0MTE5OTg3OTU3MTAxODJhMTVlOTVmMTZlYjg4ZjU5YWQ3NGUyOTZlMDJmNTIwY2Q3YTMxMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzEzMDA0ODQ3ZTA0ZDg4NDEyZjk0ZWFiNmIwNTY0OWQ2MmIwNDIzZDA0OWJiNGIzMjdhODE2MzE2ZDY0NDNjYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2E1ZWYyN2Y3MjRmMWYxZGVlMzFjMTM2MDhkM2ZhMWQ2OGQzYWFlYzFiZjE2MzcwYmM3MGJmZWM4MTZkNDAwYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjdmYzgyYjBkMzBiNjg2MDJiZjQyYTkxMTUzOTQ4ZDAxN2Y2YTgxNTE5NmZkMjY0Njg4M2Y5MmJkY2Q3MjY1MCJ9"
+        },
+        {
+          "resource": "repo://src/pages/shop/Orders.tsx#L152-L181",
+          "version": "repo-lines-v1:sha256:9188d93fcd3e81b7c149af21d65e22043d2f5c2aed64bf01b6084d03ea3b65be:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5NjZmYmZhODg5OThkYTc0NjU2YzUwMTk0OTU2YzI1ZjA4NDk0NTc2NjBjMDA5ZmU2M2QxZTlmYTlkYzkzMWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBlNDJhNmFlYTBlNjc2ZTIyZWYzZmQ4NDExOWI5MDM1MDVkMWNlOWNlZmNkN2FkOGQzYzY2OTc3MzBmMjczMzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFkNmU1ZDA5ODk1MjVkYjRhMzlmZjRhMzgzNjMzMjk3MjBjNDBmOTc5MjMxOGRkNTZiZTIyM2FiODIxYzgwNzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU1YWQ4NTY3ZDZiNDgzMGM2MWVmNzZmY2NiYTViYmQ5MzQxZjUxM2EwYzIyYzUzMWIzOWNlMjZlYzI4MTNiOWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1aa51d311ea64faead41d59bb7e2e746",
+      "statement": "Order references are passed via success URL fragment with ORDER_ID and ORDER_SECRET, with fallback to pending-order localStorage stash because the success URL is configured server-side and cannot carry client-specific data.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/shop/Orders.tsx#L60-L73",
+          "version": "repo-lines-v1:sha256:912c5043df2e3f0abbc8490ceabb3a404df8763813c35cb2f240d175b8c40aee:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5NjZmYmZhODg5OThkYTc0NjU2YzUwMTk0OTU2YzI1ZjA4NDk0NTc2NjBjMDA5ZmU2M2QxZTlmYTlkYzkzMWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY1Yzc3OTM2MWE4MDhmODdiNjEyOWUxYzc1NzE4MzE5ODBiMjBjYjRkNzY4ZDczZmMyNGU3ZjhkODY3OTllM2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ5YTQ3ODVjMTg2NWMxZThiMjFiYjQ4YTY5YWQ1MzQ3YTg2ODhlNjE3NTE0MjJmMDk3OTBjMzRiN2U2MmI3MTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZhM2Y2NzYzZjYwZjExMTM0YTlmMGE3ZDVjMDE1ZTc3ZjIwNjE2YzM0NDYyNDg3MjYxYTcwMWExOTBiYTMxYjMifQ"
+        },
+        {
+          "resource": "repo://src/shop/pending-order.ts#L1-L25",
+          "version": "repo-lines-v1:sha256:9e1be71a76403b2f085fdb334aceee1be07f99277d82f56b5e71353f21533d8f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3MmE0MjkzODJiMmUxNDcxOGUwZTM3YjA1NzBhOGExNzAyOTkxZmNkODQ5OGNkODQwNjBhOGJmNGYwNTAxN2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNjNWUyMDFiZWE3ZjZjZTk5NmVjZmEwNzkxZjQzNjE4MWI0Njk0NjAwYmM3NTAzZjM2YjFjNjljYmM4MTg0MzAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a6c7b77d044744e19a98d95e01ed2788",
+      "statement": "The Orders page polls waitForOrder with timeout 30s and interval 1s because Stripe redirects immediately but the webhook arrives on a separate connection seconds later with no ordering guarantee.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/shop/Orders.tsx#L19-L24",
+          "version": "repo-lines-v1:sha256:9454cec80d9aa288b92efc4401a8245a7d25737ea5104933148bf5ca67558948:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzhkMGU0NTU1MjBhYzdmN2NmMGRlYWNiNTAzN2Q2NDM5ZmI3ZGM5OGM2MTZjN2JmODUzYjRjZjRmMGQ0YTU2ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTcyYTQyOTM4MmIyZTE0NzE4ZTBlMzdiMDU3MGE4YTE3MDI5OTFmY2Q4NDk4Y2Q4NDA2MGE4YmY0ZjA1MDE3YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWEyOGYwMmEyNzllNWI0YjRkMmNhYzJmZjJkMDNkODgzN2IzZDhlM2JhZmJlNDkwM2UwYzZiNzM4N2U1ZGJmYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2I0MDZkYWRjNzI1ODU2YWQxNjk4MDFmOGJmYmIyMjY4MmNhYWEyMjk0NmQxNDg3YTRlNmIyNTI1OGNiYWJkMCJ9"
+        },
+        {
+          "resource": "repo://src/pages/shop/Orders.tsx#L90-L98",
+          "version": "repo-lines-v1:sha256:4f3eab3fa5964503f0f9bb8e98b97f8a324f7e3a760f4333654f166c44087e32:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWQxYTM2NGEwZWYyMTVlZDY5ZDY3ZDA2YjkzNTQ3YzAxNzViNjBlZDc5ZjUyYTFiYTRiMjlkNzRlMTg0YjAxNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGQ0YzMyY2Q3NDIxMTcwNTNkMjIxMTJjNDY3NmU4NzAyZmI4YzQ2YjNjZmZmNDVhNDY4NWVjZGVjZmViYjE4ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTkwYmM2N2QzYWExYTFhYmUxNDVlYWU2ZjBmZjBjMmJiOWI3NjMzMzlkMGEwYTg3NDJkMjVhMTJhOTZkZTE4NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTU4YmQ4OWFlNTE1M2I3MDBkNWVkNzQ0OTM2NDYzYTg3OGNiMGRkMTY4ZmQ5ZWViY2MzYmVjNzIxZTYxMDY2YyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_89d01f14762744c180ea74988ed7ef13",
+      "statement": "readOrderRef and clearOrderRef from the kit read the order reference from the URL fragment and immediately strip it from the address bar because the secret is a credential that must not be screenshotted, shared, or bookmarked.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/shop/Orders.tsx#L56-L57",
+          "version": "repo-lines-v1:sha256:59f860c90d5ed348891489da16886dc56a2d7987a701ab9e9b2b2533f97750a0:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzk0N2JhOTlhZmI2ZTlkYjIxZWZlZDgyMTU1ZjRjOTMwNDA5OGJmZGI1ZjIyMDNmY2ZlYjlhNmMzOWRmMjQyYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjYwNzdiNDU1ZGNlMTJjMzVlMDg2ZDFlYzg1ODRhMGIzYTk4NTJmYWQ3OWM2ZjUzNjVjY2I2ZWYyNjA1ODdjZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGNlZDUwOTg3YTA0NTRjMTk3ZWZkYjAzNjRkYWI0NGVkMWMwY2Q3NDIxMzgzNzA2NTZhNWY0NDQ0MDg1MWU5NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDBjY2NjYWM3YTNhMjkxZTI1ODhiYmJmYWJjMjRmYWFkYWQ3MWViZDkyYjdhYzY5MWIyMGNkYTA2NzE4ZGQ2NiJ9"
+        },
+        {
+          "resource": "repo://src/pages/shop/Orders.tsx#L66-L69",
+          "version": "repo-lines-v1:sha256:2769783dacf4ad30ceb2f6e6c69e0520e13c70488e30e53cf92b08b1bf06dada:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzU3NjRiNDdiMmM3MjAwNTgxNThmNTg3ZGE0YmRlZTk5MTE0NzYxNWY1N2U3MWMxMzk0NGQ1ODQzMjM0MDQ3MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGJiYTAwZjM3ODM5YjA2ZDNmMTdkYzliNDBmZDRjNmY3YjlhMTM5NWIwMTA5ZDFmNmJhNTZmZDNhYWI5MDVlNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNThkYjRiYWZhM2U2YThjYWY4MjkwYTUyZmEyODIxMzkwYzEwMDhkYTNhOTg4YjNlMDJhOWE3MWEzMzkwMzU3YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDUwOWE3YzQ4N2YzYTAwOTJjZWVmMDhkNGQ2MzdkZjIxNzE0NTE5NzI5YTBmZWJlNDJkMjliZTFkZWVlNjgyNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_25ef2aca78b74a6ba4eb76ebc7a9c2f6",
+      "statement": "The pending-order stash uses localStorage (not sessionStorage) and stores a list of entries (not single) to support multiple concurrent checkouts, with automatic cleanup of entries older than 24 hours and maximum 10 entries.",
+      "evidence": [
+        {
+          "resource": "repo://src/shop/pending-order.ts#L14-L24",
+          "version": "repo-lines-v1:sha256:4249392258c2c20c10100e513b6264dde3e1a5069b94d067df4e7be12269c4d3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUzODEwYjVmMWViN2RjMzZlOWVjNjdhYjc1ZjYwZTZlZmMyODcyYjQ3MmU3NDFjMjA1ZTkyY2FiZjI1NTRmNzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2ZWMwNDgwYjNkYjNlZmZmYTZmZWM3NDYxNjhhYTAyMGRiM2U5NjQwNmJiZmEyNWM4NDE1MWY1MGQyNGVhYTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYwZGE4MjM2OTRiNmU1N2Y3MDJjZGNmODQ3YmI0MGVhZmFmMDRiZThkOTkyMGEzY2Q3OWI1YzU1NjQ4N2YyNzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQyZGY5ZDc4NmU0ZWNmNWQwOWRiYzg1ZmNlODFmZGQyZGY3NzYwYTA2OTBiMjFlOWRkODVmMDBhNWY2MTUxYzEifQ"
+        },
+        {
+          "resource": "repo://src/shop/pending-order.ts#L36-L41",
+          "version": "repo-lines-v1:sha256:95e506da0d4ea054c8e95f7362080b903e3f269a16bffef8ca38e04b3d60c66c:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWVhMWUwYzJkMmZmMTljMDYzMzRkOTA2ZTllNmU0YzQ5ZDQ3MDM5NzJiNDQxZTVjOTA2ZWFhMWFjOTRmN2Y5MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWZiZjhjYzMyODQ5OWFjN2FiMGFkMWZjNTE1ZDFlMGM0OTk0YTcxOGJmY2QyNzgwMGExYjNjZGUwZmRlZTc1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWRhN2Q4MTM2NjFiMDU5MWI4NGMwMTFmYzY0ZmYyMjY4MjgyOTZlYjNiMWY4Njg5MWJmODM2ZjdjNGRlM2I0YyJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.1",
+    "at": "2026-10-01T12:11:43.532Z"
+  }
+}

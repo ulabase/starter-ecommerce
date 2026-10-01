@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:bd0844f6d13ec852df2415c2433f5bfb1ce2dfa48413d0eb4b52dfb85b1a6ae8",
+  "claims": [
+    {
+      "id": "claim_55603045000448a7b873bfbbca2d5e07",
+      "statement": "ulabase.setup.ts is a declarative setup configuration that defines check/apply steps for configuring Ulabase services.",
+      "evidence": [
+        {
+          "resource": "repo://ulabase.setup.ts#L1-L20",
+          "version": "repo-lines-v1:sha256:8da51c063cbd3c47f4512b5380cc8c7a72fbc7527c95ef7c010275f113161874:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3MmE0MjkzODJiMmUxNDcxOGUwZTM3YjA1NzBhOGExNzAyOTkxZmNkODQ5OGNkODQwNjBhOGJmNGYwNTAxN2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBlYTA5ODhkMDU2NDJhNTY4NjY0MjUxMGQ1OTM2ZDM3ZjlkODYyNjE1ZThiMGQyNWY4YWJhOWJkZDY3OWE1NDkifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.1",
+    "at": "2026-10-01T12:11:43.532Z"
+  }
+}

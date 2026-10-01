@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:39b1181c33d81dbe0e25c8f5dd51be23201b7360cd81dccd215436fc1d90bab3",
+  "claims": [
+    {
+      "id": "claim_43c2db762bee48069d795d4b170a57f9",
+      "statement": "The Stripe integration operates in products mode, using a 'catalog' collection for products and an 'orders' collection for orders, with session expiration set to 30 minutes.",
+      "evidence": [
+        {
+          "resource": "repo://ulabase.setup.ts#L352-L408",
+          "version": "repo-lines-v1:sha256:a2438ee943550826986a40316d6175206ecf79488541beb98ce1b2988dfed058:eyJzZWxlY3RlZExpbmVDb3VudCI6NTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImExNjY2MjhmZDEzN2I3YWMxNmZlMGViYTA4ZWZlYTI3OTI3ZmY1MmE0ZmViMzdjMTRjM2JiMDg2MTQ0MDE2ZWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmMGNkYjk3MmE3YmZiN2VkMjQ2ZjlmZjY3MjM4NWU1NWY0OTY4ZmMxMTA0M2RjNWI2ODRkNTFkZmEzMWRiY2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEwYTQzMmNhY2U0ZDA0YTFhNzU1YzliMTE0MDRjYjFiNDhmNzBlZjJlODlmZGZjMjZiYTliOGRmMjgzM2IxMzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUxMmE1NzgwZjI0M2Y0NzMwZTkzYzdjZGQwY2Q0ZTk0ZmEzNmI5ZWJkMWNkZTM2ODY0YzA3N2Y4YjY1YWYwN2YifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9d3654837c134ad6b5bf2615e74b097a",
+      "statement": "The success URL must include {ORDER_ID} and {ORDER_SECRET} in the fragment (after #) so the orders page can identify the order; Stripe only substitutes {CHECKOUT_SESSION_ID}.",
+      "evidence": [
+        {
+          "resource": "repo://NOTES.md#L276-L299",
+          "version": "repo-lines-v1:sha256:a4710ddcc78efa97f0df437ab935f9b1d9eaaecb5a459eb64bd37d2a43ff33c5:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc3ZjBjY2Q0ZjAyMjc2MjAxZTk4ZDYzMzBkMmUwZTFiOGRiM2JmNGE1MzE5NDcxMzE2Yjg4M2VmMGU3MTBjZWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIxOThlY2VlYzBiODFjMWU3Y2M2ZWRhMWQ5OGIxZjgzYzU2ZjZkN2IxMDRjZmYwNGRlODk0MjViYTY2MTQ1ZTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMwNmFhMDg5YWNkYzM1ZmIwZDQxZTU3ZTA3NmFlOWZkMjU1YmEyOTFlZGMxMzQxMzhhMjFiYmExYWJkOTMzMGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBhYjg5NmViOWE4MjUzOWU0NTc4ODBhYzcwNTA0MzkzNDM2MWIzYjFlM2MzOTAxNzQyNjIwMjA3ZmFmZTg3YmUifQ"
+        },
+        {
+          "resource": "repo://ulabase.setup.ts#L72-L75",
+          "version": "repo-lines-v1:sha256:9d1ab2d8d2da606d952b88c2df9ede2e83693fd593877ce9c0083fafbf3ccdec:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTcwOTIyMmVhMzdhOTIwMmVmNWRiZmU4NTY0OWIwOTYyODA2ZTkzNzZhNTU5MTViZGM0MjcxODI4NjY3NmU0YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTkwYWI3Mjc4ZWU3NWRlZjcxZWRlYmMxYzNmNzZmMjNkYmUxZjdmZDM4MzQ5YTVlMDZlMTc1ZGYxZTQ0MmM3NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWFkNzU5Zjg2NWJiM2FlNTM0NTdhYmVmMjFhNmI3YTk2ZWFkODQzOWNiZWQ1YzcwZTBiMDBkYmQwMTY4ZTJmMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTdkOTYxOTU3ZGJkODYzNDMyYTQ1MWVhZTM3NjY4MjFmNzJiMzM2MTg1YjE0ZDk3YzA1YTNhZDk3OWRjMGEwOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_fa2c33a6a7134694b7b3773a889c1f22",
+      "statement": "Six webhook events drive order status transitions: checkout.session.completed (marks paid), checkout.session.async_payment_succeeded, checkout.session.async_payment_failed, session.expired, charge.refunded, and charge.dispute.created.",
+      "evidence": [
+        {
+          "resource": "repo://NOTES.md#L319-L328",
+          "version": "repo-lines-v1:sha256:945a57e86b3a74e750205ec6c12bdf9a6f51a668fe211b4a594b3649d8054698:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlMzViNTE1MTVkOTQ3NWQzMTJkOGNmYzhlYjVlYzZhMjYwZmZlNGZiMTQ2YWQzOThiYzhiNmM2Yzk2MzYxMGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1N2Q3NjhiYzA5M2E2N2Q4NGZjZjlkMDJhYjRiZWQ3ZDIwNTM4MTBjOGNlMjQwNjIzNmUzMWMxMGZhNDE5NDAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQzYjU3NTg0YzljNjBiYTA1ZmIzMWE0MWYwZWQ2ODExYTYxNDNjN2VkNWQwYzk4MzUxNjI2ZDM0M2E1ZjM1ZDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVmMTEzODU3MjEzNWNiMDM2NmQ1MWRiZWZjZWUxNzRmMmFiZjkzYzRjMTIxMThkZDAxNjg4N2FiNDE1MzZlNmUifQ"
+        },
+        {
+          "resource": "repo://README.md#L55-L65",
+          "version": "repo-lines-v1:sha256:76f8adc1d9fde9f620527395462894fc5117f243d8170ba94a765cfac9604e96:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwMDQyYzYwODZkNTA5MTZhZmNlZDhiNDRiZWMzNDRiYjhjMmU2NzE5NjNjNjFiZjg0OWNkMTlkYWQzMmUyODYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjNTI2YzIyNmE3MGM1NTc3Mzc4ZTZhZjVjMDQ1ZjhkNWIxNzBmNjhjZWZhM2MzYzM0YmYzMWQxNWUzNTJkM2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJlYjU2ZTA3ZTExYzRlM2ZlZWNhMjA1MjRjYzAwYzc0MWUzNTFlODY3NGRmZmZiYzkyNzYxYWJhZmVhMGQ1MzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNmM2E1OTAyMjZmZjA0MjgwZTEwMDU5OWRkNTRlNDEyMTA5YjBkZWY2NDJiOTYyZTE3ZWYwNTkzOGQ5ZmUyZDcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a71b7f577cbc44d68f177047e518a884",
+      "statement": "Stock handling uses atomic decrements per line item on payment; oversold orders (where in_stock goes below zero) are marked oversold: true.",
+      "evidence": [
+        {
+          "resource": "repo://NOTES.md#L325-L334",
+          "version": "repo-lines-v1:sha256:83c9337f2928b5a6314a24f87c5f150047cc894a9bf7c883fc6458d5119a22ef:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhjOTFmMDlhY2Y3MDIxMzYwNDRhYzNiNTlhZjYwMmRiNTBkZDM2NmZmOTRlZjYxMTFlNmVlZWMxMmJjNmE0YTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiNzMzYzEwNmZkOTk5YWUyOTllZDkxMDkxZGJhZjVhMTI3Mjg5MTQzMWYzMzlmYzRiMjA2NTE5YWUyOWExNGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM5YmNmMTY5YzliNzY5NWVkNDExYzdjZjQxMGI5MDAyY2FhYjQ2YWRhMjc1ODQ0ZTY2MTZkODBkOTg1NWY0ZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc2MDdmNzg5OTBlNTlhZjllZTZhNTMxMjc0YzBiY2VhMDU1Njg0ZWIwODQyODU4Y2E4OTQwOGMzNTk2NjAyZmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1395fc0560904a4a9d801f2f7c1a8405",
+      "statement": "The Orders page polls for order status because Stripe redirects immediately but the webhook arrives on a separate connection, usually seconds later, with no ordering guarantee.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/shop/Orders.tsx#L19-L24",
+          "version": "repo-lines-v1:sha256:9454cec80d9aa288b92efc4401a8245a7d25737ea5104933148bf5ca67558948:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzhkMGU0NTU1MjBhYzdmN2NmMGRlYWNiNTAzN2Q2NDM5ZmI3ZGM5OGM2MTZjN2JmODUzYjRjZjRmMGQ0YTU2ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTcyYTQyOTM4MmIyZTE0NzE4ZTBlMzdiMDU3MGE4YTE3MDI5OTFmY2Q4NDk4Y2Q4NDA2MGE4YmY0ZjA1MDE3YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWEyOGYwMmEyNzllNWI0YjRkMmNhYzJmZjJkMDNkODgzN2IzZDhlM2JhZmJlNDkwM2UwYzZiNzM4N2U1ZGJmYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2I0MDZkYWRjNzI1ODU2YWQxNjk4MDFmOGJmYmIyMjY4MmNhYWEyMjk0NmQxNDg3YTRlNmIyNTI1OGNiYWJkMCJ9"
+        },
+        {
+          "resource": "repo://src/pages/shop/Orders.tsx#L91-L99",
+          "version": "repo-lines-v1:sha256:4d4a9be3b8e69fd13004320a237dab29b311907b6c937ebacd08e7b3eb0bf741:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTc3NzdjYjEwNTRkNGE5ODM0OWI4ZTA4MzYxNGIxOGIwZTMxMTVkMjYyMGIzYWNkNDRmZTJkZWRiMTM5NGY1YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjliMTk4MmU4ZGQ3NDgxMTgxNDZiMzlhMmQwMDYyZjQwODFlMzQ3NzliODY3NWMyMzRjNGZiMTI0ZGMzOTM5MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzRmMzMwNmYxMDIwYTMxZDExOWNiNjM2NTA5ZmZlZWRkZGMyZTIxZmM0ZmQzNjY5YzlhNWM1MGRiMTM4ZDBjOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWQwYzIzODg2NjgyNGJjYWU3OWI2ODNhYTYxNWZhZjY1NzFlZTU5MGFmZmUzNGEzNzkyOWI1ZDAxMDdiMjZhYSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b7c47abe059345e28ac98e288ddb43b5",
+      "statement": "Email notifications (order-confirmed and order-refunded) are off by default; sendOrderNotification returns early when a notification is absent or disabled.",
+      "evidence": [
+        {
+          "resource": "repo://ulabase.setup.ts#L76-L85",
+          "version": "repo-lines-v1:sha256:7d070dc7c375b174271d25e8c0abf8930a486360386fac1418db0645be61e825:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3MmE0MjkzODJiMmUxNDcxOGUwZTM3YjA1NzBhOGExNzAyOTkxZmNkODQ5OGNkODQwNjBhOGJmNGYwNTAxN2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNhM2Y4NmQyZjcyZTI1NmQ3NjllOWE4ZTI0OWU2MzFhMjgxM2Q4YTkxMDFlM2EzOTgwZDA1MzRkMjA5NGM0OGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY4MjQxYzQxN2ZiODgwYzA5YWQ4MjQ1ODMwODI0OGRlNzFmNjJhYTRlYWQ1OTQzMjgxNWY4OTg2NTczNTM3MTEifQ"
+        },
+        {
+          "resource": "repo://ulabase.setup.ts#L99-L107",
+          "version": "repo-lines-v1:sha256:b7dca13c521fa0e26211caa7312bde8b1a9458d549c7d8b92840eb1cf99f604f:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTkyNGIzZGFiN2I4OGE4ZWE5ODczZmZiMjc3OTAyMDBhNjE2ZmMzNTA2ZDNkMjg4MTk4MTJmYTUzZmI4Y2EyZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTVlZjAxYmMwOGRiYzNiNjNlNGU3NWVhM2QyNmE1Yjk0MTg5MTg3N2UyN2FkODkxMzI5Yzg0MTFkN2Q4ZGM0ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzg0NzdiMmUyNWQ2M2VmZGM5Y2I5M2MxNzNiYTgwMTk1YTNkZTBlNDEwMjcwZjUyYTM3MTAwNGQ0NmVkNDE5OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmI1NThkOGM1OWQzOThjMjk5MmNkY2JjNmU4NDQxMjRmMGQ5YzZlMmE5YTFhODE1MDk2MjgwOWMyYTg3ZjRjNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_95de9305d50a4b1e86f5e394b4f12ebf",
+      "statement": "Stripe collects email and shipping address on its own Checkout page; the webhook writes buyer_email and shipping_address back onto the order.",
+      "evidence": [
+        {
+          "resource": "repo://NOTES.md#L345-L347",
+          "version": "repo-lines-v1:sha256:c266ea9beecc62aef5e755e385eaa88b3043adf32bd0ec8527554308463d7001:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWFiMDk0NTA4MzZiZGE0NjhhNGZiNDMzYzgxMzdiNzVhY2Y4YzU3ZmRlY2E3NTA1ZDgxNGJjOTZjZGRjZWVmYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTc5NjIwNDdkYzA1YzY0ZDIxMmZkYmI5ZTc3ZjY5NTg1ZjI1MTYzYTE1MDc0NmE3ZmVlMDg0ZTBlNjYxMGY1NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmYxYmY1YWRkNmE4MGM5MjAyYjliNjRlNDkwNGM2MjNkOTFhODdjZGZlODkwNGJmMGEzNzk3ZDcyMWI2ZDI0NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmQ5MThkYjcwNjYxYTg1ZTU4YWQ3NGM0NzhhNDc2YTMyZTdkZDIxZjJjZmE3YTA1NzMyZDVhOTdlZWEwM2NhMSJ9"
+        },
+        {
+          "resource": "repo://src/pages/shop/Cart.tsx#L40-L43",
+          "version": "repo-lines-v1:sha256:06e2a1167e8fd7df77a6afc9c0b62ba4213642fbfeda8d174083d08608f065c2:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTFkZjg3YTQ3MzE2YzcwOGM1NTAyMDk4ZTlhZjZjNDQ1MzRlYjgwYmVhZGNmNjA2MzAyOGVmY2E4NTkzN2FiZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDY1MGIwOWM0NTU3NGI0NjI1OTlkODU1MjNhY2ZmNjQ2OGQ3M2VjMGM0NjI1NGZjNjJkN2U5NDc3Njg2NDY3OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTVjOTQ0ZWYwZDY0MzIwYWE2YzdkZjhlOGE3ZmUzYjdiZGExZGRlMWQ4YTAxMzk4YTU3MzRhYjJlZWMxNmRkZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYThhZDlhOThjNWRiNzdhZjg3MjJmOWI2ZWNiMjI1Nzc5MDExYjU3MzA0MjEyNDYyM2MzMmEzYmU2MzgyMTk3YiJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.1",
+    "at": "2026-10-01T12:11:43.532Z"
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:a4f1eb0f588f2b18170106ee760a16b815981a65b089ab68c3d29d7413264f03",
+  "claims": [
+    {
+      "id": "claim_be4df28b6db549ea8b202d5b58411fcf",
+      "statement": "Ulabase is a managed service platform that provides backend functionality including authentication, payments, and data storage, eliminating the need for developers to build or maintain server-side infrastructure.",
+      "evidence": [
+        {
+          "resource": "repo://NOTES.md#L1-L5",
+          "version": "repo-lines-v1:sha256:521ed47156900a30fa4318a2a83a63aca9202af26b7b691cf73ce89f11dc3201:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTE2OTg3OWE1NjBlMzhhNGQwZTkwZjk3NDU1ZjQxZjEzYTc2MjFiMTRmNTE4YTgyNmU3ZTkzNjI0NGQxMjRjNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGFhZTljZGE2ZTBmZTA0Y2U1MGFlMjQ5YWI3NDM0NWY0YTFmMjNjZGVmMjYxNjU4Y2M4MTI1Nzg5Mzk4NzNmOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDk2NmI5YjlkZDBlN2IzYmU4YTJkNmFhODU2ZGNlYzg3MjI1MDk3MGU2NWQ4ZDQ1ZDE5ZjY5ZTliNTE0ZjkxZiJ9"
+        },
+        {
+          "resource": "repo://README.md#L7-L9",
+          "version": "repo-lines-v1:sha256:e942b5ed82a50fe05e7525051c9bf0e5639c68caccdedffa0fc3e270d3b9bb27:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTRhM2M1ZjFhZjYyZjc4MmViZjIyYTdjNTAzMDc3N2I2YjJhMjRmNmEwODQ0MzE3OWQ0MDg0OTJiOTRjYjBlNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzRiZTNkZjg1MDk1MjkzOWQyZDcyYmIyM2UwYzI2NzZlZmM2YWExOGZhM2ZkYzE1MzgxNWY0YzY0YzhiNDYzNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTAxNzVmNzA1MGY2ZWEzOTRhZjlmMzExNjNkNmIyNjkyNzVjZDJjNDJlZmQ2MDZjODE3YmMxNWNjN2NiNTVjYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_6f769ae1f3284242881da7660eaebf10",
+      "statement": "Each Ulabase tenant gets their own service instance at https://<id>.ulabase.app, where <id> is a six-character identifier that isolates tenant data and configurations.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L31-L33",
+          "version": "repo-lines-v1:sha256:2f53f60dba70f7f8bf3ed18d44a49a2972f09cb0112e1871b0b12e70b4fb345a:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmNjNWU4MTlhZWMzMTJjMTQ0MWFkZDlmNmI0MzhiNWNkOGViODI3NDkwOTE5ODVjODgyODQ1MGQyMTI3NmFlYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2ZiYjI4YmE5N2UzNzlhMTlkNGQ4Mzc4ZmE1ZjYxMTlhY2VlN2IwZmIxYmU5YTc5MzU2ZmJlNjU2ZDQyZGFlZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDIzZGY4NzY5YTA0NDhhOWVkMmJiZjQ4Yzg2YWQ5ZTdiMmYxMWY0MDQ0YzVhNjhiNGRlMmM3MzZlYWFhZDhkMSJ9"
+        },
+        {
+          "resource": "repo://ulabase.setup.ts#L28-L29",
+          "version": "repo-lines-v1:sha256:2e751799476bb4de26366cfc2b1fd7e897d876c4c9f3867a4143532469548559:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjBiY2Y0MmQ5MGRjMWI4ZGQ1Njc4NWM4MDc2YjdhMGUyMzgxNGIyNTU5ZmM3ZWVkMjQ5NDZmMTcwN2VlMmNkNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTE2Yzk0NzUyOWYwYjRhYzY4NzE2OGQwODIxYzg1ZDYyZDc5MzNkMjMzMmMyNTdhZTgyN2NjMjkzOTc3NGUwMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTI1Njk3MWUxMDFjMDNhMTM3MmUyMjY3MDA1MGNkNWRkNzRjOTZlMTE5NjFiYWNkYThiNWExZWNmNjE3YzJmNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmFiM2ZmYmVkMTlhZTg4YTgxMDhhMmZmNjVmMGZmMTY1OTVjMmM1ODMxODdkNmFmMGRjN2JjYjExYjg5YWU2NCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_eb48c03e521a4433a6d5bba9cdda2f20",
+      "statement": "The Ulabase ecosystem consists of three primary NPM packages: @ulabase/kit for core authentication and API logic, @ulabase/kit-react for React-specific integrations, and @ulabase/cli for service setup configuration.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L13-L19",
+          "version": "repo-lines-v1:sha256:066ec7177287e9f73ba439825a05217cb03fc0592d114869180dd566fcc57d88:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWE1N2U1MjM1MzhmY2RlNDlkZDJhMTViZTM0ZjhhYWVmMTE4NDJiNzEzMzk2MjcwYTlmZTExNTY2ZDQ1MWJjNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODkxZDAwMjUwMmQ4ZDE4YzUwNDY2NWU0MDk1ZTBmYTM2ZGZjNjVjMGYzMTdmYjdjMzkyOThhNTMyNGZiZWM4YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTUzZTgyM2Y0NTI5YmY0NTRhOTkyMDQyODRmZTk0NWRmZGE5OWM5NzIyYzBlZDI4NzM0MzAxZDA3OWMwNjMwMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTI5MTY2MGVmNTQyYjc4NDdmYTJmMzBiY2ZhNWIzMGFiYWFhNWE2MTYwYTk1YzNjMDVhZGEwZDE0MjIyYWQzZiJ9"
+        },
+        {
+          "resource": "repo://src/main.tsx#L4-L4",
+          "version": "repo-lines-v1:sha256:85166fceb74708a0dee7c46bc9eeaf17b71eca37ffab0290b8e7b0615ccb60d3:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODUxNjZmY2ViNzQ3MDhhMGRlZTdjNDZiYzllZWFmMTdiNzFlY2EzN2ZmYWIwMjkwYjhlN2IwNjE1Y2NiNjBkMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODUxNjZmY2ViNzQ3MDhhMGRlZTdjNDZiYzllZWFmMTdiNzFlY2EzN2ZmYWIwMjkwYjhlN2IwNjE1Y2NiNjBkMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDA1MTIzM2Q4YzJlZWVjM2FmNjY5ZTBmMzJhNDUyNzU3MGVmMDY5MGY4MzU5ZmU1NTU2OTRjODAxNTVmMDgwZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDRjNDIyMzYyYTM4OTQxMmQwMjAzNTJiMDZmNGZjZjBjNDg4Yjc1NjcxNDFkYWY5NDI3YmIwMTZkZTAzZjA0ZSJ9"
+        },
+        {
+          "resource": "repo://ulabase.setup.ts#L21-L23",
+          "version": "repo-lines-v1:sha256:0ea0988d05642a5686642510d5936d37f9d862615e8b0d25f8aba9bdd679a549:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGM1MjUyMzk5ODdhNzQ2MDQ0ZDMyM2I0NzlkNjg3ZGZhNDE4NGM0N2E0ZjdkZTgyYjcwM2IxOGQ4MjM5YjM5MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2YwZjlmZmU2NGQzMWM3MThmNGFhNGI0NjUyYmVlZGUwNThkNmU0ZTgxMTdmOTgzZTNjNzA5OTUxOTM1MzA3MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjlkMzg5NjFkMWRhYzI0MWQwNzYwYTJlYjUxNTEwMTYxNWFlNTQyMjc4YzY0Y2NmZWIxYTZiOThiMDNhZDNlNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWNjNzEzZjg4YjBhMmRlNzZiZDVjMjVjNWIwNzdiYzY0ZTBkYWE5OGJlOGY1NjNjODQ5YTQ0ZWFlYmIyMmU1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_56251d8eb47b485491395999d7a7138d",
+      "statement": "The admin node for Ulabase service management is at https://api.ulabase.com, while the user-facing console for managing services and issuing tokens is at https://ulabase.com.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L34-L36",
+          "version": "repo-lines-v1:sha256:423df8769a0448a9ed2bbf48c86ad9e7b2f11f4044c5a68b4de2c736eaaad8d1:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTUxYmRlYzExYmM1MWJhZDA0MDQ2M2Q2YjQ3ZjkzNDcxYWQwZmM2NDJjYTAwZGRiNTA1ZDAzM2U3MmFiMmJiZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmY1M2Y2MGRiYTcwZjdmOGJmM2VkMThkNDRhNDlhMjk3MmYwOWNiMDExMmUxODcxYjBiMTJlNzBiNGZiMzQ1YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjFiMmM5OTgzMDAzNTJlZDgxNGJmYWQxODI2OGQyYjEyMzE4NzkxYWM2NTZhMmM2NTBjZjEwZDI2NWI4ODQ2MiJ9"
+        },
+        {
+          "resource": "repo://README.md#L87-L89",
+          "version": "repo-lines-v1:sha256:1dafabf4c3a7d090c29f706b28713cff0eddb48bf5938dd1ccf4af6f52956dfe:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmU4YTY2ZjM0ODliYTFlODRkYzU0ZTI1YmJjOTQzMGE2MDFmYjRjYWQ4Mjg1NjY2MjM3ODljZGM1NTM4OTNiZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzVlMmFkMWIzMTY4M2I0NDU4M2IwNDkxNmM2MDhhMWIzZTFlN2RlOGQ3NDA4YzAwZDQwYzVlMmE1NTllNWI2YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWRlMGQ4NmI2NmQ4Y2ViNDc0OTFkOWIwYTUyNjZmYTc5NDU4YWU2OTI3N2JmNmYwOTMyMjE0OWVhNjRmN2MxZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmMzN2QzYzQyZWY3ZWNhZTRiOGNhNDc4YWEzNjVlOGU0OTViMWY3ZDBlOGRjYTk1ZDE0NTgzYTUwYWQ5ZGJkNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5be5addeabe0459f8b38b206237100f6",
+      "statement": "When developing against a local kit checkout, the link workflow requires adding three settings to vite.config.ts: resolve.dedupe for React packages, optimizeDeps.exclude for the linked packages, and server.fs.allow for serving sources outside the project root.",
+      "evidence": [
+        {
+          "resource": "repo://NOTES.md#L13-L53",
+          "version": "repo-lines-v1:sha256:f4aa159254a5de67300adc7ab410bc3682fc926bb321f556db0f6cf98e0023b3:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVkZTJmNTMyOGVlNmU4MDUwZThhYWZkOGRjODY5YTA2OWNkOTU4NGVkYWFmNTRmZTU4OWQ3M2MzYjdkY2Q3OTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlODU4YzI1MGJhMzlmYmY0Zjc2OTllYzc0NzQyMjkzYmVlODA3NTVmODFjYzUyMDFlZDMwZTliOGQ1NDMzNDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI0NTk2MTYyM2UyMjA5MTM5OTM2MTMwMzQ5NTI5MjBkMTExMjc3Y2E2OTEzZGQ4OGU2M2E2NmUyNTU2YTIzZGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUwNDhjZmRkODllOGI0YWNmZTFmODZiZmY1YmY5YmI4Y2VmMDdhZjQzOGU1NDllYTNmZTIwNTczNTQyMDE2MjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ce2c4f28669a468e88d9ee5652cc659c",
+      "statement": "The auth.api() method applies the session bearer token automatically, allowing custom collection reads without manually attaching the token.",
+      "evidence": [
+        {
+          "resource": "repo://NOTES.md#L172-L199",
+          "version": "repo-lines-v1:sha256:390e473dadcdb017befe4a00046e6665f7d2fa7aa2bdfffb3a2acd57e98b856d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjljNGJhM2RlODVmZTQyYzRkOGE4ZGJjZjZlMzUzM2E5MjA5ZmYwYjYzNTk4OGJkZGZjYmI2NThlNzY2ZjM0YTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZkMjg0MDNjNjU0YWU3YjA0MDBmNjY2NzhlNGRmNmE3YTI1MTAzMGVlOTFmNGJjNDhhNDZhNzMzODRlMTg4MDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI2YjhhNjg1MGIwNWM1NTU1NzE1MzM2NWM3YjQxNzVlYzBmZWQ5NzZkMmE4MWYwMWMwNDI1ODI4MTljZGIxOTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUyMDYzMzAwMDFlZTNhMTM5ZGZlY2FjYjUzYjQ5NmUzMzBiZDYyMGUyMzA1OGQ0MTcwMTNiZDVhNDBhMDBkZWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_59e7260632bc4f39b5b746234b857b91",
+      "statement": "Non-2xx HTTP responses from the Ulabase service reject with ApiError objects containing status and message properties.",
+      "evidence": [
+        {
+          "resource": "repo://NOTES.md#L198-L199",
+          "version": "repo-lines-v1:sha256:3c457e0b6b92b0a63bfec7d4d081d6252f62e29ef640018f7d0f723ab7dca45f:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGQ3YjJhNWU0ZDFkYzhkMmRkZTg1ZTc1NzJiZjZiMDcyNjIzNmUzMzRjNmM0MTc5MDAyY2QwNDM0ZThmMmFlZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmQyODQwM2M2NTRhZTdiMDQwMGY2NjY3OGU0ZGY2YTdhMjUxMDMwZWU5MWY0YmM0OGE0NmE3MzM4NGUxODgwMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODgwOTE4YWM2NDMwNzA0MDMwMDQzMjc4YWJiMTY3MDAxYzY4MzQzZmM1YTNhZGY3ZjgyYjYxNjk1MjliODRhZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTIwNjMzMDAwMWVlM2ExMzlkZmVjYWNiNTNiNDk2ZTMzMGJkNjIwZTIzMDU4ZDQxNzAxM2JkNWE0MGEwMGRlZSJ9"
+        },
+        {
+          "resource": "repo://src/consents-signal.ts#L1-L1",
+          "version": "repo-lines-v1:sha256:742c13fd20db7085e214275934151fa1fd2be298f0fbd24e232b810b4b7049ca:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzQyYzEzZmQyMGRiNzA4NWUyMTQyNzU5MzQxNTFmYTFmZDJiZTI5OGYwZmJkMjRlMjMyYjgxMGI0YjcwNDljYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzQyYzEzZmQyMGRiNzA4NWUyMTQyNzU5MzQxNTFmYTFmZDJiZTI5OGYwZmJkMjRlMjMyYjgxMGI0YjcwNDljYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTI3YTFiNDEyOTZlODMwNjIxYjZjODZhZmY0MWFjY2ZiMzk2N2JjNjBkZjYwMGZiMDNkMGIyY2Y0ZjNmNTVmMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_634a4aee219e45bebf46c98c67a449cb",
+      "statement": "The RhAuthProvider accepts a config object with apiBaseUrl, payments flag, and onError callback, establishing authentication context for the application.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.tsx#L19-L35",
+          "version": "repo-lines-v1:sha256:6ed20e7c355e8470c2e73a2b4b053a7a986f8fba631b8251938bb58c71c17235:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE2ZDJkZTZkYmY3MjRjMmQ0NTg0Y2RlZDNiM2NiODNjYjNhOWJiZjcyMGUwYmIzNzQ2ZGJhZGNiOTAwNjVkNTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMjJkMmUxMTI0MDlkNjljYTE5YTU5NmUwYmE0ZmYxMzJmMWY2ZGQwMDAxYmJkYjFkZTc3ZmNkYTZlMGM1MDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM5ZTg1NWNjNWJlMzE1NWRkM2FjOTI5ZjRjODc0ZGNhYzZmZGFmNmU0OWZlMTg1N2JiZjMxNTA0MjFjNWVlYmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIxYThiNTFkZWY3MzY3ZWIzOGZhYzIyZjc1OWYzM2FhNjZhYjBlYTU2ZmE4NTg0NTY2MTA2NzQzYmQwNzgyMWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_877bba67c861472d82fd473a4c1dd636",
+      "statement": "The ulabase setup command executes declarative check/apply steps defined in ulabase.setup.ts, with --dry-run option to check configuration without making changes.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L78-L85",
+          "version": "repo-lines-v1:sha256:83f192baeacfead7821f51bd87930becfda56b2c0922a6343c4956df9b379572:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTk2MjYwYzUwNTVkMjBhZThmN2NjMjBmODU0YmMzYjJhNjJlNjY2MWVlOTJlN2E2Nzc4NmJkYmQ2ZTQ4MzM3NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDdjMDZjNTYxZDVjMzI3MzQzNjg1MjY4YTQ2YjMzOTFmMzk5OGVlZTg5MGQyYmU1MWYwZDIxY2M0YTUzYWU2ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzlmYWJjNTVjZDEwNTgxMmE5MDNiYjcxMTdiZjJkN2E2YmI2NjVjZTAyNGVkYmQyY2RlYTI5OTRmMDIyZjk4OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDlhMjRjZDAwYmVkZjA2MmM4NGU5YzVkYWY5NGZhOTFlMjMyNGM2ZGI1YzU4YjQ3M2E2MDE5YzU2MzgyMDAyOSJ9"
+        },
+        {
+          "resource": "repo://ulabase.setup.ts#L9-L16",
+          "version": "repo-lines-v1:sha256:11e325a42e31e77242b61a6c1ce131d3deadb3506b00586c55c6058efafabcfa:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjIzY2I0YzEzZDY3NzU5ZDU0Zjc2NzFkNDQwMzQ5NzJkMDkwM2EzOWQwOGFmYWU3M2JiOTgxZWI5YWIwZGNmMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjIzY2I0YzEzZDY3NzU5ZDU0Zjc2NzFkNDQwMzQ5NzJkMDkwM2EzOWQwOGFmYWU3M2JiOTgxZWI5YWIwZGNmMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmM2MzMwZTQ5MDQ5Yzc1ZjcxNzE0MzNlMTA1ODIyNWNhMTA4NTY0ZjVjZTZjMDVjNTAwZWI5M2YwMmYyOGVlNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTY3OTI1MDZlODk0YTFjMTQ3M2FlNGQ3NTk2N2VjZjY5NjlhYjk2MDZkNDUyZDgxZmE3YTdmZWNmZTRiN2JiMSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_909278c5a2714ef995afdcf4519bc87b",
+      "statement": "Linked packages benefit from Vite picking up rebuilds without restart because they are excluded from dependency pre-bundling, and dedupe prevents multiple React instances from causing 'Invalid hook call' errors.",
+      "evidence": [
+        {
+          "resource": "repo://NOTES.md#L35-L59",
+          "version": "repo-lines-v1:sha256:f8b5a8a63ad9e081dfb7828226e28da9d22272c5e2335eb065bb08350efef66b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0ZGFhMWVkNTY5MmJlZjM5NWZkZjY3ODg0YmU5YjA1ZDUyZWFjNDU4ZWI4ZjM0MTc2NTQyZGZjMTRjNGI5YjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmNDcyNDY0ZGUzOGQ2ZTU5NWZhNGM0YmJkZTJlYTNiZmYwMWU0YjBkNDZkODU1NzBhODYxMzhmZjBlNzY3ZGEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY1ODUxNTY0NjE1MTI0NDExMjU1MTVhOWUzYmVhYmJlM2ZjZWY2NTA1MjZhMzg2MzhmZDQ2MGVhMmMwZjRmMjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJlMzIyNTVkZjhmYzMwMjJlNjI1NDQ2MDA1YzNkODM2OGEyMzUyNGUzMzYwZmRjN2M4NmE0ZjMwOWNjZmQ3MzAifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.1",
+    "at": "2026-10-01T12:11:43.532Z"
+  }
+}

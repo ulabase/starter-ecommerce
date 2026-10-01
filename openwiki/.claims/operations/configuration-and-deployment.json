@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:53d500c62470e0f17c89e8afca8802ce940e2b51745ba64884b642d29a3cecb0",
+  "claims": [
+    {
+      "id": "claim_ff3b18a00b024c05926f8b8c8482a519",
+      "statement": "The Ulabase Starter Ecommerce app uses Vite for bundling with a minimal configuration that includes the React plugin.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L7-L7",
+          "version": "repo-lines-v1:sha256:a0b5c026df18c83a4f290f8568bcbcf84529ce0cd26f48f7c53bca09c5f2e5af:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTBiNWMwMjZkZjE4YzgzYTRmMjkwZjg1NjhiY2JjZjg0NTI5Y2UwY2QyNmY0OGY3YzUzYmNhMDljNWYyZTVhZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTBiNWMwMjZkZjE4YzgzYTRmMjkwZjg1NjhiY2JjZjg0NTI5Y2UwY2QyNmY0OGY3YzUzYmNhMDljNWYyZTVhZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzY4MjlmNDAyYjVmODk3NGVlMzNkYjdhNzQwZWU1NWQxNTVjOTRjZjUwYjI3YjE1Njc3M2Q4MmM4ZmYzNzFlZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDRkZDI1ODE0NDBhNmIyNmEwZTZjMTliZmNkZTFiNWU1OTM4ZWQxMDQzZDhmMjRkYjI2YmUyODc3Nzk2ZWY4ZSJ9"
+        },
+        {
+          "resource": "repo://vite.config.ts",
+          "version": "repo-file-v1:sha256:0709465427668ae85ef999f63762d7a06fd92962363fe8cc142ad656d3548115"
+        }
+      ]
+    },
+    {
+      "id": "claim_16ffb79e9ae043819c1a6fad56fba667",
+      "statement": "Environment configuration is centralized in src/environments/environment.ts, controlling API endpoint, collection names, and feature flags.",
+      "evidence": [
+        {
+          "resource": "repo://src/environments/environment.ts",
+          "version": "repo-file-v1:sha256:50c1d9f6f2014fb17f60203b66a25549ccc66652252f8a7dfe30b266363acb20"
+        }
+      ]
+    },
+    {
+      "id": "claim_9dec7bbf5f794bad8240bd2c95f99131",
+      "statement": "The build pipeline runs three sequential steps: tsc -b for type checking, vite build for bundling, and node scripts/prerender.mjs for SEO prerendering.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L7-L7",
+          "version": "repo-lines-v1:sha256:a0b5c026df18c83a4f290f8568bcbcf84529ce0cd26f48f7c53bca09c5f2e5af:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTBiNWMwMjZkZjE4YzgzYTRmMjkwZjg1NjhiY2JjZjg0NTI5Y2UwY2QyNmY0OGY3YzUzYmNhMDljNWYyZTVhZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTBiNWMwMjZkZjE4YzgzYTRmMjkwZjg1NjhiY2JjZjg0NTI5Y2UwY2QyNmY0OGY3YzUzYmNhMDljNWYyZTVhZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzY4MjlmNDAyYjVmODk3NGVlMzNkYjdhNzQwZWU1NWQxNTVjOTRjZjUwYjI3YjE1Njc3M2Q4MmM4ZmYzNzFlZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDRkZDI1ODE0NDBhNmIyNmEwZTZjMTliZmNkZTFiNWU1OTM4ZWQxMDQzZDhmMjRkYjI2YmUyODc3Nzk2ZWY4ZSJ9"
+        },
+        {
+          "resource": "repo://scripts/prerender.mjs",
+          "version": "repo-file-v1:sha256:024fb701d701c12a7fd74c1ae2b0d8df9f6d903a839e27c60d1f89d344fef2d0"
+        }
+      ]
+    },
+    {
+      "id": "claim_df6ad0adb2c24bd7827f52481668d454",
+      "statement": "The prerender script generates static HTML files for each product with SEO metadata, schema.org JSON-LD, and creates sitemap.xml and robots.txt.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/prerender.mjs#L137-L151",
+          "version": "repo-lines-v1:sha256:cf3da6c2903753d4116b501195e664a430e209283029856261a964475d6dd089:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRiZDU0ODg5MmIyZjM2NjcwYzEzM2Q3NDc5NzM2ZTRiMGQwMjMxYTU2NTMxNWU0MzFhZTFlZmUyN2Y4MTgzMDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ5OTY3ZWMxZWQzODM2ZjhlYjE3YWZmMTcyYjViZmVmN2RlNjA0ODVhNDM5YzZjYTExYzU5MWUxNzU1NzM5YWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIwMGEwNmVlYjI2OTI2ZWY3ODc4MzRlNDQ0NmI1YzBjYzdmMThlOWEwNTM4NzYxMTQzYmZiZmVmYzUzYTE3YTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc2MTA5MTY1Y2UyMjNlNzE0ZTYzYmVhM2ExYjIyNWUxNGVhMDk4ZGJhMmEwZTU4Y2Y4NDM5M2MyMzkwOTI1NGEifQ"
+        },
+        {
+          "resource": "repo://scripts/prerender.mjs#L67-L101",
+          "version": "repo-lines-v1:sha256:a9f104202a69d9209051739d172a119136b517d15195ae37c3d8a10505a59085:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1MjM3ODEyNDAwYzhmZjg0ODAyYjcxYjA1MzI2YjAwNWVmMzkyNTE5YzFmMTljNzBmMDAwNzMzZDAyYjgwNDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEyNThmM2ZlY2IzOGI0ZmJhMzAxODljNDE0ZDJhOTdlM2YxMTkwMDBhZTU3OWQ3ZTM3MTJmZWVlYzgyMzdkMTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJhYzc5OTVhOTA4MDJjOWNmZGVkOTJlMjg2MzhiZmNlNWMwZjJlZDRkYzQ3ZTA1Yjg3ZDI4YmE1NTlhMTUzMWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3OTI5ZTkxZTBmOTljM2U4MjVkZTY5YjQzNWZiNjQ4NGQxYjBhMWRmMmY0NjU2MWFiZjFhMjlmMDQxODhiODgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c416fe7c4ddd45f68dcdb4a9b76c888c",
+      "statement": "Prerendering requires SHOP_API_URL and SHOP_PUBLIC_URL environment variables but gracefully skips if they are not set.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/prerender.mjs#L29-L39",
+          "version": "repo-lines-v1:sha256:8e9560a293644f348f08c035d63a4c90f882a66005acdcd16ed6099bb0be745e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmMTFmMGRkYWI0YWZlNjEwNTRhMDgyOWU3YjAxYTJjYzU0OTBlZDZlNWIyOGJlOGE0MDc1NTc3ZDczNmE2NmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY1YWVmMmZhNDMxMDQ4YjA1ODZkMGM1OGQwOWZjOGQ2MWI3NTBmNzIyNzBkNmJlOGFjZTE2NzEyNWY3N2NmMmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY1N2JjODkwOTI3ODdjZDM4OThlNmE2NDdhOTU2ZDU0NWY3Y2IyNzI3Y2FmN2Q4OTk0NTZkNWQxNjAyYzNjNTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7e5cded02bde4464bfb4e9c1a11e37df",
+      "statement": "S3/CloudFront deployment requires a CloudFront function to rewrite extensionless URLs to index.html files.",
+      "evidence": [
+        {
+          "resource": "repo://SEO.md#L76-L97",
+          "version": "repo-lines-v1:sha256:060900c235331a25beb4b31e2d816618cc9f8556776f0dcb0f5d76859e9c53a8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1MmQ2YTY3ZTIxNzdiZjUyYjE5Yzc0YjIzNmMxZDQxYTI0NjdlMzM0NmVmNDIxYmMxZDE2NDM0MjBjNmM5ZWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdjZGRmZDI1MmFiYjA5MWYwYzM4OTFiODYxNGY4MGFjOTllNjI5NTQ1MzVkOTJhYWRjZmIyNTAyODdmZTMyNDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMxYzIyOTJkNGUzMGQ1MDFlY2FjOWU2MjIwZGM1MDcwY2U2MTA3MGExYWI3ZTI5OThmOTlkMmY0OTk3N2UwMTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9d321dad661543f9837440118b9cf8d4",
+      "statement": "SPA routes like /cart and /orders need custom error responses (403 and 404 → index.html with 200 status) to work with static hosting.",
+      "evidence": [
+        {
+          "resource": "repo://SEO.md#L102-L104",
+          "version": "repo-lines-v1:sha256:f968b09db58c42f8ec6e27041fb80816fbb6a171ab8dd960221f2f968114ec2a:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTU2MzY4ZWU1OGFkYTBhNjY1NTY1NGQ3YTdlZTc5YzQ3MGE0ZDQwZWFkMzVkNDE2MzBmYjk0OTU5OTZhYzg2ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjI1YWRkYTUxYWFmNmI3ZDFhYWYyZGQwOTI0NzJmNzhiZmJjMDgxOTZlNzY4NzU2NDllMDY5MDY0MTUzNGIzYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGJkNDI1NDAwMjhiOWI5MmZjODE5NDNlMzBiYzZlMTRlYjNjZTFkYzU1MmQ1NjVhYzYxN2ZhNTE1YTI3NjJhNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2Y4MTE3NGZmNzM5ZTM4NTZjMzllYmMxYmMyZmVhNzM1OTc2NDAwZjY5Y2IyYTBkNDBjNWMzMmVkZjI1NTcxMiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0c00170028f747589c1f375ab461a162",
+      "statement": "Cache-Control headers use tiered TTLs: immutable for static assets (1 year) and short-lived for HTML (60 seconds) to avoid invalidations.",
+      "evidence": [
+        {
+          "resource": "repo://SEO.md#L106-L118",
+          "version": "repo-lines-v1:sha256:9200e52e47b2228bf1f49748dd5c66051e59044a6fff83ed3b56b09f461be04b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI5NThiZWJmM2E5YWY1ZmU5MWU1ZTJjNTQ3MmM0ZmQ1NWRjMDg1MDMxZjU4MmM1Yzg2ZDUzMzI4MmMyNjk4OTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRlZjgxNGY2NTgyMGRkMzE1ODg2MTMwNmFlY2ZiNDdlNjY4ZGRjMDI4Y2U4MGZiMzc3YTQxZDZjNmZmZjFmOTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ3MzBhMDBlZjc2MjA1M2MzYTYzZTBlM2RlNGIyMjFjYTIyNWY3NmJiMWZhYjUwYThjY2U0MTVjMDM0Y2IzM2MifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_22062888f02b4eb6a1f9f00d564530bb",
+      "statement": "SHOP_SHELL=remote mode fetches the deployed shell instead of dist/index.html, enabling scheduled refreshes without rebuilding.",
+      "evidence": [
+        {
+          "resource": "repo://SEO.md#L59-L67",
+          "version": "repo-lines-v1:sha256:699ae0b3b49f0be18495327242118cfcceec1624bedc3df05f9a81772e389399:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjQ0MTI1MDIyMDVhZTYyNzFlNWE0MmM3OTE5ODExNDdkYTc1MGNlNjRlNTM2YjFhNmUzODE1ZjkyMjM0MmUxZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDdjMDZjNTYxZDVjMzI3MzQzNjg1MjY4YTQ2YjMzOTFmMzk5OGVlZTg5MGQyYmU1MWYwZDIxY2M0YTUzYWU2ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTRkZTlkYTQ2MmM2MjE2NzRlYjNkZTZhZWVkOTVkMjRlM2IwNmQzMzNhNjhmZjNiNzNmYTY2MzIxZDg1N2YzMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTgwZGNmZTMxYjVhM2Q1N2Y3NjFjNjFlNGU5ZWZlM2E5NTI5ZDEyODE2ODJiZmE2YTBhYjlmNWIyYTRiNjlkNyJ9"
+        },
+        {
+          "resource": "repo://scripts/prerender.mjs#L104-L117",
+          "version": "repo-lines-v1:sha256:fc1ddea27b1a4d3075b6ed5bc00511ca90359226546c40010a5ab8d58eeadefe:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY2MTA3ODU1MzllN2VmMTA2NmU0ODc0NTBhYmRiNWVmMTRkOWE0ODA1MzY5ZTUwMWNkNDNjODNmODU1YWU1NDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVlZTY5N2VkMzA3NjkyMmYzOTczMjYzMTRiZTIwMDdmYjE2MDMxZjY0ZDFiZTUxMmI3YjliYmUzMzU1Y2Q4MTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFjYzc3ZWMzMThjOGJhM2RkM2RlNDAzMGEzMGFiZDhhYTcxY2VhMTFhNWY5ZGRlNTAzZDc5Mzk1MDEyYjUwNjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_df4bb3de4a7a45708e692707b55b5670",
+      "statement": "The global stylesheet src/styles.css is structured as design tokens (section 1) plus a disposable default skin (sections 3-5) that can be replaced.",
+      "evidence": [
+        {
+          "resource": "repo://src/styles.css#L1-L34",
+          "version": "repo-lines-v1:sha256:d85ae7f5016843d4acb5255f73905cd76e732886310d28a29b2f533cbf481e8c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViMzAzZjcwZTI1MWE0MjZmNzZjMzVlYzdhM2M0OGM0YjRlNzVjYTNlZTEyMjI1MGMxYTEyMWFkZjQ1NzUxM2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmZjk4ZjRkZmEyNjcxNzJmYjcwMGUwYzdlM2IwYmM1MGQyNjU3NDQ5NDNjNTBmN2E4MTQ4ZTA3ZDRkMjZjNDYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFiZWMzNDA2NmVmODUxOTU0ZmNkNmU3YTY3MjZiYTBiYWIwMDdjYWM0MTQ1NzU5YjI0N2FlZTNkODViNzlmYzMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_70b8be8c5d7c4b329a45862d154c1cc0",
+      "statement": "src/viewport-height.ts provides a --vh CSS variable that accounts for mobile browser chrome and on-screen keyboards, unlike native dvh units.",
+      "evidence": [
+        {
+          "resource": "repo://src/viewport-height.ts#L1-L21",
+          "version": "repo-lines-v1:sha256:e8bd999a0f6d992f93232c263eb353d6b8be8cf72ce87f6efe9569b2c3c8ab25:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3MmE0MjkzODJiMmUxNDcxOGUwZTM3YjA1NzBhOGExNzAyOTkxZmNkODQ5OGNkODQwNjBhOGJmNGYwNTAxN2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdmMDNiYWYwZTIxODI1MzJjMWQ4ZGNhMTk5YmM4Yzk5YzU0MGVkZjAzNTVmZDBlNThkODE5MDVlZmFiZmQyOTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b767da62a7094c28a0ff1a13607d7e24",
+      "statement": "The app validates apiUrl at startup and shows a configuration screen if the URL is empty or invalid.",
+      "evidence": [
+        {
+          "resource": "repo://src/environments/environment.ts#L1-L14",
+          "version": "repo-lines-v1:sha256:313ad4d5c5e062877009dfd57344dee2242c2bc4f0f4b1493b8cbca219d1b95f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzMjM4ZDEyYjRkZGZlOTg2NmI3N2M0ZTc4ZWU3NWI4Y2QzZjhlZmM2MjZiMTI2ZmY0NzM2OTU1NGZlY2NlOTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5NjdjNDk2ZjBhOTY0ODRiNTVlMDExNWRlOWVkOTFiMmE2ZmRiY2ExMDBiMmMyYjgxNTZkMDhlOTE0NmUwOGEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZkNTUwYmJkNDQ1Yzc2YWQ3NGYwZWQwZDEwNmNmZTg0NjJmNDFkZjc1MGQzNjFlMTAwYWVhN2NlZDQyMzVlNjEifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.1",
+    "at": "2026-10-01T12:11:43.532Z"
+  }
+}

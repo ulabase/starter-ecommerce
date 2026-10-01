@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:302f59b3c366f5514bdc7d55aacede474b985e72fb168054e4b4049c578935ad",
+  "claims": [
+    {
+      "id": "claim_104f75414cda46b3a25d0716cb4c3c5f",
+      "statement": "The Ulabase Starter Ecommerce app uses CSS custom properties (design tokens) defined in `:root` and overridden for dark mode in `:root.dark` as the single source of truth for the entire visual system.",
+      "evidence": [
+        {
+          "resource": "repo://src/styles.css#L42-L158",
+          "version": "repo-lines-v1:sha256:250846d1bd7e66a7c6f5c6ace2dde7c530f589931199efefafb73d990df1871e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTE3LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIzZWVhNTA0YmYyMGI0MWM0NzI5ZDNjY2U0MGMyMzg1MWQzYWU5NWI1MDE3ZTZiMGExYThjYTM4NWViMzM1N2M4IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0MTJjYTM0NWNjZjc1YmY5YzA4MDZiY2U2OTViZThkZTgwOGI3OTk4NDI1MWE3YTU0ZDIwMmNmNjEwMWRkNDUxIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJmYmMxNzAxODQ4NTkzYjkwYWExYjY5Y2UyMjcxMzRiNTJkMzJiM2FlYTYwMDA2ZTMzZThkMWE1MGE5MTlkMzNmIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIzZmIwZTg2Nzg2MTE3YjhjMGJiNmMxMDUzMTU1MzE0YzhiYWZmODE2ZTg5OGNkZGVkMGFlYWQ4ODY0MDEzN2JkIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_e2f83850da1843798f802a7bf4335b41",
+      "statement": "Dark mode is implemented through a class-based override system in Shell.tsx that persists preference in localStorage and toggles `.dark` class on documentElement.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/shell/Shell.tsx#L8-L30",
+          "version": "repo-lines-v1:sha256:08c90d86b86c27c716db2e328d8676fbe14bc5c0f7d902d21c5f7494488678eb:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRhZGVhNWZkYTlhMmY3MDlhNWViNzNhODBjZjkwMTQzYjJiNDY3NjM4MDQ4NDBhZTE0Y2UwMjEwYWM3MTk3YjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVhYzY5Y2M5N2I5ODBiZjIxZWM4MDkwMDMyZGY1NDMwN2U3OTJlYWQyODljYjU2MDcyNjUzYjFlOTk0NTdkNWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBmNzFmMmJhMWRiMDdmYjdjMzQ5N2ExYTU1ZWNiY2ZhM2IyZDQ3MTlmMTYzMGFjNWU0NDU3MjUyMDg5ZDlmM2IifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_13847c668f5942789f8be5cf9a7623d3",
+      "statement": "Components reference a stable vocabulary of semantic class hooks (.card, .btn-primary, .form-field, etc.) that can be restyled or replaced with framework components.",
+      "evidence": [
+        {
+          "resource": "repo://src/styles.css#L301-L648",
+          "version": "repo-lines-v1:sha256:33ebadd516fba3714856973eaa2fde128cbb401ac1ec42eda82cbb8175efe0fc:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQ4LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJjMjVlNzhiY2I5MzNmZmQ4MGJlZmViNGU0NzUxOGVlYzliYzUwOWFjNjIwZWQ1ZWEzZWZmNDY4OTI5NjFlOTdlIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJkYTdiZDBhM2M5MjMwMzFlODFlZDcwYTRlZmZiMzdjMGEyNWM4YzMyMmI1NjZkZWE0MzM5NzJlZjVmZmNkMDFlIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI0ZDA2YTVhZGIzM2M0YmE3MzA1NTllMWU1ODFhMzg3OWIwMWQwMzcwNjgwMmUwNDU5MWEwNjJiZjYxZDQ1NWI3In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_4edcaf593878408d85b768f437878e12",
+      "statement": "The Alert component (`src/ui/alert/Alert.tsx`) is the single shared feedback component that carries `.success-msg` and `.form-error` hooks plus correct ARIA roles.",
+      "evidence": [
+        {
+          "resource": "repo://src/ui/alert/Alert.tsx#L1-L45",
+          "version": "repo-lines-v1:sha256:772d94a17c01f00a18453c919ea55ebd2f8e27452a64fb76a28341aaa1edb76e:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4ZmFiYmFlYjU2MTRiZDRkOTBhODljMWVmMzJiNTgyODc4ZjljNTA0OGYwZDMzN2NjNGIzNzBlN2QzMjJkMWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_41c750e120304f8ebedca484d52e6147",
+      "statement": "When developing against a local kit checkout, `vite.config.ts` needs three additional settings: `resolve.dedupe`, `optimizeDeps.exclude`, and `server.fs.allow`.",
+      "evidence": [
+        {
+          "resource": "repo://NOTES.md#L39-L53",
+          "version": "repo-lines-v1:sha256:5cd1b87c53dfb2aa6b1e26fb8a6d98184b49c6caaea4de660fb6de85233ef555:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlODU4YzI1MGJhMzlmYmY0Zjc2OTllYzc0NzQyMjkzYmVlODA3NTVmODFjYzUyMDFlZDMwZTliOGQ1NDMzNDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAwMzE1OTk4YzYxYTNlYmQ3M2JiYjNiMDFiNGNjNGEwOWI0ZjkzYWQ1MzVkNGJlZWNlMDkwMDVkOGRiY2FmNDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUwNDhjZmRkODllOGI0YWNmZTFmODZiZmY1YmY5YmI4Y2VmMDdhZjQzOGU1NDllYTNmZTIwNTczNTQyMDE2MjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8ee963632a69476a953f992a3311dee7",
+      "statement": "The stylesheet is organized into five sections: design tokens, base styles, default skin, auth pages, and config page.",
+      "evidence": [
+        {
+          "resource": "repo://src/styles.css#L1-L34",
+          "version": "repo-lines-v1:sha256:d85ae7f5016843d4acb5255f73905cd76e732886310d28a29b2f533cbf481e8c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViMzAzZjcwZTI1MWE0MjZmNzZjMzVlYzdhM2M0OGM0YjRlNzVjYTNlZTEyMjI1MGMxYTEyMWFkZjQ1NzUxM2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmZjk4ZjRkZmEyNjcxNzJmYjcwMGUwYzdlM2IwYmM1MGQyNjU3NDQ5NDNjNTBmN2E4MTQ4ZTA3ZDRkMjZjNDYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFiZWMzNDA2NmVmODUxOTU0ZmNkNmU3YTY3MjZiYTBiYWIwMDdjYWM0MTQ1NzU5YjI0N2FlZTNkODViNzlmYzMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_40edc146ed654d7d8b60286448025d87",
+      "statement": "Two customization paths exist: (A) tweak the existing skin by changing tokens and skin classes, or (B) adopt a UI framework by deleting skin sections and swapping components.",
+      "evidence": [
+        {
+          "resource": "repo://NOTES.md#L119-L167",
+          "version": "repo-lines-v1:sha256:881dfa66c297b80e847fc60d195021612772bdf060c74fafd8310244189542a1:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ3MGNiZjMyMmFiNTllNmNkZDAwOGFmZmU3N2YyMjg2NjYxZTBhODMwZmJhN2ZiM2Q3NDNlZmNhYTAxZTIwMWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlkNmM3MjU2Y2IzM2ViMzYxOGJhNzUwZTRmODJiNjA0NGFkNDM3OTYwYzVlZWViY2ExYThmZTU0N2MzMTRkOWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRlYWEyYzcxNDE2ZGFkNWQ2MDMwODVlMzNiZWJhZDJmYzRhMDgwM2IyOTU2NTQyMTg5ODczNWY4ZWY3OTE5ZWIifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.1",
+    "at": "2026-10-01T12:11:43.532Z"
+  }
+}
