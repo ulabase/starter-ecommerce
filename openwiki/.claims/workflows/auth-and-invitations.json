@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:671ce27aaa070a969d451870fefdfb2734d960d73eabc16a08b5cf1a3a16a0bc",
+  "claims": [
+    {
+      "id": "claim_8f63ab5c0ace49cfacba4c89246642dd",
+      "statement": "All authentication operations in the Ulabase Ecommerce Starter go through the useAuth hook from @ulabase/kit-react, which communicates with the Ulabase service's /auth/* endpoints.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/auth/forgot-password/ForgotPassword.tsx#L6-L6",
+          "version": "repo-lines-v1:sha256:becbbb0b15443423e46af060b6da15eb72915ee8128e1b2a1fdd909b1bd92ae0:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmVjYmJiMGIxNTQ0MzQyM2U0NmFmMDYwYjZkYTE1ZWI3MjkxNWVlODEyOGUxYjJhMWZkZDkwOWIxYmQ5MmFlMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmVjYmJiMGIxNTQ0MzQyM2U0NmFmMDYwYjZkYTE1ZWI3MjkxNWVlODEyOGUxYjJhMWZkZDkwOWIxYmQ5MmFlMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGQ0ZmFjMWFkM2FkY2M2OTM1MmUxYzMzZDAxYWJkMDMzZDI3MzNmOTViY2Q5MzhhYWUzYjM1MzFhYTJkMzMzMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjhmZjU4NzQ0YmYxZjY2N2FlOTg0NzY5YWMwMDcyMTBmYTllMzdlMjU2ZTMzMjgwYjcwNTliMzk3Y2NlODMxNiJ9"
+        },
+        {
+          "resource": "repo://src/pages/auth/login/Login.tsx#L14-L14",
+          "version": "repo-lines-v1:sha256:becbbb0b15443423e46af060b6da15eb72915ee8128e1b2a1fdd909b1bd92ae0:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmVjYmJiMGIxNTQ0MzQyM2U0NmFmMDYwYjZkYTE1ZWI3MjkxNWVlODEyOGUxYjJhMWZkZDkwOWIxYmQ5MmFlMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmVjYmJiMGIxNTQ0MzQyM2U0NmFmMDYwYjZkYTE1ZWI3MjkxNWVlODEyOGUxYjJhMWZkZDkwOWIxYmQ5MmFlMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGQ0Yzc0MjkyMmQ5M2EzMTkxYWE5ZmQyNWYzNjAxYTdiODE4NzQxMmFmMDE2OWM1OTVlMzQ1MjdiNDgyZWVmYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzFjNTUwYzEwMTAzZjRmMjVkNGY1OWQzMzczZGI3OTU0OWZhZWM5ODVhNjc4NDkzNDU1ZGQ0NWY4ZjM4ZDE2YiJ9"
+        },
+        {
+          "resource": "repo://src/pages/auth/reset-password/ResetPassword.tsx#L7-L7",
+          "version": "repo-lines-v1:sha256:becbbb0b15443423e46af060b6da15eb72915ee8128e1b2a1fdd909b1bd92ae0:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmVjYmJiMGIxNTQ0MzQyM2U0NmFmMDYwYjZkYTE1ZWI3MjkxNWVlODEyOGUxYjJhMWZkZDkwOWIxYmQ5MmFlMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmVjYmJiMGIxNTQ0MzQyM2U0NmFmMDYwYjZkYTE1ZWI3MjkxNWVlODEyOGUxYjJhMWZkZDkwOWIxYmQ5MmFlMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzM0NmMwZWM4NTNiOThmNmY5MGJiNGMzMDNhMjMzZmZiYjk4ZjcyYmM2MjliOGE3NzkzZDVlYjgzNzFiOTY1YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGNiNzkxM2ZmZmE4MTQ1MTc1MWMzODcwM2JjMjliYmZjM2UyZWYzNDcyYjZmNDVhMzEzOGVjMWQxYmIzOGVjZCJ9"
+        },
+        {
+          "resource": "repo://src/pages/auth/signup/Signup.tsx#L9-L9",
+          "version": "repo-lines-v1:sha256:becbbb0b15443423e46af060b6da15eb72915ee8128e1b2a1fdd909b1bd92ae0:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmVjYmJiMGIxNTQ0MzQyM2U0NmFmMDYwYjZkYTE1ZWI3MjkxNWVlODEyOGUxYjJhMWZkZDkwOWIxYmQ5MmFlMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmVjYmJiMGIxNTQ0MzQyM2U0NmFmMDYwYjZkYTE1ZWI3MjkxNWVlODEyOGUxYjJhMWZkZDkwOWIxYmQ5MmFlMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYThjZmNhNzc5Mzg2ZDAxYWExZTBjMWQyZjA2NWI2OWU1NmIyMWE5NDhhMzU0MzU5MmExZjFmZDBjMTgwYWRkNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDU4ZGNmZDE5YjBlMDQ4MGNhYTlmOTE0NDdkYzYzMTQ4MDJlMGMzZjE1NTljN2M5MzVhNmQzNTNkMmMyODhiZCJ9"
+        },
+        {
+          "resource": "repo://src/pages/auth/verify/Verify.tsx#L6-L6",
+          "version": "repo-lines-v1:sha256:becbbb0b15443423e46af060b6da15eb72915ee8128e1b2a1fdd909b1bd92ae0:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmVjYmJiMGIxNTQ0MzQyM2U0NmFmMDYwYjZkYTE1ZWI3MjkxNWVlODEyOGUxYjJhMWZkZDkwOWIxYmQ5MmFlMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmVjYmJiMGIxNTQ0MzQyM2U0NmFmMDYwYjZkYTE1ZWI3MjkxNWVlODEyOGUxYjJhMWZkZDkwOWIxYmQ5MmFlMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTVkYTc2ZTA4NDA3ZjEyNWI0N2JkYTE5Y2Y3Yjk1MDdlODY5Yzk0ZTljZWJlN2U2YzQ3ZDM3Y2JlNmVkNGUxMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWU2M2Q5OWIyZTJkNWExM2Q5MzgwYjQxMmI5OThmYzczNWY4M2JhOWVkZGNkYWU5YTk3YWJiYzU3NWJmNjMxZSJ9"
+        },
+        {
+          "resource": "repo://src/pages/invitations/accept/Accept.tsx#L7-L7",
+          "version": "repo-lines-v1:sha256:becbbb0b15443423e46af060b6da15eb72915ee8128e1b2a1fdd909b1bd92ae0:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmVjYmJiMGIxNTQ0MzQyM2U0NmFmMDYwYjZkYTE1ZWI3MjkxNWVlODEyOGUxYjJhMWZkZDkwOWIxYmQ5MmFlMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmVjYmJiMGIxNTQ0MzQyM2U0NmFmMDYwYjZkYTE1ZWI3MjkxNWVlODEyOGUxYjJhMWZkZDkwOWIxYmQ5MmFlMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGFiMWU3NWUwMGE3NTU2M2Q3MDA1YTgxN2RlYTkyMGIxNTM1ZGE4YTI1NDI3ZjM0OGMxMWY1MWEyOGEzZDI3MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGNiNzkxM2ZmZmE4MTQ1MTc1MWMzODcwM2JjMjliYmZjM2UyZWYzNDcyYjZmNDVhMzEzOGVjMWQxYmIzOGVjZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_8f5b4fd8ba65415ca4318f2fcddc0a4f",
+      "statement": "Authentication routes are conditionally included based on feature flags in environment.ts: signup requires emailRegistration OR oauthLogin, verify requires emailRegistration, forgot/reset requires passwordReset, invitations require teamInvitations.",
+      "evidence": [
+        {
+          "resource": "repo://src/routes.tsx#L108-L119",
+          "version": "repo-lines-v1:sha256:106d4e6e24c8aca19e559209c3392825252ab6eef3a27f44fc69b426d9de09ef:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNlZjAxMDRhNzk0MTgyMTA5ZTlmNzEzZDVhY2Q5NmE0Njg4ZDdkZTY4NWU1OTMxNjgzODY2ZTVlOWYzYmM5YjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhMTFlMDg5MDA4OGYzMThmZTMzMGFiOGE2MThlYjRlOTI5NmNhN2RkYzA4NDY0NzFmM2I2ZTVkZjc2MWI4N2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI1MjI4YTlkNzY0ZDhhOWIwM2E4MmY0MWJmNGE3ZTE0YWQ2NWU0YjI2M2RmNDU1MWExNzVlYzA2MTFiNTNhODEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZhODg0MmU1OTNkNmZiOWNmNDY2MTU0N2QyMGNjMDFlZDFiNmU2NjQxNDY4OWYwMWYxYjUyZTU0M2M0OTFiZmUifQ"
+        },
+        {
+          "resource": "repo://src/routes.tsx#L24-L24",
+          "version": "repo-lines-v1:sha256:94653facfa422aa108ac31aa5a02a920779a3603b928ebb70024c9ecc54aa65a:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTQ2NTNmYWNmYTQyMmFhMTA4YWMzMWFhNWEwMmE5MjA3NzlhMzYwM2I5MjhlYmI3MDAyNGM5ZWNjNTRhYTY1YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTQ2NTNmYWNmYTQyMmFhMTA4YWMzMWFhNWEwMmE5MjA3NzlhMzYwM2I5MjhlYmI3MDAyNGM5ZWNjNTRhYTY1YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmM2YmUzNDczMGVkZDY0YTMxNjAxMjVhYWYxNjFmZWEzY2UwNDcwYzQ0ZmQyNDg0YzFlNDU3NTVmNjFlZmNkOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODU1NzUxNjQyNjQ0M2NkNmQ2NDQ1NDI0MDQ2NjYxZGFjNzJmYjc4ODRiYjdkMjkzNDVhM2YwZGJmYThkODVlYSJ9"
+        },
+        {
+          "resource": "repo://src/routes.tsx#L56-L69",
+          "version": "repo-lines-v1:sha256:d16af1204dfc59677f5ae7db8a5e1b983c09e2c879c105cade923192799e9a71:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZkYTU4MWRkZWUxZGY2ZmY4OGI4NTI0MmI4NjUyMWNjOTc0NWZmODZkYzAyZmVjYWNmMGVjZTAxZTg2OGNmNjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhMTFlMDg5MDA4OGYzMThmZTMzMGFiOGE2MThlYjRlOTI5NmNhN2RkYzA4NDY0NzFmM2I2ZTVkZjc2MWI4N2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2MmMwOThiMWFlNTMwZTAwNGMyOWI0MmE3ZjY0MmM5NTE3ZDRjZjgzNjViNzI3MjdmNGFlZWQzYTM2YWI1MzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZmZGIzNDVkMzc2NjU5NzU0MjU5M2RjMzEzNzU5M2IwZTgxM2NjMzg2OTY3M2ZmYWIzZWVlNWZjMDQwNGU3MDgifQ"
+        },
+        {
+          "resource": "repo://src/routes.tsx#L70-L83",
+          "version": "repo-lines-v1:sha256:c3f7cd378c6e51393c2ebce5b181700e7414459dc7fae4f892dca91c10cfe47e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkxNmU0YjExNmFjMzkwMWUyNDI4MTA2NDA1ZDlkYmE0ODg3OTU5ZGI0MzE2MWQxNTAwMjVjMDIxZDY1ZWExMjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhMTFlMDg5MDA4OGYzMThmZTMzMGFiOGE2MThlYjRlOTI5NmNhN2RkYzA4NDY0NzFmM2I2ZTVkZjc2MWI4N2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI1MjI4YTlkNzY0ZDhhOWIwM2E4MmY0MWJmNGE3ZTE0YWQ2NWU0YjI2M2RmNDU1MWExNzVlYzA2MTFiNTNhODEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM4YzM1ODZiOTcwOTRkMzcxZjljZjhhODZkMGRjNGRhYjJkYWU5NjJlN2NmMmI2YWVjYzY5YTQxYTlmOTdjNzIifQ"
+        },
+        {
+          "resource": "repo://src/routes.tsx#L84-L107",
+          "version": "repo-lines-v1:sha256:6006c52f3d92ebf5aca9fbb01354137da3474e03442640d74422463409b9d65d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlkN2ViMWQzMzZjMjViMzAxN2Q3ODdlY2ZhNWYwZDcxYzIxZDZlMjhhMzVlNzRmMDgyNjQ5OWMyNzU1ZDYyNWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhMTFlMDg5MDA4OGYzMThmZTMzMGFiOGE2MThlYjRlOTI5NmNhN2RkYzA4NDY0NzFmM2I2ZTVkZjc2MWI4N2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI1MjI4YTlkNzY0ZDhhOWIwM2E4MmY0MWJmNGE3ZTE0YWQ2NWU0YjI2M2RmNDU1MWExNzVlYzA2MTFiNTNhODEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVlZGFkZTQ0MmI0YmU3OGUzYzMxYjFmOWJiMmJhZjI2YTRkZmE3MmFjNjA2NDk1ZDEyMDhiMzFkMWUyNGNlNTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_96dfa4920cd64e0db0ee1638a4d5c27f",
+      "statement": "The invitation acceptance page handles three distinct paths: (1) new user activation with password, (2) already logged in user calls acceptInvite(token), (3) existing user not logged in logs in then accepts.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/invitations/accept/Accept.tsx#L151-L162",
+          "version": "repo-lines-v1:sha256:06ce9685f39b35e775dd2153f4dc4e847867c7c8b8e82c9b5937155aaf817c2c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzMThiZGE2MzUxNWQxMzM3MWQwMGQ2ZWQ0YTRlM2Q2MzRiZTU2NGRlZDIwMjM2NjJiMmVkNzlmZDM5NGM3YjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFkYjNlN2NkMGMzYTYyMzA0NzY2ODE2MWQxMDRlOTlkODYyMDljYTNlNzc1NGEyNWIxMTlhNDkwNzg3ODA0MjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI5YWM3N2QyYTk4MmEwOGJiMDRkODY1ZmRmY2UxZDVmNWEyODRhZTMwMzE4YThhZTBiODFiMTg3NzQxNjUyNDAifQ"
+        },
+        {
+          "resource": "repo://src/pages/invitations/accept/Accept.tsx#L164-L189",
+          "version": "repo-lines-v1:sha256:85b22ec609adb731a970d24e0a226f7c282e3bcef40598662b040ddaac11dbca:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU3MjE2ZThlOWMwYTFhNjhkMDZjMmZiYWE1ZmQyMTM5NDgyYjhlZmQwYTE5MzE1YjkxNWU2Y2NlODQ5ZDg5ZGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1ZWYwMWJjMDhkYmMzYjYzZTRlNzVlYTNkMjZhNWI5NDE4OTE4NzdlMjdhZDg5MTMyOWM4NDExZDdkOGRjNGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFkYjNlN2NkMGMzYTYyMzA0NzY2ODE2MWQxMDRlOTlkODYyMDljYTNlNzc1NGEyNWIxMTlhNDkwNzg3ODA0MjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://src/pages/invitations/accept/Accept.tsx#L50-L60",
+          "version": "repo-lines-v1:sha256:c099508ce021aa8e1aebdd4a4dc2650fad9dd9242462dce30e3dcf7f6ff1f071:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdjMGQ1N2Y0MjJlYWNkZDgzOTE1NGU0ZGQwOGRjNWIwYWU3NmE4ZGRjMGY3ZDA4ODUxYTk1YTRjOWQ1N2FkZmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcwYmMxZGQ4MjZjYWQxMTg0OTRhZjdhMTM2NTNkMjlhYjFkYTBiNTA5NjVkM2UxOTU0ZTc1ZjFmZTA0ZDVlMzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNhMjQxMzhlYmVjYWZkNmIzZGM2NjBjN2NlZTRjMmM5NGJkZjUxNTZiNzM3YzQ0MTYyNzYyYzgyZDAyZjNhNWIifQ"
+        },
+        {
+          "resource": "repo://src/pages/invitations/accept/Accept.tsx#L73-L81",
+          "version": "repo-lines-v1:sha256:f0cbae23476318a0dd3b48311af002f2f8b9b647a40d9fdda0ac8538d807e714:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmFmMTQ0NGMwZjZlMTE0NzBkY2U4MjNhNmEyMmYyMmU4MDRiNDBlZTg2ZGRmOTdmZGNlYTkzNjY5MDkzZDY0NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDJhMmNiMjVhMTIyYjQ0MjIxYTYyMzRlYzY2MGE3YjVmYjdmOWJkZTdiM2I5ZTJiM2M1NTlhMGQ5NmZhYzczOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTFlMzcyNWRhMDAyYjQ2ZWQ4YjRkZTg4MDAzYWQ5NzEwZGNhZjE4ZDU3YzQ3MDFkYzNiZWZmMGIyYzVjYjEzZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjAzZjA0MmRhMmFiMGYzOTA3NDQwNzVmNDI2YjZmMjk3ZjZhZmEyMWU1MWQ5NDAwMTg1OGI0NTNlNTBkMzBmZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ce1aa940bb7f474fbf64353e868d2574",
+      "statement": "After email verification or OAuth redirect, the token arrives in the URL hash. App.tsx consumeFragmentToken extracts the access_token, calls setToken and scheduleRefresh, then removes the hash from the URL.",
+      "evidence": [
+        {
+          "resource": "repo://src/App.tsx#L12-L34",
+          "version": "repo-lines-v1:sha256:8bdf5a6e8f2537e40e4711ac165e6796ca60ad417b5de47dba4f5fb781e123a5:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNjN2Q0ODQ4ODQ3OWQ4MWQ1NTg5NzhmZDk5MWM1M2Y3MjdhZTJhMzlmMGIxYjFiZTMzYTk5Y2IxMWM0YjY3ZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEzNGZjODY5ZTcxMTc0YzBkYzExM2IyM2QyNDIwOTIwZThkMzc5NjQ1ZmY5MDdmZGFhY2YyYzU2YjRkZWU1NjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI4Yzc4MzAzYjE3YjQ2NTVmZGQyMzdmYjcyZDk2MjZhYmRlZTdjOWJjZjE3ZDdjMjliNWI4MjNkY2QzZjYwNzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_877439b5d29341d39c7969ce57aadabb",
+      "statement": "The just-signed-up signal is set when the URL contains flow=signup query parameter, used by Shell to show a welcome message, and cleared after the component mounts.",
+      "evidence": [
+        {
+          "resource": "repo://src/App.tsx#L23-L28",
+          "version": "repo-lines-v1:sha256:473c2ad4a27a607644baab6d76820c8ca26da5d6f8434b950e4fa863f241a677:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTEwNTFjZmFkMGExMzdkZThlODIzNjExMDIwYzUzMGNhN2I0YTAxNmYzOGVmMzc0NzE2NjNkZWNkOTk1OTJjMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTdkODYzMmU1NGU5Mjk4YWJiOTU4NzI3ZTJkNTE0MDhhYmFmMTM2NjAzNTM3OTEwMTQwYWJmNjViMzBhYjYxMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGFkOTMxMTA5NDFmMDg4YmVlNzY4NzI5YjEwYTNlYTdlMWM0OWZkMTQxZmQ1MmJmYTIyODM0ZjE3N2ViN2UwYSJ9"
+        },
+        {
+          "resource": "repo://src/pages/shell/Shell.tsx#L267-L272",
+          "version": "repo-lines-v1:sha256:b750b43f6523cb2f034ffdcb823ab2b846109a88ba1ed39f11759c25a1f63df2:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2MyZjkzY2M1ZDllMjcyZThjNjY0OWRiMDY2MGQ3YzA1NDMzOTRjM2M4NjJjYzcwM2RiYTU0OGU3NzIxYzNlMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDdiOGMxMDg1Zjk1YTFhZmFiZTVkMTUyYWQ1OGRiOWRjMjYzMzZjMTIxOGUyYjg0MGFlN2FkODI2YTBkNTc0OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2NhODFiY2MyMzViMjhhODQ1NjVmOTdiYjI2YzQ0MjQ0YjQ3NzIxYjU1ODYyMzhkNjgxOGE4NDM3MDE5MDhhZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2ZlNTJjNzhjOGZiNzg4YzRmN2QzZmI4YWNjODQ3NDBiNDljYTdiNDgwYTBmZWFhMWJkYjI0ZTJlMDZhMmU2ZCJ9"
+        },
+        {
+          "resource": "repo://src/pages/shell/Shell.tsx#L51-L51",
+          "version": "repo-lines-v1:sha256:0df7df42489ef0d837b0baaebd6a2361deb9f67434913ad8d292f2b45135654b:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGRmN2RmNDI0ODllZjBkODM3YjBiYWFlYmQ2YTIzNjFkZWI5ZjY3NDM0OTEzYWQ4ZDI5MmYyYjQ1MTM1NjU0YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGRmN2RmNDI0ODllZjBkODM3YjBiYWFlYmQ2YTIzNjFkZWI5ZjY3NDM0OTEzYWQ4ZDI5MmYyYjQ1MTM1NjU0YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGY0YzI3ZDQzZGM4ZDkyMTI0MDQ5NjhjZmUxODgzY2E0NWYzMTVmNTZkY2NhN2MyMmFkODRkZDY2MDMxMDY2YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmVjMDViMTA5Yzc2YWFhM2FlMTgxNzdjOWY5NzAyZTAwYjZhMjQzZTNjODdhMjVhY2Q0MzgxNTViMTgyOTFhYiJ9"
+        },
+        {
+          "resource": "repo://src/pages/shell/Shell.tsx#L59-L61",
+          "version": "repo-lines-v1:sha256:a9f187d3b4e5c0f2aecbbc6bcf84592bb808120061324d250478dcc5f2da0591:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTk2NmZiZmE4ODk5OGRhNzQ2NTZjNTAxOTQ5NTZjMjVmMDg0OTQ1NzY2MGMwMDlmZTYzZDFlOWZhOWRjOTMxYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmRjNTJmMDhiMzliMDhiMDFjOGQzMDhiZjg4MGIwYmVmMDJmZDFkZmNjOWQ5YWE5M2E0ZDFiNWY0ZDU4YjZjYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzFhNzZjYjE3NjNiODdmOWU2NzdlMmRlYzhjNGIyZDQ3MWQ5YTM1NDBiZDllNGMxYmNmNjAwNDA1YWYzMjliYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDFjYWY4ZDkzNjdhZGE0OTk5M2FiMTA1MWZlNjlmYWUxYzlmMzFjNTgyMDMyZTQxNmRjNTA1Y2Q1YmFlNTVkZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_de853dcca014420ab24e6aba6861a58b",
+      "statement": "Google OAuth setup requires GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET environment variables, and the frontend must set oauthLogin: true in environment.ts.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L97-L107",
+          "version": "repo-lines-v1:sha256:36e2c939cc6faf9c6a8719367ad450099cd1bfc3bea5dded9f32cd84ed66e43f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFkYTZkZDM5Yzc0YjIxZmQ4NmQ1ZmRlNDY0ZTZjYmRmNTIzYjM3ZWNhYmQ5NGI1Y2M0ODBjMTQ3NDlkZmQ1NDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3YzgyOGJiZGVmNTgyMWY1MmJiODQyZGFjODgyZGNiOWYxYTU3ODk0ZmNiZjg1YjA0ZGNlODRkMjg5NTU5NjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY5ZTFkZTAyYTM5NjAwN2YxN2Q4YWEzMDJjMThmZDNkY2MxNmExMDQxNmIwOGNlZjU3YTdlMDAwMmQ4MTA4YWQifQ"
+        },
+        {
+          "resource": "repo://src/environments/environment.ts#L29-L29",
+          "version": "repo-lines-v1:sha256:a60d176444f5163ac8552deb71d8b88728b760026aea5d78ca2a8855a0c11918:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTYwZDE3NjQ0NGY1MTYzYWM4NTUyZGViNzFkOGI4ODcyOGI3NjAwMjZhZWE1ZDc4Y2EyYTg4NTVhMGMxMTkxOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTYwZDE3NjQ0NGY1MTYzYWM4NTUyZGViNzFkOGI4ODcyOGI3NjAwMjZhZWE1ZDc4Y2EyYTg4NTVhMGMxMTkxOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzcyMmJjYTNjOGRiMjQ2NTAyOGY4YTRiODI3OTRmNjA0NThiZjMyNDI4NDNiYWQzN2YyODBjMzI5NjNhMWZmMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTdjMWNmOThhNjAxMzk1NjYwZDgzMmVlZGVlMTA2YWE4OGUyMDcwZWE1YjU1ODhmYTI0NzI4YWFhYjc0Njg0YiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_165d1ea861ce4e2182041ea9ad25f0a5",
+      "statement": "The safeNext function prevents open redirect vulnerabilities by only accepting relative paths starting with / and rejecting protocol-relative or absolute URLs.",
+      "evidence": [
+        {
+          "resource": "repo://src/safe-next.ts#L14-L18",
+          "version": "repo-lines-v1:sha256:014e0f2150d7bd981900b0137d2c2419e608f1a34650fb942c8dba2e00c4aa7e:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDU1MzY0ZWVmOTY5ODNkZGY3MDNiYjM4OGVlNWIzNmRjMWU5NzM0MzJjNTNhNWI1N2NkMzU0MjBjMmVmMmQ4YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWZlYjk0ZWEyZDUyZDNkMTk5MjUyYmZkYzY4YjNmN2Y3OWNmNjhjMzUwYWZkYjk4MDlhOWIxYmMxMTBjYTUzMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzdkMTUyOTVlNTc0MmQ3MzNmOWVlOTlmOTU3MGRkNzljOTI5YTc2YjdmZTk5NzFiY2M1N2I0ZWUzZGRlMzJjNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.1",
+    "at": "2026-10-01T12:11:43.532Z"
+  }
+}

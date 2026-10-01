@@ -1,0 +1,224 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:892a16d39d40949d57c5d2e7d46eff2b8551d525eb1b5f14e7e34393a942e09a",
+  "claims": [
+    {
+      "id": "claim_8060986c128f4400acaa06dd317c08e1",
+      "statement": "The Ulabase kit uses 'team' throughout its API (auth.teams, auth.createTeam(), auth.switchTeam()), while the shop UI presents the same entity as 'billing account' for customer clarity — this rename happens only in customer-facing strings, not in component code, route parameters, or kit calls.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/billing/Billing.tsx#L36-L45",
+          "version": "repo-lines-v1:sha256:122a0427c1c00ed46a8754dd8c6ea597429baff419f39858eba9f3a5c77a3256:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZjZTRhNzkwNzIyZTNhZDU0NDZmNTRlNzE4MDI1YjRmZDQ5Mzc4MWIyN2I5NzZiMjczM2Q3N2MzYTE3MjYzZWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAzYjI2NTVhZDM1NzYzNDg5MTc2OWU4ZDZmNThhN2VlMTI3MmQ4YjQwNzNkMmFhZTZjNzIzZmIzZjcwZTBlZDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5OGU1MWYwNjA1ZWRmMGM2OTc3ZTk4NmI5MGEwOTM3ODM2YzQ4NDc1MDIzNDAxZGY3Njk3NTVjYzRmOTlkOWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFmOGE4Njc1OTZmNWU0MmUwYzU3ZWU1ZDc4MGQ2ZjVjZGQzZDliZjE1MjIyZjdkNzBkY2M5YzcyNmY0ZTdlNjUifQ"
+        },
+        {
+          "resource": "repo://src/pages/billing/Billing.tsx#L52-L75",
+          "version": "repo-lines-v1:sha256:ffacbedbadb3744071a20f5b2b88b23c0b172e375bcb2f02fe7ce5d44522080e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNkYWExNGFmODM0YTZiYTFhMTY4MzllMmZmMjM4MmQyZWFkNmNmZjM0NmRmYTZiYWViNzIwNWRjN2RjZDVhZjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhmOGRmNzQyZTZlNmYyNTNmZWJlMGU4YjhkYzg4MmE4NDgxNjlmNzc0ODZiNjU2YmUxZjEyMDgyMmQ1ZGUwMzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQzOTM4NjJiODBlOGEzOTkwOTlmZWJiMTdiZDBhZDQxNjI4ZDg0OWNiODJiMDYzM2I3OGMxYzI4OWIxZTY5MDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzMjEyNzViMTY3MmUwZjUyNGZhZTlhYWQwOTIzMTNhYWUyNTVkZjIzMGE2MDc5OGU1OGJiNjRhODA2MjE0ZDkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_dc7f0ff57b0942f8a7b1a62bf90d7e90",
+      "statement": "Billing.tsx loads auth.teams via auth.loadTeams(), renders a list showing account name (falling back to ObjectId), description, member role, and highlights the active team with a badge; clicking a non-active team calls auth.switchTeam() before navigating to the detail page.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/billing/Billing.tsx#L14-L27",
+          "version": "repo-lines-v1:sha256:b4bc0e4d5e200ee6f6cd12b56c6790784bc93dc619e6a7840f21738cd8016568:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIxMjUyNmNiYTljNzkxNzU4MWZmMGI5NzQxZGI1MmEwODI3Nzc0YzFjMjgyODMwMDAyNTc2NjcxYzZmYzUzZGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU4YmFjMjhjMTE2MzU5NDkyM2E0MDkwMjdiOWViZDdkMjY5MmMzYjBiNjdjNWI3N2ExYWJhYzVjNDgyNzEwMjgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg2YjI4NmMzNmY1MzdmZTIyYTg0N2Q2YWZmOThkMTUyNDlkMDlhOGQ2ODllOGNiYWQ2MDk0YTY5MmY1ZGZiOWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJjN2VmZDVmMTM0MTUzZjBmN2ZiNWUyYTgzYzU4MGIzNjI1ZTAyZTRiZTVjZTI5YjY0MzFlOWY0NGFhZWU3NDQifQ"
+        },
+        {
+          "resource": "repo://src/pages/billing/Billing.tsx#L47-L77",
+          "version": "repo-lines-v1:sha256:26f89c771f5c6daf8ed0557b6a26dd3c8389e8bed6f20ebbab2308c6dda9ba05:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkxYzVjNWQ3NGUwZjgwYmI1YTYxZjdiMTdlN2I5YTg0ZDgyNjBlZGNjMWE2MjAzMmVjZWM1ZWNjMjZiNDdmOGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUxODU2NmVjMTkzNjZlNGY4MGFhMTMxMTBiYTY1YjFmMzExYjM2ODY2Y2UyYzk2MTJkZDU0NDhjYWI3NWNmYTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVmMDM3NGI2MTAzZDg4MDk5ODJhOWU3OTNmMmNhYjQ4OTJhOTQ5ZTY4NjY4Zjc2OTI2NDM0M2I2ODk0MWE2NDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdiOGI2MDBhNWI0NDhiMWU0ZDAyZGYwOTc0NmVkM2NhMzE3MmY3NWM0YWFiYjAxZGRlMDgwZTM2Y2FiMDc0YjQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_df165116e23c4cdbbe1e59184cd52981",
+      "statement": "BillingAccount.tsx provides owner-only functionality: updating team name/description via auth.updateTeam(), changing member roles via auth.updateMemberRole(), removing members via auth.removeMember(), sending invitations via auth.invite() with role selection, resending invitations with a 5-minute cooldown, and deleting the team via auth.deleteTeam() with confirmation.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/billing/detail/BillingAccount.tsx#L117-L127",
+          "version": "repo-lines-v1:sha256:c164794eebad2208a1c239762bfc5d6604b2d9ebbf25fc5d2742393775c10d46:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxMWYzOWIyZTgwMjRmODVhMjJmZDQ1MGQzNGE0OTNiYzVlYzg4MDkzMzAyOTQ1NDQwZDg0ZmM1ZTM4ZTA0NjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUxZTM3MjVkYTAwMmI0NmVkOGI0ZGU4ODAwM2FkOTcxMGRjYWYxOGQ1N2M0NzAxZGMzYmVmZjBiMmM1Y2IxM2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRmMjk4OTg5MDQ1ZTlhM2U1MjJmOTk1YzhlNTRjMzJhODQzMmY5YTA0MDRiMjRhZDQ0MDI4NjlmNDA5ZTZiMjMifQ"
+        },
+        {
+          "resource": "repo://src/pages/billing/detail/BillingAccount.tsx#L129-L142",
+          "version": "repo-lines-v1:sha256:7418335f19da1c7e1c1905ed8f48c5f6d0ebcdd8288bb7960d71152ab45e99b8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2MjYxODVhMTk1MDQzOWUzM2QzYTRiZTAwNDU0NDIxZGNjYTI1MzdiMGQ0NDEyMjQ5NTdiNjNmYjRmZjA5ZjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRjYzI1ZjQzY2Q3M2QxM2Q5MWUxNjY3ODNlMDFkMjg0MDZhY2RiY2UwMmNhNDAwZTMzN2IzYmVmZDBhM2UwYWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUzODAzNzkwMzA1Yjk2ZjQwYTkwYjUxMzVjYTE5OWYxMTViMzdlOWJkMGMyMGM1ZDQ2YzhmY2MyMTAyYWQxOTYifQ"
+        },
+        {
+          "resource": "repo://src/pages/billing/detail/BillingAccount.tsx#L144-L154",
+          "version": "repo-lines-v1:sha256:1ab6869f5887bcc031046242ac8cd329c9004df415892f02d6f5cf80a759676d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIxMjEzNzM0YWZlYWRjMTk1YzI2ZGI2NGFkZGVjNjFlYjMyNjJjOGViMDc1ODM1YWEwODkyMzVlZjlkN2JkNTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUxZTM3MjVkYTAwMmI0NmVkOGI0ZGU4ODAwM2FkOTcxMGRjYWYxOGQ1N2M0NzAxZGMzYmVmZjBiMmM1Y2IxM2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI2MjU2MTQ1ZWM5YTg4MTQ3ZDI3NGI2NmM3OTFmMDkyMTk5NWVlOTk2OGRhMGRjYmE4MTI0NTY3OWVmMmJmYjgifQ"
+        },
+        {
+          "resource": "repo://src/pages/billing/detail/BillingAccount.tsx#L156-L172",
+          "version": "repo-lines-v1:sha256:a4c10a34c0574989620b9daf4eed760348b8f083d9268330dadffe7b7357d3df:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRhNjc2OWU2MzIwOGM1MmYxNjgzMTk3NzI2NmYyNzgxN2I0YWE5NzdlZjNjNzIyNTE4YTAxNGIzMDE0NTgxNmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRjYzI1ZjQzY2Q3M2QxM2Q5MWUxNjY3ODNlMDFkMjg0MDZhY2RiY2UwMmNhNDAwZTMzN2IzYmVmZDBhM2UwYWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM4NjcxYzhlMTRhOGIwM2EzNWM2NWNlMDNiOWMzZWU4ZDRkMWE2MmFlODIwMzBlNWM2ODY3ZDZjMWQyNmEyMDgifQ"
+        },
+        {
+          "resource": "repo://src/pages/billing/detail/BillingAccount.tsx#L174-L190",
+          "version": "repo-lines-v1:sha256:81afb30b681e2926b2958ecd409bbe199a47568906e81b0a98c00678f6119192:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5YjA3ODU4MWY2MDhkY2U5OGE3ZTBkMmVjODFmOWY0ZWI4NGNlMDU4YmVkZTlhNTVkODM3ODliOGQxYjU4NTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUxZTM3MjVkYTAwMmI0NmVkOGI0ZGU4ODAwM2FkOTcxMGRjYWYxOGQ1N2M0NzAxZGMzYmVmZjBiMmM1Y2IxM2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ3NWU1NGM2ZDg3NmUwYTRhMjJhMzdkNmFjNWYwOTFhNmVhNjdmZmMzYWI1NjNkMzEwNzhiZWZmMWExM2UxNDkifQ"
+        },
+        {
+          "resource": "repo://src/pages/billing/detail/BillingAccount.tsx#L94-L115",
+          "version": "repo-lines-v1:sha256:be30816d87ba32988061473859e3deea899f11052fc3c671ee920534488d0dc5:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA2YmEwNDQyNjY3NGIyZTg0ODY2ZTQwYzk2YzVkZjY1ZTI4YWNmOWI5YWNjYzkwMzkyMjZlNTVlN2I5Mjg5NjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUyZmUwMDE4MzYyNzEyOGRlMDRlYWRmNDhmOGE2MzM4MTFlMWU3NDQ2NWU4YjdlNjUxNTY1NDQyZTMzYWY1YjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdjYzlhODgwYjkyMjQ0ODlmNWZlNmRkNGMyZTMwYzRjMDFhNTdmZDQyZGU2OTNjZTMzNjVhNDMyMmNmNWJmZDMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c30ad8ae1c6f4579915ad2a1830766aa",
+      "statement": "BillingAccount.tsx loads three data sets on mount: teams via auth.loadTeams() to find the matching TeamMembership by route param, members via auth.listTeamMembers(), and invitations via auth.listInvitations().",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/billing/detail/BillingAccount.tsx#L57-L77",
+          "version": "repo-lines-v1:sha256:58a701622dc4f557ba5cedd6d1f30ad5445e1e5979beca24ddfbb534de1b7fb3:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5NjZmYmZhODg5OThkYTc0NjU2YzUwMTk0OTU2YzI1ZjA4NDk0NTc2NjBjMDA5ZmU2M2QxZTlmYTlkYzkzMWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiOTU2MzYxOGE5MjViZDA1NzI0NzU3OGI1NWQyNDJiMjdjZmM3YjQ2MzgyOWFjNzA3ZTFiNmFjNzRjOTEyMWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZkNmQ0OGUwMGZjZGI4NTdhNDY0NThkMTU0NjMwNDZhYjg3NzZhZDU1YjQ0ZmQzYjY4NThkZWUxNWVjZTdmNjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFkYmVlM2QwMGU5NjNiZTdjM2RhM2JiYzgwMzQwYTMxMWVkNDViNGI5MjEzNzNlZDdmNjA3YjI4ZDY4ZThkNGMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_98134a3e23e14f959b9461ed830590d5",
+      "statement": "The invitation system in BillingAccount.tsx shows pending invitations with email, role, creation date, expiry status, and a resend button; resend cooldowns are tracked client-side via resendCooldownsRef with a 5-minute interval enforced by canResend().",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/billing/detail/BillingAccount.tsx#L291-L329",
+          "version": "repo-lines-v1:sha256:3a03d6bc32ac35b22f9a3c55557ec68124d6f14b2f644d174892ef460e3122b8:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIzNTc5YmQwZWNmMDdjYzdmZTliZDgxZmVjNjg2MTRlNTMxMzIxY2RlOGZjYzBlMTczOWYxNDVlNjk3YmEyNjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc0MjBkNjYxODhlOWMzYzdmOWMxZGEwN2U2ODVlZDVjNDM1YjQwYmQyNmU0OTY4MjgxODc0ZjRhZDhlYjdkNzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZkNmZmYzE4MjQ0N2ZkNjU1OWVmYzExZjdmMGNiMmRjODgyZmVjMWJlZWU1M2Q2MzdhODViNmU5Mjc1OGQ1ZTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQwNWU3N2I4MTI4MDQ2YWQzYmIyOTZhMTMxZThmMWY4NmEyZjJkZTcyOTQzZjBkYjA1ZGMyMmY0MGYwMDA3MzMifQ"
+        },
+        {
+          "resource": "repo://src/pages/billing/detail/BillingAccount.tsx#L79-L83",
+          "version": "repo-lines-v1:sha256:a0b8286f1a221e929c34aebbac749023b5c0ebbb5bc137b827aa29c5d5095045:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDcyMDQ2MWJjYTIzZGQwZjMzY2NjZDZhM2MxMDY3MTI5MGI5Y2FjODdjMTFmNTkwMzM5NDNkNTEzZDQ4ZjIyZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDJhMmNiMjVhMTIyYjQ0MjIxYTYyMzRlYzY2MGE3YjVmYjdmOWJkZTdiM2I5ZTJiM2M1NTlhMGQ5NmZhYzczOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTY2OWUzZWY4OGQ3N2JiMGIyNzhiMjc1MTk1MjhiOWE0NTg5MGMwYjFkMTE5ZjllMTY5ZWYxNzgxMmQ1ZDhkOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzY4Zjg3NDAyYjZjMWQxMzVmZGVjNDEzYTY3OGFmOGQ2ZTM2MjUzMjM1ZGUxM2VhNjAwNTJlMjgyYTYyZTNhOCJ9"
+        },
+        {
+          "resource": "repo://src/pages/billing/detail/BillingAccount.tsx#L8-L9",
+          "version": "repo-lines-v1:sha256:a878b3c3b8b52c2dd4bc8185332959e9dc43487e23ad9fb3a0bfc9acecee544d:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWM0Yjc2NjQ3OGVhZWQwMzBiNzM0ZjIwMGU3ZGYwMzAzYWMyODY5MTZhMzljNzc0MGFkNDBhOGY0M2JjZWJmZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzM1ODFkNDZiMWVhMzBhNmM2ZGRlM2Q1MWE3ZDhlOTZhYzEyMGQxZmE2ODlmYTkxODExNWJjNTk4ZDViOTE3NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDVjZGY2ZDExM2FiYWEzOGVlZjk5YjUwMTE0ZGExZjZlM2MzZDQ1YWRiYjU2N2VhMjlhOTBjZmYwMTQ2NDc3OCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_66c99bead2564f6ca714bdd7bb4d48ed",
+      "statement": "Team deletion in BillingAccount.tsx is owner-only, requires confirmation dialog, calls auth.deleteTeam(), reloads teams, and if other teams remain without an active one, switches to the first; the server enforces that no other members remain before allowing deletion.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/billing/detail/BillingAccount.tsx#L174-L190",
+          "version": "repo-lines-v1:sha256:81afb30b681e2926b2958ecd409bbe199a47568906e81b0a98c00678f6119192:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5YjA3ODU4MWY2MDhkY2U5OGE3ZTBkMmVjODFmOWY0ZWI4NGNlMDU4YmVkZTlhNTVkODM3ODliOGQxYjU4NTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUxZTM3MjVkYTAwMmI0NmVkOGI0ZGU4ODAwM2FkOTcxMGRjYWYxOGQ1N2M0NzAxZGMzYmVmZjBiMmM1Y2IxM2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ3NWU1NGM2ZDg3NmUwYTRhMjJhMzdkNmFjNWYwOTFhNmVhNjdmZmMzYWI1NjNkMzEwNzhiZWZmMWExM2UxNDkifQ"
+        },
+        {
+          "resource": "repo://src/pages/billing/detail/BillingAccount.tsx#L366-L385",
+          "version": "repo-lines-v1:sha256:2ab1977840ec7deb9d171aa52bf5a04487779532c61f1455232fc01482d54104:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmM2EwZWU2MmJmNWY2NDIwZTA3NjE0MDFiZTdiZTFhODk1ODQ2Nzk1NzliOGViNzA1YmYzOGZmYWExNTEyNmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ5OTAwNTlmNDhjYTU2ZjZiNTBmZGM2OWExNWM3YjdlNjMzY2MxZTEzNjA4ZGFhNTBlZDkyM2JlYjBmNjM2ZmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFhMmYzYzBkNDcyZGU5MTc2YzA3NWFjYzNkN2M0ZDc1YzhjNDU1OWYxZjBkMDIwMjBlYzlhNTcyYTI1YTI4YjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJjNzBkZTZlZmFiODRkOTYyY2E2NWY5Y2NmZTM4ZWQyN2Q5YjI4ZTZkZDIyMTk1ZjZkNGQ5MGZjOGIxMGUzOWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_774a96b2694442148d05de4fe2d1adb2",
+      "statement": "The active team (team.active) determines which billing account new orders are charged to; switching teams via auth.switchTeam() updates JWT claims so the ACL can filter orders by the user's active billing account.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/billing/Billing.tsx#L20-L27",
+          "version": "repo-lines-v1:sha256:2350a9ec64367d9bce46e441d8f6ca0c52feaf6cc84027ad36cd991058ff5dd9:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTBhMDQ3YzRiOTY3YzY0YWNkYjQxNWJkMWI4ZmZkNDAxYjZiMTljZjEyMDNlNGUzYjkzYWU2MDg5MzA1NzliYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZThiYWMyOGMxMTYzNTk0OTIzYTQwOTAyN2I5ZWJkN2QyNjkyYzNiMGI2N2M1Yjc3YTFhYmFjNWM0ODI3MTAyOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTEyZGU3ZDJhNThhMzAyNGRjMWFlZTIzZDk5YmZhMTdmNGIxMDBlZjFkNjA3NThiMTdhZmYyZTVkYjYyN2QzZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmM3ZWZkNWYxMzQxNTNmMGY3ZmI1ZTJhODNjNTgwYjM2MjVlMDJlNGJlNWNlMjliNjQzMWU5ZjQ0YWFlZTc0NCJ9"
+        },
+        {
+          "resource": "repo://ulabase.setup.ts#L302-L305",
+          "version": "repo-lines-v1:sha256:b3691504a935f4ec878b75a53f5620d913017984f594def5e5042a3a3cffa3a2:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTZkZGM4OWZmZWZjMzQ2YmE4OGFmNzAyNDBjNzFjYzRjNjRjYTU3ZmZlMzIwOTAxMmE3YTc5ODk2YTgyM2FmOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWZiMWU4NmRiMmViOWIzMzE3Mjk5NDhlNjhkOGIyMGJjOTAzYWUzMDRhNjUxZGQ0Mjg0ZGJjZWQ0MTY3NTMyNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjc4ZmI2Y2U3NGEyMmU5MTJkZmE1ZjQ0ZGY3ZGJiOTRiN2IyOWZhNmJhZGYyZGI4NmM2NmNmM2U5NGQwOWI1NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjhjMzEwZDc3OGQ4MWNiOTY5NmQxZjA0MDY1OTQ1NTliYjMwMWVlNTY2MDc1MGFjOTg4ZDk1MWU3MmQ2YWU4NiJ9"
+        },
+        {
+          "resource": "repo://ulabase.setup.ts#L495-L495",
+          "version": "repo-lines-v1:sha256:725d880682c2ff7334e71325eaf437683d933490a1ade63dbc82c80d264545a1:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzI1ZDg4MDY4MmMyZmY3MzM0ZTcxMzI1ZWFmNDM3NjgzZDkzMzQ5MGExYWRlNjNkYmM4MmM4MGQyNjQ1NDVhMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzI1ZDg4MDY4MmMyZmY3MzM0ZTcxMzI1ZWFmNDM3NjgzZDkzMzQ5MGExYWRlNjNkYmM4MmM4MGQyNjQ1NDVhMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDJlNTg5ODJlZTgzODIwYWU5NmMzYzJhZTVlYjcwZWUyNjc1MjZkNzE1YTg5YWU2MDc5MWYxZGUzYjAwYTBhMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTAwNTU3MDNiMGNkYTg1NWMyYjgyYTM4OWEyNGFhMTdmNzlmMTcwOGJjMTE4MDc1Mjk3YjFiNWVlYTIwZjE2NCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_6420b52486d548a99c27b159239cc51f",
+      "statement": "The Stripe billing portal is accessed via payments.openBillingPortal() from the shell header menu; it returns a URL that the browser navigates to; a 402 error means no Stripe Customer exists because the user has never purchased; a 403 means the service ACL does not allow portal access; guest checkouts have no Stripe Customer and cannot access the portal.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/shell/Shell.tsx#L150-L166",
+          "version": "repo-lines-v1:sha256:f9ca6e247c9b60b039ad906f8023d1cbac3dfa189100f63c05b438c2ca2b0e36:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViZWI2NzNjOGQyZmZmMjFiZmVkYWQ1MDI4YTY4NGZiNWMxNDQ2YTJjMDEyMGJiYzI5MDNmNGM5ZDZjZTNiOTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMwMzg5MzZhNDg4MTMxYzNmYTY1ODMxZjRiNTVkYTI4ZGQxMzYxNTA3M2NkYzY5MWI5NDkwZjk5NDdiYmI5ZGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA4NjEyODRhYzAxYTRjNzYxYjQ4MzBjYzJmMDJlMmE5NGNlM2M4MjQyYzZjZjJiNTA0MGRiYWQxMDUyYmQ2ZGUifQ"
+        },
+        {
+          "resource": "repo://src/pages/shell/Shell.tsx#L247-L249",
+          "version": "repo-lines-v1:sha256:cf4c9e95ec65e4fdf5aab3325cb5eacac48c95408f9f9c3a99787622689f6377:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmEyNjU5MmFlY2M3ZWY1YmEwYWQ4NzhmZDljODQzYTk0NTAxMzdhMDJmNWIyMzUwODQ4NzhmYWI3MWFmMWI3ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODljYzI1ZjYyMmM2YmI4YTAyMTllZDQ3MjI2ODc4ZDRhMWRkM2VjOTUwMjU2MzdlMjE5NjdmYzIyODljMzYwYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTIzMmE3OGNlMTIwYWQwNWY5ZjZmODUwM2EyNDllNTQzM2NkNTk4N2ExZmZkMDMzNTgxZDRjYWYxYzRkNjg3YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTQzNzczZWEyYjk3N2UzMjczMmZkZTk0ZTc2YjQzZjFjZGU5NmZhNjZiMDdjN2Q0MDI5NTIxNjMyZmRiNTIwZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e5280863d48d49108b6e14687fe98550",
+      "statement": "The orders collection ACL uses a readFilter on payer.id matching @user.team._id, which means all members of a billing account share visibility of the same orders, and orders are filtered to show only those charged to the user's active billing account.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/shop/Orders.tsx#L159-L161",
+          "version": "repo-lines-v1:sha256:31acf8bdca11907633fa0c1de8c9bb90b1c6af3895cc159c11bed4acdf46f7a4:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTU2ZmZhY2IwMDk0OTE3ZDhkZjE1NGZmMzkzNjYwOGQyNjI5ZGE3ZmM4MWFhYmY1MTU5OGQ4MmQ4ZTg1MzQwMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmJmZTJhMTBhNTM5MmIxZDBiMjNlNjhiOTdkMzM2ZDU0MDA4ZDFjMzliMTcwMDFhNzA2ZmJmNDAwYjQxZGE1ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2U1MzkwNWFlMjQzNmE5NWE0NjE0ZjlhODMwZjBkNTg4ZDUzMWVmNWYyOTMzOGZiN2E2ZGY3ZjBhNzZkOGVkYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzQ0MWEwZjI1YWJhOTUwMDRkN2JkMzE5NTZiMmNiMzVmZjJjZWZjMDY4OWU3Nzg2OTUyZjRmYzM3MDMyMjcwNSJ9"
+        },
+        {
+          "resource": "repo://ulabase.setup.ts#L302-L305",
+          "version": "repo-lines-v1:sha256:b3691504a935f4ec878b75a53f5620d913017984f594def5e5042a3a3cffa3a2:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTZkZGM4OWZmZWZjMzQ2YmE4OGFmNzAyNDBjNzFjYzRjNjRjYTU3ZmZlMzIwOTAxMmE3YTc5ODk2YTgyM2FmOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWZiMWU4NmRiMmViOWIzMzE3Mjk5NDhlNjhkOGIyMGJjOTAzYWUzMDRhNjUxZGQ0Mjg0ZGJjZWQ0MTY3NTMyNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjc4ZmI2Y2U3NGEyMmU5MTJkZmE1ZjQ0ZGY3ZGJiOTRiN2IyOWZhNmJhZGYyZGI4NmM2NmNmM2U5NGQwOWI1NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjhjMzEwZDc3OGQ4MWNiOTY5NmQxZjA0MDY1OTQ1NTliYjMwMWVlNTY2MDc1MGFjOTg4ZDk1MWU3MmQ2YWU4NiJ9"
+        },
+        {
+          "resource": "repo://ulabase.setup.ts#L495-L495",
+          "version": "repo-lines-v1:sha256:725d880682c2ff7334e71325eaf437683d933490a1ade63dbc82c80d264545a1:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzI1ZDg4MDY4MmMyZmY3MzM0ZTcxMzI1ZWFmNDM3NjgzZDkzMzQ5MGExYWRlNjNkYmM4MmM4MGQyNjQ1NDVhMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzI1ZDg4MDY4MmMyZmY3MzM0ZTcxMzI1ZWFmNDM3NjgzZDkzMzQ5MGExYWRlNjNkYmM4MmM4MGQyNjQ1NDVhMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDJlNTg5ODJlZTgzODIwYWU5NmMzYzJhZTVlYjcwZWUyNjc1MjZkNzE1YTg5YWU2MDc5MWYxZGUzYjAwYTBhMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTAwNTU3MDNiMGNkYTg1NWMyYjgyYTM4OWEyNGFhMTdmNzlmMTcwOGJjMTE4MDc1Mjk3YjFiNWVlYTIwZjE2NCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_fee171d18e81406badc0f09622d50a37",
+      "statement": "The /invitations/accept route handles three scenarios: new users (isNewUser) who set a password via auth.activate(), already-signed-in users who call auth.acceptInvite(token), and existing users who must log in first then accept; missing email/token parameters show an invalid link page; 404 means invalid or expired invitation.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/invitations/accept/Accept.tsx#L27-L41",
+          "version": "repo-lines-v1:sha256:53941e056d8b496dd49d04b93c6d148e2815997cae45212d13abf34f9da6fd49:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5NjZmYmZhODg5OThkYTc0NjU2YzUwMTk0OTU2YzI1ZjA4NDk0NTc2NjBjMDA5ZmU2M2QxZTlmYTlkYzkzMWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyZmZmY2QzMTY1ZWQ1ZWU1YmIyYTgxMmIxZWVlOGQyZjNjNzM5NTJlYmE1N2I5YzdmN2M2YWY3Yzc3Nzk0ZGEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQzOGU5ZWFhY2E5Y2E0NzIyMTBlNDVjMWQ0MjI5ZjBlZGYzMGY0YTdhNDkwODc1YjYzMzRjOTMxMTRkNGIwNzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZjZjgyZWIwNWM2ZTAwODUxNTgxNTI1MGU4N2JlNDcyOWE5Nzc2MTRjNjNkOWQ1OWNmMjAxYmE2YzVlNmZkYzQifQ"
+        },
+        {
+          "resource": "repo://src/pages/invitations/accept/Accept.tsx#L50-L60",
+          "version": "repo-lines-v1:sha256:c099508ce021aa8e1aebdd4a4dc2650fad9dd9242462dce30e3dcf7f6ff1f071:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdjMGQ1N2Y0MjJlYWNkZDgzOTE1NGU0ZGQwOGRjNWIwYWU3NmE4ZGRjMGY3ZDA4ODUxYTk1YTRjOWQ1N2FkZmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcwYmMxZGQ4MjZjYWQxMTg0OTRhZjdhMTM2NTNkMjlhYjFkYTBiNTA5NjVkM2UxOTU0ZTc1ZjFmZTA0ZDVlMzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNhMjQxMzhlYmVjYWZkNmIzZGM2NjBjN2NlZTRjMmM5NGJkZjUxNTZiNzM3YzQ0MTYyNzYyYzgyZDAyZjNhNWIifQ"
+        },
+        {
+          "resource": "repo://src/pages/invitations/accept/Accept.tsx#L62-L71",
+          "version": "repo-lines-v1:sha256:04b2355a43aa636e672eb365a654f8be26cacb5afa7ec10e53f414a62f9b539f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI2ODUxNGM5ZTM4NzliOWFmNGYzZmVlYzY2ZjFjZWQ1OGY4MzUyZGM4MjkyYWVkYzYzMzdlYjU0NmYzNzczNTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUxZTM3MjVkYTAwMmI0NmVkOGI0ZGU4ODAwM2FkOTcxMGRjYWYxOGQ1N2M0NzAxZGMzYmVmZjBiMmM1Y2IxM2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhkMDNiN2VlYzFiYTJjMjk2YTAzMDM4YTYyZDc0YzQ2ODQyNDU1ZDkwZWYzZTlmM2IzODk5NGE0NzI4ZjY3NGQifQ"
+        },
+        {
+          "resource": "repo://src/pages/invitations/accept/Accept.tsx#L73-L81",
+          "version": "repo-lines-v1:sha256:f0cbae23476318a0dd3b48311af002f2f8b9b647a40d9fdda0ac8538d807e714:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmFmMTQ0NGMwZjZlMTE0NzBkY2U4MjNhNmEyMmYyMmU4MDRiNDBlZTg2ZGRmOTdmZGNlYTkzNjY5MDkzZDY0NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDJhMmNiMjVhMTIyYjQ0MjIxYTYyMzRlYzY2MGE3YjVmYjdmOWJkZTdiM2I5ZTJiM2M1NTlhMGQ5NmZhYzczOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTFlMzcyNWRhMDAyYjQ2ZWQ4YjRkZTg4MDAzYWQ5NzEwZGNhZjE4ZDU3YzQ3MDFkYzNiZWZmMGIyYzVjYjEzZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjAzZjA0MmRhMmFiMGYzOTA3NDQwNzVmNDI2YjZmMjk3ZjZhZmEyMWU1MWQ5NDAwMTg1OGI0NTNlNTBkMzBmZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_cfde62f669194ccda91007e048c59bf7",
+      "statement": "All billing routes (/billing, /billing/new, /billing/:id) are behind AuthGuard, meaning only authenticated users can access them; the invitation acceptance route (/invitations/accept) has no guard and works for both signed-in and signed-out users.",
+      "evidence": [
+        {
+          "resource": "repo://src/routes.tsx#L108-L118",
+          "version": "repo-lines-v1:sha256:1da6179eb903e4841f16d7529916b25f21e40221017c2ee84664b14deda7bdd0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNlZjAxMDRhNzk0MTgyMTA5ZTlmNzEzZDVhY2Q5NmE0Njg4ZDdkZTY4NWU1OTMxNjgzODY2ZTVlOWYzYmM5YjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI0MjIzOWIxYmQ4MmI4NWVkNTBjMThhYmU2YjhlOTk3ODc1NWRhYzZmZDgwNDA5MjRjOGE4ODBjNTJmMDY1ZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI1MjI4YTlkNzY0ZDhhOWIwM2E4MmY0MWJmNGE3ZTE0YWQ2NWU0YjI2M2RmNDU1MWExNzVlYzA2MTFiNTNhODEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBhYzllZDI0ZDMzOGIyZGQzZDY3MmZmYzNjY2RjZDg3MDRkMTEwZTkzZWM1ZWI2MzMwZGQwYzk0ZWFmYmVlMjcifQ"
+        },
+        {
+          "resource": "repo://src/routes.tsx#L166-L169",
+          "version": "repo-lines-v1:sha256:19369219e09b43ac75c946eea7e36255d835830c0212ae2995665d8765db7e7b:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWFiZDU2MmNlNTFkNWQ5MmYyNTk2OTA3MTQ0OGU0ZDJkZDI5MzdiOTIwZjdiNDIzYWEwMGY0NmZjOTUwOTAzNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGRkMDE5MDdhZDk3OWZhMmYzNmExMDVlMDJhYTNjNzc5ODk4MWM1MjNhYzRkZjc4ZjljNGI5MzA0MTM1NTFjMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzNiMDdhZDNhZjA4MTBjMWY2NWVmZWIzN2JlNDZlZmI1NDNhNTZiOTM2YjU1YWM3OTc3ZDdiNjgyNTUxMTg4MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmRlOGEyODZkMDA4YTJiZmM5MGZiNDA0MWM2NmI2NDk1N2Q4MzBlZDFhMDAzZTE0MDdjOTJjMTY4ZDllZjc1MiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e137eacba5d745d18de1c70f5026f9e9",
+      "statement": "NewBillingAccount.tsx provides a simple form that calls auth.createTeam(teamName) with the account name as the only required field, then redirects to /billing on success.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/billing/new/NewBillingAccount.tsx#L15-L29",
+          "version": "repo-lines-v1:sha256:5056f1532d0896da395b95d7df749c1d211253b48ed47d0593de8d444414141f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzODk4N2ZkYjQxNTg0NjFkOWFhODhjMTVlZWNjZWU5ZWIwZWIyN2UxOTc2NTE4NGVmNTE2Y2UzYzAyMmEyOGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA0YmE3MGQ2ZTNjMmI5YTlmOGY0ZGExMWQ4MmUwOWJmYmYxMDI4NmU5OTQ3MzUxYzI2MjNlNGIwNTIyMGI3NjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJjN2VmZDVmMTM0MTUzZjBmN2ZiNWUyYTgzYzU4MGIzNjI1ZTAyZTRiZTVjZTI5YjY0MzFlOWY0NGFhZWU3NDQifQ"
+        },
+        {
+          "resource": "repo://src/pages/billing/new/NewBillingAccount.tsx#L38-L53",
+          "version": "repo-lines-v1:sha256:6f8af1a1d040c0df072c44320b0122e62eb2db78ee065b9ac6935762f957a610:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1ZjNlYmFhOWVkNTczNTJkYWUwNzRkZmIwNDBiNTA0ODdjNmFjM2UyMmM5YzM3NTg5YzExODJmZmJlN2E4MjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUxODU2NmVjMTkzNjZlNGY4MGFhMTMxMTBiYTY1YjFmMzExYjM2ODY2Y2UyYzk2MTJkZDU0NDhjYWI3NWNmYTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjNzVlOWIxOTk4MWZkNDdlNDU3MjNmZGRhMDE2MGNiYzYzMDkyNjM1YzdlOTNhN2QwZmQwYTRiYzBmZWVlMTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdiOGI2MDBhNWI0NDhiMWU0ZDAyZGYwOTc0NmVkM2NhMzE3MmY3NWM0YWFiYjAxZGRlMDgwZTM2Y2FiMDc0YjQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_91c5d18f17424ea988287f498c2cb48f",
+      "statement": "The team claim in the JWT connects the user's session to their active team; ulabase.setup.ts configures this via CLAIMS = ['latestConsents/tos', 'latestConsents/pp', 'team'], and the ACL readFilter reads @user.team._id to filter orders.",
+      "evidence": [
+        {
+          "resource": "repo://ulabase.setup.ts#L305-L305",
+          "version": "repo-lines-v1:sha256:5fb1e86db2eb9b331729948e68d8b20bc903ae304a651dd4284dbced41675324:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWZiMWU4NmRiMmViOWIzMzE3Mjk5NDhlNjhkOGIyMGJjOTAzYWUzMDRhNjUxZGQ0Mjg0ZGJjZWQ0MTY3NTMyNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWZiMWU4NmRiMmViOWIzMzE3Mjk5NDhlNjhkOGIyMGJjOTAzYWUzMDRhNjUxZGQ0Mjg0ZGJjZWQ0MTY3NTMyNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2ExYzFmZTIyYjFkNmFjZTQ2NTg3YmM0ZjMyYzk5NTE0MjRlM2ZhNWEzMGRhM2RhMTE3NzNjNTA3MzQ1ZjRjNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjhjMzEwZDc3OGQ4MWNiOTY5NmQxZjA0MDY1OTQ1NTliYjMwMWVlNTY2MDc1MGFjOTg4ZDk1MWU3MmQ2YWU4NiJ9"
+        },
+        {
+          "resource": "repo://ulabase.setup.ts#L495-L495",
+          "version": "repo-lines-v1:sha256:725d880682c2ff7334e71325eaf437683d933490a1ade63dbc82c80d264545a1:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzI1ZDg4MDY4MmMyZmY3MzM0ZTcxMzI1ZWFmNDM3NjgzZDkzMzQ5MGExYWRlNjNkYmM4MmM4MGQyNjQ1NDVhMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzI1ZDg4MDY4MmMyZmY3MzM0ZTcxMzI1ZWFmNDM3NjgzZDkzMzQ5MGExYWRlNjNkYmM4MmM4MGQyNjQ1NDVhMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDJlNTg5ODJlZTgzODIwYWU5NmMzYzJhZTVlYjcwZWUyNjc1MjZkNzE1YTg5YWU2MDc5MWYxZGUzYjAwYTBhMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTAwNTU3MDNiMGNkYTg1NWMyYjgyYTM4OWEyNGFhMTdmNzlmMTcwOGJjMTE4MDc1Mjk3YjFiNWVlYTIwZjE2NCJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.1",
+    "at": "2026-10-01T12:11:43.532Z"
+  }
+}

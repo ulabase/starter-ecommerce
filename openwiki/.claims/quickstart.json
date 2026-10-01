@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:9f981be9837310eac45f7ee1e9d6a92526d62b7d1716261e6b89ca427b25c384",
+  "claims": [
+    {
+      "id": "claim_25cb4739a07d43e799b6cf89cfdae3ba",
+      "statement": "The Ulabase Ecommerce Starter is a React SPA with no custom backend; it communicates with a managed Ulabase service via @ulabase/kit-react, which provides authentication, payments, and API access.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L7-L9",
+          "version": "repo-lines-v1:sha256:e942b5ed82a50fe05e7525051c9bf0e5639c68caccdedffa0fc3e270d3b9bb27:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTRhM2M1ZjFhZjYyZjc4MmViZjIyYTdjNTAzMDc3N2I2YjJhMjRmNmEwODQ0MzE3OWQ0MDg0OTJiOTRjYjBlNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzRiZTNkZjg1MDk1MjkzOWQyZDcyYmIyM2UwYzI2NzZlZmM2YWExOGZhM2ZkYzE1MzgxNWY0YzY0YzhiNDYzNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTAxNzVmNzA1MGY2ZWEzOTRhZjlmMzExNjNkNmIyNjkyNzVjZDJjNDJlZmQ2MDZjODE3YmMxNWNjN2NiNTVjYiJ9"
+        },
+        {
+          "resource": "repo://package.json#L13-L13",
+          "version": "repo-lines-v1:sha256:ea57e523538fcde49dd2a15be34f8aaef11842b713396270a9fe11566d451bc5:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWE1N2U1MjM1MzhmY2RlNDlkZDJhMTViZTM0ZjhhYWVmMTE4NDJiNzEzMzk2MjcwYTlmZTExNTY2ZDQ1MWJjNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWE1N2U1MjM1MzhmY2RlNDlkZDJhMTViZTM0ZjhhYWVmMTE4NDJiNzEzMzk2MjcwYTlmZTExNTY2ZDQ1MWJjNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTUzZTgyM2Y0NTI5YmY0NTRhOTkyMDQyODRmZTk0NWRmZGE5OWM5NzIyYzBlZDI4NzM0MzAxZDA3OWMwNjMwMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGNkYTZmYzRiYjY4NTJhYzFjNzBlN2M0NjY3ZDQ4ZDhlZDZiYjNkZjJlOTVmNzliOGIyYTM3OTQ4NjgwYjhkZSJ9"
+        },
+        {
+          "resource": "repo://src/main.tsx#L4-L4",
+          "version": "repo-lines-v1:sha256:85166fceb74708a0dee7c46bc9eeaf17b71eca37ffab0290b8e7b0615ccb60d3:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODUxNjZmY2ViNzQ3MDhhMGRlZTdjNDZiYzllZWFmMTdiNzFlY2EzN2ZmYWIwMjkwYjhlN2IwNjE1Y2NiNjBkMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODUxNjZmY2ViNzQ3MDhhMGRlZTdjNDZiYzllZWFmMTdiNzFlY2EzN2ZmYWIwMjkwYjhlN2IwNjE1Y2NiNjBkMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDA1MTIzM2Q4YzJlZWVjM2FmNjY5ZTBmMzJhNDUyNzU3MGVmMDY5MGY4MzU5ZmU1NTU2OTRjODAxNTVmMDgwZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDRjNDIyMzYyYTM4OTQxMmQwMjAzNTJiMDZmNGZjZjBjNDg4Yjc1NjcxNDFkYWY5NDI3YmIwMTZkZTAzZjA0ZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_339909fbfd834020bd668fa2caef6748",
+      "statement": "The app bootstraps with a provider tree: RhAuthProvider wraps RhPaymentsProvider wraps RhCartProvider wraps App, all inside BrowserRouter and StrictMode.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.tsx#L25-L37",
+          "version": "repo-lines-v1:sha256:90bfc0618d3394bc681a82ea99538b53f308edc72532edc7a5c45c026b78296d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjYWZmMjU0NDJlNjlkM2NkMDYwZWEwNGY2MDU3ZDZkZWZmMmVkNGZkMjFlZTEwNGFlZThkMDA4ZGM1MGM5YmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNjY2UwYmFhN2RmMWNlNWQ3YjNjMzEzYmJkNDljODhiNjM2MzI0NGJlZWE3NDlmZjA2NjQ2MTFmZDNiN2FmMWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ2MWY1NzYxNWEzOTg1MDIyMGI2NGExNjU3MzFmNjlhMTkxMTEzNTUzOGVmYzE0NTg3YTBiMDgxNWE5Y2MxODAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ5OTY3ZWMxZWQzODM2ZjhlYjE3YWZmMTcyYjViZmVmN2RlNjA0ODVhNDM5YzZjYTExYzU5MWUxNzU1NzM5YWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_61399a503fa2435b9268107042173b41",
+      "statement": "Feature flags in src/environments/environment.ts control route availability: emailRegistration, passwordReset, oauthLogin, and teamInvitations gate their respective routes and UI elements.",
+      "evidence": [
+        {
+          "resource": "repo://src/environments/environment.ts#L26-L32",
+          "version": "repo-lines-v1:sha256:e0c09c50abf5287407f3a473d775c4b3d6aa5796cb202935980d529c1b428e51:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjRjNjE5ZmZkNmI5MjFjNTI3OTExZWRlMTQ3MWM5MTQ5YTFkZTg2NTUzNDE4NWIwOWY2Nzg1MGRjMzMwZDU2MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGQ1Y2QyZmI0ZjNkZjg4NDUxNTI1NWIzOTUyM2YyZjhiNTQ3MmJlZWE5ZjU2NmZmY2EyMDRkYjgwMjU2MTA0MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzBlMDQ1YzUwZjBlY2Y5ZDQ2NDg3NmIwYTJhM2NiZWEzMDg4Y2ZmMTRlZDFjMzIzZTg2YTdjY2JiNjk4ZmY3ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWExZDFhNjMzOTAyMjljNzk4MzQ3ZTgzYTA0MDU0NDFjOTQwMDAzNTI4NGFkMTY4YzFiZjZjZGYxZDcwYTM3MCJ9"
+        },
+        {
+          "resource": "repo://src/routes.tsx#L24-L24",
+          "version": "repo-lines-v1:sha256:94653facfa422aa108ac31aa5a02a920779a3603b928ebb70024c9ecc54aa65a:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTQ2NTNmYWNmYTQyMmFhMTA4YWMzMWFhNWEwMmE5MjA3NzlhMzYwM2I5MjhlYmI3MDAyNGM5ZWNjNTRhYTY1YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTQ2NTNmYWNmYTQyMmFhMTA4YWMzMWFhNWEwMmE5MjA3NzlhMzYwM2I5MjhlYmI3MDAyNGM5ZWNjNTRhYTY1YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmM2YmUzNDczMGVkZDY0YTMxNjAxMjVhYWYxNjFmZWEzY2UwNDcwYzQ0ZmQyNDg0YzFlNDU3NTVmNjFlZmNkOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODU1NzUxNjQyNjQ0M2NkNmQ2NDQ1NDI0MDQ2NjYxZGFjNzJmYjc4ODRiYjdkMjkzNDVhM2YwZGJmYThkODVlYSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_fa63ded23ddd4f23a45a490552a6ceac",
+      "statement": "The ulabase CLI runs the declarative setup defined in ulabase.setup.ts, which configures the service with check/apply steps for Stripe, collections, ACL, Guards, and seed data. Secrets are read from environment variables at apply time only when the service does not already hold them.",
+      "evidence": [
+        {
+          "resource": "repo://ulabase.setup.ts#L1-L20",
+          "version": "repo-lines-v1:sha256:8da51c063cbd3c47f4512b5380cc8c7a72fbc7527c95ef7c010275f113161874:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3MmE0MjkzODJiMmUxNDcxOGUwZTM3YjA1NzBhOGExNzAyOTkxZmNkODQ5OGNkODQwNjBhOGJmNGYwNTAxN2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBlYTA5ODhkMDU2NDJhNTY4NjY0MjUxMGQ1OTM2ZDM3ZjlkODYyNjE1ZThiMGQyNWY4YWJhOWJkZDY3OWE1NDkifQ"
+        },
+        {
+          "resource": "repo://ulabase.setup.ts#L21-L21",
+          "version": "repo-lines-v1:sha256:0c525239987a746044d323b479d687dfa4184c47a4f7de82b703b18d8239b392:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGM1MjUyMzk5ODdhNzQ2MDQ0ZDMyM2I0NzlkNjg3ZGZhNDE4NGM0N2E0ZjdkZTgyYjcwM2IxOGQ4MjM5YjM5MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGM1MjUyMzk5ODdhNzQ2MDQ0ZDMyM2I0NzlkNjg3ZGZhNDE4NGM0N2E0ZjdkZTgyYjcwM2IxOGQ4MjM5YjM5MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjlkMzg5NjFkMWRhYzI0MWQwNzYwYTJlYjUxNTEwMTYxNWFlNTQyMjc4YzY0Y2NmZWIxYTZiOThiMDNhZDNlNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWZkMmM5NjZmOWRhMzkyNjU3OWMyNjI1M2QzMzY5ODc3MGQ1NWI3ZGI3YTRjNGQ2ZWMzNDNjZGQwNjcwNGU5ZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_dd7454b1ba8b48f287aba2992c38ccc1",
+      "statement": "The shop lives at / and is outside AuthGuard so guests can browse, add to cart, and complete checkout without creating an account.",
+      "evidence": [
+        {
+          "resource": "repo://NOTES.md#L103-L105",
+          "version": "repo-lines-v1:sha256:dec93d0c0d310b3ea8bccafc4b54bcc84f45857f3b75008b94fa8204a94eff77:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWNhZjA1MDdkY2MxMDVhYTg1MGVjN2NkMDU2Njk0MTNmOTg4OTRhMGNjMDFiODU3MjRlOTMzN2ZhNTQxMjkzOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzEzNzYzNTQxMDI1MmEzYzVkMDUyMzFmZTQ5ZmVjYjA1YjY2YzA3NjZiODI4YmYwZDI4MmU4MTg3ZjFkNzZlMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTAxOTA4NjMwYWE1YTZjYjg1ZmY1YzFjYTlhOWM1NTZjN2I2NjFkYWI2YWJmOTk4N2RjNTJiM2UyYTVjY2NlMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2JhZWZkM2RlMGViZTA2NDUwOWMwZWU4MzVmZjcwYmE4NzM4NTdmMjZiNWQ0M2E5MDE5M2I4ZjZlNWUyMTJiNSJ9"
+        },
+        {
+          "resource": "repo://src/routes.tsx#L136-L171",
+          "version": "repo-lines-v1:sha256:9ea701f65a1bc01cdced2cdea23af38bfd8ec112bdbf9da945c16a0d050ef472:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIxMTFmMjM5YWM2NWM5ZmVjZDRmNzk3NWQ0ZWUwYzY3N2I1OGE4ZWE2Nzg1MmVhMjVkMjc5MjM5MjUxOGQyZjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkNWNkMmZiNGYzZGY4ODQ1MTUyNTViMzk1MjNmMmY4YjU0NzJiZWVhOWY1NjZmZmNhMjA0ZGI4MDI1NjEwNDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjOGU0MTJhMTkzZmQzMjQxZDkwMzRjMTMwOGIzYzBlMzI5ZGJkNzQ4ZjQzYmYxZjkzNGNlYjU3NTMwMTUzMmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEwMmQ2YmRmYzE4YWI4MWNhYjRlZGRmYWE3MjQ1ZDE2MWM1YjQ3NmRhY2RlZGZlOThlOTc5NmMwZGZkMDQyNTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_eadb0ae4b10145bfb80568a6e161c4cc",
+      "statement": "Stripe webhook configuration is done on the Stripe dashboard (not via the Stripe CLI), with the webhook endpoint URL pointing to the Ulabase service at /stripe/webhook.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L53-L75",
+          "version": "repo-lines-v1:sha256:5dbcf39a83b425efc40a7a598ce6abfab6cf871786119acabf82233f8701e70b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzMjU2MjA0MjQ0MDk3ZjRlNmQzZGFjYTIzOTBmNWFhZjkyNWUyZjM2NzY5MzQwNjhmMzk1NzI5ZjYwYzUyMjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlNzdlMzQzNzlkMDcyNjU0MjdhZjc1YmE4NWY3MjQ1ZTIxMjc3NmJmYjY1MjdlMDY4ZjI4NTQwYzAwZjM3ZjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEzZTQ2N2JlYTY4YWM3ZDU2MThmYjdjOWIyZThkNjAwNzBhOWJhZTRiZTEwOWU3NDlkNzY1N2M1NGUyNWYxZWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ2ZmJkZWI4NzRhZmZiNDE0ZjM4NTQ1Zjg3YjAwMDMzZDc2ZmE0NDE0YTA3YmU4OTliZjVjYzAzNTNkODg0OGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fa81f7c537cd41618e9bbbcd5378e848",
+      "statement": "src/styles.css contains design tokens (section 1) and a disposable default skin (sections 3–5) meant to be replaced; @ulabase/kit-react ships no UI.",
+      "evidence": [
+        {
+          "resource": "repo://NOTES.md#L120-L125",
+          "version": "repo-lines-v1:sha256:5603e1e0d98bfbf4b398cebae9b60c369cdb838b593014789d3b2e626f10638f:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTFhZjg1MTYzMmU4YWM3ZTk4ZjhhZDQ4YTYxMTFiYTcyYTE0OTc5MDNkNjJjZmJlY2Q3N2E3NjJlMzJhYjQyZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNThlZmNkZjQwOTQwYzkzZjZjNTIxNTZkZjJmY2Y2OWNmMDY1MWJkZjQ3M2QzODQwNTcxZGRmYjg2NzMyMWUwMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDg1ZDZjMDYzMjdiMjNjMmVkNDJhMWE5MWNmN2ZlZmY3NDU4ZDQwYzU1NmVjMzRkZWI2MGQzYTcxMGRlYzQ4MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2FkMzYwOWI4MzNiYmFiYTYxOWQxNjViYzgxOTUxMzM4NDcxZWVmOTZiYjIxMzYxODdmMmU0NTUwYmMwNzA4ZSJ9"
+        },
+        {
+          "resource": "repo://NOTES.md#L128-L135",
+          "version": "repo-lines-v1:sha256:a1388b9a9760c2db05e4f0512a9abcf2c8983c793744015c8d777865eececc04:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDhlNjQ3YmRlZGZhYTZmYmM3YTU3MTExN2I0MDM3NDFhZjdiZmQ4MjczMjBiMTE3OGQ3M2M3YzJkZTgwMTMzMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWJjMjJjNDEwZDVkYTlmMjk0MDkwNjE2N2Y3ZWRhZGQ1ZjZiN2FkNzM1ZmY5YzA4NzU3MDZhMGFmZmU0ZWEyYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDBkOTI2M2ZkMTZkYTM4Yzc0NWRiMTkzYmZhZTk0OGQxOTcyN2FjMWE4YWNhNDBkZjA0ODlhNDM2NmZkZWFjMiJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.1",
+    "at": "2026-10-01T12:11:43.532Z"
+  }
+}

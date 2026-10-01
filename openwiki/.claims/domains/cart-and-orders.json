@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:2d63aa919035bebb748fdfa907bf4ef1020aa8a92e2fda9e629fe73a3cf04bb8",
+  "claims": [
+    {
+      "id": "claim_b67b88c4330e4f1aa3d2c457cc29607a",
+      "statement": "Cart state is entirely client-side until checkout, managed by RhCartProvider from @ulabase/kit-react with no server storage before order creation.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.tsx#L31-L33",
+          "version": "repo-lines-v1:sha256:8702ad2514c61282d8d839468a294cee48420882ac25cd23a60b847555a1b73b:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTY2MWZiNzg4MWYyNDE5MzI0NDZiNTg2OTc1ODQ1MTNiNDM4Y2YwZTFjMjQ0OTgzNTU3MjZlZDcxOTU4NmY1OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTQwYWE2ZjIzYmM1ZDQyNjMwNzBmZThiM2ExNTBkOGEzYzFlMzZlNWM4NDAyNDgwNGU1ODA0MTdiZGRlYjNhMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTczOWNiZDE3ZTk1NjU0NWRkMmFkYWEyNjczZTExMTA1ZDhhODYxM2E5Y2QzODFmYWU4OTZkOWFmOGNjMGVlYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTMzN2QzMDI3NWM3NDg2MWI1MGQ5MjAxZDgxMDgyNzNiYTVmODBmZTMxMjY1NTBkMGFlNmMyMjE0ZmJhZTQ1MiJ9"
+        },
+        {
+          "resource": "repo://src/pages/shop/Cart.tsx#L52-L55",
+          "version": "repo-lines-v1:sha256:34f590d81dacf0f43110acf43bbafb7128aefe1bb6d8254ae773b8a77a3b3d81:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjExMjgyOGM2Y2I3NjQ5Mzg5YmZlNTY5MjhlNDJhY2RmYzA5NzcxMDg0YzRiOWE5MTY1YWZjM2E1ZWZiNjc4ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmU0YmFkY2IxOTE1YjMyNWUzN2Y1OWQxYzY3ZmI2Mzc0YWM0MzM1NGYzYjExN2MwMTY3YmIwOTMyYzQxMWZkYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjgwODUyODU4NGVmODkzYWEwMzQxYWM0YmUwZTAyMjc3NzA2ODQxMjk1NDUyYjQzNTg2MTNhZWUyZmRiNTAzYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDY3ZjE5ZTQwYjgzZWFkNWM5N2IxMmIzODc0OWY5ZDkwNTBkMGQ0MzA3YjBmMTkxNzllYmIxZWVlOWFjNWNiNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_9900a740d0a24c2bb8499eac536362ad",
+      "statement": "Cart is NOT cleared at checkout start - it remains intact until payment is confirmed on the Orders page, preserving items for abandoned payments and Stripe's cancel link.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/shop/Cart.tsx#L52-L55",
+          "version": "repo-lines-v1:sha256:34f590d81dacf0f43110acf43bbafb7128aefe1bb6d8254ae773b8a77a3b3d81:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjExMjgyOGM2Y2I3NjQ5Mzg5YmZlNTY5MjhlNDJhY2RmYzA5NzcxMDg0YzRiOWE5MTY1YWZjM2E1ZWZiNjc4ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmU0YmFkY2IxOTE1YjMyNWUzN2Y1OWQxYzY3ZmI2Mzc0YWM0MzM1NGYzYjExN2MwMTY3YmIwOTMyYzQxMWZkYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjgwODUyODU4NGVmODkzYWEwMzQxYWM0YmUwZTAyMjc3NzA2ODQxMjk1NDUyYjQzNTg2MTNhZWUyZmRiNTAzYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDY3ZjE5ZTQwYjgzZWFkNWM5N2IxMmIzODc0OWY5ZDkwNTBkMGQ0MzA3YjBmMTkxNzllYmIxZWVlOWFjNWNiNSJ9"
+        },
+        {
+          "resource": "repo://src/pages/shop/Orders.tsx#L112-L115",
+          "version": "repo-lines-v1:sha256:4e9913b1c8780d87accfe1f6785ffa14ac8b73ab654f609e0886ebf4d7767028:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTA0Y2FhZjUzNGNjZTUzZGUyZWY2NDMyYjkzMTE2OGYzYzRlMjg0MzlhNjUwMjZhZWZkZmU3ZmUxNDU2ODNkNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmYwMzJlM2EwNjZmNzI0ZmIwNjEyZDRjNjU5NmFiYjU2OGVkMzVhYmNhNTc3ZjA4OTU3Yjc4NThkMzg3Nzk2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDZmMThlMzU4YTQwMGM5ZjZlM2E4OGNmM2RlNjYxNThkNzRkNDA5OGVlMzZlZTNmMjNlZWVjYWNhMTFiOGQ5YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmMzODc4NWFlN2RhMDY3YTdmZTMzM2ZjYTBkNGFkMDc0OTM0MzM3NGRlNDYyN2Q3NzJhNzEwZGQxMTQyZTY5YiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b66b8c78ddf94c3b90e997ebf889179f",
+      "statement": "The pending-order stash uses localStorage to persist order references across Stripe redirects, with a maximum of 10 entries and 24-hour expiry to handle multiple concurrent checkouts.",
+      "evidence": [
+        {
+          "resource": "repo://src/shop/pending-order.ts#L37-L41",
+          "version": "repo-lines-v1:sha256:de89f1dad3690696bbbf7eca006dc12dc0f748a46948355247e25c9891ea453e:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTQ3MGQzNGE0NTIxMTViNjcyNjBkMjA5NmYzNWQ3NzY1OGU5MWU0MjVlYjExOGI0YTkzOGZkZjJjM2E0ZTNjMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2JmZWZkN2RlZmJjYjQ4OTM5OGQ3ODExNjFlMTYxNmZmMTFiZDc5ODViNDcwMTYzZmI0NDcyMjZkNTFmZDhjYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWRhN2Q4MTM2NjFiMDU5MWI4NGMwMTFmYzY0ZmYyMjY4MjgyOTZlYjNiMWY4Njg5MWJmODM2ZjdjNGRlM2I0YyJ9"
+        },
+        {
+          "resource": "repo://src/shop/pending-order.ts#L43-L61",
+          "version": "repo-lines-v1:sha256:3e639f66582479b0b0ddcd01b10db5a5d2e840aa267713296de172aa9e06dac0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAzNDI1OGQyMGM1OTgxNDkyMjBmNTdhY2Y0M2UzOGI4MjM0YmQ5YjY0NWUyMjNjYzIxNTViOTk3M2IxY2I1MmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhkNzM4MDAzZWJiZDAyMmE3MmI4ZDdhY2ZlZjE4OWM3M2Q0MmU1Mzk2ZGU2OGFhYTZmNWNjMjdjZjg1YjY3YjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMwNmFmNmE1ZmEzODljNzEwMzRlYWEzZTQzZWViMzIyOWY1YTY4YjgwZDBhOTI2NDI5ZGUwNTEzOWZiYWE0Y2YifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_eeadbf3148be44f8b8a5dcb3e8073f76",
+      "statement": "Order secret is treated like a password - stored in localStorage, placed in URL fragment (not query string), and immediately stripped from the address bar on page load.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/shop/Orders.tsx#L66-L69",
+          "version": "repo-lines-v1:sha256:2769783dacf4ad30ceb2f6e6c69e0520e13c70488e30e53cf92b08b1bf06dada:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzU3NjRiNDdiMmM3MjAwNTgxNThmNTg3ZGE0YmRlZTk5MTE0NzYxNWY1N2U3MWMxMzk0NGQ1ODQzMjM0MDQ3MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGJiYTAwZjM3ODM5YjA2ZDNmMTdkYzliNDBmZDRjNmY3YjlhMTM5NWIwMTA5ZDFmNmJhNTZmZDNhYWI5MDVlNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNThkYjRiYWZhM2U2YThjYWY4MjkwYTUyZmEyODIxMzkwYzEwMDhkYTNhOTg4YjNlMDJhOWE3MWEzMzkwMzU3YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDUwOWE3YzQ4N2YzYTAwOTJjZWVmMDhkNGQ2MzdkZjIxNzE0NTE5NzI5YTBmZWJlNDJkMjliZTFkZWVlNjgyNiJ9"
+        },
+        {
+          "resource": "repo://src/shop/pending-order.ts#L25-L26",
+          "version": "repo-lines-v1:sha256:945b99e0bb6c47dfa0289ab00e93af5ae3d26c94c2e029ea079a257887d0fae7:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTcyYTQyOTM4MmIyZTE0NzE4ZTBlMzdiMDU3MGE4YTE3MDI5OTFmY2Q4NDk4Y2Q4NDA2MGE4YmY0ZjA1MDE3YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2M0ODRhNTE3YzM3YzFhOGNlNWE1NzdjNjMxZjQ2YTI3YThlYmFiZTkyZmI3OWM1ZjRkYTA1YzhhOTIxMDc1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjE0NmM1N2M3OWQyODE5MjMxNTAxMWI5ZmY0NDczY2MyNWFjOWI5OTdiZGEwNjQyZGRmNTFhMjVhZDQzMTVhNyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0cdea474e9a240be9d8f1fa51a53ca25",
+      "statement": "Cart.orderItems preserves variant options (e.g., color, size) from cart lines, unlike hand-rolled {productId, quantity} objects that would lose this information.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/shop/Cart.tsx#L34-L38",
+          "version": "repo-lines-v1:sha256:4892bf1a153d9f0c07fba4e9c4c8df79d6bc1875dbe4bff579b47f4afbc290ff:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWY0YzkyZjIzOGU2ZjhjYjY5OWRhYjU1NmYyYWQyNjM0YjYwZTFiNDYxZThmYmZiOGExZWM3NmQwNjM4MjAwNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2ZkMTFhZDU4ODgxYWQ5NWE1NzQ2NDI1N2Y2MjVjMDU2NzQwZWIwMTE0NDA2ZDk5NTRmM2Q5NjViZDc3NDcxOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzczNGNhMGU1OWM1Y2U0MWY1NTM0OGQ2Njg3Yzc1YmYwMzY0ODJmNjc1ZWVjMjFhNmRmOWRlODcwMThmNWJkYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmVlOTM0ZGU0ZjUwNjUwMWY4YzE3MGE5YmRhMDlhODNjZjEwMzJkNzEyMjZlYWZhYzgzMjNmYzU3YjNjNWRlYSJ9"
+        },
+        {
+          "resource": "repo://src/shop/types.ts#L39-L51",
+          "version": "repo-lines-v1:sha256:0521300f0305e31f06ede7836e9aa0e69f14a6485e000ee9ea9b28c0895631b6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM1ZjcwMWIxN2JlMDMzMTYzNTAyNzgwYmY4NDNmYzIxOTNlZjA2ZmNmMjkzNTNjNGIxZjZmN2JiMjQ0YzY4YjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAxNDI3YTQzMTI1NTJlNDUwODRlY2IyYTZjMDg1MzhlOTE1ODAxOTFkZDM1NWY0OTQ5OGE0NmI2NjIxYmI0NjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVjODIyZGY2YWFmYWY1ZTYxNjFiZjVjOWI3ZjY5ZjEyYmVkZjhlYjAzYTc3ZjQ4ZWI4ZGMzMDA4OGNiNDI5YWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e7a747ba1f2d4d62b5a8d57c2051fdb4",
+      "statement": "Orders page dual role: Stripe return page (polls waitForOrder for 30 seconds) and order history (lists for signed-in users via payer.id filter with ACL readFilter).",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/shop/Orders.tsx#L152-L181",
+          "version": "repo-lines-v1:sha256:9188d93fcd3e81b7c149af21d65e22043d2f5c2aed64bf01b6084d03ea3b65be:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5NjZmYmZhODg5OThkYTc0NjU2YzUwMTk0OTU2YzI1ZjA4NDk0NTc2NjBjMDA5ZmU2M2QxZTlmYTlkYzkzMWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBlNDJhNmFlYTBlNjc2ZTIyZWYzZmQ4NDExOWI5MDM1MDVkMWNlOWNlZmNkN2FkOGQzYzY2OTc3MzBmMjczMzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFkNmU1ZDA5ODk1MjVkYjRhMzlmZjRhMzgzNjMzMjk3MjBjNDBmOTc5MjMxOGRkNTZiZTIyM2FiODIxYzgwNzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU1YWQ4NTY3ZDZiNDgzMGM2MWVmNzZmY2NiYTViYmQ5MzQxZjUxM2EwYzIyYzUzMWIzOWNlMjZlYzI4MTNiOWMifQ"
+        },
+        {
+          "resource": "repo://src/pages/shop/Orders.tsx#L9-L24",
+          "version": "repo-lines-v1:sha256:97d2c30e3a7e1be7ebddf7dcc9dcbb32a34c7f8f49aeee6d013a3adb03d6370b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3MmE0MjkzODJiMmUxNDcxOGUwZTM3YjA1NzBhOGExNzAyOTkxZmNkODQ5OGNkODQwNjBhOGJmNGYwNTAxN2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY1NDY0ODYwNmE0OWNjOTJiOWY4YTY0MTQ0N2QxYjcxZDEyYzNiYWIxNTFmNmNhNmQ0YTczNzk4NTBiMmY2YmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNiNDA2ZGFkYzcyNTg1NmFkMTY5ODAxZjhiZmJiMjI2ODJjYWFhMjI5NDZkMTQ4N2E0ZTZiMjUyNThjYmFiZDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f4c41f7ac33c4117a1d8a47560490bc8",
+      "statement": "Confirming state machine has states: none, waiting, settled, unfinished, error - with waiting state polling every 1 second for up to 30 seconds.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/shop/Orders.tsx#L26-L26",
+          "version": "repo-lines-v1:sha256:e20099239c1d512d6c98c48b6fac3484abe6d88efaa9c45362da0b6cd5009c67:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTIwMDk5MjM5YzFkNTEyZDZjOThjNDhiNmZhYzM0ODRhYmU2ZDg4ZWZhYTljNDUzNjJkYTBiNmNkNTAwOWM2NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTIwMDk5MjM5YzFkNTEyZDZjOThjNDhiNmZhYzM0ODRhYmU2ZDg4ZWZhYTljNDUzNjJkYTBiNmNkNTAwOWM2NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWIyOTVlODcwZjM1NjQ5MGJlOWRhNzk0OTdkNGMxZmVhZjJmYmUyY2EzMjgyMjMyODg4ZDk2MjNkNjBlY2ExMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjM5NjQ2MzBiMDY0ODM4MDhlZTNhNGJhNWI3N2QwNDYwOTk0MTc2Mjg0NzZjOWYwZGZlYjdmMGMxZTM2ZDdhOSJ9"
+        },
+        {
+          "resource": "repo://src/pages/shop/Orders.tsx#L87-L99",
+          "version": "repo-lines-v1:sha256:bae9e8059d970681b43014fc395aba962cd735d6a97d5a20f576697d54b3b329:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZiN2QxYTQ0ODVmYmNmZWRmN2IwYmU1NzZmNWYxYTljNDIyNDQzYzQ2OGViNWVmNjFmOGJkMmQ1YWE1NGVlN2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5YjE5ODJlOGRkNzQ4MTE4MTQ2YjM5YTJkMDA2MmY0MDgxZTM0Nzc5Yjg2NzVjMjM0YzRmYjEyNGRjMzkzOTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQxZTJkN2E5YTk1ZGI0ZmJmN2VjOTAwNGI3YjU4ZTVhNGU0YzZhMWU1YzFkYTFiYzEyMTk2OTc2NzU2NDM4YzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFkMGMyMzg4NjY4MjRiY2FlNzliNjgzYWE2MTVmYWY2NTcxZWU1OTBhZmZlMzRhMzc5MjliNWQwMTA3YjI2YWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_730d9558fcc84e4295a278dde3ec0033",
+      "statement": "Order lifecycle states: pending_payment (initial), paid, expired, failed, refunded, disputed - with pending_payment orders showing 'Finish paying' button linking to original Stripe session.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/shop/Orders.tsx#L221-L241",
+          "version": "repo-lines-v1:sha256:e8db09e90edc0c0bd3a9689bef6b7e413ff94b6b5e5888c841914f41d20edb96:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0ODIzZGRkMTFlNGMyNTZhNTE3NzkwZmFiMDMyZGQ0Mjg4YWEwMWRmMDFiMWVjZjE2MzU4ODUzNGZmNmNjNmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNjOTQ2OWVhZjg4MDhjZWM2MzNhOWMyMGFjOTYwOTg4Yjk4NGMyYjg4NTVjYmZlOTk3ZTA1NmFmZDZkMjk0YjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUwM2MyMWZlMWVhZDJkZmViYmRhODJiNDUzMDc3MDhhNWI0NTE1MWQwNjVlODAwNDI3YWIyMGFjM2FiOGVkYWIifQ"
+        },
+        {
+          "resource": "repo://src/pages/shop/Orders.tsx#L260-L264",
+          "version": "repo-lines-v1:sha256:e7d939f1f69986b0e4e54d9514b4511d2a9f89c0d09020055a33b7041bca7fe3:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTJhYmUwNjRjNzA4MjU4OTAwNGQ2MDMwODEzYmU1NDBmOTY4MjMyNjgwODA4ZjA4NTg5YTE3YmE0YjU4OTY1NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzEzMDA0ODQ3ZTA0ZDg4NDEyZjk0ZWFiNmIwNTY0OWQ2MmIwNDIzZDA0OWJiNGIzMjdhODE2MzE2ZDY0NDNjYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTI1ZmRiMjM4YjQ0ZTk0ZDVhYWM3YTk4M2ZlNDRmYjgxYjI3Zjk5ZWUwYzZhMzQyZTdmN2Y3OWRjMzk2MjQ5OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGEwOGE5ZGJkYjI4MTY5MWE4MjE0ZWYyODRkYmVmNzhkMjFiZTkxMmY1ZGVhZDQ0YTljOTEzM2IxY2NjMDFmNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a9818a61faae4c57808430e1afeaffa5",
+      "statement": "Cart is cleared only on confirmed payment (status === 'paid'), not on other final states like expired or failed, allowing users to retry.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/shop/Orders.tsx#L112-L115",
+          "version": "repo-lines-v1:sha256:4e9913b1c8780d87accfe1f6785ffa14ac8b73ab654f609e0886ebf4d7767028:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTA0Y2FhZjUzNGNjZTUzZGUyZWY2NDMyYjkzMTE2OGYzYzRlMjg0MzlhNjUwMjZhZWZkZmU3ZmUxNDU2ODNkNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmYwMzJlM2EwNjZmNzI0ZmIwNjEyZDRjNjU5NmFiYjU2OGVkMzVhYmNhNTc3ZjA4OTU3Yjc4NThkMzg3Nzk2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDZmMThlMzU4YTQwMGM5ZjZlM2E4OGNmM2RlNjYxNThkNzRkNDA5OGVlMzZlZTNmMjNlZWVjYWNhMTFiOGQ5YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmMzODc4NWFlN2RhMDY3YTdmZTMzM2ZjYTBkNGFkMDc0OTM0MzM3NGRlNDYyN2Q3NzJhNzEwZGQxMTQyZTY5YiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_37008b47b0ce4d908563e57d077d9062",
+      "statement": "Success URL template uses fragment (#) for order ID and secret to prevent exposure in server logs and Referer headers: /orders#order={ORDER_ID}&secret={ORDER_SECRET}.",
+      "evidence": [
+        {
+          "resource": "repo://ulabase.setup.ts#L109-L109",
+          "version": "repo-lines-v1:sha256:732899d42df77687b9fddb486576fa23351de5aa1a4b900676319d4d2a926aca:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzMyODk5ZDQyZGY3NzY4N2I5ZmRkYjQ4NjU3NmZhMjMzNTFkZTVhYTFhNGI5MDA2NzYzMTlkNGQyYTkyNmFjYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzMyODk5ZDQyZGY3NzY4N2I5ZmRkYjQ4NjU3NmZhMjMzNTFkZTVhYTFhNGI5MDA2NzYzMTlkNGQyYTkyNmFjYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2E1M2YzYWIxZTkyODgzNTA1M2E5ZDFmZmJiYWExZTYzNDU3ZDVmYTcyMDNlYjhiMmRmOGIxN2U3N2QxZDlkNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTQ3YzVmNTNiNTZkY2RmYjNhOTQzMzM0Njk3MjI5NDFmOWM1ZjZmYTYxNmM1Y2VjNWVlY2YzMTM0MGU0NTBjNCJ9"
+        },
+        {
+          "resource": "repo://ulabase.setup.ts#L72-L75",
+          "version": "repo-lines-v1:sha256:9d1ab2d8d2da606d952b88c2df9ede2e83693fd593877ce9c0083fafbf3ccdec:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTcwOTIyMmVhMzdhOTIwMmVmNWRiZmU4NTY0OWIwOTYyODA2ZTkzNzZhNTU5MTViZGM0MjcxODI4NjY3NmU0YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTkwYWI3Mjc4ZWU3NWRlZjcxZWRlYmMxYzNmNzZmMjNkYmUxZjdmZDM4MzQ5YTVlMDZlMTc1ZGYxZTQ0MmM3NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWFkNzU5Zjg2NWJiM2FlNTM0NTdhYmVmMjFhNmI3YTk2ZWFkODQzOWNiZWQ1YzcwZTBiMDBkYmQwMTY4ZTJmMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTdkOTYxOTU3ZGJkODYzNDMyYTQ1MWVhZTM3NjY4MjFmNzJiMzM2MTg1YjE0ZDk3YzA1YTNhZDk3OWRjMGEwOCJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.1",
+    "at": "2026-10-01T12:11:43.532Z"
+  }
+}
