@@ -564,6 +564,7 @@ export default defineSetup('Ecommerce', [
       return (
         config['app-name'] === APP_NAME &&
         config['frontend-url'] === origin &&
+        config['frontend-app-url'] === origin &&
         Object.entries(features).every(([k, v]) => current[k] === v)
       );
     },
@@ -579,6 +580,9 @@ export default defineSetup('Ecommerce', [
         // every one of those emails is a dead end — a failure nobody sees
         // until a real customer hits it.
         'frontend-url': origin,
+        // where a verified or signed-in user lands, the token in the URL fragment: the app itself.
+        // Left unset, accounts sends them to its default, http://localhost:4200/app
+        'frontend-app-url': origin,
         features: { ...section(current, 'features'), ...features },
       });
     },

@@ -94,6 +94,18 @@ than yours, so it configures services and cannot buy one, and revoking it touche
 You only need the Stripe keys the first time. After that the service keeps them, and re-running
 the command asks for nothing.
 
+**Google sign-in, when you want it.** The app starts with email and password, so it runs
+without any Google setup. To add the Google button:
+
+1. In the Google Cloud console, create an OAuth client of type *Web application* with this
+   redirect URI: `https://<srvId>.ulabase.app/auth/oauth/callback/google`.
+2. In `src/environments/environment.ts`, set `oauthLogin: true` (`oauthProviders` already lists `google`).
+3. Run the setup again with the client's credentials. They go to the service, never into the app:
+
+```bash
+GOOGLE_CLIENT_ID=… GOOGLE_CLIENT_SECRET=… ulabase setup --srv <srvId>
+```
+
 ### 4. Start it
 
 ```bash
