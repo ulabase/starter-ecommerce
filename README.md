@@ -11,8 +11,8 @@ server of yours to write, deploy or pay for.
 
 ## Get it running
 
-**You need:** [Node.js](https://nodejs.org) 18 or later, a free Ulabase service, and a
-[Stripe](https://stripe.com) account. Both are free to sign up for.
+**You need:** [Node.js](https://nodejs.org) 18 or later and a free Ulabase service. For payments,
+later, a free [Stripe](https://stripe.com) account.
 
 ### 1. Clone it
 
@@ -40,19 +40,33 @@ This installs the payment feature, creates the collections, opens the shop to vi
 account, turns on sign-up, login and password reset, and puts a few demo products in the
 catalogue.
 
-First you need two things from Stripe, both in **test mode** — check the toggle at the top right
-of the Stripe dashboard says *Test mode*.
+```bash
+npm install -g ulabase   # the ulabase command; the setup file's own copy came with npm install
+ulabase login
+ulabase setup --srv <srvId>
+```
+
+`ulabase login` asks for a **personal access token**: in [ulabase.com](https://ulabase.com), open
+your profile, then Tokens, and create one. It carries the `cli` role, so it configures services and
+cannot buy one, and revoking it touches nothing else.
+
+`<srvId>` is the six characters at the start of your service URL.
+
+The shop now works: catalogue, cart, accounts. Checkout stays off until Stripe is set up, and the
+cart says so.
+
+**Payments, when you want them.** You need two things from Stripe, both in **test mode** (the
+toggle at the top right of the Stripe dashboard says *Test mode*).
 
 **The secret key.** [Developers → API keys](https://dashboard.stripe.com/test/apikeys), copy the
 one starting `sk_test_`.
 
-**The webhook signing secret.** This one takes a minute: Stripe has to know where to tell your
-service that a payment went through, and your service has to know the message really came from
-Stripe.
+**The webhook signing secret.** Stripe has to know where to tell your service that a payment went
+through, and your service has to know the message came from Stripe.
 
 In [Developers → Webhooks](https://dashboard.stripe.com/test/webhooks), add an event destination:
 
-1. **Events** — scope *Your account*, then select these six:
+1. **Events**: scope *Your account*, then select these six:
    ```
    checkout.session.completed
    checkout.session.async_payment_succeeded
@@ -61,38 +75,28 @@ In [Developers → Webhooks](https://dashboard.stripe.com/test/webhooks), add an
    charge.refunded
    charge.dispute.created
    ```
-   The first is the one that marks an order paid. The rest cover slow payment methods, abandoned
-   checkouts, refunds and disputes. Leave the API version as Stripe suggests it.
-2. **Destination type** — *Webhook endpoint*.
-3. **Destination** — the URL is your service plus `/stripe/webhook`:
+   The first marks an order paid. The rest cover slow payment methods, abandoned checkouts,
+   refunds and disputes. Leave the API version as Stripe suggests it.
+2. **Destination type**: *Webhook endpoint*.
+3. **Destination**: your service plus `/stripe/webhook`:
    ```
    https://xxxxxx.ulabase.app/stripe/webhook
    ```
 
-Save it, then reveal the **signing secret** on the destination you just made. It starts `whsec_`.
+Save it, then reveal the **signing secret** on the destination. It starts `whsec_`.
 
-> Your service is on the public internet, so Stripe reaches it directly. You do not need the
-> Stripe CLI or `stripe listen` — those are for a webhook arriving at your laptop.
+> Your service is on the public internet, so Stripe reaches it directly. The Stripe CLI and
+> `stripe listen` are for a webhook arriving at your laptop, and you do not need them here.
+
+Then run the setup again with the two keys:
 
 ```bash
-npm install -g ulabase   # the ulabase command; the setup file's own copy came with npm install
-
 export STRIPE_SECRET_KEY=sk_test_...
 export STRIPE_WEBHOOK_SECRET=whsec_...
-
-ulabase login
 ulabase setup --srv <srvId>
 ```
 
-`ulabase login` asks for a **personal access token**, which you create first: in
-[ulabase.com](https://ulabase.com), open your profile and issue one. It is not
-your account password — the CLI has no way to accept one. A token carries the `cli` role rather
-than yours, so it configures services and cannot buy one, and revoking it touches nothing else.
-
-`<srvId>` is the six characters at the start of your service URL.
-
-You only need the Stripe keys the first time. After that the service keeps them, and re-running
-the command asks for nothing.
+The service keeps the keys: later runs ask for nothing.
 
 **Google sign-in, when you want it.** The app starts with email and password, so it runs
 without any Google setup. To add the Google button:

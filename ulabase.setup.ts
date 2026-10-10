@@ -160,8 +160,34 @@ const secret = (name: string, stored: unknown) => {
     pushed.add(name);
     return fromEnv(name);
   }
-  if (configured(stored)) return stored;
-  return fromEnv(name);
+  return stored;
+};
+
+/**
+ * The Stripe keys are optional for the first run. Without them the shop opens with its catalog,
+ * cart and accounts, and only checkout stays off; exporting the two keys and running the setup
+ * again turns it on. Asking for a Stripe account before anything else works was the step most
+ * people stopped at.
+ */
+const isSet = (name: string) => (process.env[name] ?? '') !== '';
+
+let checkoutNoticeShown = false;
+const checkoutNotice = () => {
+  if (checkoutNoticeShown) return;
+  checkoutNoticeShown = true;
+  console.log(
+    '\n  Checkout is off: the shop works without it, and the cart says payments are not set up yet.\n' +
+      '  To turn it on, export STRIPE_SECRET_KEY and STRIPE_WEBHOOK_SECRET (test keys) and run the setup again.\n'
+  );
+};
+
+/** The keys are stored, or none is in the environment: then checkout stays off, and is said so once. */
+const keysSatisfied = (config: FeatureConfig): boolean => {
+  const stored = configured(config['secret-key']) && configured(config['webhook-secret']);
+  if (!stored && !isSet('STRIPE_SECRET_KEY') && !isSet('STRIPE_WEBHOOK_SECRET')) {
+    checkoutNotice();
+  }
+  return stored || (!isSet('STRIPE_SECRET_KEY') && !isSet('STRIPE_WEBHOOK_SECRET'));
 };
 
 const products = (config: FeatureConfig): FeatureConfig =>
@@ -364,8 +390,8 @@ export default defineSetup('Ecommerce', [
         SHIPPING_COUNTRIES.every(c =>
           ((p['shipping-address-countries'] as string[] | undefined) ?? []).includes(c)
         ) &&
-        configured(config['secret-key']) &&
-        configured(config['webhook-secret']) &&
+        // the keys: stored, or not asked for. Without them checkout stays off, and the setup says so.
+        keysSatisfied(config) &&
         // A secret named in the environment is one you are asking to be written,
         // so the step is not satisfied until it has been. Without this the apply
         // above would never run: the check would pass on the old value.

@@ -60,10 +60,14 @@ export default function Cart() {
       // A 401 is the one failure this page can explain better than the server:
       // it means the service does not permit anonymous orders, which is its
       // ACL's decision and says nothing a buyer could act on.
+      // A 502 is the service failing to open a Stripe session: on a shop set up without the
+      // Stripe keys that is every order, so the page says what the owner has to do.
       setError(
         e.status === 401
           ? 'This service requires an account to order. Please sign in.'
-          : (e.message ?? `Could not start checkout${e.status ? ` (HTTP ${e.status})` : ''}.`)
+          : e.status === 502
+            ? 'Payments are not set up on this shop yet. The owner adds the Stripe test keys and runs the setup again.'
+            : (e.message ?? `Could not start checkout${e.status ? ` (HTTP ${e.status})` : ''}.`)
       );
     }
   };
