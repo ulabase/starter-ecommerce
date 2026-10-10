@@ -11,14 +11,14 @@ server of yours to write, deploy or pay for.
 
 ## Get it running
 
-**You need:** [Node.js](https://nodejs.org) 18 or later and a free Ulabase service. For payments,
+**You need:** [Node.js](https://nodejs.org) 22.18 or later (it runs the TypeScript setup file) and a free Ulabase service. For payments,
 later, a free [Stripe](https://stripe.com) account.
 
 ### 1. Clone it
 
 ```bash
 git clone https://github.com/ulabase/starter-ecommerce.git
-cd ulabase-starter-ecommerce
+cd starter-ecommerce
 npm install
 ```
 
