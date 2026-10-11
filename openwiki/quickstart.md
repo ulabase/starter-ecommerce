@@ -1,10 +1,11 @@
 ---
-type: "Reference"
-title: "Quickstart — Ulabase Ecommerce Starter"
-openwiki_generated: true
+type: reference
+title: Quickstart — Ulabase Ecommerce Starter
+description: Entry point for the wiki — routes readers to the right section based on their goal. Covers first-time setup, key files, and links to every wiki section.
+tags: [quickstart, setup, onboarding, routing]
 verified:
-  - by: openwiki/0.6.1
-    at: 2026-10-01T12:11:43.532Z
+  - by: openwiki/0.7.2
+    at: 2026-10-11T09:48:34.925Z
 sources:
   - id: openwiki-source-4e7cd7f381c92e8c5d89f5c1
     resource: repo://NOTES.md
@@ -20,9 +21,8 @@ sources:
     resource: repo://src/routes.tsx
   - id: openwiki-source-34f568b222540eb11aa44859
     resource: repo://ulabase.setup.ts
-generated: { by: "openwiki/0.6.1", at: "2026-10-01T12:11:43.532Z" }
+generated: { by: "openwiki/0.7.2", at: "2026-10-11T09:48:34.925Z" }
 ---
-
 
 # Quickstart — Ulabase Ecommerce Starter
 
@@ -32,9 +32,9 @@ Welcome to the Ulabase Ecommerce Starter documentation. This React SPA is a comp
 
 | Requirement | Notes |
 |---|---|
-| **Node.js 18+** | Local development and the `ulabase` CLI |
+| **Node.js 22.18+** | Runs the TypeScript setup file (`ulabase.setup.ts`) and the `ulabase` CLI |
 | **A free Ulabase service** | Created at [ulabase.com](https://ulabase.com); the six-character service ID is in the URL |
-| **A Stripe account** | Free to sign up; test mode works out of the box |
+| **A Stripe account** | Free to sign up; test mode works out of the box. Only needed when you want checkout |
 
 The app boots with email/password auth and a demo catalogue. Google OAuth, custom products, and production Stripe keys are opt-in steps.
 
@@ -63,35 +63,75 @@ Start here depending on what you want to do:
 
 ## First-time setup in 10 minutes
 
-1. **Clone and install:**
-   ```bash
-   git clone https://github.com/ulabase/starter-ecommerce.git
-   cd ulabase-starter-ecommerce
-   npm install
+### 1. Clone and install
+
+```bash
+git clone https://github.com/ulabase/starter-ecommerce.git
+cd starter-ecommerce
+npm install
+```
+
+### 2. Create a service
+
+Create a **free service** at [ulabase.com](https://ulabase.com). Its ID is the six characters at the start of its URL.
+
+### 3. Set it up
+
+```bash
+npm install -g ulabase   # or use npx ulabase in place of ulabase below
+ulabase login
+ulabase setup --srv <srvId>
+```
+
+`ulabase login` asks for a **personal access token** — create one in your [ulabase.com](https://ulabase.com) profile under Tokens. It carries the `cli` role for configuring services; revoking it touches nothing else.
+
+`ulabase setup` configures the service (collections, ACL, seed data) and writes the service URL into `src/environments/environment.ts`. Commit that file when you publish your app. Checkout stays off until Stripe is configured — the cart says so.
+
+### 4. Add Stripe payments (optional, when you want them)
+
+You need two things from Stripe, both in **test mode** (toggle at the top right of the Stripe dashboard):
+
+**The secret key.** [Developers → API keys](https://dashboard.stripe.com/test/apikeys), copy the one starting `sk_test_`.
+
+**The webhook signing secret.** In [Developers → Webhooks](https://dashboard.stripe.com/test/webhooks), add an event destination:
+
+1. **Events**: scope *Your account*, then select these six:
+   ```
+   checkout.session.completed
+   checkout.session.async_payment_succeeded
+   checkout.session.async_payment_failed
+   checkout.session.expired
+   charge.refunded
+   charge.dispute.created
+   ```
+   Leave the API version as Stripe suggests.
+2. **Destination type**: *Webhook endpoint*.
+3. **Destination**: your service plus `/stripe/webhook`:
+   ```
+   https://xxxxxx.ulabase.app/stripe/webhook
    ```
 
-2. **Point at your service** — copy the URL from your service's *Connect* page into `src/environments/environment.ts`:
-   ```ts
-   apiUrl: 'https://xxxxxx.ulabase.app',
-   ```
+Save it, then reveal the **signing secret** on the destination. It starts `whsec_`.
 
-3. **Configure the service** — create a Stripe webhook destination (six events, destination type *Webhook endpoint*, URL `https://xxxxxx.ulabase.app/stripe/webhook`), then:
-   ```bash
-   npm install -g ulabase
-   export STRIPE_SECRET_KEY=sk_test_...
-   export STRIPE_WEBHOOK_SECRET=whsec_...
-   ulabase login
-   ulabase setup --srv <srvId>
-   ```
-   The `ulabase login` command asks for a personal access token (created in your Ulabase profile), not your account password.
+> Your service is on the public internet, so Stripe reaches it directly. The Stripe CLI and `stripe listen` are for a webhook arriving at your laptop, and you do not need them here.
 
-4. **Start:**
-   ```bash
-   npm run dev
-   ```
-   Open [localhost:5173](http://localhost:5173). Buy a demo product with Stripe's test card `4242 4242 4242 4242`.
+Then run the setup again with the two keys:
 
-You only need the Stripe keys the first time. Subsequent `ulabase setup` runs ask for nothing.
+```bash
+export STRIPE_SECRET_KEY=sk_test_...
+export STRIPE_WEBHOOK_SECRET=whsec_...
+ulabase setup --srv <srvId>
+```
+
+The service keeps the keys: later runs ask for nothing.
+
+### 5. Start
+
+```bash
+npm run dev
+```
+
+Open [localhost:5173](http://localhost:5173). Buy a demo product with Stripe's test card `4242 4242 4242 4242`.
 
 ## Key files
 
@@ -102,7 +142,6 @@ You only need the Stripe keys the first time. Subsequent `ulabase setup` runs as
 | `src/main.tsx` | Provider tree: `RhAuthProvider` → `RhPaymentsProvider` → `RhCartProvider` |
 | `src/routes.tsx` | Route map with feature-flag gating and lazy loading |
 | `src/styles.css` | Design tokens (section 1) and disposable default skin (sections 3–5) |
-| `src/shop/cart.ts` | Client-side cart state (persisted) |
 | `src/shop/pending-order.ts` | Stashes order reference across the Stripe redirect |
 
 ## Next steps

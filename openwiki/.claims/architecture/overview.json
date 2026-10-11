@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:f0b886cb7079de77ce596e828b1867852670ac1ea86ddcd42b51ea34e6589902",
+  "pageVersion": "sha256:e15bb2fde5ad0d741d74ca9b6067c95c34ba21898ace2f4cd0311fba440727cf",
   "claims": [
     {
       "id": "claim_466fb5dd1fcf4ac5b044769046237a16",
@@ -95,8 +95,8 @@
           "version": "repo-lines-v1:sha256:028926a820d32cbe81d5a9073b229892d6cf35ededafbeb6b96370eabd388a05:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5MWM0YjllYzZkNTY0MzFiM2JkNDZjYjE3YTg5NTJjNGI1M2EwNjc2NzVjOTcwMjYyNjRkMzUyMTUwNzVmZDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3ZWM3YTRlNDVlNTc5ODkwNzExYjkyZjNjYzQ1MTUyYWE2NTVlZjRlODE5Y2UwMDFhMTZkZTQyMzFkMTY1MWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY2YzA3NGFkYTcyODEzZTIwM2Y4NjQwYjcyZmU1NWU0MTE3OThhNDE5MjVjODQ3M2VlYjE4YWU0YmQ1ZWJjNmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFjZWJiYzMzNjU4NGU1N2E3ZDBjNDQ3NDcxYTNmZTNhYTZmMDcyYjNlMDAyN2IwMTI2OTZkYTE4NDdhMmY1YjIifQ"
         },
         {
-          "resource": "repo://src/ConfigPage.tsx#L1-L59",
-          "version": "repo-lines-v1:sha256:518909ec08e851d8e803e414195f631af6af7c00197f7cf117626c425ae58353:eyJzZWxlY3RlZExpbmVDb3VudCI6NTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVmMWU4Nzg4NmQzNTkwOWVlZGEwMGQxY2YwOTE5ZmViYzQyOGI2YmZhODFkODEwZTNjOWY3ZTk5OTIxNmM2MzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+          "resource": "repo://src/ConfigPage.tsx#L1-L61",
+          "version": "repo-lines-v1:sha256:b5e3765f2684c293247739db300f26ba6e9d7b0f43afdc553bb31660d0056bb1:eyJzZWxlY3RlZExpbmVDb3VudCI6NjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVmMWU4Nzg4NmQzNTkwOWVlZGEwMGQxY2YwOTE5ZmViYzQyOGI2YmZhODFkODEwZTNjOWY3ZTk5OTIxNmM2MzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
         }
       ]
     },
@@ -123,10 +123,30 @@
           "version": "repo-lines-v1:sha256:678a3a4e62ae0ee0e0faec946a9774586b6bad8b02507b2f8a7ccc46738539b7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyMWY5MjUxOGZlYzI3YTI5OTZmOTIxNWJjMzljZWZlYTMzNzk0YjQ5ODY5MjRiMjdmNjE5MDQzYmQxZWZhMzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkyMDQwZTA5NWE5NGUyYWRhNzRlNDIxZjM3MTg3NTFhOTFhODEwYmZkNjZmNDhmNGU5MzljN2I3NDgwZWI2NzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFhMWQxYTYzMzkwMjI5Yzc5ODM0N2U4M2EwNDA1NDQxYzk0MDAwMzUyODRhZDE2OGMxYmY2Y2RmMWQ3MGEzNzAifQ"
         }
       ]
+    },
+    {
+      "id": "claim_58698bfeaa25445b8126053a1c47c934",
+      "statement": "The Footer component is rendered as a sibling of ConsentsGate in App.tsx, outside the consents gate, so it appears on every screen including the consents acceptance overlay — the seller's identity should remain visible even when asking the user to accept terms.",
+      "evidence": [
+        {
+          "resource": "repo://src/App.tsx#L75-L80",
+          "version": "repo-lines-v1:sha256:94cb1eb7f83094fe9cf2c649b6d66d3adc99b40e6ca328bb3b2eb92036bae3a3:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTcyMTZlOGU5YzBhMWE2OGQwNmMyZmJhYTVmZDIxMzk0ODJiOGVmZDBhMTkzMTViOTE1ZTZjY2U4NDlkODlkYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTVlZjAxYmMwOGRiYzNiNjNlNGU3NWVhM2QyNmE1Yjk0MTg5MTg3N2UyN2FkODkxMzI5Yzg0MTFkN2Q4ZGM0ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDMyYzBkYzdmODU5ZjEyMzE5MDY1Zjc1NGI3ZjViNGRiYzA4NTBkMWMzYzgxMGFhYTFkNzkwMzVmYmIxODEyYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b2a64e90ef444a749a5a16cc846c1b14",
+      "statement": "The SuspenseWrapper deliberately uses a minimal text 'Loading...' fallback instead of a spinner because during Stripe return navigation, a blank or spinning screen causes buyers to question whether their payment succeeded.",
+      "evidence": [
+        {
+          "resource": "repo://src/routes.tsx#L27-L43",
+          "version": "repo-lines-v1:sha256:df0d2546f21d6c93361d4f3aedff3bf147259ab27b3dd326f78ada82fb31fdf1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRhNWJlNzY0NmQ3ZThjOGY5MTgxMjE4YTNmYTc4NWJlMGVjOGExODU1MzgwNGRjOThmMjQ3YzE1MDg4YzFlNWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ4ZWU4OGFmZDZkY2ZlNTNiYWI1NjkwMDY1YzE5MzUzMTM4Njk1YTQ1NTcxMGYzYzU3MGQ3MWZlZWQ0MTA0ZWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFjODBhNjJmMTlkNmY2NWY2Y2VlNzJmNDkyYmUxNzM5Yzc1MWM1YzU5ZDc5MTliOGQ1NDhlMTE5NTQxNTdjYTcifQ"
+        }
+      ]
     }
   ],
   "verification": {
-    "by": "openwiki/0.6.1",
-    "at": "2026-10-01T12:11:43.532Z"
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-11T09:48:34.925Z"
   }
 }

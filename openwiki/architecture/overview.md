@@ -3,8 +3,8 @@ type: "Reference"
 title: "Architecture Overview"
 openwiki_generated: true
 verified:
-  - by: openwiki/0.6.1
-    at: 2026-10-01T12:11:43.532Z
+  - by: openwiki/0.7.2
+    at: 2026-10-11T09:48:34.925Z
 sources:
   - id: openwiki-source-4e7cd7f381c92e8c5d89f5c1
     resource: repo://NOTES.md
@@ -24,8 +24,9 @@ sources:
     resource: repo://src/pages/shell/Shell.tsx
   - id: openwiki-source-07aa4341cebe71bfc8fd2890
     resource: repo://src/routes.tsx
-generated: { by: "openwiki/0.6.1", at: "2026-10-01T12:11:43.532Z" }
+generated: { by: "openwiki/0.7.2", at: "2026-10-11T09:48:34.925Z" }
 ---
+
 
 
 # Architecture Overview
@@ -54,6 +55,7 @@ graph TD
     D --> E[App]
     E --> F[ConsentsGate]
     F --> G[Router]
+    E --> H[Footer]
     
     style A fill:#e1f5fe
     style B fill:#f3e5f5
@@ -62,6 +64,7 @@ graph TD
     style E fill:#fce4ec
     style F fill:#f1f8e9
     style G fill:#e3f2fd
+    style H fill:#e3f2fd
 ```
 
 **Provider Responsibilities**:
@@ -69,8 +72,9 @@ graph TD
 - **RhAuthProvider**: Authentication state, session management, user data
 - **RhPaymentsProvider**: Stripe payments integration and billing portal
 - **RhCartProvider**: Shopping cart state and persistence
-- **App**: Core application logic including fragment token capture and API validation
+- **App**: Core application logic including fragment token capture and API validation; renders ConsentsGate wrapping the route output and the Footer as a sibling outside the gate
 - **ConsentsGate**: Enforces Terms of Service and Privacy Policy acceptance for authenticated users
+- **Footer**: Rendered outside ConsentsGate so it appears on every screen, including the consents acceptance overlay
 
 ## Route Map and Guards
 
@@ -170,8 +174,12 @@ If `apiUrl` is not configured or invalid:
 
 1. `App.tsx` validates the URL using `isValidApiBaseUrl`
 2. If invalid, renders `ConfigPage` instead of the router
-3. `ConfigPage` shows setup instructions and the current `apiUrl` value
-4. No API calls are made; the app is in a safe, non-functional state
+3. `ConfigPage` shows a three-step setup flow:
+   - **Create a free service** at ulabase.com (skip if you already have one)
+   - **Set it up from this folder** with `npx ulabase login` and `npx ulabase setup --srv <your service id>` — payments are optional; the setup runs without Stripe keys, and checkout turns on later with the test keys
+   - **Reload** to replace the configuration screen with the sign-in page
+4. The page displays whether `apiUrl` is set to an invalid URL or not set at all
+5. No API calls are made; the app is in a safe, non-functional state
 
 ## Key Design Decisions
 
