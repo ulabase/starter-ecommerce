@@ -39,10 +39,12 @@ export function ConfigPage({ apiUrl }: ConfigPageProps) {
           </li>
           <li>
             <div>
-              <strong>Copy its URL into your environment file</strong>
+              <strong>Set it up from this folder</strong>
+              <p>In a terminal, in this folder:</p>
+              <pre className="config-command">{'npx ulabase login\nnpx ulabase setup --srv <your service id>'}</pre>
               <p>
-                Edit <code>src/environments/environment.ts</code> and set{' '}
-                <code>apiUrl</code> to your Ulabase service URL.
+                It configures the service for this app and writes its URL into{' '}
+                <code>src/environments/environment.ts</code>. Payments are optional: the setup runs without Stripe keys, and checkout turns on later with the test keys.
               </p>
             </div>
           </li>

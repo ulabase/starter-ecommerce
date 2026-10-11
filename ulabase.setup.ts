@@ -18,6 +18,7 @@
  * the value is not already stored, so a re-run against a configured service
  * needs no secrets in the environment at all.
  */
+import { readFileSync, writeFileSync } from 'node:fs';
 import { defineSetup, step, fromEnv, isRedacted } from '@ulabase/cli';
 import { isApiError } from '@ulabase/cli';
 import type { AdminClient, FeatureConfig, ServiceClient } from '@ulabase/cli';
@@ -368,6 +369,35 @@ const install = async (admin: AdminClient, srvId: string, featureId: string) => 
     if (!isApiError(err) || err.status !== 409) throw err;
   }
 };
+
+/**
+ * The environment file the app reads its service URL from, next to this setup file whatever the
+ * working directory. Read fresh each time: the `environment` import above is the value at start.
+ */
+const ENV_FILE = new URL('./src/environments/environment.ts', import.meta.url);
+const API_URL_LINE = /^(\s*apiUrl:\s*)'[^']*'/m;
+
+/** The `apiUrl` the environment file holds now, or null when it has no such line. */
+function apiUrlInFile(): string | null {
+  const m = readFileSync(ENV_FILE, 'utf8').match(/^\s*apiUrl:\s*'([^']*)'/m);
+  return m ? m[1] : null;
+}
+
+/** Exported so a setup that extends this one can keep it last. */
+export const appPointsAtService = step('the app points at this service', {
+  // Last, on purpose: the app is pointed at the service only once everything above it is in
+  // place, so a setup that stopped halfway leaves the "connect your service" screen, not a
+  // sign-up page that fails. Only the apiUrl line is rewritten; comments and flags stay.
+  check: async ({ admin, srvId }) => apiUrlInFile() === (await admin.serviceToken(srvId)).url,
+  apply: async ({ admin, srvId }) => {
+    const { url } = await admin.serviceToken(srvId);
+    const text = readFileSync(ENV_FILE, 'utf8');
+    if (!API_URL_LINE.test(text)) {
+      throw new Error(`src/environments/environment.ts has no apiUrl: '...' line to write ${url} into`);
+    }
+    writeFileSync(ENV_FILE, text.replace(API_URL_LINE, `$1'${url}'`));
+  },
+});
 
 export default defineSetup('Ecommerce', [
   step('stripe feature installed', {
@@ -791,4 +821,5 @@ export default defineSetup('Ecommerce', [
       });
     },
   }),
+  appPointsAtService,
 ]);

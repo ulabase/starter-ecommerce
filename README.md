@@ -22,17 +22,10 @@ cd starter-ecommerce
 npm install
 ```
 
-### 2. Point it at your service
+### 2. Create a service
 
-Create a **free service** at [ulabase.com](https://ulabase.com) and copy its URL
-from the service's *Connect* page. Put it in `src/environments/environment.ts`:
-
-```ts
-apiUrl: 'https://xxxxxx.ulabase.app',
-```
-
-> Use the URL of **your service**, not `api.ulabase.com`. That second one is Ulabase's
-> own control panel, and pointing the app at it makes every request fail.
+Create a **free service** at [ulabase.com](https://ulabase.com). Its id is the six characters at the
+start of its URL: you give it to the setup below.
 
 ### 3. Set the service up
 
@@ -45,6 +38,9 @@ npm install -g ulabase   # the ulabase command; the setup file's own copy came w
 ulabase login
 ulabase setup --srv <srvId>
 ```
+
+The last step writes the service URL into `src/environments/environment.ts` (`apiUrl`), so the app talks to it
+when you start it. Commit that file when you publish your app.
 
 `ulabase login` asks for a **personal access token**: in [ulabase.com](https://ulabase.com), open
 your profile, then Tokens, and create one. It carries the `cli` role, so it configures services and
