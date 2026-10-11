@@ -3,9 +3,6 @@ type: platform-integration
 title: Ulabase Platform and Kit Packages
 description: Explains the Ulabase managed service platform, its NPM packages (@ulabase/kit, @ulabase/kit-react, @ulabase/cli), and how they integrate with the ecommerce starter application
 tags: [ulabase, platform, kit, authentication, payments, setup, integration, managed-service]
-verified:
-  - by: openwiki/0.6.1
-    at: 2026-10-01T12:11:43.532Z
 sources:
   - id: openwiki-source-4e7cd7f381c92e8c5d89f5c1
     resource: repo://NOTES.md
@@ -19,7 +16,10 @@ sources:
     resource: repo://src/main.tsx
   - id: openwiki-source-34f568b222540eb11aa44859
     resource: repo://ulabase.setup.ts
-generated: { by: "openwiki/0.6.1", at: "2026-10-01T12:11:43.532Z" }
+generated: { by: "openwiki/0.7.2", at: "2026-10-11T09:48:34.925Z" }
+verified:
+  - by: openwiki/0.7.2
+    at: 2026-10-11T09:48:34.925Z
 ---
 
 # Ulabase Platform and Kit Packages
@@ -46,7 +46,7 @@ Where `<id>` is a six-character identifier (e.g., `xxxxxx` in `https://xxxxxx.ul
 
 ## NPM Packages
 
-The Ulabase ecosystem consists of three primary packages that work together:
+The Ulabase ecosystem consists of three packages that work together:
 
 ### @ulabase/kit
 
@@ -56,6 +56,8 @@ The core framework-agnostic package that handles authentication and API communic
 - **API Communication**: Provides authenticated API access to Ulabase services
 - **Error Handling**: Implements standardized error responses via `ApiError` objects with `status` and `message` properties
 - **Token Management**: Handles JWT token storage, refresh, and automatic attachment to requests
+
+*Note*: This package is a transitive dependency of `@ulabase/kit-react` and not installed directly in the starter.
 
 ### @ulabase/kit-react
 
@@ -82,7 +84,7 @@ React-specific integrations built on top of `@ulabase/kit`:
 
 ### @ulabase/cli
 
-Command-line interface for service setup and configuration:
+Command-line interface for service setup and configuration (devDependency):
 
 - **`defineSetup()`**: Declarative setup configuration function
 - **`step()`**: Defines check/apply pairs for idempotent configuration
@@ -104,13 +106,20 @@ const config = {
   onError: consentsOnError,
 };
 
-<RhAuthProvider config={config}>
-  <RhPaymentsProvider config={config}>
-    <RhCartProvider>
-      <App />
-    </RhCartProvider>
-  </RhPaymentsProvider>
-</RhAuthProvider>
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+    <BrowserRouter>
+      <RhAuthProvider config={config}>
+        {/* Must sit inside RhAuthProvider — it reads the user from it. */}
+        <RhPaymentsProvider config={config}>
+          <RhCartProvider>
+            <App />
+          </RhCartProvider>
+        </RhPaymentsProvider>
+      </RhAuthProvider>
+    </BrowserRouter>
+  </StrictMode>
+);
 ```
 
 ### Authentication Flow

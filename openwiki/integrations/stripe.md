@@ -1,10 +1,11 @@
 ---
-type: "Reference"
-title: "Stripe Payment Integration"
-openwiki_generated: true
+type: integration
+title: Stripe Payment Integration
+description: Stripe checkout integration covering configuration, webhook handling, order lifecycle, stock, and operational concerns.
+tags: [stripe, payments, checkout, webhooks, orders]
 verified:
-  - by: openwiki/0.6.1
-    at: 2026-10-01T12:11:43.532Z
+  - by: openwiki/0.7.2
+    at: 2026-10-11T09:48:34.925Z
 sources:
   - id: openwiki-source-4e7cd7f381c92e8c5d89f5c1
     resource: repo://NOTES.md
@@ -16,7 +17,7 @@ sources:
     resource: repo://src/pages/shop/Orders.tsx
   - id: openwiki-source-34f568b222540eb11aa44859
     resource: repo://ulabase.setup.ts
-generated: { by: "openwiki/0.6.1", at: "2026-10-01T12:11:43.532Z" }
+generated: { by: "openwiki/0.7.2", at: "2026-10-11T09:48:34.925Z" }
 ---
 
 
@@ -106,7 +107,7 @@ https://your-app.example.com/orders#order={ORDER_ID}&secret={ORDER_SECRET}
 - Browser history (address bar)
 - Screenshots or bookmarks
 
-The Orders page reads the fragment with `readOrderRef()` and immediately strips it with `clearOrderRef()`.
+The Orders page reads the fragment with `readOrderRef()` and immediately strips it with `clearOrderRef()`. The pending order stash stores orders in `localStorage` (not `sessionStorage`) to persist across tabs, maintains a list (not single entry) to support multiple concurrent checkouts, expires entries older than 24 hours, and limits to 10 entries (oldest removed when exceeded).
 
 ### Session Expiration
 

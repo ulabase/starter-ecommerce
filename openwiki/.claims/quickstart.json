@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:9f981be9837310eac45f7ee1e9d6a92526d62b7d1716261e6b89ca427b25c384",
+  "pageVersion": "sha256:e7ae811361b0c7f2f7b239c7fd4fca14c1a5bac897bcf580b883a825dfedb484",
   "claims": [
     {
       "id": "claim_25cb4739a07d43e799b6cf89cfdae3ba",
@@ -53,7 +53,7 @@
           "version": "repo-lines-v1:sha256:8da51c063cbd3c47f4512b5380cc8c7a72fbc7527c95ef7c010275f113161874:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3MmE0MjkzODJiMmUxNDcxOGUwZTM3YjA1NzBhOGExNzAyOTkxZmNkODQ5OGNkODQwNjBhOGJmNGYwNTAxN2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBlYTA5ODhkMDU2NDJhNTY4NjY0MjUxMGQ1OTM2ZDM3ZjlkODYyNjE1ZThiMGQyNWY4YWJhOWJkZDY3OWE1NDkifQ"
         },
         {
-          "resource": "repo://ulabase.setup.ts#L21-L21",
+          "resource": "repo://ulabase.setup.ts#L22-L22",
           "version": "repo-lines-v1:sha256:0c525239987a746044d323b479d687dfa4184c47a4f7de82b703b18d8239b392:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGM1MjUyMzk5ODdhNzQ2MDQ0ZDMyM2I0NzlkNjg3ZGZhNDE4NGM0N2E0ZjdkZTgyYjcwM2IxOGQ4MjM5YjM5MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGM1MjUyMzk5ODdhNzQ2MDQ0ZDMyM2I0NzlkNjg3ZGZhNDE4NGM0N2E0ZjdkZTgyYjcwM2IxOGQ4MjM5YjM5MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjlkMzg5NjFkMWRhYzI0MWQwNzYwYTJlYjUxNTEwMTYxNWFlNTQyMjc4YzY0Y2NmZWIxYTZiOThiMDNhZDNlNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWZkMmM5NjZmOWRhMzkyNjU3OWMyNjI1M2QzMzY5ODc3MGQ1NWI3ZGI3YTRjNGQ2ZWMzNDNjZGQwNjcwNGU5ZSJ9"
         }
       ]
@@ -77,8 +77,8 @@
       "statement": "Stripe webhook configuration is done on the Stripe dashboard (not via the Stripe CLI), with the webhook endpoint URL pointing to the Ulabase service at /stripe/webhook.",
       "evidence": [
         {
-          "resource": "repo://README.md#L53-L75",
-          "version": "repo-lines-v1:sha256:5dbcf39a83b425efc40a7a598ce6abfab6cf871786119acabf82233f8701e70b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzMjU2MjA0MjQ0MDk3ZjRlNmQzZGFjYTIzOTBmNWFhZjkyNWUyZjM2NzY5MzQwNjhmMzk1NzI5ZjYwYzUyMjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlNzdlMzQzNzlkMDcyNjU0MjdhZjc1YmE4NWY3MjQ1ZTIxMjc3NmJmYjY1MjdlMDY4ZjI4NTQwYzAwZjM3ZjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEzZTQ2N2JlYTY4YWM3ZDU2MThmYjdjOWIyZThkNjAwNzBhOWJhZTRiZTEwOWU3NDlkNzY1N2M1NGUyNWYxZWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ2ZmJkZWI4NzRhZmZiNDE0ZjM4NTQ1Zjg3YjAwMDMzZDc2ZmE0NDE0YTA3YmU4OTliZjVjYzAzNTNkODg0OGYifQ"
+          "resource": "repo://README.md#L54-L85",
+          "version": "repo-lines-v1:sha256:b1fd5013224746dd1a7d11efc7d408aec2b44045e18ae6c04b2d86390ee12e57:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUxNDVhZjllZjY2NTliNGQzNmIwODhkYjA0YmRlODJlOTU2N2VlNjc3YzlkMDVkMjhiMWQyZjVjZGNjNzFlNGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2ZDgwYWVkMjEzMDJiN2QxNzdkMzkxNjliZjE2NjRlNzQyMzRmMmVmMTU0OTgwNTU5NTUxYmI4ZDdkYjg1MzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNiZjNjNmM3ZDE5YjhkYjRlYTgzODFjNzYyOThjNzgzYThkMjcwNjhjZGNmNDcyODgzMzc5N2UzZDYyZDYzYjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkzZjg4OTgxYzYwODJiY2E0NjIyODNmOWNiNTNkODJhY2YyNGM5YWRjZWI2ODExMDE0YWJjNWY3MWU0MDJmNjkifQ"
         }
       ]
     },
@@ -98,7 +98,7 @@
     }
   ],
   "verification": {
-    "by": "openwiki/0.6.1",
-    "at": "2026-10-01T12:11:43.532Z"
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-11T09:48:34.925Z"
   }
 }
