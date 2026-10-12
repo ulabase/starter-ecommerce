@@ -56,8 +56,10 @@ export default function BillingAccount() {
 
   useEffect(() => {
     if (!teamId) return;
-    auth.loadTeams().then(() => {
-      const found = auth.teams.find(t => t.id.$oid === teamId);
+    // the teams loadTeams answers, not auth.teams: that is the list this effect closed over, which
+    // is empty when the page is opened directly, and the page came up with no name and no form
+    auth.loadTeams().then(teams => {
+      const found = teams.find(t => t.id.$oid === teamId);
       setTeam(found);
       if (found) {
         setTeamName(found.name ?? '');
