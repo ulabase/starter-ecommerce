@@ -15,16 +15,14 @@ export function ConfigPage({ apiUrl }: ConfigPageProps) {
           at a Ulabase service.
         </p>
 
-        <div className="config-status">
-          {apiUrl ? (
+        {apiUrl && (
+          <div className="config-status">
             <p>
               <code>apiUrl</code> is set to <code>{apiUrl}</code>, which isn't a
-              Ulabase service — it must be an <code>https://</code> address.
+              Ulabase service: it must be an <code>https://</code> address.
             </p>
-          ) : (
-            <p><code>apiUrl</code> isn't set yet.</p>
-          )}
-        </div>
+          </div>
+        )}
 
         <ol className="config-steps">
           <li>
@@ -32,8 +30,8 @@ export function ConfigPage({ apiUrl }: ConfigPageProps) {
               <strong>Create a free service</strong>
               <p>
                 At{' '}
-                <a href="https://ulabase.com" target="_blank" rel="noopener">ulabase.com</a>
-                {' '}— it takes less than a minute. Skip this if you already have one.
+                <a href="https://ulabase.com" target="_blank" rel="noopener">ulabase.com</a>, in less
+                than a minute. Skip this if you already have one.
               </p>
             </div>
           </li>
