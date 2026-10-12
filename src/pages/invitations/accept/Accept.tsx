@@ -112,6 +112,18 @@ export default function Accept() {
     );
   }
 
+  // the service did not recognise the link: say so, rather than offer a login to join nothing
+  if (!invitation) {
+    return (
+      <main className="auth-page">
+        <div className="auth-card">
+          <h1>Invalid invitation link</h1>
+          <p>{error ?? 'This invitation is invalid or has expired.'}</p>
+        </div>
+      </main>
+    );
+  }
+
   if (invitation?.isNewUser) {
     const newUserPasswordInvalid = newUserTouched && (!newUserPassword || newUserPassword.length < 8);
     return (

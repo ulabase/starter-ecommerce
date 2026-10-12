@@ -10,7 +10,7 @@
   },
   "private": true,
   "dependencies": {
-    "@ulabase/kit-react": "^0.13.3",
+    "@ulabase/kit-react": "^0.13.4",
     "react": "^18.3.0",
     "react-dom": "^18.3.0",
     "react-router-dom": "^6.28.0"
