@@ -99,7 +99,7 @@ export default function Login() {
             <p id="error-password" className="field-error">Password is required.</p>
           )}
 
-          <button type="submit" disabled={loading || !email || !password}>
+          <button type="submit" disabled={loading}>
             {loading ? 'Logging in\u2026' : 'Log in'}
           </button>
         </form>

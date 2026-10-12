@@ -52,6 +52,12 @@ export function ConsentsGate({ children }: { children: React.ReactNode }) {
       // user id comes from the token, since the user document is exactly what
       // we cannot read yet.
       await auth.acceptConsents();
+      // The gate usually opens on the login page: the login itself was refused with
+      // 451, so it never moved on. Start the app from its home, as the Angular starter does.
+      if (window.location.pathname.startsWith('/auth')) {
+        window.location.assign('/');
+        return;
+      }
       // The token is new and /users/me now answers: reload the session so the
       // app starts with a user and their teams rather than a blank shell.
       await auth.checkSession();
