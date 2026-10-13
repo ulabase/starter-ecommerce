@@ -1,10 +1,11 @@
 ---
-type: "Reference"
-title: "Architecture Overview"
-openwiki_generated: true
+type: reference
+title: Architecture Overview
+description: Describes the React SPA bootstrap process, provider tree (BrowserRouter → RhAuthProvider → RhPaymentsProvider → RhCartProvider → App), route map with feature-flag gating, Shell component, ConsentsGate placement, lazy loading, and configuration fallback.
+tags: [architecture, react, spa, providers, routing, feature-flags, consents, shell]
 verified:
   - by: openwiki/0.7.2
-    at: 2026-10-11T09:48:34.925Z
+    at: 2026-10-13T10:18:39.801Z
 sources:
   - id: openwiki-source-4e7cd7f381c92e8c5d89f5c1
     resource: repo://NOTES.md
@@ -24,10 +25,8 @@ sources:
     resource: repo://src/pages/shell/Shell.tsx
   - id: openwiki-source-07aa4341cebe71bfc8fd2890
     resource: repo://src/routes.tsx
-generated: { by: "openwiki/0.7.2", at: "2026-10-11T09:48:34.925Z" }
+generated: { by: "openwiki/0.7.2", at: "2026-10-13T10:18:39.801Z" }
 ---
-
-
 
 # Architecture Overview
 
@@ -48,15 +47,15 @@ The application bootstraps through a carefully orchestrated sequence:
 The application uses a nested provider structure that establishes all necessary contexts:
 
 ```mermaid
-graph TD
-    A[BrowserRouter] --> B[RhAuthProvider]
-    B --> C[RhPaymentsProvider]
-    C --> D[RhCartProvider]
-    D --> E[App]
-    E --> F[ConsentsGate]
-    F --> G[Router]
-    E --> H[Footer]
-    
+flowchart TD
+    A["BrowserRouter"] --> B["RhAuthProvider"]
+    B --> C["RhPaymentsProvider"]
+    C --> D["RhCartProvider"]
+    D --> E["App"]
+    E --> F["ConsentsGate"]
+    F --> G["Router"]
+    E --> H["Footer"]
+
     style A fill:#e1f5fe
     style B fill:#f3e5f5
     style C fill:#e8f5e8
@@ -68,6 +67,7 @@ graph TD
 ```
 
 **Provider Responsibilities**:
+
 - **BrowserRouter**: React Router context for navigation
 - **RhAuthProvider**: Authentication state, session management, user data
 - **RhPaymentsProvider**: Stripe payments integration and billing portal

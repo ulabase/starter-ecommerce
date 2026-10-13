@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:671ce27aaa070a969d451870fefdfb2734d960d73eabc16a08b5cf1a3a16a0bc",
+  "pageVersion": "sha256:69c4553eeaefc37a3110717abb9826a41b57b8b4f7283872b28d1adb34d602fe",
   "claims": [
     {
       "id": "claim_8f63ab5c0ace49cfacba4c89246642dd",
@@ -63,11 +63,11 @@
       "statement": "The invitation acceptance page handles three distinct paths: (1) new user activation with password, (2) already logged in user calls acceptInvite(token), (3) existing user not logged in logs in then accepts.",
       "evidence": [
         {
-          "resource": "repo://src/pages/invitations/accept/Accept.tsx#L151-L162",
+          "resource": "repo://src/pages/invitations/accept/Accept.tsx#L163-L174",
           "version": "repo-lines-v1:sha256:06ce9685f39b35e775dd2153f4dc4e847867c7c8b8e82c9b5937155aaf817c2c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzMThiZGE2MzUxNWQxMzM3MWQwMGQ2ZWQ0YTRlM2Q2MzRiZTU2NGRlZDIwMjM2NjJiMmVkNzlmZDM5NGM3YjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFkYjNlN2NkMGMzYTYyMzA0NzY2ODE2MWQxMDRlOTlkODYyMDljYTNlNzc1NGEyNWIxMTlhNDkwNzg3ODA0MjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI5YWM3N2QyYTk4MmEwOGJiMDRkODY1ZmRmY2UxZDVmNWEyODRhZTMwMzE4YThhZTBiODFiMTg3NzQxNjUyNDAifQ"
         },
         {
-          "resource": "repo://src/pages/invitations/accept/Accept.tsx#L164-L189",
+          "resource": "repo://src/pages/invitations/accept/Accept.tsx#L176-L201",
           "version": "repo-lines-v1:sha256:85b22ec609adb731a970d24e0a226f7c282e3bcef40598662b040ddaac11dbca:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU3MjE2ZThlOWMwYTFhNjhkMDZjMmZiYWE1ZmQyMTM5NDgyYjhlZmQwYTE5MzE1YjkxNWU2Y2NlODQ5ZDg5ZGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1ZWYwMWJjMDhkYmMzYjYzZTRlNzVlYTNkMjZhNWI5NDE4OTE4NzdlMjdhZDg5MTMyOWM4NDExZDdkOGRjNGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFkYjNlN2NkMGMzYTYyMzA0NzY2ODE2MWQxMDRlOTlkODYyMDljYTNlNzc1NGEyNWIxMTlhNDkwNzg3ODA0MjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
         },
         {
@@ -121,7 +121,7 @@
           "version": "repo-lines-v1:sha256:36e2c939cc6faf9c6a8719367ad450099cd1bfc3bea5dded9f32cd84ed66e43f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFkYTZkZDM5Yzc0YjIxZmQ4NmQ1ZmRlNDY0ZTZjYmRmNTIzYjM3ZWNhYmQ5NGI1Y2M0ODBjMTQ3NDlkZmQ1NDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3YzgyOGJiZGVmNTgyMWY1MmJiODQyZGFjODgyZGNiOWYxYTU3ODk0ZmNiZjg1YjA0ZGNlODRkMjg5NTU5NjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY5ZTFkZTAyYTM5NjAwN2YxN2Q4YWEzMDJjMThmZDNkY2MxNmExMDQxNmIwOGNlZjU3YTdlMDAwMmQ4MTA4YWQifQ"
         },
         {
-          "resource": "repo://src/environments/environment.ts#L29-L29",
+          "resource": "repo://src/environments/environment.ts#L20-L20",
           "version": "repo-lines-v1:sha256:a60d176444f5163ac8552deb71d8b88728b760026aea5d78ca2a8855a0c11918:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTYwZDE3NjQ0NGY1MTYzYWM4NTUyZGViNzFkOGI4ODcyOGI3NjAwMjZhZWE1ZDc4Y2EyYTg4NTVhMGMxMTkxOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTYwZDE3NjQ0NGY1MTYzYWM4NTUyZGViNzFkOGI4ODcyOGI3NjAwMjZhZWE1ZDc4Y2EyYTg4NTVhMGMxMTkxOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzcyMmJjYTNjOGRiMjQ2NTAyOGY4YTRiODI3OTRmNjA0NThiZjMyNDI4NDNiYWQzN2YyODBjMzI5NjNhMWZmMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTdjMWNmOThhNjAxMzk1NjYwZDgzMmVlZGVlMTA2YWE4OGUyMDcwZWE1YjU1ODhmYTI0NzI4YWFhYjc0Njg0YiJ9"
         }
       ]
@@ -138,7 +138,7 @@
     }
   ],
   "verification": {
-    "by": "openwiki/0.6.1",
-    "at": "2026-10-01T12:11:43.532Z"
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-13T10:18:39.801Z"
   }
 }

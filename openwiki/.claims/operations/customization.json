@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:302f59b3c366f5514bdc7d55aacede474b985e72fb168054e4b4049c578935ad",
+  "pageVersion": "sha256:e71c0ca5a1958644b72a6517ae5f994c841e410c1b5c9ab3043a6e18ebb2e551",
   "claims": [
     {
       "id": "claim_104f75414cda46b3a25d0716cb4c3c5f",
@@ -14,11 +14,15 @@
     },
     {
       "id": "claim_e2f83850da1843798f802a7bf4335b41",
-      "statement": "Dark mode is implemented through a class-based override system in Shell.tsx that persists preference in localStorage and toggles `.dark` class on documentElement.",
+      "statement": "Dark mode is implemented through a class-based override system in Shell.tsx that persists preference in localStorage under key 'rh-theme' and toggles the .dark class on documentElement; the :root.dark block overrides only colors and --shadow-popup.",
       "evidence": [
         {
           "resource": "repo://src/pages/shell/Shell.tsx#L8-L30",
           "version": "repo-lines-v1:sha256:08c90d86b86c27c716db2e328d8676fbe14bc5c0f7d902d21c5f7494488678eb:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRhZGVhNWZkYTlhMmY3MDlhNWViNzNhODBjZjkwMTQzYjJiNDY3NjM4MDQ4NDBhZTE0Y2UwMjEwYWM3MTk3YjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVhYzY5Y2M5N2I5ODBiZjIxZWM4MDkwMDMyZGY1NDMwN2U3OTJlYWQyODljYjU2MDcyNjUzYjFlOTk0NTdkNWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBmNzFmMmJhMWRiMDdmYjdjMzQ5N2ExYTU1ZWNiY2ZhM2IyZDQ3MTlmMTYzMGFjNWU0NDU3MjUyMDg5ZDlmM2IifQ"
+        },
+        {
+          "resource": "repo://src/styles.css#L130-L158",
+          "version": "repo-lines-v1:sha256:e3ad3e1eea88f336cac5f91b1581249f40e3d2ad34851fbc2cb0893ee1f90661:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRhZGFjZTY0N2Q1OWMzYTk0NDMxMzM1YWYyYjBlMjkwMzY5ZTc2Y2UyNTQyNDk5ODhhOThhNGQ4ODMyYmMwN2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM5YWM4NTA2N2M1MjMwMDM5ODMwNDc3YzcwNDlmMTUwOTg0NGIxNGE5NzE3NDAyYjFiZjYwYmQyY2YzN2YyY2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNmYjBlODY3ODYxMTdiOGMwYmI2YzEwNTMxNTUzMTRjOGJhZmY4MTZlODk4Y2RkZWQwYWVhZDg4NjQwMTM3YmQifQ"
         }
       ]
     },
@@ -34,11 +38,11 @@
     },
     {
       "id": "claim_4edcaf593878408d85b768f437878e12",
-      "statement": "The Alert component (`src/ui/alert/Alert.tsx`) is the single shared feedback component that carries `.success-msg` and `.form-error` hooks plus correct ARIA roles.",
+      "statement": "The Alert component (src/ui/alert/Alert.tsx) is the single shared feedback component that carries no styles of its own, only the .success-msg/.form-error hooks and ARIA roles (status for success, alert for errors), with auto-dismiss (default 4000ms, 0 disables) and an accessible dismiss button.",
       "evidence": [
         {
-          "resource": "repo://src/ui/alert/Alert.tsx#L1-L45",
-          "version": "repo-lines-v1:sha256:772d94a17c01f00a18453c919ea55ebd2f8e27452a64fb76a28341aaa1edb76e:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4ZmFiYmFlYjU2MTRiZDRkOTBhODljMWVmMzJiNTgyODc4ZjljNTA0OGYwZDMzN2NjNGIzNzBlN2QzMjJkMWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+          "resource": "repo://src/ui/alert/Alert.tsx#L11-L45",
+          "version": "repo-lines-v1:sha256:b3d03516098adf45e1f2f49faa53bcba03d513ae5bcb294642b1b3af366cb43b:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQzZGM3ZDQ1OGJjN2Y3YjIzYTRjNWJkYWMwMGNmOWFkMjBhMDViNTAzOGJkNGFjZjRlN2E0OGRjYmYyMDk2YzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI0NTdiZTVlMzRhMGQ2OWU1MjQ0N2ZiZDE3NzUyY2IwMzIyN2QwNjQ3NWI2Y2RkZGViOWIyNDEwZGFjNTM3YmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
         }
       ]
     },
@@ -54,11 +58,19 @@
     },
     {
       "id": "claim_8ee963632a69476a953f992a3311dee7",
-      "statement": "The stylesheet is organized into five sections: design tokens, base styles, default skin, auth pages, and config page.",
+      "statement": "The stylesheet is organized into numbered sections: design tokens (with the :root.dark dark-mode override), base styles, default skin, auth pages, and config page, plus responsive and reduced-motion sections at the end; skin sections 3-5 are marked for deletion when adopting a framework.",
       "evidence": [
         {
           "resource": "repo://src/styles.css#L1-L34",
           "version": "repo-lines-v1:sha256:d85ae7f5016843d4acb5255f73905cd76e732886310d28a29b2f533cbf481e8c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViMzAzZjcwZTI1MWE0MjZmNzZjMzVlYzdhM2M0OGM0YjRlNzVjYTNlZTEyMjI1MGMxYTEyMWFkZjQ1NzUxM2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmZjk4ZjRkZmEyNjcxNzJmYjcwMGUwYzdlM2IwYmM1MGQyNjU3NDQ5NDNjNTBmN2E4MTQ4ZTA3ZDRkMjZjNDYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFiZWMzNDA2NmVmODUxOTU0ZmNkNmU3YTY3MjZiYTBiYWIwMDdjYWM0MTQ1NzU5YjI0N2FlZTNkODViNzlmYzMifQ"
+        },
+        {
+          "resource": "repo://src/styles.css#L301-L305",
+          "version": "repo-lines-v1:sha256:b15d4fe0b454ba1154f3baa8467d850722a87e2c031b1c1763871ab98cf91e6a:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzI1ZTc4YmNiOTMzZmZkODBiZWZlYjRlNDc1MThlZWM5YmM1MDlhYzYyMGVkNWVhM2VmZjQ2ODkyOTYxZTk3ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2ZmOThmNGRmYTI2NzE3MmZiNzAwZTBjN2UzYjBiYzUwZDI2NTc0NDk0M2M1MGY3YTgxNDhlMDdkNGQyNmM0NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGE3YmQwYTNjOTIzMDMxZTgxZWQ3MGE0ZWZmYjM3YzBhMjVjOGMzMjJiNTY2ZGVhNDMzOTcyZWY1ZmZjZDAxZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmRhM2YwYzk1NDYxN2FjMDRhZjBkY2ZkMDBkMWY2MzNkYjc3YmMwYzVkZDEyOThlYzZlOWRhNTgxODdkNzkxYSJ9"
+        },
+        {
+          "resource": "repo://src/styles.css#L867-L930",
+          "version": "repo-lines-v1:sha256:a23d4bdbac6e5127b16a5319cb138e36dda9b38b91d25b750c2447dda82696f0:eyJzZWxlY3RlZExpbmVDb3VudCI6NjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViMzAzZjcwZTI1MWE0MjZmNzZjMzVlYzdhM2M0OGM0YjRlNzVjYTNlZTEyMjI1MGMxYTEyMWFkZjQ1NzUxM2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU2YWZmMjhiN2E0ODNiMGMwZGI0ZDYxZDA4NTBmZjczMmEzMTg4ZDVkNDkxYTI0OGFiYmQxYzRlMGJjNmZhOGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
         }
       ]
     },
@@ -74,7 +86,7 @@
     }
   ],
   "verification": {
-    "by": "openwiki/0.6.1",
-    "at": "2026-10-01T12:11:43.532Z"
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-13T10:18:39.801Z"
   }
 }

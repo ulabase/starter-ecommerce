@@ -2,13 +2,13 @@
 type: "Reference"
 title: "Ulabase Service Configuration"
 openwiki_generated: true
-verified:
-  - by: openwiki/0.6.1
-    at: 2026-10-01T12:11:43.532Z
 sources:
   - id: openwiki-source-34f568b222540eb11aa44859
     resource: repo://ulabase.setup.ts
-generated: { by: "openwiki/0.6.1", at: "2026-10-01T12:11:43.532Z" }
+generated: { by: "openwiki/0.7.2", at: "2026-10-13T10:18:39.801Z" }
+verified:
+  - by: openwiki/0.7.2
+    at: 2026-10-13T10:18:39.801Z
 ---
 
 
@@ -27,7 +27,7 @@ The service configuration ensures:
 
 ## ACL Permissions
 
-ACL permissions control access to collections and endpoints. The application defines five permissions that map to specific access patterns.
+ACL permissions control access to collections and endpoints. The application defines six permissions that map to specific access patterns.
 
 ### Permission to Predicate and Role Mapping
 
@@ -73,7 +73,7 @@ flowchart TD
     style U fill:#fff3e0
 ```
 
-*The five ACL permissions and their corresponding predicates and roles.*
+*The six ACL permissions and their corresponding predicates and roles.*
 
 ### 1. Catalog Read Permission (`catalog-read-anon`)
 
@@ -253,6 +253,7 @@ The `consents-signal.ts` module:
 - **Version comparison**: Check compares stamped versions against current versions
 - **History growth**: `$push` grows consents array instead of overwriting
 - **Ownership verification**: Only user can update their own consents
+- **Low priority**: Priority 1 ensures this permission is checked after other permissions
 
 **Critical Check**: The step verifies both presence and version match—bumping versions shows work outstanding, not satisfied.
 
@@ -281,10 +282,12 @@ const CLAIMS = ['latestConsents/tos', 'latestConsents/pp', 'team'];
 The JSON schema validates user documents and defines required fields.
 
 **Required Fields**:
-- `_id` - User identifier
-- `password` - Hashed password
+- `_id` - User identifier (required for direct PUT operations)
 - `roles` - Array of role strings
-- `profile` - Object with required `name` and `surname`
+
+**Optional Fields**:
+- `password` - Hashed password (absent for invited users until invitation accepted)
+- `profile` - Object with optional `name`, `surname`, and `avatarUrl`
 
 **Consents Fields**:
 - `latestConsents` - Object with `tos`, `pp`, and `acceptedAt` (BSON date)

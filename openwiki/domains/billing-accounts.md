@@ -1,10 +1,11 @@
 ---
-type: "Reference"
+type: "Domain"
 title: "Billing Accounts (Teams)"
-openwiki_generated: true
+description: "Documents billing accounts (teams in kit vocabulary): list, create, detail with members/invitations/settings, Stripe portal integration, and order filtering by active team."
+tags: ["billing", "teams", "accounts", "stripe", "acl", "permissions"]
 verified:
-  - by: openwiki/0.6.1
-    at: 2026-10-01T12:11:43.532Z
+  - by: openwiki/0.7.2
+    at: 2026-10-13T10:18:39.801Z
 sources:
   - id: openwiki-source-a3a3cc41ccfefb8fada04d9d
     resource: repo://src/pages/billing/Billing.tsx

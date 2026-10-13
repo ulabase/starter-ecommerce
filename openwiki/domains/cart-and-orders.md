@@ -3,9 +3,6 @@ type: domain
 title: Cart and Order Lifecycle
 description: Covers cart state management (client-side via RhCartProvider), the checkout process, order states, polling for payment confirmation, and the pending-order stash for cross-redirect persistence.
 tags: [cart, orders, checkout, payment, stripe, lifecycle, state-machine]
-verified:
-  - by: openwiki/0.6.1
-    at: 2026-10-01T12:11:43.532Z
 sources:
   - id: openwiki-source-95bfccfd0c712f6e72040e0d
     resource: repo://src/main.tsx
@@ -19,7 +16,10 @@ sources:
     resource: repo://src/shop/types.ts
   - id: openwiki-source-34f568b222540eb11aa44859
     resource: repo://ulabase.setup.ts
-generated: { by: "openwiki/0.6.1", at: "2026-10-01T12:11:43.532Z" }
+generated: { by: "openwiki/0.7.2", at: "2026-10-13T10:18:39.801Z" }
+verified:
+  - by: openwiki/0.7.2
+    at: 2026-10-13T10:18:39.801Z
 ---
 
 # Cart and Order Lifecycle
@@ -150,6 +150,10 @@ interface PendingOrder {
 }
 ```
 
+### Migration from Single-Order Stash
+
+The system originally stored a single pending order, which caused issues when users had multiple tabs open. The current list-based implementation includes migration logic: if the stored value is an object (not an array), it's automatically wrapped in an array to preserve the existing order reference.
+
 ### Constraints
 
 - **Maximum entries:** 10 (oldest removed when exceeded)
@@ -181,7 +185,7 @@ When a user returns from Stripe, the page reads the order reference from two sou
 1. **URL fragment** - Interpolated by the service into the success URL
 2. **localStorage stash** - Fallback from `readPendingOrder()`
 
-The URL fragment is read once and immediately stripped from the address bar to prevent the secret from being screenshotted, shared, or bookmarked.
+The URL fragment is read once and immediately stripped from the address bar to prevent the secret from being screenshotted, shared, or bookmarked. The system distinguishes between references from the URL (indicating a just-completed payment) and references from localStorage (indicating a previously started checkout), using this distinction to decide whether to poll for webhook confirmation.
 
 ### Confirming State Machine
 
@@ -221,7 +225,16 @@ stateDiagram-v2
 - **`unfinished`** - Payment authorized but webhook not received within timeout
 - **`error`** - Error reading order
 
+**User Experience by State:**
+
+- **`settled` with `paid` status:** "Thank you — order confirmed" with full order details
+- **`settled` with other status:** "Order not completed" with status explanation
+- **`unfinished` (just returned from Stripe):** "Payment received — still confirming" with reassurance "You have not been charged twice"
+- **`unfinished` (from localStorage stash):** "This order is not paid" with "Finish paying" button
+
 ### Polling Mechanism
+
+Polling only occurs when the user **returns from Stripe** (order reference found in URL fragment). For users viewing order history (reference from localStorage stash), a single read is performed instead.
 
 For users just returning from Stripe:
 
@@ -236,7 +249,7 @@ payments.waitForOrder(ref.id, ref.secret, {
 
 **Why poll?** Stripe redirects as soon as payment is authorized, but the order only moves off `pending_payment` when Stripe's webhook arrives - a separate connection, usually seconds later, with no ordering guarantee against the redirect.
 
-For users just viewing history (not returning from payment):
+For users viewing history (not returning from payment):
 - Single read via `payments.getOrder()`
 - No polling needed
 
@@ -370,12 +383,14 @@ The ACL's `readFilter` ensures users only see their own orders. The query return
 ### Checkout Errors
 
 - **401:** Service requires account to order (ACL decision)
+- **502:** Stripe keys not configured - service cannot create checkout sessions
 - **Other:** Generic checkout failure message
 
 ### Order Reading Errors
 
 - **404 on URL return:** Order not found (contact support)
 - **404 on stash fallback:** Stale entry, silently cleared
+- **403 on order history:** ACL does not allow reading orders (setup issue)
 - **Timeout:** Payment authorized but webhook late, shows "unfinished" state
 
 ### Pending Order Errors

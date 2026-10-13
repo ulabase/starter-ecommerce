@@ -16,10 +16,10 @@ sources:
     resource: repo://src/main.tsx
   - id: openwiki-source-34f568b222540eb11aa44859
     resource: repo://ulabase.setup.ts
-generated: { by: "openwiki/0.7.2", at: "2026-10-11T09:48:34.925Z" }
+generated: { by: "openwiki/0.7.2", at: "2026-10-13T10:18:39.801Z" }
 verified:
   - by: openwiki/0.7.2
-    at: 2026-10-11T09:48:34.925Z
+    at: 2026-10-13T10:18:39.801Z
 ---
 
 # Ulabase Platform and Kit Packages
@@ -47,6 +47,35 @@ Where `<id>` is a six-character identifier (e.g., `xxxxxx` in `https://xxxxxx.ul
 ## NPM Packages
 
 The Ulabase ecosystem consists of three packages that work together:
+
+```mermaid
+graph LR
+    A["@ulabase/kit"] --> B["@ulabase/kit-react"]
+    C["@ulabase/cli"] -.-> D[Ulabase Service]
+    
+    B --> E[React Application]
+    A --> F[Authentication & API]
+    
+    G[ulabase.setup.ts] --> C
+    
+    subgraph "Client-side"
+        E
+        B
+        A
+    end
+    
+    subgraph "Build/Config"
+        C
+        G
+    end
+    
+    subgraph "Server-side"
+        D
+        F
+    end
+```
+
+*Package relationships: @ulabase/kit provides core logic, @ulabase/kit-react adds React integration, and @ulabase/cli handles service configuration.*
 
 ### @ulabase/kit
 
@@ -122,12 +151,60 @@ createRoot(document.getElementById('root')!).render(
 );
 ```
 
+```mermaid
+graph TD
+    A[App Entry] --> B[RhAuthProvider]
+    B --> C[RhPaymentsProvider]
+    C --> D[RhCartProvider]
+    D --> E[App Component]
+    
+    B -->|Authentication| F[Ulabase Service]
+    C -->|Payments| F
+    D -->|Cart State| G[Client State]
+    
+    H[config] --> B
+    H --> C
+    
+    I[consentsOnError] --> H
+```
+
+*Provider nesting hierarchy: RhAuthProvider must wrap RhPaymentsProvider because payments reads the authenticated user from it.*
+
 ### Authentication Flow
 
 1. **Login/Signup**: Users authenticate via `/auth/*` endpoints handled by the kit
 2. **Token Management**: Kit automatically manages JWT tokens and refresh cycles
 3. **Session Restoration**: `RhAuthProvider` restores sessions on app load
 4. **Consents Gate**: Enforces legal document acceptance for authenticated users
+
+```mermaid
+sequenceDiagram
+    participant U as User
+    participant A as App
+    participant R as RhAuthProvider
+    participant S as Ulabase Service
+    
+    U->>A: Access protected route
+    A->>R: Check auth state
+    R->>S: Restore session (/users/me)
+    
+    alt Session valid
+        S-->>R: User data + tokens
+        R-->>A: Authenticated user
+        A-->>U: Show protected content
+    else Session invalid
+        S-->>R: 401 Unauthorized
+        R-->>A: Not authenticated
+        A-->>U: Redirect to login
+    else Consents required
+        S-->>R: 451 Unavailable
+        R->>R: Set consents flag
+        R-->>A: Blocked state
+        A-->>U: Show consents overlay
+    end
+```
+
+*Authentication flow with consents gate: 451 responses trigger the consents overlay without affecting authentication state.*
 
 ### API Access
 
@@ -416,7 +493,21 @@ Common validation steps:
 
 ### Consents Enforcement
 
-- Server-side Guards rule blocks non-compliant users
-- Client-side gate provides user experience overlay
-- Versions are compared, not just presence
-- Anonymous users bypass consents (no user document to stamp)
+The consents system enforces legal document acceptance through a three-part mechanism:
+
+1. **Server-side Guards rule**: Blocks requests from users who haven't accepted current legal documents with HTTP 451 status
+2. **Client-side signal**: `consents-signal.ts` watches for 451 responses and raises a blocking flag
+3. **UI overlay**: `ConsentsGate.tsx` sits above the router and shows acceptance form when flag is raised
+
+```typescript
+// src/consents-signal.ts - The consents gate, client side
+export const consentsOnError = (err: ApiError): void => {
+  if (err.status === 451) setBlocked(true);
+};
+```
+
+**Key behaviors**:
+- Session restoration (`/users/me`) is the first request that trips the gate
+- Guest users bypass consents (no user document to stamp)
+- Versions are compared, not just presence (bumping versions requires no client changes)
+- The gate sits above the router because `AuthGuard` would block unreachable content

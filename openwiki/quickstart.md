@@ -3,9 +3,6 @@ type: reference
 title: Quickstart — Ulabase Ecommerce Starter
 description: Entry point for the wiki — routes readers to the right section based on their goal. Covers first-time setup, key files, and links to every wiki section.
 tags: [quickstart, setup, onboarding, routing]
-verified:
-  - by: openwiki/0.7.2
-    at: 2026-10-11T09:48:34.925Z
 sources:
   - id: openwiki-source-4e7cd7f381c92e8c5d89f5c1
     resource: repo://NOTES.md

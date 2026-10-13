@@ -3,9 +3,6 @@ type: workflow
 title: Consents Gate Flow
 description: Explains how registered users are blocked (HTTP 451) until they accept the current Terms of Service and Privacy Policy, and how the client-side overlay and server-side Guards rule work together.
 tags: [consents, legal, authentication, workflow, frontend, backend]
-verified:
-  - by: openwiki/0.6.1
-    at: 2026-10-01T12:11:43.532Z
 sources:
   - id: openwiki-source-54631e6ebf1d3b815c4a5eed
     resource: repo://src/App.tsx
@@ -21,7 +18,10 @@ sources:
     resource: repo://src/routes.tsx
   - id: openwiki-source-34f568b222540eb11aa44859
     resource: repo://ulabase.setup.ts
-generated: { by: "openwiki/0.6.1", at: "2026-10-01T12:11:43.532Z" }
+generated: { by: "openwiki/0.7.2", at: "2026-10-13T10:18:39.801Z" }
+verified:
+  - by: openwiki/0.7.2
+    at: 2026-10-13T10:18:39.801Z
 ---
 
 # Consents Gate Flow
@@ -119,7 +119,7 @@ This module implements a simple pub/sub pattern to track the blocked state:
 ### `ConsentsGate.tsx`
 
 The main component that:
-- Sits above the router in `App.tsx`.
+- Sits above the router in `App.tsx` (line 77: `<ConsentsGate>{element}</ConsentsGate>`).
 - Renders a modal overlay with two checkboxes (TOS and PP).
 - Shows links to `/terms` and `/privacy` (readable while blocked).
 - Calls `auth.acceptConsents()` when both boxes are checked.

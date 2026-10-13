@@ -1,11 +1,8 @@
 ---
 type: "Operations"
 title: "Customization and Theming"
-description: "Explains how to reskin the Ulabase Starter Ecommerce shop: design tokens, semantic class hooks, the swap map for framework migration, and the Alert component."
+description: "Explains how to reskin the Ulabase Starter Ecommerce shop: design tokens, semantic class hooks, the swap map for framework migration, dark mode, and the Alert component."
 tags: ["customization", "theming", "design-tokens", "css", "styles", "swap-map", "dark-mode", "alert"]
-verified:
-  - by: openwiki/0.6.1
-    at: 2026-10-01T12:11:43.532Z
 sources:
   - id: openwiki-source-4e7cd7f381c92e8c5d89f5c1
     resource: repo://NOTES.md
@@ -15,7 +12,10 @@ sources:
     resource: repo://src/styles.css
   - id: openwiki-source-429b77349fb224052d11fb18
     resource: repo://src/ui/alert/Alert.tsx
-generated: { by: "openwiki/0.6.1", at: "2026-10-01T12:11:43.532Z" }
+generated: { by: "openwiki/0.7.2", at: "2026-10-13T10:18:39.801Z" }
+verified:
+  - by: openwiki/0.7.2
+    at: 2026-10-13T10:18:39.801Z
 ---
 
 # Customization and Theming
@@ -24,36 +24,41 @@ The Ulabase Starter Ecommerce app is designed with a disposable default skin. Al
 
 ## Design System Architecture
 
-The stylesheet (`src/styles.css`) is organized into five clear sections:
+The stylesheet (`src/styles.css`) is organized into numbered sections, with the disposable skin clearly marked:
 
-1. **Design tokens** (Section 1) — CSS custom properties that define the entire visual language
+1. **Design tokens** (Section 1) — CSS custom properties that define the entire visual language, plus the `:root.dark` override block for dark mode
 2. **Base styles** (Section 2) — Element-level defaults that apply the tokens globally
 3. **Default skin** (Section 3) — Semantic class hooks that implement the mockup look
 4. **Auth pages** (Section 4) — Specific styling for authentication flows
 5. **Config page** (Section 5) — Styling for the configuration screen
+6. **Responsive** (Section 6) — Breakpoints for small screens
+7. **Reduced motion** (Section 7) — Accessibility media query plus the lazy-route placeholder
 
 ```mermaid
 flowchart TD
-    A[src/styles.css] --> B[Design Tokens]
-    A --> C[Base Styles]
-    A --> D[Default Skin]
-    A --> E[Auth Pages]
-    A --> F[Config Page]
-    
-    B --> G[Colors]
-    B --> H[Typography]
-    B --> I[Spacing]
-    B --> J[Shape]
-    B --> K[Motion]
-    
-    D --> L[Semantic Class Hooks]
-    L --> M[.card, .btn-primary, .form-field]
-    L --> N[All Components Use These]
-    
+    A[src/styles.css] --> B[1. Design Tokens]
+    A --> B2[Dark mode overrides :root.dark]
+    A --> C[2. Base Styles]
+    A --> D[3. Default Skin]
+    A --> E[4. Auth Pages]
+    A --> F[5. Config Page]
+    A --> G[6. Responsive]
+    A --> H[7. Reduced motion]
+
+    B --> I[Colors]
+    B --> J[Typography]
+    B --> K[Spacing]
+    B --> L[Shape]
+    B --> M[Motion]
+
+    D --> N[Semantic Class Hooks]
+    N --> O[.card, .btn-primary, .form-field]
+    N --> P[All Components Use These]
+
     style A fill:#e1f5fe
     style B fill:#f3e5f5
     style D fill:#e8f5e8
-    style L fill:#fff3e0
+    style N fill:#fff3e0
 ```
 
 *The stylesheet architecture: tokens flow through semantic hooks to all components.*
@@ -91,20 +96,20 @@ Design tokens are CSS custom properties defined in `:root` and overridden for da
   --color-border-strong: #b6bfcb;
   --color-text: #14171c;
   --color-text-muted: #656d7a;
-  
+
   /* Ulabase amber — the one accent. Paired with dark text. */
   --color-primary: #f8a839;
   --color-primary-hover: #e0942b;
   --color-on-primary: #14171c;
-  
+
   /* Ulabase's teal-green, darkened for readable text-link contrast */
   --color-link: #1f6f54;
   --color-success: #1f6f54;
-  
+
   --color-error: #b91c1c;
   --color-error-bg: #fef2f2;
   --color-on-error: #ffffff;
-  
+
   /* Faint drafting-paper grid */
   --color-grid: rgba(20, 23, 28, 0.045);
 }
@@ -116,7 +121,7 @@ Design tokens are CSS custom properties defined in `:root` and overridden for da
 :root {
   --font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
-  
+
   --text-xs: 0.6875rem;
   --text-sm: 0.8125rem;
   --text-base: 0.875rem;
@@ -124,7 +129,7 @@ Design tokens are CSS custom properties defined in `:root` and overridden for da
   --text-lg: 1.125rem;
   --text-xl: 1.5rem;
   --text-2xl: 2rem;
-  
+
   --leading-tight: 1.25;
   --leading-normal: 1.55;
   --tracking-label: 0.09em;
@@ -144,19 +149,21 @@ Design tokens are CSS custom properties defined in `:root` and overridden for da
   --space-6: 2rem;
   --space-7: 3rem;
   --space-8: 4rem;
-  
+
   /* Shape */
   --radius-sm: 3px;
   --radius: 5px;
   --radius-lg: 8px;
   --radius-pill: 999px;
   --border-width: 1px;
-  
+
   /* Motion & elevation */
   --transition: 0.15s ease;
   --shadow-popup: 0 8px 24px rgba(20, 23, 28, 0.12);
 }
 ```
+
+There is also a focus-ring pair (`--focus-ring-width`, `--focus-ring-offset`) applied via a single global `:focus-visible` rule, and a legacy `--spacing: 1rem` alias kept so older page CSS keeps working — prefer the `--space-*` scale in new code.
 
 ## Dark Mode Implementation
 
@@ -194,6 +201,7 @@ function useTheme() {
 - Toggles `.dark` class on `document.documentElement`
 - Default is light mode
 - Since every color flows through a token, no per-component changes are needed
+- The `:root.dark` block only overrides colors and `--shadow-popup` — the dark background dims the grid (`--color-grid`) and brightens the amber accent, link/teal, and error colors for contrast
 
 ## Swap Map: Semantic Class Hooks
 
@@ -220,7 +228,7 @@ Components reference a small, stable vocabulary of semantic class hooks. Restyle
 
 ## Alert Component
 
-The Alert component (`src/ui/alert/Alert.tsx`) is the single shared feedback component that carries all success and error messages throughout the app.
+The Alert component (`src/ui/alert/Alert.tsx`) is the single shared feedback component that carries all success and error messages throughout the app. It carries no styles of its own — only the semantic hooks and ARIA roles.
 
 ```typescript
 // src/ui/alert/Alert.tsx
@@ -233,7 +241,7 @@ export function Alert({ type, dismissible = true, autoDismiss = 4000, onClose, c
   }, [autoDismiss, onClose]);
 
   return (
-    <div className={type === 'success' ? 'success-msg' : 'form-error'} 
+    <div className={type === 'success' ? 'success-msg' : 'form-error'}
          role={type === 'success' ? 'status' : 'alert'}>
       <span style={{ flex: 1 }}>{children}</span>
       {dismissible && (
@@ -249,8 +257,8 @@ export function Alert({ type, dismissible = true, autoDismiss = 4000, onClose, c
 **Key responsibilities:**
 - Carries `.success-msg` and `.form-error` hooks (from the swap map)
 - Provides correct ARIA roles (`status` for success, `alert` for errors)
-- Supports auto-dismiss with configurable timeout (default 4 seconds)
-- Supports manual dismissal with accessible close button
+- Supports auto-dismiss with configurable timeout (default 4 seconds); pass `autoDismiss={0}` to disable it
+- Supports manual dismissal with an accessible close button
 - **Swap this one component and every success/error message in the app follows**
 
 ## Vite Configuration for Local Kit Development
@@ -272,7 +280,7 @@ export default defineConfig({
 - `optimizeDeps.exclude`: Prevents Vite from snapshotting symlinked dependencies
 - `server.fs.allow`: Lets Vite serve sources from outside the project root
 
-**Important**: After changing linking (npm link/unlink), stop the dev server and delete `node_modules/.vite` first. Vite resolves modules once and caches them.
+**Important**: After changing linking (npm link/unlink), stop the dev server and delete `node_modules/.vite` first. Vite resolves modules once and caches them — switching under a running server surfaces as `useAuth must be used within a <RhAuthProvider>`.
 
 ## Shell Layout Customization
 
@@ -281,37 +289,39 @@ The shell (`src/pages/shell/Shell.tsx`) is the app's frame for all users, intent
 ```mermaid
 graph TD
     A[Shell Component] --> B[Header]
+    A --> E[Banners]
     A --> C[Main Content]
-    A --> D[Footer]
-    
-    B --> E[Logo]
-    B --> F[Navigation]
+
+    B --> E2[Logo]
+    B --> F[Navigation - Shop / Cart]
     B --> G[Header Actions]
-    
+
     G --> H[Theme Toggle]
     G --> I{Authenticated?}
     I -->|No| J[Login/Signup Links]
     I -->|Yes| K[Avatar Menu]
-    
-    K --> L[Profile]
-    K --> M[Orders]
-    K --> N[Payments]
-    K --> O[Billing]
+
+    K --> L[Your profile]
+    K --> M[Your orders]
+    K --> N[Payments and invoices]
+    K --> O[Billing account]
     K --> P[Logout]
-    
+
     style A fill:#e1f5fe
     style B fill:#f3e5f5
     style G fill:#e8f5e8
     style I fill:#fff3e0
 ```
 
-*Shell structure: header with navigation and user menu, main content area, and footer.*
+*Shell structure: header with navigation and user menu, transient banners, and the main content area.*
 
 **Key customization points:**
 - Replace logo and branding in `Shell.tsx`
 - Modify navigation links and structure
 - Customize user menu items and actions
 - Adjust header layout in `Shell.css`
+
+The shell also renders dismissible banner strips between header and content (portal errors and a just-signed-up welcome message), a skip-to-content link, and a scroll-to-top effect keyed on `location.pathname` so each page starts at the top.
 
 ## Extending the System
 
@@ -333,7 +343,7 @@ When adding new components:
 1. Always use design tokens for colors
 2. Test both light and dark modes
 3. Ensure sufficient contrast ratios
-4. Use `color-mix()` for transparent variations
+4. Use `color-mix()` for transparent variations (as `.success-msg`, `.form-error`, and `.badge` do)
 
 ## Migration Checklist
 
