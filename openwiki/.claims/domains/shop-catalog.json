@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:d4a3c06dd4ce46a0fc27142a3b746db0778b9c127d6411368cca307177951fd1",
+  "pageVersion": "sha256:a1328f9e1e7f088cc99b8a684bca282ed7697a656aae2bf6586161f9d613e308",
   "claims": [
     {
       "id": "claim_490fddb982a24d929db66a61614a1432",
@@ -135,10 +135,82 @@
           "version": "repo-lines-v1:sha256:4f923302a8f1da8927a47dcab40fe8eda7c0e6278902d10739dbf85278a25b05:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBkYjk2MGNmNzdhNTU5MWZjNWJjZWUyM2IwZTdjZDM5OTAzNzZlNTM2YWY0YjJlMjNkOGI0ZTY2ODlhMjRjODgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZjZGM3NmQxMmU1MzA0ZDMwNzllZGI1Zjg5MDAwN2VhMDVmMjI2ZTRkOTNiNjk1Njg0NjBjYWZhZjgwMDc0NGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkzOGQ1ZDRjNTA3YThiMDI5Yjk0NmQ5ZjhlNDI1NTdhNzgzZGZmNmMyNGI5ZjQ1OWIzNmU2YzZmMWQ5ZmJkZDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjljZDgwOTM3MzAzM2ZiZmY2ZmU0NDI2NzY0NWEyZjgxOTFjMTNjODIyMTNmZDQ1OThjODIzMzhkZDI0ZTFlMTcifQ"
         }
       ]
+    },
+    {
+      "id": "claim_817afdd9205a4dcbabdc5fe5c1d931f3",
+      "statement": "The fromPrice() function returns the lowest unit_amount across a product's variants (falling back to the product's own price), used in the grid to display 'from €X.XX' pricing for products with variants.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/shop/Shop.tsx#L371-L374",
+          "version": "repo-lines-v1:sha256:4b616689d60e8de668ae8c29fcc7368409550311832380fff9b6ffb1508c228b:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWY1ZWI2YmFjMDNmN2JkYTczNmE0YTllMzVjMGIwMDM3ZjA1NDIzYjhlNzVhZjM4NjQyZjVlYjQ5OGMzZWQ5NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTliNDhhNTFhMWJiMzk5NTM2ODYwMGVmZjY0NTQzYzc2NDI0NDIxOTZlZDVkMzRkOWYyYWQxMmVlMGRjMzNmMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2I0OWYwMzVmMDlhNWI3YTBlZDRhODJjZWQ1ZWEzZDdiOGIyZjE0NmU5OGQ0MjRkMGQxODAwOTA0ZTkxZjc2MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjYwNzI4NmNhZmIwN2ZkYTZhNmEzNGI4NDBlYmI5MWVmNWY1OTc1ZjI1N2U0NjZkNTRlMjkyMTA3N2ZiYzFhNSJ9"
+        },
+        {
+          "resource": "repo://src/shop/types.ts#L75-L79",
+          "version": "repo-lines-v1:sha256:a24ae75fe9e71fa12145618b03a1cda7077384c99bf11686c1478217209b7677:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjcwYWM0ODQxOWZiOTYzNDQzOGVkODcwMmYwMDExNGQ4NGVhYWVjOTVkMjc2NzlkYmRjZDBlYmU4MDAyMjkyZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTIwNDBlMDk1YTk0ZTJhZGE3NGU0MjFmMzcxODc1MWE5MWE4MTBiZmQ2NmY0OGY0ZTkzOWM3Yjc0ODBlYjY3MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTIzNGQyNjk3YzE1NWYwYmQwNmUyOGQyMWU3ZGJhOGIzNjEyNWFmMTMxYTNmMGM4ZTc4YzJhNjEyOWY0MGU0MSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_3a2eb65f031f49ccbc16306e8990a5bc",
+      "statement": "The Product page adds items to the cart with the composite variant ID (product-id/variant-id), selected options, and variant image; the 'Added ✓' confirmation and shown photo index reset when variant selection changes.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/shop/Product.tsx#L180-L198",
+          "version": "repo-lines-v1:sha256:e23c41818017ec732976e314eff164ecd8dd774868589a8dd807a9f2025b576f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBkOGExN2ZmYjJiNjU1NDA3M2YzM2Q1N2ZlM2RmNDRkMDczZWZmODA1Yjc4OWZmNTc3ODJhODI1ODMwNWY2MjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk2M2Y0YTE0YTUyYWE5ZjA1NzdmYWFhOTZiNjU0Zjk0ZWY0YWVkMDE4NjI3ODE1YTMyMTUzZjY5NTdkOWU5ZmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVkNzk1Y2I1YTQzOGJkMzFlM2I5ZDY4MzNjOWZjOTJiM2FjOGE1Y2MzMzk1ZWVkMGNhNmYzMGNkMDA0YmU3MzQifQ"
+        },
+        {
+          "resource": "repo://src/pages/shop/Product.tsx#L40-L45",
+          "version": "repo-lines-v1:sha256:bde9af814409aae39fff8ceae5ac4f71858b0fa3367b38d4b1a5da77d992b2a9:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWQ0ZTFmMTZhOGVlNTg2OTkxYzQxYTdiMDJhNmNiYzliMTc3M2NhZjI5OGU3YmRlZWRiYTRhNGM2YzFiNzZjYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGIwMTJjY2ZlZDNmYWJlM2NiNTA5NjhlNDUzM2QyNTU1ZDJmY2FmYjBkYTZiYmJjZTIxZDYyZjlhNGYwNDZiNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDU2NWZmY2RmZjRmYzgyZmFkZjk1NGU4MDI1YTIwNWYxMDM3ZTQzMjFhNGFiNmUzMGZhMTk3ZmY3YzQ4ZTVhNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzA1MWU1NmQ4OGViMjM2ZmJiZjVjYzY2ZjI2MzU5ZDIxMDA0NzMwZjQ5NWJjMGUwN2U5MjEwNTNmMjMyNWM3ZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_babd697d641a486d84247c78745330b0",
+      "statement": "Scroll position restoration on the Shop page fetches pages 1..N in a single request and restores the scroll offset after paint via requestAnimationFrame, because applying a large scroll to a freshly loaded first page would land on nothing.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/shop/Shop.tsx#L214-L240",
+          "version": "repo-lines-v1:sha256:7c5f3f7e87526e352d43bd435185efc7eed0ea190e863dbc0dcac552d312c1b0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVkZDMzMDVlMjc3ZmU3OWNhOGI0MjZlYzgzNTQ1MjliY2JmNTEzMjgzZjM3MGE4MjNiYjc4YmQzYzUyZDZmZTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2NGZhNGVkYmQ0MGYxZTkyY2M0MDI0ZjY5OTg4NjA0ODRjMmFhMjlhNmI5ODFlYTQzNTI2NjIzMWU2OGJjOWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc0NjZhOTcxZDU1NWRmMDViMjdkMzNhNTQ3NjViMzZlYWFhNjI4NjZjMmFkY2ZmYmNjMGY1NjUyY2RkMzRhODIifQ"
+        },
+        {
+          "resource": "repo://src/pages/shop/Shop.tsx#L235-L239",
+          "version": "repo-lines-v1:sha256:cf1b4f9ae81d8667c7d6798d48526355fff04719209bb10e3e92aa57cf5f997e:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDJiNjY2YWRkZTQxYWM1Yjk2ODY4NGYzOWM0ZjZjNTg4YjY5ZDgwOTg5NGJhMzliMTc3YTEwYzBlOTM4N2Y4OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2E4NjBjOGQwN2I3MTdkNmQxMGFlNzYwODRmZTk4ZmY4OGVmMWZmODU1OTFhZTBjYWQxMGUyY2QxNjkzYjJmNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTk4YjkyODVkMmJiZDU0NzE1M2JkNTJlODdlYzQ3NWM4ZmE3YWVjODgwYTYzYzYwYTVkNGVhYmM2ZGU3YTU2ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDIzMWRhYjYyM2ZiZmExNzE5ZGExYjM1YzhiMmZiZjk5MzdkZDViMWY1YjcwMzQwMGJjOTg4YWE0NTM5MTAxMiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2b0043d0dd0e47bc90ec5306b95e0f9d",
+      "statement": "applySeo() sets a canonical URL without query parameters to prevent duplicate-indexed pages, and removes all existing JSON-LD script tags before appending new structured data to avoid stale or duplicate product information.",
+      "evidence": [
+        {
+          "resource": "repo://src/seo.ts#L68-L87",
+          "version": "repo-lines-v1:sha256:0ab15b60a482e30757794629a45710abc00f2261c80dfe662c226c9ad4a00649:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJlMzVkMTc2ZTlhNWNiNTY1N2Q2MjI0NDYxOTMwMjE4OThiNWI2Yzg3NWRlOTk4YzVhOTIyYWNlZTY3YzhkNmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg2NzdkMGUwNzkzMjk4Yzk1NzdjMDUwMTRiMzg0MGZjOGI4YjVjZDY4MWVhM2ZiNWRmZDI5ODgzNzMwMWFkYWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBjZDZlNjIyMWQzNzc1YjI4NmExYjFmY2I3MzljMTc1MzU4MWIyYmE5NTBiYWZiYmUwYWM3NTNjYTEyNDgyOTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_079287f72e774ea18b96127595ce3329",
+      "statement": "The Shop grid shows a 'Choose' link for products with variants (navigating to the product page), an 'Add to cart' button for simple sellable products, and a 'Sold out' badge for unsoldable products.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/shop/Shop.tsx#L375-L390",
+          "version": "repo-lines-v1:sha256:0708292940e625ff779bf857376a78ce36620a7901f71167c09f152def63a861:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNiM2QxNzRhYmI2YWEwODJmNTc3MzA0MTgzNDUyN2EzY2Y5NGEzYmIyM2FkZGU4YjdhMmE3ZDc2Zjg3ZTc2ZWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3YTdiZmUwODMxZmNlNzA4MzNiOWU5NzVlNGM1N2M5MTcyZDA5YWM3N2I5NTFjNmJiZGI0YTAyMjFmOTU3ZWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlmYTM2NmE5NWM4OTkxN2ZmY2JkODEyZGJhMTMxZDhjZDA1YzgwMjM3MmIwMDQxOTMwZmJiYzg2NTIzMTAyYWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY3NGQ1MWI3MWI0MDdhNzI5NGVmZDBlOTdlYjg3NzU1OWU2NmZmY2ExYzM5ZDU1NzUyZDAxYjIwZDAwYTdiYjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_97c26f69d0894c24b984e8812f1129e0",
+      "statement": "The Shop page holds category, search, and page number together in one state object so they change atomically, preventing the race condition where a filter change fires a fetch with a stale page number from a previous filter.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/shop/Shop.tsx#L99-L120",
+          "version": "repo-lines-v1:sha256:c652a4a0ca3f5de81f4d9832d44e19ea2646c908b69d3d7b7f7e938b95ccfa52:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRmMmEyZjk5NmYwOGU2ODBiZDI5MjEzNWE2ZmE0OTc4YmRhMjZlNjAyZDg0ZjMzY2IxZDU5NDc3NWQ0MzA0YjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhM2U0NmY5NDI3NmI2ZjZmNGVkMWYwMmFmNzhiZWY2YTJlZTFjNDM5ZGQ1NTg0Yjk3Mzk0ODMxMzIxNGQyYjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE0OTM5MTViMjRiMjUzNTYxZWQ1ZTI0Mzg3ZDQ4NDU4ZTVmN2UzNDcxOTE1ODM5M2EwZTE0MjA2OWZjNGVkMTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ2ZjFmYTJkYTM1YmEyZmU4NDc3N2ZlZDRlNDk1NDhjNDAzZDlmYTNhNTk3YmVhZjNlNWRhYWRlY2ZiOGE1ZWMifQ"
+        }
+      ]
     }
   ],
   "verification": {
-    "by": "openwiki/0.6.1",
-    "at": "2026-10-01T12:11:43.532Z"
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-13T10:18:39.801Z"
   }
 }

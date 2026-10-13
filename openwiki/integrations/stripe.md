@@ -3,9 +3,6 @@ type: integration
 title: Stripe Payment Integration
 description: Stripe checkout integration covering configuration, webhook handling, order lifecycle, stock, and operational concerns.
 tags: [stripe, payments, checkout, webhooks, orders]
-verified:
-  - by: openwiki/0.7.2
-    at: 2026-10-11T09:48:34.925Z
 sources:
   - id: openwiki-source-4e7cd7f381c92e8c5d89f5c1
     resource: repo://NOTES.md
@@ -18,6 +15,9 @@ sources:
   - id: openwiki-source-34f568b222540eb11aa44859
     resource: repo://ulabase.setup.ts
 generated: { by: "openwiki/0.7.2", at: "2026-10-11T09:48:34.925Z" }
+verified:
+  - by: openwiki/0.7.2
+    at: 2026-10-13T10:18:39.801Z
 ---
 
 

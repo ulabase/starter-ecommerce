@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:53d500c62470e0f17c89e8afca8802ce940e2b51745ba64884b642d29a3cecb0",
+  "pageVersion": "sha256:d72838ce40f7c79dcf1410afbe0626ed1f72c8b5d1204d49f5d0bd4651e78465",
   "claims": [
     {
       "id": "claim_ff3b18a00b024c05926f8b8c8482a519",
@@ -22,7 +22,7 @@
       "evidence": [
         {
           "resource": "repo://src/environments/environment.ts",
-          "version": "repo-file-v1:sha256:50c1d9f6f2014fb17f60203b66a25549ccc66652252f8a7dfe30b266363acb20"
+          "version": "repo-file-v1:sha256:9d363d296d49459fa9e675f684dad49fdae0bed0f32bf0c94170742a3c5885cb"
         }
       ]
     },
@@ -133,14 +133,14 @@
       "statement": "The app validates apiUrl at startup and shows a configuration screen if the URL is empty or invalid.",
       "evidence": [
         {
-          "resource": "repo://src/environments/environment.ts#L1-L14",
-          "version": "repo-lines-v1:sha256:313ad4d5c5e062877009dfd57344dee2242c2bc4f0f4b1493b8cbca219d1b95f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzMjM4ZDEyYjRkZGZlOTg2NmI3N2M0ZTc4ZWU3NWI4Y2QzZjhlZmM2MjZiMTI2ZmY0NzM2OTU1NGZlY2NlOTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5NjdjNDk2ZjBhOTY0ODRiNTVlMDExNWRlOWVkOTFiMmE2ZmRiY2ExMDBiMmMyYjgxNTZkMDhlOTE0NmUwOGEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZkNTUwYmJkNDQ1Yzc2YWQ3NGYwZWQwZDEwNmNmZTg0NjJmNDFkZjc1MGQzNjFlMTAwYWVhN2NlZDQyMzVlNjEifQ"
+          "resource": "repo://src/environments/environment.ts#L1-L5",
+          "version": "repo-lines-v1:sha256:49ba2b3ed7e11df64672b896ee721a643c97dc2d1d3531d8a2fbe7f8d2d11c8d:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTMyMzhkMTJiNGRkZmU5ODY2Yjc3YzRlNzhlZTc1YjhjZDNmOGVmYzYyNmIxMjZmZjQ3MzY5NTU0ZmVjY2U5OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjk2N2M0OTZmMGE5NjQ4NGI1NWUwMTE1ZGU5ZWQ5MWIyYTZmZGJjYTEwMGIyYzJiODE1NmQwOGU5MTQ2ZTA4YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmQ1NTBiYmQ0NDVjNzZhZDc0ZjBlZDBkMTA2Y2ZlODQ2MmY0MWRmNzUwZDM2MWUxMDBhZWE3Y2VkNDIzNWU2MSJ9"
         }
       ]
     }
   ],
   "verification": {
-    "by": "openwiki/0.6.1",
-    "at": "2026-10-01T12:11:43.532Z"
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-13T10:18:39.801Z"
   }
 }

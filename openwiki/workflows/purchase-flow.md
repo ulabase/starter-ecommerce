@@ -3,9 +3,6 @@ type: workflow
 title: End-to-End Purchase Flow
 description: Traces the complete buyer journey from browsing catalog through adding to cart, Stripe checkout, webhook processing, and order return/confirmation. Covers both guest and authenticated purchases.
 tags: [purchase, checkout, stripe, cart, orders, workflow, payment, guest, authenticated]
-verified:
-  - by: openwiki/0.6.1
-    at: 2026-10-01T12:11:43.532Z
 sources:
   - id: openwiki-source-54f2dc46cbd8d2c84c53491b
     resource: repo://src/pages/shop/Cart.tsx

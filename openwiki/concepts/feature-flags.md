@@ -3,6 +3,9 @@ type: "Configuration"
 title: "Feature Flags and Environment Configuration"
 description: "Explains how environment.ts controls feature availability and how flags gate routes, UI elements, and server-side features."
 tags: ["configuration", "feature-flags", "environment", "routes", "authentication"]
+verified:
+  - by: openwiki/0.7.2
+    at: 2026-10-13T10:18:39.801Z
 sources:
   - id: openwiki-source-4e7cd7f381c92e8c5d89f5c1
     resource: repo://NOTES.md
@@ -18,10 +21,7 @@ sources:
     resource: repo://src/routes.tsx
   - id: openwiki-source-34f568b222540eb11aa44859
     resource: repo://ulabase.setup.ts
-generated: { by: "openwiki/0.6.1", at: "2026-10-01T12:11:43.532Z" }
-verified:
-  - by: openwiki/0.7.2
-    at: 2026-10-11T09:48:34.925Z
+generated: { by: "openwiki/0.7.2", at: "2026-10-13T10:18:39.801Z" }
 ---
 
 # Feature Flags and Environment Configuration
@@ -78,7 +78,7 @@ catalogCollection: 'catalog',
 catalogOrdersCollection: 'orders',
 ```
 
-These names must match the collection names configured on your Ulabase service. The service uses defaults (`catalog` and `orders`) if not explicitly configured.
+These names must match the collection names configured on your Ulabase service. The service uses defaults (`catalog` and `orders`) if not explicitly configured. Collection names are configured per service (`stripeConfig.products.catalog-collection` / `.orders-collection`), and the interceptors match on the *configured* name — so the HTTP path really does change if a deployment renamed them.
 
 ### 3. Feature Flags
 

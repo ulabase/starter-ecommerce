@@ -3,9 +3,6 @@ type: workflow
 title: Authentication and Invitation Flows
 description: Covers login, signup, email verification, password reset, Google OAuth, and the three-path invitation acceptance flow.
 tags: [auth, login, signup, oauth, invitations, verification, password-reset]
-verified:
-  - by: openwiki/0.6.1
-    at: 2026-10-01T12:11:43.532Z
 sources:
   - id: openwiki-source-23775c3de52f3ab95a13cb8b
     resource: repo://README.md
@@ -31,7 +28,10 @@ sources:
     resource: repo://src/routes.tsx
   - id: openwiki-source-f35ebbb169397481aefdbbb7
     resource: repo://src/safe-next.ts
-generated: { by: "openwiki/0.6.1", at: "2026-10-01T12:11:43.532Z" }
+generated: { by: "openwiki/0.7.2", at: "2026-10-13T10:18:39.801Z" }
+verified:
+  - by: openwiki/0.7.2
+    at: 2026-10-13T10:18:39.801Z
 ---
 
 # Authentication and Invitation Flows
@@ -180,6 +180,9 @@ Google OAuth requires configuration on both the Google Cloud Console and the Ula
    - Set `oauthLogin: true` in `src/environments/environment.ts`
    - `oauthProviders` already defaults to `['google']`
 
+**Supported providers:**
+The `OAuthButtons` component supports both `'google'` and `'github'` providers, though only Google is enabled by default. The component renders provider-specific icons and labels.
+
 **OAuth button implementation:**
 The `OAuthButtons` component renders OAuth provider buttons. It generates URLs using `oauthUrl(provider)` which constructs: `${environment.apiUrl}/auth/oauth/authorize/${provider}?noauthchallenge`
 
@@ -291,6 +294,16 @@ The consents gate interacts with authentication:
 
 **Important:** Guests (unauthenticated users) are never blocked by the consents gate because they have no user document to stamp. Their consent is handled by a checkout checkbox.
 
+**Consents signal implementation:**
+The `consents-signal.ts` file implements a simple pub/sub pattern:
+- `isBlocked()`: Returns current blocked state
+- `setBlocked(next)`: Updates state and notifies listeners
+- `subscribe(listener)`: Adds a listener, returns unsubscribe function
+- `consentsOnError(err)`: Passed to `RhAuthProvider` as `config.onError` - sets blocked on 451 status
+
+**Legal documents accessibility:**
+The `ConsentsGate` component allows `/terms` and `/privacy` paths to pass through even when blocked, so users can read the documents they're being asked to accept.
+
 ## Configuration and Environment
 
 **Environment variables (for service, not frontend):**
@@ -344,3 +357,7 @@ features: {
 - OAuth cancellation
 - Network errors during auth operations
 - Feature flags disabled scenarios
+- Just-signed-up welcome banner display and dismissal
+- Consents gate blocking on 451 responses
+- Open redirect prevention with malicious `next` parameters
+- Password visibility toggle functionality

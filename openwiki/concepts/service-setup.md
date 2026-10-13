@@ -4,12 +4,12 @@ title: Service Setup (ulabase.setup.ts)
 description: Declarative setup file that defines check/apply steps for configuring Ulabase services including Stripe, accounts, ACL, Guards, and consents
 tags: [setup, configuration, stripe, accounts, acl, guards, consents, declarative]
 verified:
-  - by: openwiki/0.6.1
-    at: 2026-10-01T12:11:43.532Z
+  - by: openwiki/0.7.2
+    at: 2026-10-13T10:18:39.801Z
 sources:
   - id: openwiki-source-34f568b222540eb11aa44859
     resource: repo://ulabase.setup.ts
-generated: { by: "openwiki/0.6.1", at: "2026-10-01T12:11:43.532Z" }
+generated: { by: "openwiki/0.7.2", at: "2026-10-13T10:18:39.801Z" }
 ---
 
 # Service Setup (ulabase.setup.ts)
@@ -124,6 +124,7 @@ const secret = (name: string, stored: unknown) => {
 - Stored secrets read back as bullets; empty strings mean never set
 - Re-running against a configured service needs no secrets in the environment
 - Changing a secret from the environment works by exporting the key and re-running
+- A secret named in the environment is one you are asking to be written, so the step is not satisfied until it has been
 
 ## SHOPPERS Role Configuration
 
@@ -149,15 +150,17 @@ The setup includes demo products for initial shop display:
 - **Never overwrites**: Re-running the setup doesn't reset real data to demo data
 - **Idempotent**: Uses upsert to allow partial seeding runs
 - **Delete when ready**: Remove the seeding step when the shop becomes yours
+- **Checks for emptiness**: The check asks whether the catalog holds anything at all, not whether specific products are present
 
 ## Versioned Legal Documents
 
 Legal document versions are managed centrally:
 
-- **TOS_VERSION** and **PP_VERSION** define current versions
-- **Permission stamps** versions when users accept
+- **TOS_VERSION** and **PP_VERSION** define current versions in `src/legal-versions.ts`
+- **Permission stamps** versions when users accept via `mergeRequest`
 - **Guards rule** compares token claims against current versions
 - **Updating versions** forces re-acceptance on next request
+- **Version comparison**: The guard blocks when either acceptance is missing (`not (A and B)`)
 
 ## Dependencies and Order
 
@@ -183,7 +186,7 @@ flowchart TD
     P --> Q[Guards Feature]
     Q --> R[Guards Rule]
     
-    D --> S[Shop Ready]
+    D --> S[All Steps Complete]
     E --> S
     F --> S
     G --> S
@@ -191,9 +194,11 @@ flowchart TD
     I --> S
     L --> S
     R --> S
+    
+    S --> T[App Points at Service]
 ```
 
-*Step dependencies: Stripe and accounts configurations are independent, but consents require accounts to be configured first.*
+*Step dependencies: Stripe and accounts configurations are independent, but consents require accounts to be configured first. The app is pointed at the service only after all other steps complete.*
 
 ## Running the Setup
 
@@ -222,6 +227,7 @@ npx @ulabase/cli setup --srv <srvId> --dry-run
 - Checks verify actual state, not just presence
 - Secrets are resolved at apply time, not check time
 - Catalog data is never overwritten by setup runs
+- The app is pointed at the service only after all other steps complete
 
 **Failure modes:**
 - Missing environment variables cause `fromEnv` to throw
@@ -237,6 +243,7 @@ The setup can be extended by:
 - Updating `SHIPPING_COUNTRIES` for different regions
 - Adding new legal document versions
 - Customizing the user schema for additional fields
+- Exporting the `appPointsAtService` step to keep it last in extended setups
 
 ## Configuration/Operations
 
@@ -244,6 +251,7 @@ The setup can be extended by:
 1. Edit `TOS_VERSION` and `PP_VERSION` in `src/legal-versions.ts`
 2. Re-run the setup
 3. All users will be prompted to accept new versions on next request
+4. The acceptance they already gave stays in the `consents` history
 
 **Changing secrets:**
 1. Export the environment variable (e.g., `STRIPE_SECRET_KEY`)

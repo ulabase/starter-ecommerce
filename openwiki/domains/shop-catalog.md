@@ -3,9 +3,6 @@ type: domain
 title: Shop Catalog and Product Pages
 description: Covers catalog browsing, category filtering, text search, infinite scroll pagination, product pages with variant selection, and stock handling.
 tags: [catalog, shop, products, variants, stock, pagination, filtering, search]
-verified:
-  - by: openwiki/0.6.1
-    at: 2026-10-01T12:11:43.532Z
 sources:
   - id: openwiki-source-192c27e8048436d93b29c2cb
     resource: repo://src/catalog.seed.ts
@@ -17,7 +14,10 @@ sources:
     resource: repo://src/seo.ts
   - id: openwiki-source-949bdd44bd293ab2d96d3c24
     resource: repo://src/shop/types.ts
-generated: { by: "openwiki/0.6.1", at: "2026-10-01T12:11:43.532Z" }
+generated: { by: "openwiki/0.7.2", at: "2026-10-13T10:18:39.801Z" }
+verified:
+  - by: openwiki/0.7.2
+    at: 2026-10-13T10:18:39.801Z
 ---
 
 # Shop Catalog and Product Pages
@@ -51,6 +51,8 @@ type Variant = {
   metadata?: Record<string, string>;  // Selection keys (color, size, etc.)
 };
 ```
+
+**Variant ID composition**: Variant IDs are scoped to their parent product. The composite `<product-id>/<variant-id>` is what the cart stores and the server prices.
 
 ### Variant Inheritance with `pick()`
 
@@ -93,6 +95,17 @@ function stock(chosen: ReturnType<typeof pick>) {
 - `in_stock` absent = nobody counting (default for most items)
 - Server applies same rules when pricing orders
 
+### Price Display with `fromPrice()`
+
+For products with variants, the grid shows "from €X.XX" using the lowest variant price:
+
+```typescript
+export function fromPrice(item: ShopItem): number {
+  if (!item.variants?.length) return item.unit_amount;
+  return Math.min(...item.variants.map(v => v.unit_amount ?? item.unit_amount));
+}
+```
+
 ## Product Page
 
 The Product page fetches products by ID rather than from grid state, because URLs are shared and bookmarked.
@@ -123,12 +136,15 @@ flowchart TD
     H -->|No| I[Show "Select an option"]
     H -->|Yes| J{Variant exists?}
     J -->|No| K[Show "Combination not available"]
-    J -->|Yes| L[Show price and add to cart]
+    J -->|Yes| L{Is sellable?}
+    L -->|No| M[Show "Sold out"]
+    L -->|Yes| N[Show price and add to cart]
     
-    C --> M[Render product page]
-    I --> M
-    K --> M
-    L --> M
+    C --> O[Render product page]
+    I --> O
+    K --> O
+    M --> O
+    N --> O
 ```
 
 ### Option Extraction
@@ -153,6 +169,7 @@ const options = useMemo(() => {
 - `etichetta` is excluded (used for email labels)
 - Adding new metadata keys automatically creates new selectors
 - Options shown as chips, disabled if no sellable variant exists
+- Low stock warning shows when `in_stock` ≤ 5: "Only X left"
 
 ### Related Products
 
@@ -168,6 +185,72 @@ payments.getCatalog({
 ```
 
 **Why after**: Must never delay the main product. Failure is silent (empty section).
+
+### Cart Integration
+
+The Product page adds items to the cart with the composite variant ID and selected options:
+
+```typescript
+cart.add(
+  {
+    productId: chosenItem.id,  // e.g., "product-id/variant-id"
+    name: item.name,
+    unitAmount: chosenItem.unitAmount,
+    currency: chosenItem.currency,
+    ...(Object.keys(chosen).length > 0 ? { options: chosen } : {}),
+    ...(chosenItem.images[0] ? { image: chosenItem.images[0] } : {}),
+  },
+  quantity
+);
+```
+
+**Why composite ID**: The cart holds what is bought, not the product family. The server prices the composite ID and the order line records it.
+
+**State reset**: The "Added ✓" confirmation clears when the user changes variant selection, because a new choice is effectively a new product.
+
+**Quantity input**: Clamped to stock limit where counted, with a minimum of 1. The checkout would refuse larger numbers anyway.
+
+**View cart link**: Appears after successful addition, allowing quick navigation to the cart.
+
+**Image gallery**: Shows variant-specific images with thumbnail navigation when multiple images exist.
+
+**Reference field**: Shows the composite variant ID (e.g., "product-id/variant-id") for support and identification.
+
+**Delivery info**: Shows "Downloadable — nothing to ship" for digital products, "Shipped in a box" for physical products.
+
+**Category display**: Shows category as an "eyebrow" label above the product name.
+
+**Back link**: "← Back to the shop" link at the top returns to the catalog with filters preserved.
+
+**Shop header**: Shows "Shop" eyebrow and "Everything we make" title.
+
+**Category chips**: "All" button plus category chips from the `CATEGORIES` array, with active state for selected category.
+
+**Loading more**: Shows "Loading more…" text while fetching additional pages.
+
+**Sentinel element**: Hidden div at the bottom of the grid that triggers infinite scroll when it comes into view.
+
+**Toast area**: Announces additions to screen readers via `aria-live="polite"` and shows visual toast with "View cart" link.
+
+**Just added tracking**: Tracks which item was just added to show "Added ✓" on the button and toast notification.
+
+**Timer management**: Uses a ref to hold the timeout, so adding a second item restarts the timer rather than letting the first one's timeout clear the second one's message.
+
+**Cancellation pattern**: Both pages use a `cancelled` flag in cleanup functions to prevent state updates after unmount.
+
+**Restore logic**: When returning to a saved position, fetches pages 1..N in one request (`restoreAll`), then restores scroll position after paint using `requestAnimationFrame`.
+
+**Page number in state**: The page number stays in state, not the URL, because it's a consequence of scrolling rather than a choice, and an address bar that changes as you scroll is noise in the history.
+
+**Sort order**: Always sorted by name to ensure consistent paging and prevent items from appearing on multiple pages or none.
+
+**Race condition prevention**: The `q` state object holds category, search, and page together, so they change in the same update or not at all, preventing stale page numbers with new filters.
+
+**URL replacement**: Filter changes use `replace: true` to avoid adding to browser history, since typing is not navigation.
+
+**Filter change clearing**: When a new filter is applied (page 1), the grid clears immediately to avoid showing previous filter's products while loading.
+
+**Category toggle**: Clicking the active category deselects it (sets to null), clicking a different category selects it.
 
 ## Shop Page
 
@@ -191,6 +274,8 @@ const [q, setQ] = useState<{ category: string | null; search: string; page: numb
 - Back button works after viewing a product
 - Filtered URLs can be shared
 - Reload preserves filters
+
+**Search debounce**: Typing is debounced at 300ms to avoid firing a request per keystroke across the network.
 
 ### Infinite Scroll Pagination
 
@@ -261,6 +346,21 @@ payments.getCatalog({
 - Search: regex on name, case-insensitive
 - Escaped to prevent regex injection
 
+**Toast feedback**: Adding an item from the grid shows a toast notification with the product name and a "View cart" link, which auto-dismisses after 2.5 seconds.
+
+**Grid item states**:
+- Products with variants show "Choose" (links to product page)
+- Simple sellable products show "Add to cart"
+- Unsoldable products show "Sold out" badge
+
+**Loading state**: Skeleton cards show while items load, with the search input remaining stable to preserve focus.
+
+**Empty states**:
+- No matches: "Nothing matches that. Try another category, or clear the search."
+- Empty catalog: "The catalog has no purchasable products yet. Run `ulabase setup --srv <srvId>`."
+
+**Price display**: Products with variants show "from €X.XX" using the lowest variant price.
+
 ## ACL and Visibility
 
 The catalog permission carries a readFilter that ensures only purchasable products reach the client:
@@ -313,6 +413,10 @@ export function productJsonLd(opts: {
 }
 ```
 
+**Canonical URL**: `applySeo()` sets a canonical URL without query parameters, so `?category=apparel` and `?q=mug` don't appear as separate pages to search engines.
+
+**Structured data cleanup**: Before appending new JSON-LD, `applySeo()` removes any existing `<script type="application/ld+json">` tags—including stale prerendered data—to avoid duplicate or contradictory product information.
+
 **Limitation**: As a SPA, link previews (Slack, WhatsApp, etc.) show `index.html` content, not product data. Server-side rendering would be required for full preview support.
 
 ## Error Handling
@@ -320,6 +424,7 @@ export function productJsonLd(opts: {
 - **404 on catalog fetch**: Usually means Stripe plugin disabled or collection name mismatch
 - **403 on catalog fetch**: ACL doesn't allow reading catalog (re-run setup)
 - **Empty results**: "Nothing matches" or "Catalog empty" messages
+- **Product not found**: "That product is not in the catalog. It may have been withdrawn."
 - **Variant mismatch**: "That combination is not available"
 - **Network errors**: Generic error messages with retry guidance
 

@@ -3,9 +3,6 @@ type: "Operations"
 title: "Configuration, Build, and Deployment"
 description: "Covers environment configuration, the build pipeline (Vite + prerender), static hosting requirements, and SEO prerendering."
 tags: ["configuration", "build", "deployment", "vite", "prerender", "seo", "s3", "cloudfront", "static-hosting"]
-verified:
-  - by: openwiki/0.6.1
-    at: 2026-10-01T12:11:43.532Z
 sources:
   - id: openwiki-source-5b54a58d1b51cd490b0e7162
     resource: repo://package.json
@@ -21,7 +18,10 @@ sources:
     resource: repo://src/viewport-height.ts
   - id: openwiki-source-5e1b077422a94ae165e88e4e
     resource: repo://vite.config.ts
-generated: { by: "openwiki/0.6.1", at: "2026-10-01T12:11:43.532Z" }
+generated: { by: "openwiki/0.7.2", at: "2026-10-13T10:18:39.801Z" }
+verified:
+  - by: openwiki/0.7.2
+    at: 2026-10-13T10:18:39.801Z
 ---
 
 # Configuration, Build, and Deployment
@@ -30,24 +30,31 @@ This page covers how the Ulabase Starter Ecommerce app is configured, built, and
 
 ## Environment Configuration
 
-The app's runtime configuration lives in `src/environments/environment.ts`. This file controls the API endpoint, collection names, and feature flags.
+The app's runtime configuration lives in `src/environments/environment.ts`. This file controls the API endpoint, collection names, and feature flags, with expanded comments explaining collection name semantics.
 
 ### Core Properties
 
 ```typescript
 export const environment = {
-  // Your Ulabase service URL (not the admin node)
+  // Your free Ulabase service, e.g. 'https://<srvid>.ulabase.app'.
+  // `npx ulabase setup --srv <srvid>` writes it here for you. Empty in the
+  // starter's own repository: empty shows the "configure your service" screen.
   apiUrl: '',
-  
-  // Collection names (must match service configuration)
+
+  /**
+   * Collection names are configured per service
+   * (`stripeConfig.products.catalog-collection` / `.orders-collection`), and the
+   * interceptors match on the *configured* name — so the HTTP path really does
+   * change if a deployment renamed them. These are the defaults the service
+   * uses when it hasn't.
+   */
   catalogCollection: 'catalog',
   catalogOrdersCollection: 'orders',
-  
-  // Feature flags
+
   features: {
     emailRegistration: true,
     passwordReset: true,
-    oauthLogin: false,
+    oauthLogin: false, // Google sign-in: off until you create its OAuth client (README, "Google sign-in")
     oauthProviders: ['google'] as const,
     teamInvitations: true,
   },
@@ -84,12 +91,12 @@ This runs three sequential steps:
 <!-- openwiki: mermaid parse failed and this diagram was converted to a text fence so it does not break rendering. Fix the diagram source and restore the mermaid fence. Parser error: Heuristic: an unescaped angle bracket inside a label breaks rendering; rephrase the label. -->
 ```text
 flowchart TD
-    A[Start Build] --> B[tsc -b<br/>Type Check]
-    B --> C[vite build<br/>Bundle & Optimize]
-    C --> D{SHOP_API_URL<br/>& SHOP_PUBLIC_URL<br/>set?}
-    D -->|Yes| E[prerender.mjs<br/>Generate Product Pages]
-    D -->|No| F[Skip Prerender<br/>Continue Build]
-    E --> G[Output dist/]
+    A["Start Build"] --> B["tsc -b<br>Type Check"]
+    B --> C["vite build<br>Bundle & Optimize"]
+    C --> D{"SHOP_API_URL<br>& SHOP_PUBLIC_URL<br>set?"}
+    D -->|Yes| E["prerender.mjs<br>Generate Product Pages"]
+    D -->|No| F["Skip Prerender<br>Continue Build"]
+    E --> G["Output dist/"]
     F --> G
     
     style A fill:#e1f5fe

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:2d63aa919035bebb748fdfa907bf4ef1020aa8a92e2fda9e629fe73a3cf04bb8",
+  "pageVersion": "sha256:1955c5ed3540ec8ed36cc8df8e25870d62e6a32b7a3a8ff47c9e77114e033ac4",
   "claims": [
     {
       "id": "claim_b67b88c4330e4f1aa3d2c457cc29607a",
@@ -129,18 +129,52 @@
       "statement": "Success URL template uses fragment (#) for order ID and secret to prevent exposure in server logs and Referer headers: /orders#order={ORDER_ID}&secret={ORDER_SECRET}.",
       "evidence": [
         {
-          "resource": "repo://ulabase.setup.ts#L109-L109",
+          "resource": "repo://ulabase.setup.ts#L110-L110",
           "version": "repo-lines-v1:sha256:732899d42df77687b9fddb486576fa23351de5aa1a4b900676319d4d2a926aca:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzMyODk5ZDQyZGY3NzY4N2I5ZmRkYjQ4NjU3NmZhMjMzNTFkZTVhYTFhNGI5MDA2NzYzMTlkNGQyYTkyNmFjYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzMyODk5ZDQyZGY3NzY4N2I5ZmRkYjQ4NjU3NmZhMjMzNTFkZTVhYTFhNGI5MDA2NzYzMTlkNGQyYTkyNmFjYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2E1M2YzYWIxZTkyODgzNTA1M2E5ZDFmZmJiYWExZTYzNDU3ZDVmYTcyMDNlYjhiMmRmOGIxN2U3N2QxZDlkNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTQ3YzVmNTNiNTZkY2RmYjNhOTQzMzM0Njk3MjI5NDFmOWM1ZjZmYTYxNmM1Y2VjNWVlY2YzMTM0MGU0NTBjNCJ9"
         },
         {
-          "resource": "repo://ulabase.setup.ts#L72-L75",
+          "resource": "repo://ulabase.setup.ts#L73-L76",
           "version": "repo-lines-v1:sha256:9d1ab2d8d2da606d952b88c2df9ede2e83693fd593877ce9c0083fafbf3ccdec:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTcwOTIyMmVhMzdhOTIwMmVmNWRiZmU4NTY0OWIwOTYyODA2ZTkzNzZhNTU5MTViZGM0MjcxODI4NjY3NmU0YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTkwYWI3Mjc4ZWU3NWRlZjcxZWRlYmMxYzNmNzZmMjNkYmUxZjdmZDM4MzQ5YTVlMDZlMTc1ZGYxZTQ0MmM3NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWFkNzU5Zjg2NWJiM2FlNTM0NTdhYmVmMjFhNmI3YTk2ZWFkODQzOWNiZWQ1YzcwZTBiMDBkYmQwMTY4ZTJmMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTdkOTYxOTU3ZGJkODYzNDMyYTQ1MWVhZTM3NjY4MjFmNzJiMzM2MTg1YjE0ZDk3YzA1YTNhZDk3OWRjMGEwOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_aa9b81d6866d46b7a77f17642b2c21ee",
+      "statement": "Checkout returns HTTP 502 when Stripe keys are not configured, with a specific user-facing message: 'Payments are not set up on this shop yet. The owner adds the Stripe test keys and runs the setup again.'",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/shop/Cart.tsx#L65-L70",
+          "version": "repo-lines-v1:sha256:4c84df7232974f3c19db1d8fbe8413654de331426bec6bdf021e126e50e1d5d8:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTRmN2Q1YzJhYTBhZjZjYmYyOTE4NTIwNDI0YWZiYjc0YjFiZmY3N2Y1Y2FkNmM2YmMxYWRlNTI4OGQzZWI0MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjZhZmUzY2JmNWExNDhiNjdlYTJiYWE4NzNkMGI5NWYwMGVhMzg3MzI1OWY3MTBmOTE3MTE5Nzk5NDgwODE5MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDlhMTkzZDJjZTM3NzZhMGNhODg4NmVhMGJkMmI2ZTE5OTJlMmE4MzZlY2I0YjI5MGZmYWRhN2E2MTBlY2M1YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODRiZjM4YjE4MTVkODc4MjZmMDM3MmVmZmE0OGMxMzNlODZjYjQ5ZmI4MDY3M2Q5MTRiMjY0OTMwMTUxZWM1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c6cd2ce31aa94b3faa08e578daa0283a",
+      "statement": "Order history loading handles HTTP 403 errors with a setup-specific message: 'The service ACL does not allow reading your orders. Re-run `ulabase setup`.'",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/shop/Orders.tsx#L172-L174",
+          "version": "repo-lines-v1:sha256:c0b43c2512fb9ac610b44482bfb98186c57e1d24d713a0d03370af0d0aee12d2:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDQ0YzI0ZWFiNmRmOWQxM2JjMjBiYWM0YWI2YWZmYTc2NDMyMDQyNTgwNDg4Y2U5OWYwYTdkZWUyN2M5YmY3NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmRiMjcwMTcwYzA2N2E0MzA2MDE2MGFkODgzOGY1MzA2NDgyNjMwMzBiNWI2MTRiYTE4ZmJlNTgyOWFkNzZlOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzllYTUwYjc5NjIxYmFmYzhhYzU4ZDA3NjZmYjZmMWU4Y2JkOGIxNzA5NWFiMGUzYjc1ZDUzNzg3MTk5OTk3YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmZjNzZmMGYzZTVkOTBiZDBmODE2MTEwMTNiMTI4ZTI0NTg0MDA3ZWFjNjVhNzBhNDliNTgyMjA0YTJjODdhNyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ac29ef1bc6864e1da7dabb29d438122f",
+      "statement": "The system distinguishes between order references from URL fragment (just returned from Stripe) and from localStorage stash (previously started checkout), using this distinction to decide whether to poll for webhook confirmation.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/shop/Orders.tsx#L80-L85",
+          "version": "repo-lines-v1:sha256:2cc5dbc6aa2397f82bd6ee5104bf65074e6290fc5b49d54debb26bc0c7925377:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmNhZjM0Y2E3NTEzM2M2ZmNkYzRkMTkyZDA0MzMxNzNhMWUzZDQ5MjdhMzI4MGI1Y2M4N2JhYTRkNTMyOWU4MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGU0ZWFlOGQ2MGI4MTZjZmI5ZmM2ZDAzNjE3MWYxNzgwNTNhYzA0NDY3NjFmYmQ0ZTNkYjRhYzQ0ZWUxZjYxMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTBkZWM5N2M5MWMwMTYxODVkYjdlMjExOTMyMTQ2ZTRkN2ViNTNjYzMyOWU4ZDRmOWJlM2JiODBlY2UzOWU3ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTBhMWEyNzVkZTVmM2MzMTg4ZjYyOTY0Mzc2NTg2MGNlMDZiYTA2OGM4MGNmMGE1Mzk5ZWQ4NDJjNTRiMmQ3NSJ9"
+        },
+        {
+          "resource": "repo://src/pages/shop/Orders.tsx#L90-L101",
+          "version": "repo-lines-v1:sha256:fd1bfc019da330932867606f15679eb2bc78a3b0da8b699e14a83b7cc4a7216e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkMWEzNjRhMGVmMjE1ZWQ2OWQ2N2QwNmI5MzU0N2MwMTc1YjYwZWQ3OWY1MmExYmE0YjI5ZDc0ZTE4NGIwMTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5MWNmNDBmY2RkZTgyOGJlODI1OGE1ZTU4NzQ2NWI1M2NhNmUxMTRmODllNjI0NmFhZjA5MDZkMTRlZjM3MDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU5MGJjNjdkM2FhMWExYWJlMTQ1ZWFlNmYwZmYwYzJiYjliNzYzMzM5ZDBhMGE4NzQyZDI1YTEyYTk2ZGUxODYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcwNzY2NGYxN2I0MmFhYjA0ZjJlOGRlMGRkNDhjZmFiMGY2OWFjOTQ2ZWQ1ODMwMjNiNzczMjUzM2FlNTg1ZDgifQ"
         }
       ]
     }
   ],
   "verification": {
-    "by": "openwiki/0.6.1",
-    "at": "2026-10-01T12:11:43.532Z"
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-13T10:18:39.801Z"
   }
 }
