@@ -1,5 +1,7 @@
 # Ulabase Starter — Ecommerce
 
+[![CLA assistant](https://cla-assistant.io/readme/badge/ulabase/starter-ecommerce)](https://cla-assistant.io/ulabase/starter-ecommerce)
+
 A real online shop: product catalogue, cart, card payments through Stripe, and orders you can
 look up afterwards. People can buy without creating an account, and the ones who do get sign-up,
 login, password reset and teams.
