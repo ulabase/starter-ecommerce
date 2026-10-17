@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:500cb408441e352415546c697e908ac3df78feaaa92b35e1740e4b3cbeff5199",
+  "pageVersion": "sha256:0a744301438f4ea13d62a0fea8fd5d2a378c2a25ac010cf7a22f52931345d9a8",
   "claims": [
     {
       "id": "claim_a041200c99984fbd8258df1cb2e58a6a",
@@ -39,7 +39,7 @@
       "statement": "Guest users have no session and prove order ownership via the order secret in the URL fragment, while authenticated users have orders filtered by payer.id (billing account) and can view order history.",
       "evidence": [
         {
-          "resource": "repo://src/pages/shop/Cart.tsx#L144-L151",
+          "resource": "repo://src/pages/shop/Cart.tsx#L148-L155",
           "version": "repo-lines-v1:sha256:e0e548904e49935311f9a5d2bff8a50e2c1a7a46714a0e0a2c87785b6ab8c29f:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjEwODNjNTAxODY0MTE5OTg3OTU3MTAxODJhMTVlOTVmMTZlYjg4ZjU5YWQ3NGUyOTZlMDJmNTIwY2Q3YTMxMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzEzMDA0ODQ3ZTA0ZDg4NDEyZjk0ZWFiNmIwNTY0OWQ2MmIwNDIzZDA0OWJiNGIzMjdhODE2MzE2ZDY0NDNjYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2E1ZWYyN2Y3MjRmMWYxZGVlMzFjMTM2MDhkM2ZhMWQ2OGQzYWFlYzFiZjE2MzcwYmM3MGJmZWM4MTZkNDAwYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjdmYzgyYjBkMzBiNjg2MDJiZjQyYTkxMTUzOTQ4ZDAxN2Y2YTgxNTE5NmZkMjY0Njg4M2Y5MmJkY2Q3MjY1MCJ9"
         },
         {
@@ -106,7 +106,7 @@
     }
   ],
   "verification": {
-    "by": "openwiki/0.6.1",
-    "at": "2026-10-01T12:11:43.532Z"
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-17T07:38:01.110Z"
   }
 }
