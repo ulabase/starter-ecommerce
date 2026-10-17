@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:850775a3f5fcff4acd3456ccc21afb61efec1c570336c77b87b0acfa9c2d9972",
+  "pageVersion": "sha256:3f2ce79728197da825c43d8edd1649132b6e3855acf2cfd76a31525ee5df1a37",
   "claims": [
     {
       "id": "claim_be4df28b6db549ea8b202d5b58411fcf",
@@ -11,7 +11,7 @@
           "version": "repo-lines-v1:sha256:521ed47156900a30fa4318a2a83a63aca9202af26b7b691cf73ce89f11dc3201:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTE2OTg3OWE1NjBlMzhhNGQwZTkwZjk3NDU1ZjQxZjEzYTc2MjFiMTRmNTE4YTgyNmU3ZTkzNjI0NGQxMjRjNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGFhZTljZGE2ZTBmZTA0Y2U1MGFlMjQ5YWI3NDM0NWY0YTFmMjNjZGVmMjYxNjU4Y2M4MTI1Nzg5Mzk4NzNmOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDk2NmI5YjlkZDBlN2IzYmU4YTJkNmFhODU2ZGNlYzg3MjI1MDk3MGU2NWQ4ZDQ1ZDE5ZjY5ZTliNTE0ZjkxZiJ9"
         },
         {
-          "resource": "repo://README.md#L7-L9",
+          "resource": "repo://README.md#L9-L11",
           "version": "repo-lines-v1:sha256:e942b5ed82a50fe05e7525051c9bf0e5639c68caccdedffa0fc3e270d3b9bb27:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTRhM2M1ZjFhZjYyZjc4MmViZjIyYTdjNTAzMDc3N2I2YjJhMjRmNmEwODQ0MzE3OWQ0MDg0OTJiOTRjYjBlNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzRiZTNkZjg1MDk1MjkzOWQyZDcyYmIyM2UwYzI2NzZlZmM2YWExOGZhM2ZkYzE1MzgxNWY0YzY0YzhiNDYzNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTAxNzVmNzA1MGY2ZWEzOTRhZjlmMzExNjNkNmIyNjkyNzVjZDJjNDJlZmQ2MDZjODE3YmMxNWNjN2NiNTVjYiJ9"
         }
       ]
@@ -21,11 +21,11 @@
       "statement": "Each Ulabase tenant gets their own service instance at https://<id>.ulabase.app, where <id> is a six-character identifier that isolates tenant data and configurations.",
       "evidence": [
         {
-          "resource": "repo://README.md#L27-L29",
+          "resource": "repo://README.md#L29-L31",
           "version": "repo-lines-v1:sha256:03d146cefd2d75176bc2184c365fc1c3658e86737d040871e0502cf2e68ccd8d:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjI4Nzk2NWFjNTk0YzQzOWZhNmMyMDc2M2Y3YjU4MjJlMDM2MzA4NWFiZWI0MjVmNDdiMDJjZGNmMjczMjEwZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTk1NDc3ODBjZjEwMzNkNWQ5ODA5MzAxMTQ0ZTJkNjk0ZTQ4MzhlZDgzOGU0M2ExYTUyZjFlYjM2NTYyNGRkZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjFiMmM5OTgzMDAzNTJlZDgxNGJmYWQxODI2OGQyYjEyMzE4NzkxYWM2NTZhMmM2NTBjZjEwZDI2NWI4ODQ2MiJ9"
         },
         {
-          "resource": "repo://README.md#L49-L49",
+          "resource": "repo://README.md#L51-L51",
           "version": "repo-lines-v1:sha256:52173f980f9028e882d68f7c4f2c429ae36338fb4780ae517830912de3dfcd49:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTIxNzNmOTgwZjkwMjhlODgyZDY4ZjdjNGYyYzQyOWFlMzYzMzhmYjQ3ODBhZTUxNzgzMDkxMmRlM2RmY2Q0OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTIxNzNmOTgwZjkwMjhlODgyZDY4ZjdjNGYyYzQyOWFlMzYzMzhmYjQ3ODBhZTUxNzgzMDkxMmRlM2RmY2Q0OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODhjNWM4YThlYjYyY2MyNTRlM2MxMzk1MTU5MWRiNGY4OGI4MzVjMzIwN2Q3Nzk4NzU4NzlhMjE5ZTgzMTc5NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzBhNmNiNDk0OTMwM2MxODdkZTMwOWIyMGE5Njg2OTMxMDY5NGZlYTc1Zjg1MmJmYmY2MTUzOThmNjY0MTkzNSJ9"
         },
         {
@@ -36,11 +36,11 @@
     },
     {
       "id": "claim_eb48c03e521a4433a6d5bba9cdda2f20",
-      "statement": "The Ulabase ecosystem consists of three primary NPM packages: @ulabase/kit for core authentication and API logic, @ulabase/kit-react for React-specific integrations, and @ulabase/cli for service setup configuration.",
+      "statement": "The Ulabase ecosystem consists of three primary NPM packages: @ulabase/kit for core authentication and API logic, @ulabase/kit-react (^0.13.6) for React-specific integrations, and @ulabase/cli (^0.13.6) for service setup configuration. The ecommerce starter application directly depends on @ulabase/kit-react and @ulabase/cli, with @ulabase/kit as a transitive dependency.",
       "evidence": [
         {
           "resource": "repo://package.json#L12-L21",
-          "version": "repo-lines-v1:sha256:1380511577996f8c5e9bfadd139394990e38a8b7fae2b43d7114fc4c72248ab6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJhM2I0NjlkOWUwOTc1NzIyNDY2NjczNGM5ZWY3YjI1NGQ4ODUzNGY1ZDViYjcwOTg5NjA4MDVjNTUzZGMzMDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM4ZTdmZjdhMDRiOWQ2ZDljYWE0NDRlNTc3OWQ0YWJkOTVhNzNmNTVhZDEwNTk0YzUyYmRmNDY4ZWYwNmM3ZmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYzZTBjNjcyOTlhOWQyN2UwODIwNmMzZmQ2YWEwM2U5YzhlNzZjYzQ1ZmMxNTFjMTA4NzU0MjY4MGMzM2E4ZjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI4NjcwNDExOWIwNjg0NTdmNTFjOGEwZGJkNDBiYWFkYmY1MWFmODMzY2ZlNTMzMWY5ZDEwNTk4Yzk4NmQwMDYifQ"
+          "version": "repo-lines-v1:sha256:977509936eb6355399433442adda461e18b296adcba6b4962954e0f097f5cde0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJhM2I0NjlkOWUwOTc1NzIyNDY2NjczNGM5ZWY3YjI1NGQ4ODUzNGY1ZDViYjcwOTg5NjA4MDVjNTUzZGMzMDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJhNWE5OTYzODQxMzE0NWY5ZTU0NmNlOWNkYTA2YjFmZTIyOWQyMGM2Mzk4NWIyM2RkNmQ4ZDFlNjI2ZWNlNTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYzZTBjNjcyOTlhOWQyN2UwODIwNmMzZmQ2YWEwM2U5YzhlNzZjYzQ1ZmMxNTFjMTA4NzU0MjY4MGMzM2E4ZjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI4NjcwNDExOWIwNjg0NTdmNTFjOGEwZGJkNDBiYWFkYmY1MWFmODMzY2ZlNTMzMWY5ZDEwNTk4Yzk4NmQwMDYifQ"
         },
         {
           "resource": "repo://src/main.tsx#L4-L4",
@@ -57,11 +57,11 @@
       "statement": "The admin node for Ulabase service management is at https://api.ulabase.com, while the user-facing console for managing services and issuing tokens is at https://ulabase.com.",
       "evidence": [
         {
-          "resource": "repo://README.md#L142-L143",
+          "resource": "repo://README.md#L144-L145",
           "version": "repo-lines-v1:sha256:e0bb488f36fa3b23453e9eaddc4d5d9e25f7f414a8f5d9491692bef1fab88704:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmNlNTVjYjQ2ZDI1MGUyNDFkNzIwMmMzNjA1NTRkYTQ3ZmM4Y2NiYWU3NjRlNTA5ZmYzYWI5ZTAyMWIxMDc0OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWQ2NGVhOTc0OWE0OWMwNmY5NjNjMTE5ZGNkZTk4NzFlMmRlYjVmNTE0OGYzYjQ3ZWZhYmE3M2ZmNTIyNTZmMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTIwMDVhODViODFjMjdhMmI2MmQ2OWJjOWIwODVkZWI3NzI4MTFiYmVlMjNiM2JhM2I1MTk3YjgzNTM0ZGNiMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGUyMGUxZDc5ZjVmY2ZjZjcxNTEyMDEzOGRiN2M5ZTZlZjg3NzMwMTE4NWQyMThiYWU2MmExMTU2YTdkNTkxNCJ9"
         },
         {
-          "resource": "repo://README.md#L45-L47",
+          "resource": "repo://README.md#L47-L49",
           "version": "repo-lines-v1:sha256:70243ce53a236d70381ae0656d623e86de0df40b4551155c49f0e01e06bb597e:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTBjZGY4OTc0M2E4YTEzZTY3NDJiOTdhZjU0NWE4NTcwOTBlNDVhYThhZTg4MmNmODVhNTc3MjdiNDA4MGM1OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTBhMWY1OTBkZjVlYzMxZWI5NDdjNTdlN2E3MjgxYzhhNGFkNzdlNWVmODFhMWIzMDg2OGI2YTE2MDQ0NTIwYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWMyNDg5YzU0N2RjZmU1NTZlMGQ3NDA0NGMwODI1ZjIyMDhjMzFkMWIzOWVjMzNiNjdlYWU0MzFiMDJkNDg3OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWQwNzljNDQ4ZGM4MTNkZGY1OGNjMWE3YmUzN2I1MjU4ODUwNWFkNzY3OGM3OGMzMDE0N2Q0YTZiYWFjYTUzZiJ9"
         }
       ]
@@ -115,7 +115,7 @@
       "statement": "The ulabase setup command executes declarative check/apply steps defined in ulabase.setup.ts, with --dry-run option to check configuration without making changes.",
       "evidence": [
         {
-          "resource": "repo://README.md#L36-L39",
+          "resource": "repo://README.md#L38-L41",
           "version": "repo-lines-v1:sha256:e2525b8e5d158afc33973fd4c0adcb32462f3808b64a95619b88062b2c883932:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWRlMmY1MzI4ZWU2ZTgwNTBlOGFhZmQ4ZGM4NjlhMDY5Y2Q5NTg0ZWRhYWY1NGZlNTg5ZDczYzNiN2RjZDc5OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2U1Y2E3ZDFlNmU1NGY0OGRkNGNhMTkxMzY3ODNiZmZhNGUyOTQ2YTZhNTJiNzJhNjc3YzliODJkOTFlZmRkZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDdiMjVkYWExMDE3MmUxNWQzMjRmYjMwYjBmNGQ3M2M3ODE0OTk1NTY0MWMzN2Q2MGM2YjhiNzQ4YTNiMzEyZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTZhOTdmODFkMDYzYmQ2YzVkYzJkYTFjN2JiN2QwNWZiZDI2ZjZkOTk1ZTg1NWMyZjMwZWMwYjZlMmViNDM2MCJ9"
         },
         {
@@ -137,6 +137,6 @@
   ],
   "verification": {
     "by": "openwiki/0.7.2",
-    "at": "2026-10-13T10:18:39.801Z"
+    "at": "2026-10-17T07:38:01.110Z"
   }
 }

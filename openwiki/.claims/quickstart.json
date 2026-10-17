@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:e7ae811361b0c7f2f7b239c7fd4fca14c1a5bac897bcf580b883a825dfedb484",
+  "pageVersion": "sha256:1259ccb58c9a28f8626baa561f37cdd5b5eba209f7e956f210d00928ca44da4a",
   "claims": [
     {
       "id": "claim_25cb4739a07d43e799b6cf89cfdae3ba",
       "statement": "The Ulabase Ecommerce Starter is a React SPA with no custom backend; it communicates with a managed Ulabase service via @ulabase/kit-react, which provides authentication, payments, and API access.",
       "evidence": [
         {
-          "resource": "repo://README.md#L7-L9",
+          "resource": "repo://README.md#L9-L11",
           "version": "repo-lines-v1:sha256:e942b5ed82a50fe05e7525051c9bf0e5639c68caccdedffa0fc3e270d3b9bb27:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTRhM2M1ZjFhZjYyZjc4MmViZjIyYTdjNTAzMDc3N2I2YjJhMjRmNmEwODQ0MzE3OWQ0MDg0OTJiOTRjYjBlNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzRiZTNkZjg1MDk1MjkzOWQyZDcyYmIyM2UwYzI2NzZlZmM2YWExOGZhM2ZkYzE1MzgxNWY0YzY0YzhiNDYzNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTAxNzVmNzA1MGY2ZWEzOTRhZjlmMzExNjNkNmIyNjkyNzVjZDJjNDJlZmQ2MDZjODE3YmMxNWNjN2NiNTVjYiJ9"
         },
         {
           "resource": "repo://package.json#L13-L13",
-          "version": "repo-lines-v1:sha256:ea57e523538fcde49dd2a15be34f8aaef11842b713396270a9fe11566d451bc5:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWE1N2U1MjM1MzhmY2RlNDlkZDJhMTViZTM0ZjhhYWVmMTE4NDJiNzEzMzk2MjcwYTlmZTExNTY2ZDQ1MWJjNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWE1N2U1MjM1MzhmY2RlNDlkZDJhMTViZTM0ZjhhYWVmMTE4NDJiNzEzMzk2MjcwYTlmZTExNTY2ZDQ1MWJjNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTUzZTgyM2Y0NTI5YmY0NTRhOTkyMDQyODRmZTk0NWRmZGE5OWM5NzIyYzBlZDI4NzM0MzAxZDA3OWMwNjMwMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGNkYTZmYzRiYjY4NTJhYzFjNzBlN2M0NjY3ZDQ4ZDhlZDZiYjNkZjJlOTVmNzliOGIyYTM3OTQ4NjgwYjhkZSJ9"
+          "version": "repo-lines-v1:sha256:5532b4f5fc9c3e8fb5f83aa51336cf3948b05fe5d9909e880e912c7fa7aeff23:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTUzMmI0ZjVmYzljM2U4ZmI1ZjgzYWE1MTMzNmNmMzk0OGIwNWZlNWQ5OTA5ZTg4MGU5MTJjN2ZhN2FlZmYyMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTUzMmI0ZjVmYzljM2U4ZmI1ZjgzYWE1MTMzNmNmMzk0OGIwNWZlNWQ5OTA5ZTg4MGU5MTJjN2ZhN2FlZmYyMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTUzZTgyM2Y0NTI5YmY0NTRhOTkyMDQyODRmZTk0NWRmZGE5OWM5NzIyYzBlZDI4NzM0MzAxZDA3OWMwNjMwMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGNkYTZmYzRiYjY4NTJhYzFjNzBlN2M0NjY3ZDQ4ZDhlZDZiYjNkZjJlOTVmNzliOGIyYTM3OTQ4NjgwYjhkZSJ9"
         },
         {
           "resource": "repo://src/main.tsx#L4-L4",
@@ -35,7 +35,7 @@
       "statement": "Feature flags in src/environments/environment.ts control route availability: emailRegistration, passwordReset, oauthLogin, and teamInvitations gate their respective routes and UI elements.",
       "evidence": [
         {
-          "resource": "repo://src/environments/environment.ts#L26-L32",
+          "resource": "repo://src/environments/environment.ts#L17-L23",
           "version": "repo-lines-v1:sha256:e0c09c50abf5287407f3a473d775c4b3d6aa5796cb202935980d529c1b428e51:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjRjNjE5ZmZkNmI5MjFjNTI3OTExZWRlMTQ3MWM5MTQ5YTFkZTg2NTUzNDE4NWIwOWY2Nzg1MGRjMzMwZDU2MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGQ1Y2QyZmI0ZjNkZjg4NDUxNTI1NWIzOTUyM2YyZjhiNTQ3MmJlZWE5ZjU2NmZmY2EyMDRkYjgwMjU2MTA0MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzBlMDQ1YzUwZjBlY2Y5ZDQ2NDg3NmIwYTJhM2NiZWEzMDg4Y2ZmMTRlZDFjMzIzZTg2YTdjY2JiNjk4ZmY3ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWExZDFhNjMzOTAyMjljNzk4MzQ3ZTgzYTA0MDU0NDFjOTQwMDAzNTI4NGFkMTY4YzFiZjZjZGYxZDcwYTM3MCJ9"
         },
         {
@@ -77,7 +77,7 @@
       "statement": "Stripe webhook configuration is done on the Stripe dashboard (not via the Stripe CLI), with the webhook endpoint URL pointing to the Ulabase service at /stripe/webhook.",
       "evidence": [
         {
-          "resource": "repo://README.md#L54-L85",
+          "resource": "repo://README.md#L56-L87",
           "version": "repo-lines-v1:sha256:b1fd5013224746dd1a7d11efc7d408aec2b44045e18ae6c04b2d86390ee12e57:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUxNDVhZjllZjY2NTliNGQzNmIwODhkYjA0YmRlODJlOTU2N2VlNjc3YzlkMDVkMjhiMWQyZjVjZGNjNzFlNGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2ZDgwYWVkMjEzMDJiN2QxNzdkMzkxNjliZjE2NjRlNzQyMzRmMmVmMTU0OTgwNTU5NTUxYmI4ZDdkYjg1MzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNiZjNjNmM3ZDE5YjhkYjRlYTgzODFjNzYyOThjNzgzYThkMjcwNjhjZGNmNDcyODgzMzc5N2UzZDYyZDYzYjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkzZjg4OTgxYzYwODJiY2E0NjIyODNmOWNiNTNkODJhY2YyNGM5YWRjZWI2ODExMDE0YWJjNWY3MWU0MDJmNjkifQ"
         }
       ]
@@ -99,6 +99,6 @@
   ],
   "verification": {
     "by": "openwiki/0.7.2",
-    "at": "2026-10-11T09:48:34.925Z"
+    "at": "2026-10-17T07:38:01.110Z"
   }
 }

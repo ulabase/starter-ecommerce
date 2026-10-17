@@ -3,6 +3,9 @@ type: workflow
 title: End-to-End Purchase Flow
 description: Traces the complete buyer journey from browsing catalog through adding to cart, Stripe checkout, webhook processing, and order return/confirmation. Covers both guest and authenticated purchases.
 tags: [purchase, checkout, stripe, cart, orders, workflow, payment, guest, authenticated]
+verified:
+  - by: openwiki/0.7.2
+    at: 2026-10-17T07:38:01.110Z
 sources:
   - id: openwiki-source-54f2dc46cbd8d2c84c53491b
     resource: repo://src/pages/shop/Cart.tsx
@@ -12,7 +15,7 @@ sources:
     resource: repo://src/pages/shop/Shop.tsx
   - id: openwiki-source-13e0b91938cfb0ab061a712b
     resource: repo://src/shop/pending-order.ts
-generated: { by: "openwiki/0.6.1", at: "2026-10-01T12:11:43.532Z" }
+generated: { by: "openwiki/0.7.2", at: "2026-10-17T07:38:01.110Z" }
 ---
 
 # End-to-End Purchase Flow
@@ -75,7 +78,7 @@ payments.getCatalog({
 
 ## Cart Operations
 
-The cart is entirely client-side until checkout, managed by `RhCartProvider`:
+The cart is entirely client-side until checkout, managed by `useCart()` hook:
 
 ```typescript
 interface CartLine {
@@ -406,6 +409,7 @@ sequenceDiagram
 ### Checkout Errors
 
 - **401:** Service requires account to order (ACL decision)
+- **502:** Missing Stripe keys (owner needs to configure Stripe)
 - **Other:** Generic checkout failure message
 
 ### Order Reading Errors
