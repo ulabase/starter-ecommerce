@@ -327,10 +327,12 @@ const CONDITION = [
   `not (equals(@user.latestConsents.tos, '${TOS_VERSION}') and equals(@user.latestConsents.pp, '${PP_VERSION}'))`,
 ].join(' and ');
 
-// `team` is here for the orders list: its permission filters on the billing
-// account, and a readFilter reading `@user.team._id` can only see what the
-// token carries.
-const CLAIMS = ['latestConsents/tos', 'latestConsents/pp', 'team'];
+// The orders list needs no claim: its readFilter reads `@team._id`, the active
+// team the server resolves at every request, whatever the token carries.
+const CLAIMS = ['latestConsents/tos', 'latestConsents/pp'];
+
+// The billing account of the caller: the active team, never read from the token.
+const ORDERS_FILTER = { 'payer.id': '@team._id' };
 
 const rules = (config: FeatureConfig): unknown[] =>
   (config['rules'] as unknown[] | undefined) ?? [];
@@ -543,13 +545,21 @@ export default defineSetup('Ecommerce', [
     //
     // The filter is the whole permission. `path('/orders')` with no filter
     // would hand every customer the entire order book.
-    check: ({ service }) => permissionGrants(service, 'orders-list-own', ['user']),
+    //
+    // The check reads the filter too: a service set up before reads `@user.team._id`,
+    // which the tokens no longer carry, and must be rewritten.
+    async check({ service }) {
+      if (!(await permissionGrants(service, 'orders-list-own', ['user']))) return false;
+      const res = await service.fetch('/acl/orders-list-own');
+      const acl = (await res.json()) as { mongo?: { readFilter?: Record<string, unknown> } };
+      return acl.mongo?.readFilter?.['payer.id'] === ORDERS_FILTER['payer.id'];
+    },
     apply: ({ service }) =>
       service.putPermission('orders-list-own', {
         predicate: `path(/${ORDERS}) and method(GET)`,
         roles: ['user'],
         priority: 90,
-        mongo: { readFilter: { 'payer.id': '@user.team._id' } },
+        mongo: { readFilter: ORDERS_FILTER },
       }),
   }),
   step('customers may open the Stripe billing portal', {
