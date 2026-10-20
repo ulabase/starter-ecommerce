@@ -21,7 +21,7 @@ sources:
 generated: { by: "openwiki/0.7.2", at: "2026-10-11T09:48:34.925Z" }
 verified:
   - by: openwiki/0.7.2
-    at: 2026-10-17T07:38:01.110Z
+    at: 2026-10-20T08:19:28.862Z
 ---
 
 # Quickstart — Ulabase Ecommerce Starter

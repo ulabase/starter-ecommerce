@@ -23,18 +23,18 @@
       "completedRunId": "d6f9fac1-3a1b-45b5-9239-94ae8f34b0b3"
     },
     "/openwiki/concepts/ulabase-and-kit.md": {
+      "gitHead": "99b5a2530ae20eaea06e237c6e4c25aba8faddd9",
+      "sourceFingerprint": "sha256:0457f3d8284539253cb4e62e7584a8e059e27f13dbdab490d784c2e660e31974",
       "pageVersion": "sha256:3f2ce79728197da825c43d8edd1649132b6e3855acf2cfd76a31525ee5df1a37",
       "completedBy": "openwiki/0.7.2",
-      "completedRunId": "70a12e27-612d-439a-af86-264fd0431004",
-      "gitHead": "99b5a2530ae20eaea06e237c6e4c25aba8faddd9",
-      "sourceFingerprint": "sha256:0457f3d8284539253cb4e62e7584a8e059e27f13dbdab490d784c2e660e31974"
+      "completedRunId": "70a12e27-612d-439a-af86-264fd0431004"
     },
     "/openwiki/domains/billing-accounts.md": {
-      "gitHead": "810443d0366e6e80e3cdd40af15d367308cbb407",
-      "sourceFingerprint": "sha256:bdd138641c51f57ecad0716a5bc8b28a4abd1ed37e1c367819d61cf8f9e61d4a",
-      "pageVersion": "sha256:b10720218c49461eb68e66c5670c61c7567702cd57bfaf70dfdd86f6e767659f",
+      "pageVersion": "sha256:7a3528d345e374d6c743ed825bc7e2421036f7e48c4e7f299cdb5c166b15ac62",
       "completedBy": "openwiki/0.7.2",
-      "completedRunId": "d6f9fac1-3a1b-45b5-9239-94ae8f34b0b3"
+      "completedRunId": "9683c638-c8aa-4305-977a-25f1b488e2ee",
+      "gitHead": "e150df179a25ecb89a60be17b3fd09b309aef1b4",
+      "sourceFingerprint": "sha256:e500dad75bf39e62bd394053822bd87bae22e85414f3b4c7cd3e293969a1520e"
     },
     "/openwiki/domains/cart-and-orders.md": {
       "gitHead": "810443d0366e6e80e3cdd40af15d367308cbb407",
@@ -51,18 +51,18 @@
       "completedRunId": "d6f9fac1-3a1b-45b5-9239-94ae8f34b0b3"
     },
     "/openwiki/integrations/stripe.md": {
-      "gitHead": "810443d0366e6e80e3cdd40af15d367308cbb407",
-      "sourceFingerprint": "sha256:bdd138641c51f57ecad0716a5bc8b28a4abd1ed37e1c367819d61cf8f9e61d4a",
-      "pageVersion": "sha256:ad31ca2b3146713370834c32792d6cacf5eebd05675b5701ddb44a730674cee5",
+      "pageVersion": "sha256:e743c2a1cc19dc8a6f113c9f685c7d3395fdb741a1f61e9d331004f25cec445c",
       "completedBy": "openwiki/0.7.2",
-      "completedRunId": "d6f9fac1-3a1b-45b5-9239-94ae8f34b0b3"
+      "completedRunId": "9683c638-c8aa-4305-977a-25f1b488e2ee",
+      "gitHead": "e150df179a25ecb89a60be17b3fd09b309aef1b4",
+      "sourceFingerprint": "sha256:e500dad75bf39e62bd394053822bd87bae22e85414f3b4c7cd3e293969a1520e"
     },
     "/openwiki/integrations/ulabase-service.md": {
-      "gitHead": "810443d0366e6e80e3cdd40af15d367308cbb407",
-      "sourceFingerprint": "sha256:bdd138641c51f57ecad0716a5bc8b28a4abd1ed37e1c367819d61cf8f9e61d4a",
-      "pageVersion": "sha256:a17d1bbe657ec7872ea6a431ae0afcab49082e83c2f5d1c689a2fc1adc9e6d81",
+      "pageVersion": "sha256:7452846cea2134c5c9622fc754b98a61047cc47309738ca9928c90f32a8f128a",
       "completedBy": "openwiki/0.7.2",
-      "completedRunId": "d6f9fac1-3a1b-45b5-9239-94ae8f34b0b3"
+      "completedRunId": "9683c638-c8aa-4305-977a-25f1b488e2ee",
+      "gitHead": "e150df179a25ecb89a60be17b3fd09b309aef1b4",
+      "sourceFingerprint": "sha256:e500dad75bf39e62bd394053822bd87bae22e85414f3b4c7cd3e293969a1520e"
     },
     "/openwiki/operations/configuration-and-deployment.md": {
       "gitHead": "810443d0366e6e80e3cdd40af15d367308cbb407",
@@ -79,11 +79,11 @@
       "completedRunId": "d6f9fac1-3a1b-45b5-9239-94ae8f34b0b3"
     },
     "/openwiki/quickstart.md": {
-      "pageVersion": "sha256:1259ccb58c9a28f8626baa561f37cdd5b5eba209f7e956f210d00928ca44da4a",
+      "pageVersion": "sha256:6ad55ec49aa1746f546bb7a0df8ac36775ceb076b4bb556a3b3cf2b9ae1a3490",
       "completedBy": "openwiki/0.7.2",
-      "completedRunId": "70a12e27-612d-439a-af86-264fd0431004",
-      "gitHead": "99b5a2530ae20eaea06e237c6e4c25aba8faddd9",
-      "sourceFingerprint": "sha256:0457f3d8284539253cb4e62e7584a8e059e27f13dbdab490d784c2e660e31974"
+      "completedRunId": "9683c638-c8aa-4305-977a-25f1b488e2ee",
+      "gitHead": "e150df179a25ecb89a60be17b3fd09b309aef1b4",
+      "sourceFingerprint": "sha256:e500dad75bf39e62bd394053822bd87bae22e85414f3b4c7cd3e293969a1520e"
     },
     "/openwiki/workflows/auth-and-invitations.md": {
       "gitHead": "810443d0366e6e80e3cdd40af15d367308cbb407",
@@ -93,18 +93,18 @@
       "completedRunId": "d6f9fac1-3a1b-45b5-9239-94ae8f34b0b3"
     },
     "/openwiki/workflows/consents-gate.md": {
-      "gitHead": "810443d0366e6e80e3cdd40af15d367308cbb407",
-      "sourceFingerprint": "sha256:bdd138641c51f57ecad0716a5bc8b28a4abd1ed37e1c367819d61cf8f9e61d4a",
-      "pageVersion": "sha256:7c2d35b509168bf2ef9ddf289d92c0e9d848d6b0255d930767629f859cebe504",
+      "pageVersion": "sha256:6a6105d886f3442a9bd5262ba84b078302b7ec3be4288907a103f400ddae7152",
       "completedBy": "openwiki/0.7.2",
-      "completedRunId": "d6f9fac1-3a1b-45b5-9239-94ae8f34b0b3"
+      "completedRunId": "9683c638-c8aa-4305-977a-25f1b488e2ee",
+      "gitHead": "e150df179a25ecb89a60be17b3fd09b309aef1b4",
+      "sourceFingerprint": "sha256:e500dad75bf39e62bd394053822bd87bae22e85414f3b4c7cd3e293969a1520e"
     },
     "/openwiki/workflows/purchase-flow.md": {
-      "pageVersion": "sha256:0a744301438f4ea13d62a0fea8fd5d2a378c2a25ac010cf7a22f52931345d9a8",
+      "pageVersion": "sha256:9db5598f24884d8cddb1dccd1a6463783e7641d5d7c3a36acbd3e9a5b142eccd",
       "completedBy": "openwiki/0.7.2",
-      "completedRunId": "70a12e27-612d-439a-af86-264fd0431004",
-      "gitHead": "99b5a2530ae20eaea06e237c6e4c25aba8faddd9",
-      "sourceFingerprint": "sha256:0457f3d8284539253cb4e62e7584a8e059e27f13dbdab490d784c2e660e31974"
+      "completedRunId": "9683c638-c8aa-4305-977a-25f1b488e2ee",
+      "gitHead": "e150df179a25ecb89a60be17b3fd09b309aef1b4",
+      "sourceFingerprint": "sha256:e500dad75bf39e62bd394053822bd87bae22e85414f3b4c7cd3e293969a1520e"
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:b10720218c49461eb68e66c5670c61c7567702cd57bfaf70dfdd86f6e767659f",
+  "pageVersion": "sha256:7a3528d345e374d6c743ed825bc7e2421036f7e48c4e7f299cdb5c166b15ac62",
   "claims": [
     {
       "id": "claim_8060986c128f4400acaa06dd317c08e1",
@@ -104,19 +104,19 @@
     },
     {
       "id": "claim_774a96b2694442148d05de4fe2d1adb2",
-      "statement": "The active team (team.active) determines which billing account new orders are charged to; switching teams via auth.switchTeam() updates JWT claims so the ACL can filter orders by the user's active billing account.",
+      "statement": "The active team (team.active) determines which billing account new orders are charged to; the server resolves the active team at every request via @team._id, not via JWT claims.",
       "evidence": [
         {
           "resource": "repo://src/pages/billing/Billing.tsx#L20-L27",
           "version": "repo-lines-v1:sha256:2350a9ec64367d9bce46e441d8f6ca0c52feaf6cc84027ad36cd991058ff5dd9:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTBhMDQ3YzRiOTY3YzY0YWNkYjQxNWJkMWI4ZmZkNDAxYjZiMTljZjEyMDNlNGUzYjkzYWU2MDg5MzA1NzliYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZThiYWMyOGMxMTYzNTk0OTIzYTQwOTAyN2I5ZWJkN2QyNjkyYzNiMGI2N2M1Yjc3YTFhYmFjNWM0ODI3MTAyOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTEyZGU3ZDJhNThhMzAyNGRjMWFlZTIzZDk5YmZhMTdmNGIxMDBlZjFkNjA3NThiMTdhZmYyZTVkYjYyN2QzZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmM3ZWZkNWYxMzQxNTNmMGY3ZmI1ZTJhODNjNTgwYjM2MjVlMDJlNGJlNWNlMjliNjQzMWU5ZjQ0YWFlZTc0NCJ9"
         },
         {
-          "resource": "repo://ulabase.setup.ts#L330-L333",
-          "version": "repo-lines-v1:sha256:b3691504a935f4ec878b75a53f5620d913017984f594def5e5042a3a3cffa3a2:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTZkZGM4OWZmZWZjMzQ2YmE4OGFmNzAyNDBjNzFjYzRjNjRjYTU3ZmZlMzIwOTAxMmE3YTc5ODk2YTgyM2FmOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWZiMWU4NmRiMmViOWIzMzE3Mjk5NDhlNjhkOGIyMGJjOTAzYWUzMDRhNjUxZGQ0Mjg0ZGJjZWQ0MTY3NTMyNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjc4ZmI2Y2U3NGEyMmU5MTJkZmE1ZjQ0ZGY3ZGJiOTRiN2IyOWZhNmJhZGYyZGI4NmM2NmNmM2U5NGQwOWI1NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjhjMzEwZDc3OGQ4MWNiOTY5NmQxZjA0MDY1OTQ1NTliYjMwMWVlNTY2MDc1MGFjOTg4ZDk1MWU3MmQ2YWU4NiJ9"
+          "resource": "repo://ulabase.setup.ts#L330-L335",
+          "version": "repo-lines-v1:sha256:50b95a23e84e07bcf5d931a12ce2845ae232903aaacb8ce520816fe6acea8cf4:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTIwMTcyZWQ3OTg5YjVjYzNmNmE3Njk2ZGZlZWU1M2FmZDdhYWEwYjE4MWVmNzQ2NWNhODFiOGQyMTVhMWJhOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDUzMzZlNDQ4NjM1YWE3NGFiNjg3Zjk3OTAxYzhhYmY5NjAzZTgzMDBkYzJjMmFjYWExOWM4ZmQ5NTI2MjAyNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjc4ZmI2Y2U3NGEyMmU5MTJkZmE1ZjQ0ZGY3ZGJiOTRiN2IyOWZhNmJhZGYyZGI4NmM2NmNmM2U5NGQwOWI1NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjhjMzEwZDc3OGQ4MWNiOTY5NmQxZjA0MDY1OTQ1NTliYjMwMWVlNTY2MDc1MGFjOTg4ZDk1MWU3MmQ2YWU4NiJ9"
         },
         {
-          "resource": "repo://ulabase.setup.ts#L552-L552",
-          "version": "repo-lines-v1:sha256:725d880682c2ff7334e71325eaf437683d933490a1ade63dbc82c80d264545a1:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzI1ZDg4MDY4MmMyZmY3MzM0ZTcxMzI1ZWFmNDM3NjgzZDkzMzQ5MGExYWRlNjNkYmM4MmM4MGQyNjQ1NDVhMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzI1ZDg4MDY4MmMyZmY3MzM0ZTcxMzI1ZWFmNDM3NjgzZDkzMzQ5MGExYWRlNjNkYmM4MmM4MGQyNjQ1NDVhMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDJlNTg5ODJlZTgzODIwYWU5NmMzYzJhZTVlYjcwZWUyNjc1MjZkNzE1YTg5YWU2MDc5MWYxZGUzYjAwYTBhMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTAwNTU3MDNiMGNkYTg1NWMyYjgyYTM4OWEyNGFhMTdmNzlmMTcwOGJjMTE4MDc1Mjk3YjFiNWVlYTIwZjE2NCJ9"
+          "resource": "repo://ulabase.setup.ts#L540-L565",
+          "version": "repo-lines-v1:sha256:a30f36b0eec5325d9e2a4d8204d679ec90a5b92b5c67344e85a2cddbdebbddf3:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmMzUwNmRjYThmNzEwZDA5NTQyOTBhYmYyNzg5M2IzNjk4NmY2ZDk0ZDc0YWZhNzZjYTIxYzdjNTIzZmM4NTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk2NTliZDAzYTVlMmJmN2YyMTM3NGYwMGRjNTVkYzFiMjhjMTk5YWU4Y2RkMjdjOTU3NDQyMTc3M2U4ZWMzM2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc0NDliNTZkYWQ2OTczMWRlYWFhMzc3NDFiYWUzNWM1NWVlMjY5YWI0ZWI4ZTRhZDM1ODQ4YTYwNWFkYTViNjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIyOGQ2NTFmMTgxZDUzZGZhZWI4MWRkMTYwZDhlYWI2NTFiZTA5NWYwYzQ3NDU4ZmFkZmY1YmRiYjAwMTM2ZjIifQ"
         }
       ]
     },
@@ -136,19 +136,19 @@
     },
     {
       "id": "claim_e5280863d48d49108b6e14687fe98550",
-      "statement": "The orders collection ACL uses a readFilter on payer.id matching @user.team._id, which means all members of a billing account share visibility of the same orders, and orders are filtered to show only those charged to the user's active billing account.",
+      "statement": "The orders collection ACL uses a readFilter on payer.id matching @team._id, which means all members of a billing account share visibility of the same orders, and orders are filtered to show only those charged to the user's active billing account.",
       "evidence": [
         {
           "resource": "repo://src/pages/shop/Orders.tsx#L159-L161",
           "version": "repo-lines-v1:sha256:31acf8bdca11907633fa0c1de8c9bb90b1c6af3895cc159c11bed4acdf46f7a4:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTU2ZmZhY2IwMDk0OTE3ZDhkZjE1NGZmMzkzNjYwOGQyNjI5ZGE3ZmM4MWFhYmY1MTU5OGQ4MmQ4ZTg1MzQwMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmJmZTJhMTBhNTM5MmIxZDBiMjNlNjhiOTdkMzM2ZDU0MDA4ZDFjMzliMTcwMDFhNzA2ZmJmNDAwYjQxZGE1ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2U1MzkwNWFlMjQzNmE5NWE0NjE0ZjlhODMwZjBkNTg4ZDUzMWVmNWYyOTMzOGZiN2E2ZGY3ZjBhNzZkOGVkYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzQ0MWEwZjI1YWJhOTUwMDRkN2JkMzE5NTZiMmNiMzVmZjJjZWZjMDY4OWU3Nzg2OTUyZjRmYzM3MDMyMjcwNSJ9"
         },
         {
-          "resource": "repo://ulabase.setup.ts#L330-L333",
-          "version": "repo-lines-v1:sha256:b3691504a935f4ec878b75a53f5620d913017984f594def5e5042a3a3cffa3a2:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTZkZGM4OWZmZWZjMzQ2YmE4OGFmNzAyNDBjNzFjYzRjNjRjYTU3ZmZlMzIwOTAxMmE3YTc5ODk2YTgyM2FmOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWZiMWU4NmRiMmViOWIzMzE3Mjk5NDhlNjhkOGIyMGJjOTAzYWUzMDRhNjUxZGQ0Mjg0ZGJjZWQ0MTY3NTMyNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjc4ZmI2Y2U3NGEyMmU5MTJkZmE1ZjQ0ZGY3ZGJiOTRiN2IyOWZhNmJhZGYyZGI4NmM2NmNmM2U5NGQwOWI1NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjhjMzEwZDc3OGQ4MWNiOTY5NmQxZjA0MDY1OTQ1NTliYjMwMWVlNTY2MDc1MGFjOTg4ZDk1MWU3MmQ2YWU4NiJ9"
+          "resource": "repo://ulabase.setup.ts#L330-L335",
+          "version": "repo-lines-v1:sha256:50b95a23e84e07bcf5d931a12ce2845ae232903aaacb8ce520816fe6acea8cf4:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTIwMTcyZWQ3OTg5YjVjYzNmNmE3Njk2ZGZlZWU1M2FmZDdhYWEwYjE4MWVmNzQ2NWNhODFiOGQyMTVhMWJhOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDUzMzZlNDQ4NjM1YWE3NGFiNjg3Zjk3OTAxYzhhYmY5NjAzZTgzMDBkYzJjMmFjYWExOWM4ZmQ5NTI2MjAyNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjc4ZmI2Y2U3NGEyMmU5MTJkZmE1ZjQ0ZGY3ZGJiOTRiN2IyOWZhNmJhZGYyZGI4NmM2NmNmM2U5NGQwOWI1NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjhjMzEwZDc3OGQ4MWNiOTY5NmQxZjA0MDY1OTQ1NTliYjMwMWVlNTY2MDc1MGFjOTg4ZDk1MWU3MmQ2YWU4NiJ9"
         },
         {
-          "resource": "repo://ulabase.setup.ts#L552-L552",
-          "version": "repo-lines-v1:sha256:725d880682c2ff7334e71325eaf437683d933490a1ade63dbc82c80d264545a1:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzI1ZDg4MDY4MmMyZmY3MzM0ZTcxMzI1ZWFmNDM3NjgzZDkzMzQ5MGExYWRlNjNkYmM4MmM4MGQyNjQ1NDVhMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzI1ZDg4MDY4MmMyZmY3MzM0ZTcxMzI1ZWFmNDM3NjgzZDkzMzQ5MGExYWRlNjNkYmM4MmM4MGQyNjQ1NDVhMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDJlNTg5ODJlZTgzODIwYWU5NmMzYzJhZTVlYjcwZWUyNjc1MjZkNzE1YTg5YWU2MDc5MWYxZGUzYjAwYTBhMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTAwNTU3MDNiMGNkYTg1NWMyYjgyYTM4OWEyNGFhMTdmNzlmMTcwOGJjMTE4MDc1Mjk3YjFiNWVlYTIwZjE2NCJ9"
+          "resource": "repo://ulabase.setup.ts#L540-L565",
+          "version": "repo-lines-v1:sha256:a30f36b0eec5325d9e2a4d8204d679ec90a5b92b5c67344e85a2cddbdebbddf3:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmMzUwNmRjYThmNzEwZDA5NTQyOTBhYmYyNzg5M2IzNjk4NmY2ZDk0ZDc0YWZhNzZjYTIxYzdjNTIzZmM4NTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk2NTliZDAzYTVlMmJmN2YyMTM3NGYwMGRjNTVkYzFiMjhjMTk5YWU4Y2RkMjdjOTU3NDQyMTc3M2U4ZWMzM2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc0NDliNTZkYWQ2OTczMWRlYWFhMzc3NDFiYWUzNWM1NWVlMjY5YWI0ZWI4ZTRhZDM1ODQ4YTYwNWFkYTViNjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIyOGQ2NTFmMTgxZDUzZGZhZWI4MWRkMTYwZDhlYWI2NTFiZTA5NWYwYzQ3NDU4ZmFkZmY1YmRiYjAwMTM2ZjIifQ"
         }
       ]
     },
@@ -203,22 +203,22 @@
       ]
     },
     {
-      "id": "claim_91c5d18f17424ea988287f498c2cb48f",
-      "statement": "The team claim in the JWT connects the user's session to their active team; ulabase.setup.ts configures this via CLAIMS = ['latestConsents/tos', 'latestConsents/pp', 'team'], and the ACL readFilter reads @user.team._id to filter orders.",
+      "id": "claim_4b999cea85c5419eb0d49b5941d92cd6",
+      "statement": "The JWT CLAIMS array only includes 'latestConsents/tos' and 'latestConsents/pp'; the orders list readFilter reads @team._id directly, so no team claim is needed in the token.",
       "evidence": [
         {
-          "resource": "repo://ulabase.setup.ts#L333-L333",
-          "version": "repo-lines-v1:sha256:5fb1e86db2eb9b331729948e68d8b20bc903ae304a651dd4284dbced41675324:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWZiMWU4NmRiMmViOWIzMzE3Mjk5NDhlNjhkOGIyMGJjOTAzYWUzMDRhNjUxZGQ0Mjg0ZGJjZWQ0MTY3NTMyNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWZiMWU4NmRiMmViOWIzMzE3Mjk5NDhlNjhkOGIyMGJjOTAzYWUzMDRhNjUxZGQ0Mjg0ZGJjZWQ0MTY3NTMyNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2ExYzFmZTIyYjFkNmFjZTQ2NTg3YmM0ZjMyYzk5NTE0MjRlM2ZhNWEzMGRhM2RhMTE3NzNjNTA3MzQ1ZjRjNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjhjMzEwZDc3OGQ4MWNiOTY5NmQxZjA0MDY1OTQ1NTliYjMwMWVlNTY2MDc1MGFjOTg4ZDk1MWU3MmQ2YWU4NiJ9"
+          "resource": "repo://ulabase.setup.ts#L330-L335",
+          "version": "repo-lines-v1:sha256:50b95a23e84e07bcf5d931a12ce2845ae232903aaacb8ce520816fe6acea8cf4:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTIwMTcyZWQ3OTg5YjVjYzNmNmE3Njk2ZGZlZWU1M2FmZDdhYWEwYjE4MWVmNzQ2NWNhODFiOGQyMTVhMWJhOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDUzMzZlNDQ4NjM1YWE3NGFiNjg3Zjk3OTAxYzhhYmY5NjAzZTgzMDBkYzJjMmFjYWExOWM4ZmQ5NTI2MjAyNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjc4ZmI2Y2U3NGEyMmU5MTJkZmE1ZjQ0ZGY3ZGJiOTRiN2IyOWZhNmJhZGYyZGI4NmM2NmNmM2U5NGQwOWI1NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjhjMzEwZDc3OGQ4MWNiOTY5NmQxZjA0MDY1OTQ1NTliYjMwMWVlNTY2MDc1MGFjOTg4ZDk1MWU3MmQ2YWU4NiJ9"
         },
         {
-          "resource": "repo://ulabase.setup.ts#L552-L552",
-          "version": "repo-lines-v1:sha256:725d880682c2ff7334e71325eaf437683d933490a1ade63dbc82c80d264545a1:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzI1ZDg4MDY4MmMyZmY3MzM0ZTcxMzI1ZWFmNDM3NjgzZDkzMzQ5MGExYWRlNjNkYmM4MmM4MGQyNjQ1NDVhMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzI1ZDg4MDY4MmMyZmY3MzM0ZTcxMzI1ZWFmNDM3NjgzZDkzMzQ5MGExYWRlNjNkYmM4MmM4MGQyNjQ1NDVhMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDJlNTg5ODJlZTgzODIwYWU5NmMzYzJhZTVlYjcwZWUyNjc1MjZkNzE1YTg5YWU2MDc5MWYxZGUzYjAwYTBhMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTAwNTU3MDNiMGNkYTg1NWMyYjgyYTM4OWEyNGFhMTdmNzlmMTcwOGJjMTE4MDc1Mjk3YjFiNWVlYTIwZjE2NCJ9"
+          "resource": "repo://ulabase.setup.ts#L540-L565",
+          "version": "repo-lines-v1:sha256:a30f36b0eec5325d9e2a4d8204d679ec90a5b92b5c67344e85a2cddbdebbddf3:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmMzUwNmRjYThmNzEwZDA5NTQyOTBhYmYyNzg5M2IzNjk4NmY2ZDk0ZDc0YWZhNzZjYTIxYzdjNTIzZmM4NTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk2NTliZDAzYTVlMmJmN2YyMTM3NGYwMGRjNTVkYzFiMjhjMTk5YWU4Y2RkMjdjOTU3NDQyMTc3M2U4ZWMzM2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc0NDliNTZkYWQ2OTczMWRlYWFhMzc3NDFiYWUzNWM1NWVlMjY5YWI0ZWI4ZTRhZDM1ODQ4YTYwNWFkYTViNjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIyOGQ2NTFmMTgxZDUzZGZhZWI4MWRkMTYwZDhlYWI2NTFiZTA5NWYwYzQ3NDU4ZmFkZmY1YmRiYjAwMTM2ZjIifQ"
         }
       ]
     }
   ],
   "verification": {
     "by": "openwiki/0.7.2",
-    "at": "2026-10-13T10:18:39.801Z"
+    "at": "2026-10-20T08:19:28.862Z"
   }
 }
