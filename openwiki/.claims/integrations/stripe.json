@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:ad31ca2b3146713370834c32792d6cacf5eebd05675b5701ddb44a730674cee5",
+  "pageVersion": "sha256:e743c2a1cc19dc8a6f113c9f685c7d3395fdb741a1f61e9d331004f25cec445c",
   "claims": [
     {
       "id": "claim_43c2db762bee48069d795d4b170a57f9",
       "statement": "The Stripe integration operates in products mode, using a 'catalog' collection for products and an 'orders' collection for orders, with session expiration set to 30 minutes.",
       "evidence": [
         {
-          "resource": "repo://ulabase.setup.ts#L409-L465",
+          "resource": "repo://ulabase.setup.ts#L411-L467",
           "version": "repo-lines-v1:sha256:c1e423f4b5cad6d97322c2d159f30a31937947e6f4755fb7934c8eaff47e5313:eyJzZWxlY3RlZExpbmVDb3VudCI6NTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImExNjY2MjhmZDEzN2I3YWMxNmZlMGViYTA4ZWZlYTI3OTI3ZmY1MmE0ZmViMzdjMTRjM2JiMDg2MTQ0MDE2ZWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmMGNkYjk3MmE3YmZiN2VkMjQ2ZjlmZjY3MjM4NWU1NWY0OTY4ZmMxMTA0M2RjNWI2ODRkNTFkZmEzMWRiY2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEwYTQzMmNhY2U0ZDA0YTFhNzU1YzliMTE0MDRjYjFiNDhmNzBlZjJlODlmZGZjMjZiYTliOGRmMjgzM2IxMzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUxMmE1NzgwZjI0M2Y0NzMwZTkzYzdjZGQwY2Q0ZTk0ZmEzNmI5ZWJkMWNkZTM2ODY0YzA3N2Y4YjY1YWYwN2YifQ"
         }
       ]
@@ -31,7 +31,7 @@
       "statement": "Six webhook events drive order status transitions: checkout.session.completed (marks paid), checkout.session.async_payment_succeeded, checkout.session.async_payment_failed, session.expired, charge.refunded, and charge.dispute.created.",
       "evidence": [
         {
-          "resource": "repo://README.md#L65-L72",
+          "resource": "repo://README.md#L67-L74",
           "version": "repo-lines-v1:sha256:68cc442af463d07b5b13965c7a8fd3f5f9b12a74400bf7489af60c2d7c450dcb:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTdiNjMxYjg2OGFlN2NkNThhOWQ3ZTk4OWE0NTBhMTk0MzRmOWU0ZGMxYjc4MGNlY2NhYzQ5MTFjNmYyYTI4NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZThkYjg3MTU2ZjE3ZTgxYzljZDU0ZGFmZDQ3Y2M5OTk4MGMwMjBkMDkwYjRmZWQ5ZWRmNWE4M2I5NjE5NmZlMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmViNTZlMDdlMTFjNGUzZmVlY2EyMDUyNGNjMDBjNzQxZTM1MWU4Njc0ZGZmZmJjOTI3NjFhYmFmZWEwZDUzOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTY0NTg3OWJiMmZlODBkYzc4MGM1YTIxOTc5ZjBjNTBmNGVjYWI4N2ZjZDVlNmRmOGJlZDhiZjcyZmU3NjZkNSJ9"
         }
       ]
@@ -91,6 +91,6 @@
   ],
   "verification": {
     "by": "openwiki/0.7.2",
-    "at": "2026-10-13T10:18:39.801Z"
+    "at": "2026-10-20T08:19:28.862Z"
   }
 }

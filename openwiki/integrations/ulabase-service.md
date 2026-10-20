@@ -5,10 +5,10 @@ openwiki_generated: true
 sources:
   - id: openwiki-source-34f568b222540eb11aa44859
     resource: repo://ulabase.setup.ts
-generated: { by: "openwiki/0.7.2", at: "2026-10-13T10:18:39.801Z" }
+generated: { by: "openwiki/0.7.2", at: "2026-10-20T08:19:28.862Z" }
 verified:
   - by: openwiki/0.7.2
-    at: 2026-10-13T10:18:39.801Z
+    at: 2026-10-20T08:19:28.862Z
 ---
 
 
@@ -151,11 +151,11 @@ This ensures both product types appear in the catalog while hiding draft/unavail
   predicate: `path(/orders) and method(GET)`,
   roles: ['user'],
   priority: 90,
-  mongo: { readFilter: { 'payer.id': '@user.team._id' } }
+  mongo: { readFilter: { 'payer.id': '@team._id' } }
 }
 ```
 
-**Team-Based Filtering**: Users see orders charged to their billing account (their own and those of anyone they share it with).
+**Team-Based Filtering**: Users see orders charged to their billing account (their own and those of anyone they share it with). The filter reads `@team._id`, the active team the server resolves at every request, whatever the token carries — never `@user.team._id`, which tokens no longer carry. The step's check reads the stored filter too, so a service set up before this change is detected and rewritten.
 
 ### 5. Stripe Portal Permission (`stripe-portal`)
 
@@ -263,12 +263,11 @@ Token claims ensure the Guards rule can evaluate consents status.
 
 **Required Claims**:
 - `latestConsents/tos` - Current Terms of Service version
-- `latestConsents/pp` - Current Privacy Policy version  
-- `team` - User's team (for orders list filtering)
+- `latestConsents/pp` - Current Privacy Policy version
 
 **Configuration**:
 ```typescript
-const CLAIMS = ['latestConsents/tos', 'latestConsents/pp', 'team'];
+const CLAIMS = ['latestConsents/tos', 'latestConsents/pp'];
 ```
 
 **Why Required**:
@@ -276,6 +275,8 @@ const CLAIMS = ['latestConsents/tos', 'latestConsents/pp', 'team'];
 - Missing claim compares false for every token-authenticated user
 - Blocks users permanently while condition looks reasonable
 - JWT payload is base64, not encrypted (readable by anyone holding token)
+
+**Note**: Order filtering uses `@team._id` (the active team resolved by the server at every request), so no `team` claim is needed in the JWT.
 
 ## User Schema (USER_SCHEMA)
 
@@ -332,7 +333,7 @@ step('the two claims travel in the token', {
 
 **Key Points**:
 - Added, not replaced (service may carry claims of its own)
-- Only these three claims in token (consents history grows, not in token)
+- Only these two claims in token (consents history grows, not in token; the team is resolved server-side, not read from the token)
 - Missing claims block users permanently
 
 ## Consents Version Management
@@ -433,6 +434,7 @@ Each step follows:
 - Guards rule compares false for every user
 - Blocks users permanently
 - Condition looks reasonable but fails silently
+- Only the two consents claims matter here; order listing does not depend on a token claim
 
 ### Version Mismatch
 

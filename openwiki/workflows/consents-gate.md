@@ -18,10 +18,10 @@ sources:
     resource: repo://src/routes.tsx
   - id: openwiki-source-34f568b222540eb11aa44859
     resource: repo://ulabase.setup.ts
-generated: { by: "openwiki/0.7.2", at: "2026-10-13T10:18:39.801Z" }
+generated: { by: "openwiki/0.7.2", at: "2026-10-20T08:19:28.862Z" }
 verified:
   - by: openwiki/0.7.2
-    at: 2026-10-13T10:18:39.801Z
+    at: 2026-10-20T08:19:28.862Z
 ---
 
 # Consents Gate Flow
@@ -153,9 +153,10 @@ A specific permission (`userCanPatchOwnConsents`) allows users to update their o
 Two claims are added to the JWT token:
 - `latestConsents/tos`
 - `latestConsents/pp`
-- `team`
 
 This allows the guard rule to check versions without hitting the database on every request.
+
+> **Note:** The orders list readFilter uses `@team._id` (server‑resolved at every request), so no team claim is needed. See `ulabase.setup.ts` L330‑L331.
 
 ## Flow Summary
 

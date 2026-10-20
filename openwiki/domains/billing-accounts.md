@@ -5,7 +5,7 @@ description: "Documents billing accounts (teams in kit vocabulary): list, create
 tags: ["billing", "teams", "accounts", "stripe", "acl", "permissions"]
 verified:
   - by: openwiki/0.7.2
-    at: 2026-10-13T10:18:39.801Z
+    at: 2026-10-20T08:19:28.862Z
 sources:
   - id: openwiki-source-a3a3cc41ccfefb8fada04d9d
     resource: repo://src/pages/billing/Billing.tsx
@@ -23,7 +23,7 @@ sources:
     resource: repo://src/routes.tsx
   - id: openwiki-source-34f568b222540eb11aa44859
     resource: repo://ulabase.setup.ts
-generated: { by: "openwiki/0.6.1", at: "2026-10-01T12:11:43.532Z" }
+generated: { by: "openwiki/0.7.2", at: "2026-10-20T08:19:28.862Z" }
 ---
 
 
@@ -143,7 +143,7 @@ Guest checkouts have no Stripe Customer, so the portal is not available to them.
 
 ## Team.active and Order Charging
 
-The active team determines which billing account new orders are charged to. When a user switches teams via `auth.switchTeam()`, the JWT claims update to reflect the new active team. The orders collection ACL uses a `readFilter` on `payer.id` matching `@user.team._id`, which means:
+The active team determines which billing account new orders are charged to. The orders collection ACL uses a `readFilter` on `payer.id` matching `@team._id` — the server resolves the active team at every request, independent of the JWT. This means:
 
 - All members of a billing account share visibility of the same orders.
 - Orders are filtered to show only those charged to the user's active billing account.
@@ -185,7 +185,7 @@ The kit represents these entities (types from `@ulabase/kit-react`):
 | `TeamMember` | `email`, `name`, `role` | A member of the current team |
 | `PendingInvitation` | `email`, `role`, `createdAt`, `expired` | An outstanding invitation |
 
-The `team` claim in the JWT connects the user's session to their active team, which the ACL reads for order filtering.
+The server resolves the active team independently via `@team._id` at every request — the JWT does not carry a team claim for order filtering.
 
 ## Configuration
 
@@ -193,6 +193,6 @@ Billing accounts require:
 
 1. **`teamInvitations: true`** in `environment.ts` features — enables the invitation acceptance route and the invite UI.
 2. **ACL permissions** configured by `ulabase setup`:
-   - Order list permission with `readFilter: { 'payer.id': '@user.team._id' }` — filters orders by billing account.
+   - Order list permission with `readFilter: { 'payer.id': '@team._id' }` — filters orders by the active billing account resolved server-side.
    - Stripe portal permission — allows signed-in users to access `payments.openBillingPortal()`.
-3. **JWT claims** including `team` — configured in `ulabase.setup.ts` via `CLAIMS = ['latestConsents/tos', 'latestConsents/pp', 'team']`.
+3. **JWT claims** — configured in `ulabase.setup.ts` via `CLAIMS = ['latestConsents/tos', 'latestConsents/pp']`. The orders list `readFilter` reads `@team._id` directly, so no team claim is needed in the token.

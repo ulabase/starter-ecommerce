@@ -14,10 +14,10 @@ sources:
     resource: repo://src/pages/shop/Orders.tsx
   - id: openwiki-source-34f568b222540eb11aa44859
     resource: repo://ulabase.setup.ts
-generated: { by: "openwiki/0.7.2", at: "2026-10-11T09:48:34.925Z" }
+generated: { by: "openwiki/0.7.2", at: "2026-10-20T08:19:28.862Z" }
 verified:
   - by: openwiki/0.7.2
-    at: 2026-10-13T10:18:39.801Z
+    at: 2026-10-20T08:19:28.862Z
 ---
 
 
@@ -453,9 +453,11 @@ The secret proves ownership — a guest has no session.
   predicate: `path(/${ORDERS}) and method(GET)`,
   roles: ['user'],
   priority: 90,
-  mongo: { readFilter: { 'payer.id': '@user.team._id' } }
+  mongo: { readFilter: { 'payer.id': '@team._id' } }
 }
 ```
+
+> **Note:** The server resolves the active team at every request via `@team._id` — this is not read from the JWT.
 
 Signed-in users see all orders charged to their billing account.
 
