@@ -1,9 +1,11 @@
 ---
 type: "Operations"
-title: "Configuration, Build, and Deployment"
-description: "Covers environment configuration, the build pipeline (Vite + prerender), static hosting requirements, and SEO prerendering."
+title: "Configuration and Deployment"
+description: "Covers environment configuration, the build and preview scripts (Vite + prerender), static hosting requirements, and SEO prerendering for the Ulabase Starter Ecommerce SPA."
 tags: ["configuration", "build", "deployment", "vite", "prerender", "seo", "s3", "cloudfront", "static-hosting"]
 sources:
+  - id: openwiki-source-4e7cd7f381c92e8c5d89f5c1
+    resource: repo://NOTES.md
   - id: openwiki-source-5b54a58d1b51cd490b0e7162
     resource: repo://package.json
   - id: openwiki-source-c83a8d61677eda2bd5d4ea73
@@ -18,19 +20,21 @@ sources:
     resource: repo://src/viewport-height.ts
   - id: openwiki-source-5e1b077422a94ae165e88e4e
     resource: repo://vite.config.ts
-generated: { by: "openwiki/0.7.2", at: "2026-10-13T10:18:39.801Z" }
+generated: { by: "openwiki/0.7.2", at: "2026-10-28T14:01:51.932Z" }
 verified:
   - by: openwiki/0.7.2
-    at: 2026-10-13T10:18:39.801Z
+    at: 2026-10-28T14:01:51.932Z
 ---
 
-# Configuration, Build, and Deployment
+# Configuration and Deployment
 
-This page covers how the Ulabase Starter Ecommerce app is configured, built, and deployed as a static site. The app uses Vite for bundling, a prerender script for SEO optimization, and can be hosted on any static hosting service with proper URL rewriting.
+This page covers how the Ulabase Starter Ecommerce app is configured, built, previewed, and deployed as a static site. The app uses Vite for bundling, a prerender script for SEO optimization, and can be hosted on any static hosting service with proper URL rewriting.
+
+For service-side setup (Stripe keys, collections, ACL), see [Service Setup](../concepts/service-setup.md). For reskinning and theming, see [Customization and Theming](customization.md).
 
 ## Environment Configuration
 
-The app's runtime configuration lives in `src/environments/environment.ts`. This file controls the API endpoint, collection names, and feature flags, with expanded comments explaining collection name semantics.
+The app's runtime configuration lives in `src/environments/environment.ts`. This file controls the API endpoint, collection names, and feature flags.
 
 ### Core Properties
 
@@ -61,22 +65,24 @@ export const environment = {
 };
 ```
 
-**Critical**: `apiUrl` must point to your tenant service (e.g., `https://xxxxxx.ulabase.app`), not the admin node (`api.ulabase.com`). The app validates this at startup and shows a configuration screen if invalid.
+**Critical**: `apiUrl` must point to your tenant service (e.g., `https://xxxxxx.ulabase.app`), not the admin node (`api.ulabase.com`). The app validates this at startup and shows a configuration screen if the URL is empty or not a valid service address.
+
+Collection names are not free-form labels on the client: `catalogCollection` and `catalogOrdersCollection` must match the names configured on the Ulabase service, because the shop requests and the kit interceptors use the configured name as the HTTP path.
 
 ### Feature Flags
 
-Feature flags control which authentication and team management features are available. These must match the corresponding toggles on your Ulabase service:
-
-- **`emailRegistration`**: Enables email/password registration and verification
-- **`passwordReset`**: Enables password reset functionality  
-- **`oauthLogin`**: Enables OAuth login (currently only Google)
-- **`teamInvitations`**: Enables team invitation flows
-
-See [Feature Flags and Environment Configuration](../concepts/feature-flags.md) for detailed flag behavior.
+`environment.features` gates which authentication and team-management routes and UI are reachable, and those flags must match the corresponding toggles on your Ulabase service. See [Feature Flags and Environment Configuration](../concepts/feature-flags.md) for flag-by-flag behavior, route gating, and mismatch symptoms.
 
 ## Build Pipeline
 
-The build process is defined in `package.json`:
+The npm scripts in `package.json` are the entrypoints:
+
+| Command | What it runs | When to use it |
+|---|---|---|
+| `npm run dev` | `vite` | Local development server |
+| `npm run build` | `tsc -b && vite build && node scripts/prerender.mjs` | Production build in `dist/` |
+| `npm run preview` | `vite preview` | Serve the production build locally |
+| `npm run test` | `vitest` | Unit tests |
 
 ```bash
 npm run build
@@ -86,19 +92,18 @@ This runs three sequential steps:
 
 1. **`tsc -b`**: TypeScript type checking
 2. **`vite build`**: Production bundling and asset optimization
-3. **`node scripts/prerender.mjs`**: SEO prerendering (optional, requires environment variables)
+3. **`node scripts/prerender.mjs`**: SEO prerendering (writes product pages when the required environment variables are set, otherwise skips)
 
-<!-- openwiki: mermaid parse failed and this diagram was converted to a text fence so it does not break rendering. Fix the diagram source and restore the mermaid fence. Parser error: Heuristic: an unescaped angle bracket inside a label breaks rendering; rephrase the label. -->
-```text
+```mermaid
 flowchart TD
-    A["Start Build"] --> B["tsc -b<br>Type Check"]
-    B --> C["vite build<br>Bundle & Optimize"]
-    C --> D{"SHOP_API_URL<br>& SHOP_PUBLIC_URL<br>set?"}
-    D -->|Yes| E["prerender.mjs<br>Generate Product Pages"]
-    D -->|No| F["Skip Prerender<br>Continue Build"]
-    E --> G["Output dist/"]
+    A["Start Build"] --> B["tsc -b Type Check"]
+    B --> C["vite build Bundle and Optimize"]
+    C --> D{"SHOP_API_URL and SHOP_PUBLIC_URL set"}
+    D -->|Yes| E["prerender.mjs Generate Product Pages"]
+    D -->|No| F["Skip Prerender Continue Build"]
+    E --> G["Output dist"]
     F --> G
-    
+
     style A fill:#e1f5fe
     style B fill:#e8f5e8
     style C fill:#e8f5e8
@@ -131,14 +136,16 @@ optimizeDeps: { exclude: ['@ulabase/kit', '@ulabase/kit-react'] },
 server: { fs: { allow: ['..'] } },
 ```
 
+`resolve.dedupe` keeps a single React copy when linked packages resolve their own imports from their real path; `optimizeDeps.exclude` stops Vite from snapshotting symlinked kit packages; `server.fs.allow` lets the dev server read the linked package outside the app root. After switching between linked and registry packages, stop the dev server and delete `node_modules/.vite` so Vite re-resolves modules. See [Ulabase and Kit](../concepts/ulabase-and-kit.md) for the local kit workflow.
+
 ## SEO Prerendering
 
-The prerender script (`scripts/prerender.mjs`) generates static HTML files for each product, enabling link previews on platforms that don't execute JavaScript (Slack, WhatsApp, X, LinkedIn).
+The prerender script (`scripts/prerender.mjs`) generates static HTML files for each product, enabling link previews on platforms that don't execute JavaScript (Slack, WhatsApp, X, LinkedIn). Full background is in `SEO.md`.
 
 ### How It Works
 
-1. **Reads the catalog** from your live Ulabase service
-2. **Generates `dist/product/<id>/index.html`** for each product
+1. **Reads the catalog** from your live Ulabase service (paged requests of the configured collection)
+2. **Generates `dist/product/<id>/index.html`** for each product by substituting product-specific `<head>` tags into the same app shell as `dist/index.html`
 3. **Creates `sitemap.xml`** listing all product URLs
 4. **Creates `robots.txt`** with sitemap reference
 
@@ -146,6 +153,8 @@ Each generated HTML file contains:
 - Product-specific `<title>`, description, and Open Graph tags
 - Schema.org `Product` JSON-LD structured data (price, availability, images)
 - The same app shell as `dist/index.html`
+
+The prerendered `<head>` is a snapshot: price and availability stay stale in a crawler's copy until the next run. Human visitors always get the live SPA.
 
 ### Environment Variables
 
@@ -175,9 +184,11 @@ SHOP_PUBLIC_URL=https://ilmionegozio.com \
 node scripts/prerender.mjs
 ```
 
-This fetches `index.html` from your deployed site instead of `dist/`, so you can update product data without running `npm install` or `vite build`.
+This fetches `index.html` from your deployed site instead of `dist/`, so you can update product data without running `npm install` or `vite build`. After a remote refresh, upload `dist/product/` and `sitemap.xml` to the host.
 
 ## Static Hosting Requirements
+
+The output of `npm run build` is a static site in `dist/` (SPA shell, hashed assets, and optional prerendered product pages). `npm run preview` serves that output locally for a smoke test before upload.
 
 ### S3 + CloudFront Deployment
 
@@ -205,6 +216,8 @@ async function handler(event) {
 }
 ```
 
+The plain S3 website endpoint is not a substitute: it redirects `/product/<id>` to the trailing-slash form, so the crawled address stops matching the declared canonical.
+
 #### 2. SPA Routes
 
 Routes like `/cart` and `/orders` have no generated file. Configure custom error responses:
@@ -227,7 +240,7 @@ aws s3 sync dist/ s3://$BUCKET/ --delete \
   --cache-control "public,max-age=60,stale-while-revalidate=2592000"
 ```
 
-**Why no invalidations**: HTML refreshes itself via short TTL. Static assets are content-hashed by Vite, so new filenames = new cache entries.
+**Why no invalidations**: HTML refreshes itself via short TTL. Static assets are content-hashed by Vite, so new filenames = new cache entries. On a `SHOP_SHELL=remote` refresh, keep `--delete` scoped to `product/` so the run does not remove the rest of `dist/`.
 
 ### Verification
 
@@ -240,50 +253,25 @@ curl -s https://ilmionegozio.com/product/mug-enamel | grep '<title>'
 - Product name = working
 - Generic shop title = rewrite is eating the pages
 
-## Styles Architecture
+## Presentation Defaults
 
-The global stylesheet (`src/styles.css`) is a disposable default skin:
+Two runtime defaults affect deployable UI behavior. Deep theming and replacement belong in [Customization and Theming](customization.md); the operations-relevant facts are:
 
-### Section 1: Design Tokens
-CSS custom properties for colors, typography, spacing, and shape. Re-theme the entire app by modifying this section.
-
-### Sections 3-5: Disposable Skin
-Default styling using the token vocabulary. Templates reference semantic class hooks (`.card`, `.btn-primary`, `.form-field`, etc.) for easy replacement.
-
-**Two customization paths**:
-1. **Tweak**: Modify tokens in section 1, then skin classes in section 3
-2. **Replace**: Delete sections 3-5, adopt Material/Spartan/Tailwind, and reskin using the swap map in README.md
-
-## Mobile Viewport Handling
-
-`src/viewport-height.ts` provides a `--vh` CSS variable that accounts for mobile browser chrome and on-screen keyboards:
-
-```typescript
-export function trackViewportHeight(): () => void {
-  // Measures visual viewport height, writes to --vh
-  // Updates on resize (debounced for keyboard events)
-  // Returns cleanup function
-}
-```
-
-**Usage in CSS**:
-```css
-height: calc(var(--vh, 1vh) * 100);
-```
-
-**Why not `dvh`**: The native `dvh` unit tracks browser chrome but ignores the on-screen keyboard, which is the half that breaks login forms.
+- **`src/styles.css`** is a disposable default skin: section 1 is the design token vocabulary, and sections 3–5 are skin classes that templates reference through semantic hooks (`.card`, `.btn-primary`, `.form-field`, and similar). Re-theme from the tokens or replace the skin wholesale.
+- **`src/viewport-height.ts`** writes `--vh` (one percent of the visible viewport) from `visualViewport`, updated on resize and safe to call when there is no `window`. CSS should use `height: calc(var(--vh, 1vh) * 100)` so full-height layouts account for mobile browser chrome and the on-screen keyboard. Native `dvh` tracks chrome but ignores the keyboard, which is the half that breaks login forms.
 
 ## Deployment Checklist
 
 1. **Configure environment.ts**: Set `apiUrl` and collection names
 2. **Set feature flags**: Match service configuration
 3. **Run build**: `npm run build`
-4. **Configure hosting**: S3/CloudFront or other static host
-5. **Set up URL rewriting**: Extensionless URLs for product pages
-6. **Configure error responses**: SPA routes return `index.html`
-7. **Set cache headers**: Tiered TTLs for HTML vs static assets
-8. **Verify prerendering**: Test product page titles
-9. **Schedule refreshes**: Optional cron for `SHOP_SHELL=remote` mode
+4. **Preview locally**: `npm run preview`
+5. **Configure hosting**: S3/CloudFront or other static host
+6. **Set up URL rewriting**: Extensionless URLs for product pages
+7. **Configure error responses**: SPA routes return `index.html`
+8. **Set cache headers**: Tiered TTLs for HTML vs static assets
+9. **Verify prerendering**: Test product page titles
+10. **Schedule refreshes**: Optional cron for `SHOP_SHELL=remote` mode
 
 ## Troubleshooting
 
@@ -301,5 +289,9 @@ height: calc(var(--vh, 1vh) * 100);
 - Test with `curl` to see what HTML is returned
 
 ### Mobile keyboard covers form fields
-- Ensure `trackViewportHeight()` is called in shell component
+- Ensure `trackViewportHeight()` is called (it is mounted from `App`)
 - Use `calc(var(--vh, 1vh) * 100)` for full-height layouts
+
+### Invalid hook call after linking kit packages
+- Restore the Vite `dedupe` / `optimizeDeps` settings above
+- Delete `node_modules/.vite` and restart the dev server

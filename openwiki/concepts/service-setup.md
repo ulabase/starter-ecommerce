@@ -5,11 +5,15 @@ description: Declarative setup file that defines check/apply steps for configuri
 tags: [setup, configuration, stripe, accounts, acl, guards, consents, declarative]
 verified:
   - by: openwiki/0.7.2
-    at: 2026-10-13T10:18:39.801Z
+    at: 2026-10-28T14:01:51.932Z
 sources:
+  - id: openwiki-source-192c27e8048436d93b29c2cb
+    resource: repo://src/catalog.seed.ts
+  - id: openwiki-source-e97943e8cdae3243b0c06632
+    resource: repo://src/legal-versions.ts
   - id: openwiki-source-34f568b222540eb11aa44859
     resource: repo://ulabase.setup.ts
-generated: { by: "openwiki/0.7.2", at: "2026-10-13T10:18:39.801Z" }
+generated: { by: "openwiki/0.7.2", at: "2026-10-28T14:01:51.932Z" }
 ---
 
 # Service Setup (ulabase.setup.ts)
@@ -41,22 +45,18 @@ This pattern ensures:
 
 ```mermaid
 flowchart TD
-    A[Start Setup] --> B{Step 1: Check}
-    B -->|Satisfied| C[Step 2: Check]
-    B -->|Not satisfied| D[Step 1: Apply]
-    D --> E{Re-check}
-    E -->|Now satisfied| C
-    E -->|Still failing| F[Report Error]
-    C -->|Satisfied| G[Step 3: Check]
-    C -->|Not satisfied| H[Step 2: Apply]
-    H --> I{Re-check}
-    I -->|Now satisfied| G
-    I -->|Still failing| F
-    G --> J[...]
-    J --> K[All Steps Complete]
+    A["Start setup"] --> B{"Step check"}
+    B -->|"Satisfied"| C["Step complete"]
+    B -->|"Not satisfied"| D["Step apply"]
+    D --> E{"Re-check"}
+    E -->|"Satisfied"| C
+    E -->|"Still failing"| F["Report error and stop"]
+    C --> G{"Next step"}
+    G -->|"Yes"| B
+    G -->|"No"| H["Setup complete"]
 ```
 
-*The setup process: each step checks state, applies if needed, then re-checks to verify success.*
+*Each step checks desired state, applies only when the check fails, then re-checks so a satisfied step is verified.*
 
 ## Step Groups
 
@@ -70,7 +70,7 @@ The setup installs and configures Stripe for payment processing:
 
 ### ACL Permissions
 
-Four permissions control catalog and order access:
+Five permissions control catalog and order access:
 
 - **Catalog Read**: Allows anyone (`$unauthenticated` and `user` roles) to browse purchasable products
 - **Order Creation**: Allows anyone to place orders via POST
@@ -90,7 +90,7 @@ The accounts feature provides authentication:
 
 A JSON schema validates user documents:
 
-- **Schema Storage**: Stores a schema that defines required fields (`_id`, `password`, `roles`, `profile`)
+- **Schema Storage**: Stores a schema that defines required fields (`_id`, `roles`). `password` and `profile` are deliberately optional: an invited user is written with no password and an empty profile, so requiring them would refuse every invitation.
 - **Collection Validation**: Applies the schema to the `users` collection
 - **Consents Fields**: Includes `latestConsents` and `consents` fields for legal document tracking
 
@@ -98,9 +98,9 @@ A JSON schema validates user documents:
 
 The consents system manages legal document acceptance:
 
-1. **Permission**: Allows users to update their own consents via PATCH
-2. **Token Claims**: Ensures `latestConsents/tos`, `latestConsents/pp`, and `team` are included in authentication tokens
-3. **Guards Rule**: Blocks users who haven't accepted current legal versions
+1. **Permission**: Allows users to update their own consents via PATCH. The permission's `mergeRequest` stamps the current versions and appends to the `consents` history.
+2. **Token Claims**: Ensures `latestConsents/tos` and `latestConsents/pp` are included in authentication tokens (configured via `account-properties-claims` on the `auth` feature). There is no team claim — the orders list `readFilter` reads `@team._id`, which the server resolves at every request.
+3. **Guards Rule**: Blocks users who haven't accepted current legal versions (HTTP 451).
 
 ## Secrets Handling
 
@@ -113,18 +113,17 @@ const secret = (name: string, stored: unknown) => {
     pushed.add(name);
     return fromEnv(name);
   }
-  if (configured(stored)) return stored;
-  return fromEnv(name);
+  return stored;
 };
 ```
 
 **Key principles:**
-- `fromEnv` marks a secret for resolution at apply time
-- Environment variables override stored values ("variable wins")
+- `fromEnv` marks a secret for resolution at apply time ("on the way to the wire")
+- Environment variables override stored values ("variable wins"): when the variable is set, the function returns `fromEnv(name)` and records the name in the pushed set; otherwise it returns the stored value
+- A secret named in the environment is one you are asking to be written, so the step is not satisfied until it has been — `wantsReplacing` consults the pushed set to know this
 - Stored secrets read back as bullets; empty strings mean never set
 - Re-running against a configured service needs no secrets in the environment
 - Changing a secret from the environment works by exporting the key and re-running
-- A secret named in the environment is one you are asking to be written, so the step is not satisfied until it has been
 
 ## SHOPPERS Role Configuration
 
@@ -164,41 +163,31 @@ Legal document versions are managed centrally:
 
 ## Dependencies and Order
 
-The steps have logical dependencies:
+The steps run in a fixed order. Stripe and accounts are logically independent, but the consents steps must follow accounts because they write against the `users` collection the accounts feature owns. The app is pointed at the service only after every other step is in place.
 
 ```mermaid
 flowchart TD
-    A[Stripe Feature] --> B[Stripe Config]
-    B --> C[Stripe Collections]
-    C --> D[Catalog Read Permission]
-    C --> E[Order Create Permission]
-    C --> F[Order Read Permission]
-    C --> G[Order List Permission]
-    C --> H[Stripe Portal Permission]
-    C --> I[Sample Catalog]
-    
-    J[Accounts Feature] --> K[Accounts Config]
-    K --> L[Google OAuth]
-    K --> M[User Schema]
-    M --> N[Collection Validation]
-    N --> O[Consents Permission]
-    O --> P[Token Claims]
-    P --> Q[Guards Feature]
-    Q --> R[Guards Rule]
-    
-    D --> S[All Steps Complete]
-    E --> S
-    F --> S
-    G --> S
-    H --> S
-    I --> S
-    L --> S
-    R --> S
-    
-    S --> T[App Points at Service]
+    A["Stripe feature"] --> B["Stripe products config"]
+    B --> C["Stripe collections"]
+    C --> D["Catalog read permission"]
+    D --> E["Order create permission"]
+    E --> F["Order read permission"]
+    F --> G["Order list permission"]
+    G --> H["Stripe portal permission"]
+    H --> I["Sample catalog"]
+    I --> J["Accounts feature"]
+    J --> K["Accounts config"]
+    K --> L["Google OAuth optional"]
+    L --> M["User schema stored"]
+    M --> N["Users collection validated"]
+    N --> O["Consents permission"]
+    O --> P["Token claims"]
+    P --> Q["Guards feature"]
+    Q --> R["Guards rule"]
+    R --> S["App points at service"]
 ```
 
-*Step dependencies: Stripe and accounts configurations are independent, but consents require accounts to be configured first. The app is pointed at the service only after all other steps complete.*
+*Step order in `ulabase.setup.ts`: Stripe and accounts configure independently, consents steps follow accounts, and the app is pointed at the service only after every other step is in place.*
 
 ## Running the Setup
 
@@ -265,7 +254,8 @@ The setup can be extended by:
 
 ## Related Pages
 
-- [Ulabase and Kit](../concepts/ulabase-and-kit.md) - Overview of the Ulabase platform
+- [Feature Flags](feature-flags.md) - App-side feature toggles that drive setup configuration
 - [Stripe Integration](../integrations/stripe.md) - Stripe-specific configuration details
 - [Ulabase Service](../integrations/ulabase-service.md) - Service architecture and APIs
-- [Purchase Flow](../workflows/purchase-flow.md) - How purchases work end-to-end
+- [Consents Gate](../workflows/consents-gate.md) - How the consent gate blocks unaccepted users
+- [Billing Accounts](../domains/billing-accounts.md) - Teams, billing accounts, and order filtering by `@team._id`

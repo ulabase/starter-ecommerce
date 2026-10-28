@@ -1,8 +1,11 @@
 ---
 type: reference
-title: Quickstart — Ulabase Ecommerce Starter
-description: Entry point for the wiki — routes readers to the right section based on their goal. Covers first-time setup, key files, and links to every wiki section.
+title: Quick Start
+description: Central entry point and task-routing map for the Ulabase Ecommerce Starter wiki — routes each job to the owning page (architecture, concepts, domains, workflows, integrations, operations) and covers first-time setup and key files.
 tags: [quickstart, setup, onboarding, routing]
+verified:
+  - by: openwiki/0.7.2
+    at: 2026-10-28T14:01:51.932Z
 sources:
   - id: openwiki-source-4e7cd7f381c92e8c5d89f5c1
     resource: repo://NOTES.md
@@ -18,15 +21,14 @@ sources:
     resource: repo://src/routes.tsx
   - id: openwiki-source-34f568b222540eb11aa44859
     resource: repo://ulabase.setup.ts
-generated: { by: "openwiki/0.7.2", at: "2026-10-11T09:48:34.925Z" }
-verified:
-  - by: openwiki/0.7.2
-    at: 2026-10-20T08:19:28.862Z
+generated: { by: "openwiki/0.7.2", at: "2026-10-28T14:01:51.932Z" }
 ---
 
-# Quickstart — Ulabase Ecommerce Starter
+# Quick Start
 
 Welcome to the Ulabase Ecommerce Starter documentation. This React SPA is a complete online shop — product catalogue, cart, Stripe card payments, and order lookup — powered by a managed Ulabase service. There is no custom backend to write, deploy, or pay for: the app talks to Ulabase via `@ulabase/kit-react`, and the service handles persistence, authentication, and Stripe integration.
+
+This page is the routing map. Pick the job below and go to the owning page for the detail; the setup walkthrough at the bottom is enough to get a shop running.
 
 ## What you need
 
@@ -38,28 +40,24 @@ Welcome to the Ulabase Ecommerce Starter documentation. This React SPA is a comp
 
 The app boots with email/password auth and a demo catalogue. Google OAuth, custom products, and production Stripe keys are opt-in steps.
 
-## Quick paths
-
-Start here depending on what you want to do:
+## Task routing
 
 | I want to… | Go to |
 |---|---|
-| **Understand the app** — architecture, provider tree, route map, how it boots | [Architecture Overview](./architecture/overview.md) |
-| **Add a feature** — understand the purchase flow, cart lifecycle, auth, or billing | [Workflows](./workflows/) and [Domains](./domains/) |
-| **Configure Stripe** — keys, webhooks, products mode, success URL | [Stripe Integration](./integrations/stripe.md) |
-| **Deploy** — environment variables, build, static hosting, SEO prerendering | [Configuration, Build, and Deployment](./operations/configuration-and-deployment.md) |
-| **Reskin the shop** — design tokens, semantic class hooks, swap map for framework migration | [Customization and Theming](./operations/customization.md) |
-
-## Major wiki sections
-
-| Section | What it covers |
-|---|---|
-| **[Architecture](./architecture/)** | The React SPA, provider tree, route map, and how the app bootstraps with no custom server. |
-| **[Concepts](./concepts/)** | Foundational pieces: the `ulabase.setup.ts` declarative configuration file, feature flags and environment configuration, and the relationship between Ulabase platform and the kit packages. |
-| **[Workflows](./workflows/)** | End-to-end flows: the purchase journey, authentication and invitation handling, and the consents gate that blocks users who haven't accepted the current legal documents. |
-| **[Domains](./domains/)** | The shop's core domains: product catalogue browsing, cart and order lifecycle, and billing accounts (teams). |
-| **[Operations](./operations/)** | Running and customizing the app: environment configuration, build pipeline, static hosting, theming, and design tokens. |
-| **[Integrations](./integrations/)** | External services: the Stripe payment integration (webhooks, checkout sessions, order status) and the Ulabase service configuration (ACL permissions, Guards rules, collection schemas). |
+| **Understand how the app boots** — provider tree, route map, lazy loading, where `ConsentsGate` sits | [Architecture Overview](./architecture/overview.md) |
+| **Understand the platform** — managed service vs. the `@ulabase/kit` / `@ulabase/kit-react` / `@ulabase/cli` packages | [Ulabase Platform and Kit Packages](./concepts/ulabase-and-kit.md) |
+| **Configure the service in code** — check/apply steps for Stripe, ACL, accounts, user schema and validation, catalog seeding, secrets, and versioned legal documents. Includes the two JWT claims (`latestConsents/tos`, `latestConsents/pp` — no team claim) and the consents acceptance + Guards gate | [Service Setup (ulabase.setup.ts)](./concepts/service-setup.md) |
+| **Know what the shop requires from Ulabase** — provisions the service: Stripe products-mode config, ACL permissions (order list `readFilter` by active team), user schema, consents acceptance, token claims, Guards rule | [Ulabase Service Integration](./integrations/ulabase-service.md) |
+| **Turn features on and off** — `environment.ts` flags, route/UI gating, matching service toggles | [Feature Flags and Environment Configuration](./concepts/feature-flags.md) |
+| **Work on the catalogue** — browsing, filtering, search, product pages, variants, stock | [Shop Catalog and Product Pages](./domains/shop-catalog.md) |
+| **Work on cart and orders** — client-side cart, checkout, order states, the pending-order stash across the Stripe redirect | [Cart and Order Lifecycle](./domains/cart-and-orders.md) |
+| **Work on teams and billing** — billing accounts (teams), members and invitations, Stripe portal, order filtering by active team (`@team._id`, no team claim in the JWT) | [Billing Accounts (Teams)](./domains/billing-accounts.md) |
+| **Trace a purchase end to end** — catalogue → cart → Stripe checkout → webhook → order return, for guests and signed-in buyers | [End-to-End Purchase Flow](./workflows/purchase-flow.md) |
+| **Trace auth and invitations** — login, signup, verification, password reset, Google OAuth, invitation acceptance | [Authentication and Invitation Flows](./workflows/auth-and-invitations.md) |
+| **Understand the consents gate** — consents acceptance + Guards rule blocks signed-in users with HTTP 451 until they accept the current TOS/Privacy Policy (two JWT claims, no team claim) | [Consents Gate Flow](./workflows/consents-gate.md) |
+| **Configure Stripe** — keys, webhook events and signing secret, products mode, success URL | [Stripe Payment Integration](./integrations/stripe.md) |
+| **Build and deploy** — environment configuration, `vite build` + prerender, static hosting, SEO | [Configuration and Deployment](./operations/configuration-and-deployment.md) |
+| **Reskin the shop** — design tokens, semantic class hooks, swap map for a UI framework | [Customization and Theming](./operations/customization.md) |
 
 ## First-time setup in 10 minutes
 

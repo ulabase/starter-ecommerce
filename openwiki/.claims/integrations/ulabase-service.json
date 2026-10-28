@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:7452846cea2134c5c9622fc754b98a61047cc47309738ca9928c90f32a8f128a",
+  "pageVersion": "sha256:8d0f615901710815baebbd8f982f0d0edfe79cda43d4c762c00be5d10782d276",
   "claims": [
     {
       "id": "claim_f7d2220e4ad04848b8e5827414990f32",
@@ -31,22 +31,22 @@
           "version": "repo-lines-v1:sha256:152607e653da37f5f18e11d56b3e53c87e63a611c2dfc3bc59005995c4e38be8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY5NTQ3N2VkYWI3MTU2NTFlZjNmZDBhOGE1ZjgzYzYwMTM1YTIwYjNhMmI3N2MxYTc5N2EwZjZjODM1MmFkYjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ2ZjVhODU2NTdiOGU4NTQwZjZmNWYyZWM3YjY2YjY2YWNiNzc3ZmJlNjQyY2E5M2I5N2QyNWU4NjBlZDM4YjgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhmNjI4MGZjMDFmYzc1OWFhZGY4ODgwY2RmM2E4M2Q1YmIxYzZkNmNiYTJkNjdiZWEzOTRlZDUyMDI1ZWEzZWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ4MDNlOGZhMzU5YzU4Yjk1ZGM1NGQ1OGZlODkyY2Q1ZjZmMWQ5MjkxMzZjNTY3MTJjMzZjN2M5OTc2YjY4NWUifQ"
         },
         {
-          "resource": "repo://ulabase.setup.ts#L813-L832",
+          "resource": "repo://ulabase.setup.ts#L810-L829",
           "version": "repo-lines-v1:sha256:390250595cc65eab7a20515205fcf34d378d123076463be2cbb1fac855a45b37:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1NDE1NGIwOTdiNTg4YmI5MzYyMDk4YjU0Mzk3ZjVlYTI5NmJjODJjNDllNjc0NDI2ZTgwMTkxYzBkYmY5NDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxN2FmMTEwMWM5N2I3YzJmNTI1NDA3ODJlNjM0Y2M0NDQwZjBlOTcwMzQxZTUyZjk3NTIzMTFkNzhiN2Q3ZDAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNkMjg0YjA0YWM3NDJkNGYzZThmNTRjNzIwZTYwODY5MzcyZWI4YjBlYjJkMzYwZTQ5MTZiZjUyMzAxMWU0ZTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZjODgwNTAwOGQ0NDAyYTRiODNjZmVmM2JjZDg0MjA3YzNmMDQ5YjBjZGYwNDhmNGJmNWM5ZjY0NDg1MDljMDgifQ"
         }
       ]
     },
     {
       "id": "claim_a3d5e1403ae34701812cf5a08c82185d",
-      "statement": "Token claims must include only latestConsents/tos and latestConsents/pp for the Guards rule to evaluate consents status; the orders list filtering uses @team._id (server-resolved) so no team claim is needed in the JWT.",
+      "statement": "Token claims must include only latestConsents/tos and latestConsents/pp for the Guards rule to evaluate consents status; the orders list filtering uses @team._id (server-resolved) so no team claim is needed in the JWT. The token-claims setup step reads and writes these via admin.getFeatureConfig(srvId, 'auth') and admin.updateFeatureConfig(srvId, 'auth', ...) setting 'account-properties-claims' (added, not replaced).",
       "evidence": [
         {
           "resource": "repo://ulabase.setup.ts#L330-L335",
           "version": "repo-lines-v1:sha256:50b95a23e84e07bcf5d931a12ce2845ae232903aaacb8ce520816fe6acea8cf4:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTIwMTcyZWQ3OTg5YjVjYzNmNmE3Njk2ZGZlZWU1M2FmZDdhYWEwYjE4MWVmNzQ2NWNhODFiOGQyMTVhMWJhOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDUzMzZlNDQ4NjM1YWE3NGFiNjg3Zjk3OTAxYzhhYmY5NjAzZTgzMDBkYzJjMmFjYWExOWM4ZmQ5NTI2MjAyNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjc4ZmI2Y2U3NGEyMmU5MTJkZmE1ZjQ0ZGY3ZGJiOTRiN2IyOWZhNmJhZGYyZGI4NmM2NmNmM2U5NGQwOWI1NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjhjMzEwZDc3OGQ4MWNiOTY5NmQxZjA0MDY1OTQ1NTliYjMwMWVlNTY2MDc1MGFjOTg4ZDk1MWU3MmQ2YWU4NiJ9"
         },
         {
-          "resource": "repo://ulabase.setup.ts#L765-L792",
-          "version": "repo-lines-v1:sha256:9d37d3e6a363b91d369e72b52f1ab716d1c3963465c87f873099c950c0eb02b0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcyMzBhYjg1ZDg0ZDViNzI1N2RhMDQzYmFhMzIxZDQ2ZDYxZTM2MmVlMDA5MWM2NDVlMjExZmNkMDUwMjJiZWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyZTZmY2RkNGQ3Mjc0ODdlOGI4ZDdhNDM3N2YwNjJjZDFiY2U1OTQ0NGQ2ZDczYWE4OGNhNTg0OGY5NGI0ZTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc0NDliNTZkYWQ2OTczMWRlYWFhMzc3NDFiYWUzNWM1NWVlMjY5YWI0ZWI4ZTRhZDM1ODQ4YTYwNWFkYTViNjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIyMDQ3ZmQzNjk2Zjc1ZTVkNjA4Zjc0Y2M2OGFhNmQ5OGZmZGJlMjUzMWZhMDYxMzNiOGEyMzE5NGJmMjZjOWEifQ"
+          "resource": "repo://ulabase.setup.ts#L765-L789",
+          "version": "repo-lines-v1:sha256:4bd3daaf8213666dd87649a2f91d22ecbb0d85c018edc188f2f61381241cf693:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcyMzBhYjg1ZDg0ZDViNzI1N2RhMDQzYmFhMzIxZDQ2ZDYxZTM2MmVlMDA5MWM2NDVlMjExZmNkMDUwMjJiZWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyZTZmY2RkNGQ3Mjc0ODdlOGI4ZDdhNDM3N2YwNjJjZDFiY2U1OTQ0NGQ2ZDczYWE4OGNhNTg0OGY5NGI0ZTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc0NDliNTZkYWQ2OTczMWRlYWFhMzc3NDFiYWUzNWM1NWVlMjY5YWI0ZWI4ZTRhZDM1ODQ4YTYwNWFkYTViNjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIyMDQ3ZmQzNjk2Zjc1ZTVkNjA4Zjc0Y2M2OGFhNmQ5OGZmZGJlMjUzMWZhMDYxMzNiOGEyMzE5NGJmMjZjOWEifQ"
         }
       ]
     },
@@ -113,10 +113,38 @@
           "version": "repo-lines-v1:sha256:a30f36b0eec5325d9e2a4d8204d679ec90a5b92b5c67344e85a2cddbdebbddf3:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmMzUwNmRjYThmNzEwZDA5NTQyOTBhYmYyNzg5M2IzNjk4NmY2ZDk0ZDc0YWZhNzZjYTIxYzdjNTIzZmM4NTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk2NTliZDAzYTVlMmJmN2YyMTM3NGYwMGRjNTVkYzFiMjhjMTk5YWU4Y2RkMjdjOTU3NDQyMTc3M2U4ZWMzM2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc0NDliNTZkYWQ2OTczMWRlYWFhMzc3NDFiYWUzNWM1NWVlMjY5YWI0ZWI4ZTRhZDM1ODQ4YTYwNWFkYTViNjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIyOGQ2NTFmMTgxZDUzZGZhZWI4MWRkMTYwZDhlYWI2NTFiZTA5NWYwYzQ3NDU4ZmFkZmY1YmRiYjAwMTM2ZjIifQ"
         }
       ]
+    },
+    {
+      "id": "claim_03eaf5c82720465c98a75a1c3dd5f2c6",
+      "statement": "The Stripe products-mode setup configures catalog and orders collections matching src/environments/environment.ts, success/cancel URLs with order secret in the URL fragment, 30-minute session expiry, shipping-address-countries allow-list, order notifications, and optional Stripe keys (checkout stays off when none are stored or exported).",
+      "evidence": [
+        {
+          "resource": "repo://ulabase.setup.ts#L411-L467",
+          "version": "repo-lines-v1:sha256:c1e423f4b5cad6d97322c2d159f30a31937947e6f4755fb7934c8eaff47e5313:eyJzZWxlY3RlZExpbmVDb3VudCI6NTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImExNjY2MjhmZDEzN2I3YWMxNmZlMGViYTA4ZWZlYTI3OTI3ZmY1MmE0ZmViMzdjMTRjM2JiMDg2MTQ0MDE2ZWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmMGNkYjk3MmE3YmZiN2VkMjQ2ZjlmZjY3MjM4NWU1NWY0OTY4ZmMxMTA0M2RjNWI2ODRkNTFkZmEzMWRiY2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEwYTQzMmNhY2U0ZDA0YTFhNzU1YzliMTE0MDRjYjFiNDhmNzBlZjJlODlmZGZjMjZiYTliOGRmMjgzM2IxMzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUxMmE1NzgwZjI0M2Y0NzMwZTkzYzdjZGQwY2Q0ZTk0ZmEzNmI5ZWJkMWNkZTM2ODY0YzA3N2Y4YjY1YWYwN2YifQ"
+        },
+        {
+          "resource": "repo://ulabase.setup.ts#L470-L478",
+          "version": "repo-lines-v1:sha256:ae99932ff059726b75651392d29f5a288024343cae37cb3ddd02bfdeb8af6051:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTlhZWIwNzg3ZjBkODQ4YmEwOWRmMDUwNTdhMzA4ZTlmNTY0NDNmNDJjODM0OWI0NzVjOWFiZTIyNjNmYmY3ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDJlNmZjZGQ0ZDcyNzQ4N2U4YjhkN2E0Mzc3ZjA2MmNkMWJjZTU5NDQ0ZDZkNzNhYTg4Y2E1ODQ4Zjk0YjRlMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGIwODZkNDY2M2FiYWJkYTlmMmZlMjNlZTg2MDIzZTE1NDIyZDA5ZTZjMjVlNTc4MGRkMzJkYTE3M2VhMjc2MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTM4YzBmMDc5MDdhNzJjOGU2MmRhOWIwY2JkYThkODc2YjM1NTg1Y2RiZWEyMTZiNjVjZTg4MWM0NDY0MWQ0NiJ9"
+        },
+        {
+          "resource": "repo://ulabase.setup.ts#L73-L111",
+          "version": "repo-lines-v1:sha256:fdff24f12514944d1b48af111dcbdbaf380d4056f55fe6eba314a476dd65f455:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE3MDkyMjJlYTM3YTkyMDJlZjVkYmZlODU2NDliMDk2MjgwNmU5Mzc2YTU1OTE1YmRjNDI3MTgyODY2NzZlNGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcyYWUyODM4NmJhYTZmNDY1Njk5Y2NlMDdlMGUyZWM0YjNhZmQ3ZjIxMGJiNTUyZDQ0OTc3NzFkODM0N2QzNmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFhZDc1OWY4NjViYjNhZTUzNDU3YWJlZjIxYTZiN2E5NmVhZDg0MzljYmVkNWM3MGUwYjAwZGJkMDE2OGUyZjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIzYjI2MzExYWNiNjI2ZTEzZGIyMDNmOTAzOWM1MTQ3YmI1MTUyNmRmMGY3MDM0ZWU2YWMzNTFkZmU3MTdjNDYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3d4a15734a434b31962f6b28e5d33b5d",
+      "statement": "The userCanPatchOwnConsents permission restricts PATCH to the consents field only via bson-request-whitelist(consents) and verifies ownership via equals(@user._id, ${userId}) or equals(@user.sub, ${userId}), while the step's check reads /acl/{PERMISSION_ID} to compare the stamped versions against current TOS_VERSION and PP_VERSION.",
+      "evidence": [
+        {
+          "resource": "repo://ulabase.setup.ts#L719-L763",
+          "version": "repo-lines-v1:sha256:6732b4c0e30735d8d2dae86ff46eb2ae6c3118f2d095b9a5df786afe030eaa89:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzNWM2MjE2YjNjYmQ1NDZkM2I2OTFhN2NiMjExNjZjZDA0Yzc5OTlmZGI1MzY5OWUwZGI3ODYwNjc0NDgwNWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyZTZmY2RkNGQ3Mjc0ODdlOGI4ZDdhNDM3N2YwNjJjZDFiY2U1OTQ0NGQ2ZDczYWE4OGNhNTg0OGY5NGI0ZTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc0NDliNTZkYWQ2OTczMWRlYWFhMzc3NDFiYWUzNWM1NWVlMjY5YWI0ZWI4ZTRhZDM1ODQ4YTYwNWFkYTViNjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE4MGNkYWU4ZjEwZmY5MzFhMTg2NjYyODJhZTBkZTliOTQwZGYzZTQ0NDYyYTBjOWI1Y2Q2YjIwZTU3MzVkN2YifQ"
+        }
+      ]
     }
   ],
   "verification": {
     "by": "openwiki/0.7.2",
-    "at": "2026-10-20T08:19:28.862Z"
+    "at": "2026-10-28T14:01:51.932Z"
   }
 }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:d72838ce40f7c79dcf1410afbe0626ed1f72c8b5d1204d49f5d0bd4651e78465",
+  "pageVersion": "sha256:b14349bf128271d0252d774599a3f86543be664739191ed0c05f569e294264fb",
   "claims": [
     {
       "id": "claim_ff3b18a00b024c05926f8b8c8482a519",
@@ -137,10 +137,78 @@
           "version": "repo-lines-v1:sha256:49ba2b3ed7e11df64672b896ee721a643c97dc2d1d3531d8a2fbe7f8d2d11c8d:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTMyMzhkMTJiNGRkZmU5ODY2Yjc3YzRlNzhlZTc1YjhjZDNmOGVmYzYyNmIxMjZmZjQ3MzY5NTU0ZmVjY2U5OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjk2N2M0OTZmMGE5NjQ4NGI1NWUwMTE1ZGU5ZWQ5MWIyYTZmZGJjYTEwMGIyYzJiODE1NmQwOGU5MTQ2ZTA4YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmQ1NTBiYmQ0NDVjNzZhZDc0ZjBlZDBkMTA2Y2ZlODQ2MmY0MWRmNzUwZDM2MWUxMDBhZWE3Y2VkNDIzNWU2MSJ9"
         }
       ]
+    },
+    {
+      "id": "claim_2132cbada08a419ba2d4f626a3d6e3aa",
+      "statement": "The npm scripts define the operational entrypoints: `dev` runs `vite`, `build` runs `tsc -b && vite build && node scripts/prerender.mjs`, `preview` runs `vite preview` to serve the production build locally, and `test` runs `vitest`.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L5-L10",
+          "version": "repo-lines-v1:sha256:e385662051cbf41dfc0fb7df1b72b2af59c47c2454a4185873ec4136a59f5e56:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzQ4MzNkNTk0OWMwM2E0MGNhOTUyNDkxNjEwYTY2NTk2NDRiM2FhNDY2MzYyZjc5OTAyMGRiZjE5ODE1NDdkYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGQ1Y2QyZmI0ZjNkZjg4NDUxNTI1NWIzOTUyM2YyZjhiNTQ3MmJlZWE5ZjU2NmZmY2EyMDRkYjgwMjU2MTA0MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGJiOThiMWNmNDUwMGRjYjU3MzRmMzk1ZmE4ZjdhN2NiMTdlYjY2YWMwNDVjNDdmZmJlZDM2NDRiOTA5MTY1NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGQ2YjIxMTczZTcyNWYzNjZiMjljZDBmN2Y5OGQ0MDlkMjVjMThkOWVhZmY5YTJmZmRhMWEzYjRkZTBmZTIzOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_9aa438f344c34791a1b39395e9eaa930",
+      "statement": "`catalogCollection` and `catalogOrdersCollection` in `environment.ts` must match the collection names configured on the Ulabase service, because the kit interceptors match on the configured name and the HTTP path changes if a deployment renamed the collections.",
+      "evidence": [
+        {
+          "resource": "repo://NOTES.md#L250-L256",
+          "version": "repo-lines-v1:sha256:019f9846fb10fc177bf40690de135367ac1084904ffe7e0a048273c49eceba89:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTQxODc1NzFmOTZjOWVhNDY3YzkxZDJiZDgyNWQ3ODE2ZGFjMjgxYzZlMTMzMmYwNTBjZGJkMmYxNDEzNjA1YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2FhMTkwOTY2ZTY3NTAzZGYzMmI4YThiMjQ3OGExY2MyMzgxMWM2ZjM4MjE0ZTVhM2Y0OGU4OGRiNjRiMTBiNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWVmYTEyMmNjZWMzMjdlYmZhYTExYWY4NTcwODQ0ZTRhNDY0ZjhhMjJkMWYwY2MwYzJmZjJjMDY5ZTEyMGMzNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjYxYmRhMGZkNmNiZjJmZjkyZTU2MzNmYmM4NTcxOGRmZTY4Y2MxMDAwZGRhODRiM2ViOGRjMTNiOTdmZjNkNSJ9"
+        },
+        {
+          "resource": "repo://src/environments/environment.ts#L7-L15",
+          "version": "repo-lines-v1:sha256:e355b7c6658db9a5c361c1c4a797118bc98aeeb654878dfb0a1e17724f0d2c6b:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGYyYTJmOTk2ZjA4ZTY4MGJkMjkyMTM1YTZmYTQ5NzhiZGEyNmU2MDJkODRmMzNjYjFkNTk0Nzc1ZDQzMDRiNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDViY2JlN2Y0MjU3MTc5ZWRmM2JmZmMyNTc5MThjMjZkZTg4YjVlNjQyNTQzODgyMTcwYjA2OTdkODExYTQ3NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGI3YzI1YjkwNDYzNTFiNDc4ZTBhYzI5ZjY5YTU3NTY0YWZlNDY4N2JjY2FlYjc1NTlhZDA4YTkwZDIxMjM3MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWNkNmQ4NmUwZjk5NDA5YjdlZDc1Nzg2YmI5MjMwNDY4ZmYzMzJmYjk4ZGY0YzYxYjUyZWE1ZmUwMTNlZDFhZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_3d81400346b844c4ab4d93b05c241c53",
+      "statement": "Prerendered product head metadata is a build-time snapshot: price and availability stay stale in a crawler copy until the next prerender run, while human visitors always receive the live SPA.",
+      "evidence": [
+        {
+          "resource": "repo://SEO.md#L49-L57",
+          "version": "repo-lines-v1:sha256:9db6f6ba274118520ec7d305079fb4e26e505093b2689cab41f73db03675a357:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTIyZTQ1NmIwNjc3ZTkyYzI0YTAxMjg3NjY5NjFjYmE0MjA1NTkyMzFmNDZmNjQwNDgxM2Q3ZDk2YmJjNGZjZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGEzMTg4YTI4MDQwMzJkYTQ0ODE2NmFiZWMzNDcyOGY0Y2FmMTE3MDNiZTExMDExOTMyMTE2ZmJkNmIyNTkwOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDQwZjVkNTNhN2U5YWI4NDYwY2VmYWZhODVmZmRiOWM1YTFjNTA3OWExNjVhY2UzNTIzNDJiOGNkZmRhYjYzOCJ9"
+        },
+        {
+          "resource": "repo://scripts/prerender.mjs#L18-L24",
+          "version": "repo-lines-v1:sha256:4f315a43ee084db80ce6517a9330a722a67492ef71768031ddbbd4e3869dc966:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzk1N2UzNzg1NzE4NDRlODI1MWMzODQ5OTg1NzhjNzBmNTg5YjkyYjAwNGRmNWJmNjA3Njk2ZGY0NzVlN2MwNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDdjZWI5YjcxZTU0NmRjNGIxMDA1NmM5ZjIyM2QxNTlmYjgwMDcyNzk3MWNmNzBlYWJkZTZlMjc2Y2M1Yjc0OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWQ0MjE5YzMyOTkzOGU2ZmVmMjhhZWE0MmIzMzdkNDA3MGQ0NzEwZjcyNzc2NGVjYjViMDlkYjZhNzRmODUwNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGJmNGRiYzEzY2ViMDNjNjdiNWQ4YTdhZWQxNDk2N2I4OTQ5N2NjZDU2NjNlMGM1MTg5ZDUzZTBkM2Y4ZjU0MCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_63e92e0addc74184a42bb972b5077102",
+      "statement": "When linking local `@ulabase/kit` packages for development, `vite.config.ts` needs `resolve.dedupe`, `optimizeDeps.exclude`, and `server.fs.allow` restored; switching between linked and registry packages requires deleting `node_modules/.vite` and restarting the dev server so Vite re-resolves modules.",
+      "evidence": [
+        {
+          "resource": "repo://NOTES.md#L38-L55",
+          "version": "repo-lines-v1:sha256:c4e5ff69e6b0798f2d1e96875f858e4d07cb290de968ea2ffe2fdd9979963b36:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM0OGRmYTQ1MzFmZjQwMWFjZmUzZTg5ZDM3NGRhYTU2YWJhNzkyYTA3ZjY1YzhkN2U2NDczNmU4OThhYjNmMWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIxMjJmODg4YzRhN2RmNzg5ZjE3ZTI5YmJhMDhjYThlZjY1M2Y3ZmJiNDkxYjQ3NTJmYTI4NTMzMDc4MjExZWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJmNGM0ODc3MGYxNTQ2NmZkNGQyZjQyYTkyMzg5ZWUwZWIwYzg0ODc4MzRlZjUzMTlhMTgwMmE2ZGQzNTgwMGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjczZmI5NTNmMmQ2YTEzMzAwMGFmYTc5MDVlMTA1MGZmY2M3MWY4NmE0ZTg5NmQyYTNkMDJhNTk4MzhmMGY4YWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4cb8a893e6ef4cbba4b302633ae5eb46",
+      "statement": "The plain S3 website endpoint cannot replace CloudFront for product pages: it answers the extensionless product URL with a redirect to the trailing-slash form, so the crawled address no longer matches the declared canonical URL.",
+      "evidence": [
+        {
+          "resource": "repo://SEO.md#L76-L100",
+          "version": "repo-lines-v1:sha256:cb8faf49cd3ddd7172b97ceb2768dc88b827191417e04c5d8778d99f058d8567:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1MmQ2YTY3ZTIxNzdiZjUyYjE5Yzc0YjIzNmMxZDQxYTI0NjdlMzM0NmVmNDIxYmMxZDE2NDM0MjBjNmM5ZWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZiOGUwMDRlYzBjMjM1NTAyMWRjODk4ZTM2MzBhZmNkZTM3MDgwYzBmNmQwNTc4YWExOWQ1YWUyZjYzZjhjYjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdjZGRmZDI1MmFiYjA5MWYwYzM4OTFiODYxNGY4MGFjOTllNjI5NTQ1MzVkOTJhYWRjZmIyNTAyODdmZTMyNDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMDFjMmNlM2E2YzMwZGMwMGE5ODA0Yjk5YjU1M2UzYzAzYWM0MTBlNThjY2Q0YjBhOWM1YTk4MDA0MDFjZTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_58971b2c96d749a9bc64ad18f5c54d6c",
+      "statement": "On a `SHOP_SHELL=remote` refresh run that never rebuilds, `dist/` holds only the refreshed product pages and sitemap, so the upload `--delete` must be scoped to `product/` to avoid deleting the rest of the deployed site.",
+      "evidence": [
+        {
+          "resource": "repo://SEO.md#L120-L122",
+          "version": "repo-lines-v1:sha256:cc067ff15379d467d614626cba58e861584f27e6d4cfe4d5aed379fabf91fc29:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2NmYTJhN2RiNTFjN2Y5ZDU2ZTJlOWNlMjMzY2MyNmExZjU1NGY3N2ZkNTQyOWYyZWRiYTMyOWI4ODI4ZjQzZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmRhM2JjZmExNWJhOGExODQ2ZDNhZDExODg0YjFmYjdkZTg0ZDI0NzFiZDU2MTg3NGI4MTNkODBkMWUxYmNhMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDIyNDkwZDgwZWMyZDMyZGY0OWY3ZDQ2MzZjZDRlYWE0YmIwYTdmYzg2NjEzNmNjZmQ4OWQ2NGVlNWM0ZjZmMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2M2MzQ0MGViOWI0MWFhZmZkMDYyZTU4MTYyZGJlMjBmOGY1ZTU0NjBkYzAxY2I3OGQ5YjAwYTQ3NjE5YzU2OSJ9"
+        }
+      ]
     }
   ],
   "verification": {
     "by": "openwiki/0.7.2",
-    "at": "2026-10-13T10:18:39.801Z"
+    "at": "2026-10-28T14:01:51.932Z"
   }
 }
