@@ -1,18 +1,18 @@
 ---
 type: "Reference"
-title: "Ulabase Service Configuration"
-openwiki_generated: true
+title: "Ulabase Service Integration"
+description: "What the shop requires from the Ulabase service and how ulabase.setup.ts provisions it: Stripe products-mode config, ACL permissions, user schema, consents acceptance, token claims, and the Guards rule."
+tags: [ulabase, setup, acl, guards, consents, stripe, authentication, configuration]
+verified:
+  - by: openwiki/0.7.2
+    at: 2026-10-28T14:01:51.932Z
 sources:
   - id: openwiki-source-34f568b222540eb11aa44859
     resource: repo://ulabase.setup.ts
-generated: { by: "openwiki/0.7.2", at: "2026-10-20T08:19:28.862Z" }
-verified:
-  - by: openwiki/0.7.2
-    at: 2026-10-20T08:19:28.862Z
+generated: { by: "openwiki/0.7.2", at: "2026-10-28T14:01:51.932Z" }
 ---
 
-
-# Ulabase Service Configuration
+# Ulabase Service Integration
 
 The Ulabase service requires specific configuration to support the shop application's authentication, authorization, legal compliance, and payment processing. This configuration is defined declaratively in `ulabase.setup.ts` and consists of ACL permissions, Guards rules, collection schemas, token claims, and feature configurations.
 
@@ -24,6 +24,24 @@ The service configuration ensures:
 - **Legal compliance** through consents gating
 - **Payment processing** via Stripe integration
 - **User management** with accounts feature
+
+## Stripe Products Mode
+
+The setup installs the `stripe` feature and configures it in products mode: a catalog collection is the source of products, an orders collection records purchases, and Stripe Checkout does the charging.
+
+**What is configured** (the `stripe products mode configured` step):
+- `enabled: true` under `products`
+- `catalog-collection` / `orders-collection` — must match `catalogCollection` / `catalogOrdersCollection` in `src/environments/environment.ts`
+- `success-url` / `cancel-url` — the success URL carries `{ORDER_ID}` and `{ORDER_SECRET}` in the **fragment**, so the secret never reaches a server log or a Referer header
+- `session-expires-minutes: 30` — Stripe's minimum; an abandoned checkout otherwise looks like a live `pending_payment` order for an hour
+- `notifications` for `order-confirmed` and `order-refunded`
+- `shipping-address-countries` — an explicit allow-list; an empty one means Checkout never shows the address form
+- `default-currency: 'eur'`
+- `secret-key` / `webhook-secret` — read-modify-write with redaction placeholders passed straight back, so the server restores stored values rather than writing bullets over them
+
+**Checkout is optional**: with no Stripe keys stored and none in the environment, the setup leaves checkout off, says so once, and the rest of the shop (catalog, cart, accounts) still works. Exporting `STRIPE_SECRET_KEY` and `STRIPE_WEBHOOK_SECRET` and re-running turns it on. A secret named in the environment is treated as a request to write it, so the step stays unsatisfied until it has been.
+
+The `stripe collections and indexes initialised` step runs the feature's initializer (creating `catalog`, `orders`, `transactions` and their indexes) and never overwrites what is already there; the honest check is whether the collections exist.
 
 ## ACL Permissions
 
@@ -205,20 +223,23 @@ const CONDITION = [
 ].join(' and ');
 ```
 
+The final clause is `not (A and B)`, never `not A and not B`: the latter would block only the users who accepted neither document, letting someone who accepted only one through.
+
 **Key Exclusions**:
 - **Anonymous callers**: Excluded via `@authenticated` (true when request carries account)
 - **Auth endpoints**: `/auth` and `/token` paths are excluded (needed for login/registration)
 - **Consents acceptance**: The PATCH endpoint for accepting consents is excluded
-- **Legal document paths**: `/terms` and `/privacy` are readable while blocked
 
 **Status Code**: 451 (Unavailable For Legal Reasons) - exactly matches the situation.
+
+The rule is installed with `action: 'block'` and `on_error: 'allow'`, so a rule that cannot be evaluated must not lock everyone out.
 
 ### Client-Side Implementation
 
 The `ConsentsGate` component:
 - Sits at root, above router (blocked users have no session)
 - Shows acceptance form when API returns 451
-- Allows reading legal documents while blocked
+- Lets `/terms` and `/privacy` render while blocked — a document you cannot open is a document you cannot agree to
 - Calls `auth.acceptConsents()` (server stamps versions, client sends nothing)
 - Reloads session after acceptance
 
@@ -229,22 +250,30 @@ The `consents-signal.ts` module:
 
 ## Consents Acceptance Permission (`userCanPatchOwnConsents`)
 
-**Purpose**: Allows users to update their own consents via PATCH.
+**Purpose**: Allows users to update their own consents via PATCH — and nothing else.
 
 **What breaks when missing**: Acceptance returns 403, user locked out permanently.
 
 **Configuration**:
 ```typescript
+const PERMISSION_ID = 'userCanPatchOwnConsents';
+
+/** Both versions, as the permission stamps them and the rule compares them. */
+const accepted = { tos: TOS_VERSION, pp: PP_VERSION, acceptedAt: '@now' };
+
 {
-  predicate: "path-template('/users/{userId}') and method(PATCH) and (equals(@user._id, ${userId}) or equals(@user.sub, ${userId})) and bson-request-whitelist(consents)",
+  predicate:
+    "path-template('/users/{userId}') and method(PATCH) and " +
+    '(equals(@user._id, ${userId}) or equals(@user.sub, ${userId})) and ' +
+    'bson-request-whitelist(consents)',
   roles: ['user'],
   priority: 1,
   mongo: {
     mergeRequest: {
-      latestConsents: { tos: TOS_VERSION, pp: PP_VERSION, acceptedAt: '@now' },
-      _$push: { consents: { tos: TOS_VERSION, pp: PP_VERSION, acceptedAt: '@now' } }
-    }
-  }
+      latestConsents: accepted,
+      _$push: { consents: accepted },
+    },
+  },
 }
 ```
 
@@ -252,16 +281,17 @@ The `consents-signal.ts` module:
 - **Server-stamped versions**: Client sends `{"consents": []}` and states nothing
 - **Version comparison**: Check compares stamped versions against current versions
 - **History growth**: `$push` grows consents array instead of overwriting
-- **Ownership verification**: Only user can update their own consents
+- **Ownership verification**: `equals(@user._id, ${userId}) or equals(@user.sub, ${userId})` — only the caller's own document
+- **Field whitelist**: `bson-request-whitelist(consents)` — the PATCH cannot edit any other user field
 - **Low priority**: Priority 1 ensures this permission is checked after other permissions
 
-**Critical Check**: The step verifies both presence and version match—bumping versions shows work outstanding, not satisfied.
+**Critical Check**: The step verifies both presence and version match by reading `/acl/{PERMISSION_ID}` — bumping versions shows work outstanding, not satisfied.
 
 ## Token Claims
 
 Token claims ensure the Guards rule can evaluate consents status.
 
-**Required Claims**:
+**Required Claims** — exactly two:
 - `latestConsents/tos` - Current Terms of Service version
 - `latestConsents/pp` - Current Privacy Policy version
 
@@ -276,7 +306,38 @@ const CLAIMS = ['latestConsents/tos', 'latestConsents/pp'];
 - Blocks users permanently while condition looks reasonable
 - JWT payload is base64, not encrypted (readable by anyone holding token)
 
-**Note**: Order filtering uses `@team._id` (the active team resolved by the server at every request), so no `team` claim is needed in the JWT.
+**No team claim**: Order filtering uses `@team._id`, the active team resolved server-side at every request, so no `team` claim is needed in the JWT. The `consents` history also stays out of the token — it grows at every acceptance and no decision reads it.
+
+### Token Claims Configuration
+
+Token claims are configured on the always-on `auth` feature via the admin API, in the feature's `account-properties-claims` array.
+
+**Configuration Step** (`the two claims travel in the token`):
+```typescript
+step('the two claims travel in the token', {
+  async check({ admin, srvId }) {
+    // the claims are the configuration of `auth`, a feature always on, configured like every other
+    const config = await admin.getFeatureConfig(srvId, 'auth');
+    const current = (config['account-properties-claims'] as string[] | undefined) ?? [];
+    return CLAIMS.every(c => current.includes(c));
+  },
+  async apply({ admin, srvId }) {
+    const config = await admin.getFeatureConfig(srvId, 'auth');
+    const current = (config['account-properties-claims'] as string[] | undefined) ?? [];
+    // Added, not replaced: a service may carry claims of its own.
+    await admin.updateFeatureConfig(srvId, 'auth', {
+      ...config,
+      'account-properties-claims': [...new Set([...current, ...CLAIMS])],
+    });
+  },
+})
+```
+
+**Key Points**:
+- Read and written with `admin.getFeatureConfig(srvId, 'auth')` / `admin.updateFeatureConfig(srvId, 'auth', ...)` like every other feature config
+- Added, not replaced (service may carry claims of its own)
+- Only these two claims in token (consents history grows, not in token; the team is resolved server-side, not read from the token)
+- Missing claims block users permanently
 
 ## User Schema (USER_SCHEMA)
 
@@ -291,7 +352,7 @@ The JSON schema validates user documents and defines required fields.
 - `profile` - Object with optional `name`, `surname`, and `avatarUrl`
 
 **Consents Fields**:
-- `latestConsents` - Object with `tos`, `pp`, and `acceptedAt` (BSON date)
+- `latestConsents` - Object with `tos`, `pp`, and `acceptedAt` (BSON date); `tos` and `pp` are required inside the object
 - `consents` - Array of acceptance history
 
 **Important Notes**:
@@ -300,41 +361,9 @@ The JSON schema validates user documents and defines required fields.
 - `_id` IS required (direct PUT needs id in body)
 
 **Schema Validation**:
-1. Schema stored with ID `userConsentsSchema`
-2. Applied to `users` collection via PATCH to `/users/_meta`
+1. Schema stored with ID `userConsentsSchema` via `service.putSchema`
+2. Applied to the `users` collection: the check reads collection properties at `/users/_meta`, and the apply PATCHes `/users` with `{ jsonSchema: { schemaId: SCHEMA_ID } }`
 3. Registration through `/auth/register` passes validation
-
-## Token Claims Configuration
-
-Token claims are configured in the service's `account-properties-claims` array.
-
-**Configuration Step**:
-```typescript
-step('the two claims travel in the token', {
-  async check({ admin, srvId }) {
-    const res = await admin.fetch(`/auth-config/${encodeURIComponent(srvId)}`);
-    const config = (await res.json()) as { 'account-properties-claims'?: string[] };
-    const current = config['account-properties-claims'] ?? [];
-    return CLAIMS.every(c => current.includes(c));
-  },
-  async apply({ admin, srvId }) {
-    const res = await admin.fetch(`/auth-config/${encodeURIComponent(srvId)}`);
-    const config = (await res.json()) as { 'account-properties-claims'?: string[] };
-    const current = config['account-properties-claims'] ?? [];
-    await admin.fetch(`/auth-config/${encodeURIComponent(srvId)}`, {
-      method: 'PATCH',
-      body: JSON.stringify({
-        'account-properties-claims': [...new Set([...current, ...CLAIMS])],
-      }),
-    });
-  },
-})
-```
-
-**Key Points**:
-- Added, not replaced (service may carry claims of its own)
-- Only these two claims in token (consents history grows, not in token; the team is resolved server-side, not read from the token)
-- Missing claims block users permanently
 
 ## Consents Version Management
 
@@ -402,6 +431,8 @@ flowchart TD
 ```
 
 *Step dependencies: Stripe and accounts configurations are independent, but consents require accounts to be configured first.*
+
+The final step, `appPointsAtService`, writes the service URL into `src/environments/environment.ts` only once everything above it is in place, so a setup that stopped halfway leaves the "connect your service" screen rather than a sign-up page that fails.
 
 ### Check/Apply Pattern
 
@@ -475,5 +506,7 @@ Each step follows:
 ## Related Pages
 
 - [Service Setup](../concepts/service-setup.md) - Declarative setup file overview
+- [Billing Accounts](../domains/billing-accounts.md) - Teams and payer identity behind `@team._id`
 - [Stripe Integration](stripe.md) - Payment processing configuration
 - [Consents Gate Workflow](../workflows/consents-gate.md) - Client-side consents flow
+- [Purchase Flow](../workflows/purchase-flow.md) - Order placement and return

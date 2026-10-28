@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:6ad55ec49aa1746f546bb7a0df8ac36775ceb076b4bb556a3b3cf2b9ae1a3490",
+  "pageVersion": "sha256:e7678d12313b67b3c6296f77df03b493e615ccfbf3645f1f568313271db043d6",
   "claims": [
     {
       "id": "claim_25cb4739a07d43e799b6cf89cfdae3ba",
@@ -95,10 +95,52 @@
           "version": "repo-lines-v1:sha256:a1388b9a9760c2db05e4f0512a9abcf2c8983c793744015c8d777865eececc04:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDhlNjQ3YmRlZGZhYTZmYmM3YTU3MTExN2I0MDM3NDFhZjdiZmQ4MjczMjBiMTE3OGQ3M2M3YzJkZTgwMTMzMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWJjMjJjNDEwZDVkYTlmMjk0MDkwNjE2N2Y3ZWRhZGQ1ZjZiN2FkNzM1ZmY5YzA4NzU3MDZhMGFmZmU0ZWEyYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDBkOTI2M2ZkMTZkYTM4Yzc0NWRiMTkzYmZhZTk0OGQxOTcyN2FjMWE4YWNhNDBkZjA0ODlhNDM2NmZkZWFjMiJ9"
         }
       ]
+    },
+    {
+      "id": "claim_9c0a2be06ee146bb983e4f713f376c70",
+      "statement": "The consents gate is a pair of server-side mechanisms installed by ulabase.setup.ts: a consents-acceptance ACL permission that stamps the current TOS/PP versions onto the user document via mergeRequest, and a guards rule `consentsGate` that answers HTTP 451 to signed-in users until the two JWT claims `latestConsents/tos` and `latestConsents/pp` match the current versions.",
+      "evidence": [
+        {
+          "resource": "repo://ulabase.setup.ts#L720-L763",
+          "version": "repo-lines-v1:sha256:83f49e2fa24a71e893fed8f6f012b04ce0bf2e25604f9633332a2f6971eaa97d:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhlYzM3ZmY3ZjE4ZDJiZDZiMTNhMGQyOGY3NDMzNzRhNTVmOTNlYzQ0MWFhNzkzMjAxMDY1MTRlY2ZmMGU3ZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyZTZmY2RkNGQ3Mjc0ODdlOGI4ZDdhNDM3N2YwNjJjZDFiY2U1OTQ0NGQ2ZDczYWE4OGNhNTg0OGY5NGI0ZTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMwMGVjMmM0NDYxYjhiZDZhOGYzMDllYmRmZGU1NTFmY2ZkNmQ3Zjk1MmJlNWQ4NGEyOTYyN2E4YWQ1NmYzODEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE4MGNkYWU4ZjEwZmY5MzFhMTg2NjYyODJhZTBkZTliOTQwZGYzZTQ0NDYyYTBjOWI1Y2Q2YjIwZTU3MzVkN2YifQ"
+        },
+        {
+          "resource": "repo://ulabase.setup.ts#L765-L789",
+          "version": "repo-lines-v1:sha256:4bd3daaf8213666dd87649a2f91d22ecbb0d85c018edc188f2f61381241cf693:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcyMzBhYjg1ZDg0ZDViNzI1N2RhMDQzYmFhMzIxZDQ2ZDYxZTM2MmVlMDA5MWM2NDVlMjExZmNkMDUwMjJiZWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyZTZmY2RkNGQ3Mjc0ODdlOGI4ZDdhNDM3N2YwNjJjZDFiY2U1OTQ0NGQ2ZDczYWE4OGNhNTg0OGY5NGI0ZTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc0NDliNTZkYWQ2OTczMWRlYWFhMzc3NDFiYWUzNWM1NWVlMjY5YWI0ZWI4ZTRhZDM1ODQ4YTYwNWFkYTViNjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIyMDQ3ZmQzNjk2Zjc1ZTVkNjA4Zjc0Y2M2OGFhNmQ5OGZmZGJlMjUzMWZhMDYxMzNiOGEyMzE5NGJmMjZjOWEifQ"
+        },
+        {
+          "resource": "repo://ulabase.setup.ts#L796-L831",
+          "version": "repo-lines-v1:sha256:61bb3204eef5b835755b0b6f6ddeb8cd77fc51636fd8e642903f24bd6671900f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyNmE0MTQ1MmIwMTVkNzk5Y2ExMDkwNTI5YWQwYTI2MTk1MjcwZDFlOTdiMjMwZDY5N2E3NGNjMzEzYzZhNDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyZTZmY2RkNGQ3Mjc0ODdlOGI4ZDdhNDM3N2YwNjJjZDFiY2U1OTQ0NGQ2ZDczYWE4OGNhNTg0OGY5NGI0ZTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE3MzVlOGJjZjVlZGZhYzZmMDM2MDcxYjdhMzI2NGZmY2I5N2E4NTdmN2FlMWNjMTcwNTg3ZWQzNGIwMGQ4OTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJjNGIyOGJlN2NiNDc3YzQzNzM0Y2U0NDVjNzYyODk5MjVkM2MyN2UyNDczYjFkMmM3MTc5MGY5YjUwZTJlNjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_042ccb02200d4f7b9abe55380695140f",
+      "statement": "There is no team JWT claim: the orders list ACL readFilter reads `@team._id`, which the server resolves as the active team at every request, so `CLAIMS` contains only the two consents claims.",
+      "evidence": [
+        {
+          "resource": "repo://ulabase.setup.ts#L330-L335",
+          "version": "repo-lines-v1:sha256:50b95a23e84e07bcf5d931a12ce2845ae232903aaacb8ce520816fe6acea8cf4:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTIwMTcyZWQ3OTg5YjVjYzNmNmE3Njk2ZGZlZWU1M2FmZDdhYWEwYjE4MWVmNzQ2NWNhODFiOGQyMTVhMWJhOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDUzMzZlNDQ4NjM1YWE3NGFiNjg3Zjk3OTAxYzhhYmY5NjAzZTgzMDBkYzJjMmFjYWExOWM4ZmQ5NTI2MjAyNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjc4ZmI2Y2U3NGEyMmU5MTJkZmE1ZjQ0ZGY3ZGJiOTRiN2IyOWZhNmJhZGYyZGI4NmM2NmNmM2U5NGQwOWI1NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjhjMzEwZDc3OGQ4MWNiOTY5NmQxZjA0MDY1OTQ1NTliYjMwMWVlNTY2MDc1MGFjOTg4ZDk1MWU3MmQ2YWU4NiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_bae86a5754244149a1abc9338e4f27be",
+      "statement": "The shop runs without Stripe: checkout stays off until STRIPE_SECRET_KEY and STRIPE_WEBHOOK_SECRET are supplied, and the cart surfaces that payments are not set up yet.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L53-L54",
+          "version": "repo-lines-v1:sha256:0408a04078de52166296b52f81a59688a18667d7583f866542129b8865b313d5:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDNlYjYyZWYyODc5ZDlkMWQ0MGY2YmM2ZDE1ZmMyNWQxYTgyNzhmOTJiM2ZjNDNlZDgyMzE0MjViYjZmZmEwMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmQ3MmNmYmUzZDI1MGQ5MWM3MDg5MWJjNDkzMGM3NTgxNGQxMzc2YjJjMzIyN2M0MmI0YjBlYzQwODNlZTc5ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWQwNzljNDQ4ZGM4MTNkZGY1OGNjMWE3YmUzN2I1MjU4ODUwNWFkNzY3OGM3OGMzMDE0N2Q0YTZiYWFjYTUzZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzhmOTIxOTk4NTgyMDcxMWE2MTBiOThhNTNmZDE1NzZiNjg0Mjc3ODhhNTBlNWJlYzJmYmI0ZjZhY2U5NDc5MiJ9"
+        },
+        {
+          "resource": "repo://ulabase.setup.ts#L167-L180",
+          "version": "repo-lines-v1:sha256:bc43d6beed4d957df18b46e33454afc4ce531e671e735bbbb5b5d5e6b2f10883:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIxYjY1NGJmMDkxNmU1ZTA1MzZjOWFiZDJhMWJjMjA2NDI1MDk2YzRkYzgwNGI1ODc3MTM3NzgyN2JjYjQ3NDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM4OTViOTllNGU5NmRhNDllNzAzOTM5YjE3NmY4YTViYzdlMzdlNDA0YzBlMjFlOWQxNDE5MDVmNDM4YTQ2NmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQzMzZjMTU0YWM3Y2Q0NDI3MTMxYzVhZmFhZmNlMjU4OGMzZTM5YzE0MGFiZGNmZDNkOTk5MmMwZGM1MjFmMWMifQ"
+        }
+      ]
     }
   ],
   "verification": {
     "by": "openwiki/0.7.2",
-    "at": "2026-10-20T08:19:28.862Z"
+    "at": "2026-10-28T14:01:51.932Z"
   }
 }

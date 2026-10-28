@@ -4,7 +4,7 @@ okf_version: "0.2"
 
 # Files
 
-- [Quickstart — Ulabase Ecommerce Starter](quickstart.md) - Entry point for the wiki — routes readers to the right section based on their goal. Covers first-time setup, key files, and links to every wiki section.
+- [Quick Start](quickstart.md) - Central entry point and task-routing map for the Ulabase Ecommerce Starter wiki — routes each job to the owning page (architecture, concepts, domains, workflows, integrations, operations) and covers first-time setup and key files.
 
 # Directories
 
