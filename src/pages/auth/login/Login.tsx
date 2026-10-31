@@ -8,6 +8,8 @@ import { Alert } from '../../../ui/alert/Alert';
 
 const ERROR_MESSAGES: Record<string, string> = {
   invalid_token: 'This link is invalid or has expired.',
+  token_expired:
+    'This verification link has expired. Use "Forgot password?" below to get a new link: it also verifies your email.',
 };
 
 export default function Login() {

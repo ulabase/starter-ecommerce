@@ -37,6 +37,7 @@ export default function Verify() {
         <div className="auth-card">
           <h1>Verification failed</h1>
           <p>The verification link is invalid or has expired.</p>
+          <p>Use <Link to="/auth/forgot-password">Forgot password?</Link> to get a new link: it also verifies your email.</p>
           <p className="auth-links"><Link to="/auth/login">Back to log in</Link></p>
         </div>
       </main>
