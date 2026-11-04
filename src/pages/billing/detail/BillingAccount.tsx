@@ -26,6 +26,8 @@ export default function BillingAccount() {
   const [invitationsLoading, setInvitationsLoading] = useState(true);
   const [resendingEmail, setResendingEmail] = useState<string | null>(null);
   const [resendSuccessEmail, setResendSuccessEmail] = useState<string | null>(null);
+  // the server's reason when it refuses a resend: too many for this invitation, or too soon
+  const [resendError, setResendError] = useState<string | null>(null);
   const resendCooldownsRef = useRef<Record<string, number>>({});
   const [now, setNow] = useState(Date.now());
 
@@ -73,7 +75,13 @@ export default function BillingAccount() {
     );
     setInvitationsLoading(true);
     auth.listInvitations().then(
-      inv => { setInvitations(inv); setInvitationsLoading(false); },
+      inv => {
+        // the last send of each pending invitation, so the resend button counts down from it: the service
+        // refuses a resend within 5 minutes of it
+        resendCooldownsRef.current = withLastSends(resendCooldownsRef.current, inv);
+        setInvitations(inv);
+        setInvitationsLoading(false);
+      },
       () => setInvitationsLoading(false)
     );
   }, [teamId, auth.loadTeams, auth.listTeamMembers, auth.listInvitations]);
@@ -131,6 +139,7 @@ export default function BillingAccount() {
   const resendInvite = async (invite: PendingInvitation) => {
     setResendingEmail(invite.email);
     setResendSuccessEmail(null);
+    setResendError(null);
     try {
       await auth.resendInvite(invite.email);
       const at = Date.now();
@@ -138,8 +147,10 @@ export default function BillingAccount() {
       setResendSuccessEmail(invite.email);
       resendCooldownsRef.current = { ...resendCooldownsRef.current, [invite.email]: at };
       setNow(at);
-    } catch {
+    } catch (err: unknown) {
       setResendingEmail(null);
+      const e = err as { message?: string };
+      setResendError(e?.message ?? 'Something went wrong. Please try again.');
     }
   };
 
@@ -301,6 +312,9 @@ export default function BillingAccount() {
               {resendSuccessEmail && (
                 <Alert type="success" onClose={() => setResendSuccessEmail(null)}>Invitation resent to {resendSuccessEmail}!</Alert>
               )}
+              {resendError && (
+                <Alert type="error" onClose={() => setResendError(null)}>{resendError}</Alert>
+              )}
               <ul className="member-list">
                 {invitations.map(invite => (
                   <li key={invite.email} className={`member-row${invite.expired ? ' expired' : ''}`}>
@@ -390,4 +404,14 @@ export default function BillingAccount() {
       )}
     </>
   );
+}
+
+/** The cooldowns with each pending invitation's last send, when later than the one already known. */
+function withLastSends(cooldowns: Record<string, number>, invitations: PendingInvitation[]): Record<string, number> {
+  const next = { ...cooldowns };
+  for (const invite of invitations) {
+    const at = invite.createdAt && !invite.expired ? Date.parse(invite.createdAt) : NaN;
+    if (!Number.isNaN(at) && at > (next[invite.email] ?? 0)) next[invite.email] = at;
+  }
+  return next;
 }
