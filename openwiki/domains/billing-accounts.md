@@ -4,8 +4,8 @@ title: "Billing Accounts (Teams)"
 description: "Documents billing accounts (teams in kit vocabulary): list, create, detail with members/invitations/settings, Stripe portal integration, and order filtering by active team."
 tags: ["billing", "teams", "accounts", "stripe", "acl", "permissions"]
 verified:
-  - by: openwiki/0.7.2
-    at: 2026-10-20T08:19:28.862Z
+  - by: openwiki/0.9.0
+    at: 2026-11-05T15:27:38.405Z
 sources:
   - id: openwiki-source-a3a3cc41ccfefb8fada04d9d
     resource: repo://src/pages/billing/Billing.tsx
@@ -23,7 +23,7 @@ sources:
     resource: repo://src/routes.tsx
   - id: openwiki-source-34f568b222540eb11aa44859
     resource: repo://ulabase.setup.ts
-generated: { by: "openwiki/0.7.2", at: "2026-10-20T08:19:28.862Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-05T15:27:38.405Z" }
 ---
 
 
@@ -80,9 +80,9 @@ A simple form that calls `auth.createTeam(teamName)` and redirects to `/billing`
 
 The detail page loads once on mount, fetching three data sets:
 
-1. **Teams** via `auth.loadTeams()` — to find the matching `TeamMembership` by route param
+1. **Teams** via `auth.loadTeams()` — to find the matching `TeamMembership` by route param. The effect takes the list `loadTeams()` resolves rather than the `auth.teams` state: that state is empty when the page is opened directly, and the page then came up with no name and no form.
 2. **Members** via `auth.listTeamMembers()` — list of `TeamMember` objects
-3. **Invitations** via `auth.listInvitations()` — list of `PendingInvitation` objects
+3. **Invitations** via `auth.listInvitations()` — list of `PendingInvitation` objects; this also seeds each invitation's resend cooldown from its last send time (see [Invitations](#invitations))
 
 ### Team Settings
 
@@ -104,10 +104,25 @@ Owners can invite new members by email, selecting a role (`member` or `owner`). 
 
 A 409 error means the person is already a member of this billing account; the UI shows "This person can already charge to this billing account."
 
-Pending invitations are listed with:
+Pending invitations are listed with email, role, creation date, and expiry status, plus a **Resend** button per invitation.
 
-- Email, role, creation date, and expiry status
-- A **Resend** button that calls `auth.resendInvite()` with a **5-minute cooldown** enforced client-side via `resendCooldownsRef`
+### Invitation resend and cooldown
+
+Resend cooldown is measured from each invitation's **last send time**, not from the user's click. On load, `withLastSends()` seeds `resendCooldownsRef` from each pending invitation's `createdAt` (skipping expired ones), so a freshly opened page already knows how long each invitation has left. A successful `auth.resendInvite()` records the click time as the new last send. `RESEND_COOLDOWN_MS` is 5 minutes from that timestamp; `canResend()` compares it against a `now` value kept fresh by a 30-second interval, and the button shows `Wait Nm` for the remaining whole minutes while the cooldown holds.
+
+A refused resend surfaces the service's own reason in a dismissible error alert (`resendError`), falling back to a generic message if the error carries none. Success shows a dismissible success alert naming the address (`resendSuccessEmail`).
+
+```mermaid
+stateDiagram-v2
+    [*] --> Ready
+    Ready --> Sending: click Resend
+    Sending --> Cooling: resend accepted
+    Sending --> Refused: service refuses
+    Cooling --> Ready: 5 minutes since last send
+    Refused --> Ready: dismiss error alert
+```
+
+Resend lifecycle for one pending invitation: the cooldown counts down from the last send, and a refusal shows the service's own reason in a dismissible alert before the button becomes available again.
 
 ### Delete Account
 
