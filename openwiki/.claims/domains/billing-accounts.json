@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:7a3528d345e374d6c743ed825bc7e2421036f7e48c4e7f299cdb5c166b15ac62",
+  "pageVersion": "sha256:a95104cf3df86eaf7fe866effa3f575c7a2b52586441644b5f12592c0f2fd3bc",
   "claims": [
     {
       "id": "claim_8060986c128f4400acaa06dd317c08e1",
@@ -32,59 +32,83 @@
     },
     {
       "id": "claim_df165116e23c4cdbbe1e59184cd52981",
-      "statement": "BillingAccount.tsx provides owner-only functionality: updating team name/description via auth.updateTeam(), changing member roles via auth.updateMemberRole(), removing members via auth.removeMember(), sending invitations via auth.invite() with role selection, resending invitations with a 5-minute cooldown, and deleting the team via auth.deleteTeam() with confirmation.",
+      "statement": "BillingAccount.tsx provides owner-only functionality: updating team name/description via auth.updateTeam(), changing member roles via auth.updateMemberRole(), removing members via auth.removeMember(), sending invitations via auth.invite() with role selection, resending invitations with a 5-minute cooldown measured from the last send, and deleting the team via auth.deleteTeam() with confirmation.",
       "evidence": [
         {
-          "resource": "repo://src/pages/billing/detail/BillingAccount.tsx#L119-L129",
+          "resource": "repo://src/pages/billing/detail/BillingAccount.tsx#L104-L125",
+          "version": "repo-lines-v1:sha256:be30816d87ba32988061473859e3deea899f11052fc3c671ee920534488d0dc5:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA2YmEwNDQyNjY3NGIyZTg0ODY2ZTQwYzk2YzVkZjY1ZTI4YWNmOWI5YWNjYzkwMzkyMjZlNTVlN2I5Mjg5NjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUyZmUwMDE4MzYyNzEyOGRlMDRlYWRmNDhmOGE2MzM4MTFlMWU3NDQ2NWU4YjdlNjUxNTY1NDQyZTMzYWY1YjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdjYzlhODgwYjkyMjQ0ODlmNWZlNmRkNGMyZTMwYzRjMDFhNTdmZDQyZGU2OTNjZTMzNjVhNDMyMmNmNWJmZDMifQ"
+        },
+        {
+          "resource": "repo://src/pages/billing/detail/BillingAccount.tsx#L127-L137",
           "version": "repo-lines-v1:sha256:c164794eebad2208a1c239762bfc5d6604b2d9ebbf25fc5d2742393775c10d46:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxMWYzOWIyZTgwMjRmODVhMjJmZDQ1MGQzNGE0OTNiYzVlYzg4MDkzMzAyOTQ1NDQwZDg0ZmM1ZTM4ZTA0NjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUxZTM3MjVkYTAwMmI0NmVkOGI0ZGU4ODAwM2FkOTcxMGRjYWYxOGQ1N2M0NzAxZGMzYmVmZjBiMmM1Y2IxM2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRmMjk4OTg5MDQ1ZTlhM2U1MjJmOTk1YzhlNTRjMzJhODQzMmY5YTA0MDRiMjRhZDQ0MDI4NjlmNDA5ZTZiMjMifQ"
         },
         {
-          "resource": "repo://src/pages/billing/detail/BillingAccount.tsx#L131-L144",
-          "version": "repo-lines-v1:sha256:7418335f19da1c7e1c1905ed8f48c5f6d0ebcdd8288bb7960d71152ab45e99b8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2MjYxODVhMTk1MDQzOWUzM2QzYTRiZTAwNDU0NDIxZGNjYTI1MzdiMGQ0NDEyMjQ5NTdiNjNmYjRmZjA5ZjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRjYzI1ZjQzY2Q3M2QxM2Q5MWUxNjY3ODNlMDFkMjg0MDZhY2RiY2UwMmNhNDAwZTMzN2IzYmVmZDBhM2UwYWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUzODAzNzkwMzA1Yjk2ZjQwYTkwYjUxMzVjYTE5OWYxMTViMzdlOWJkMGMyMGM1ZDQ2YzhmY2MyMTAyYWQxOTYifQ"
+          "resource": "repo://src/pages/billing/detail/BillingAccount.tsx#L139-L155",
+          "version": "repo-lines-v1:sha256:70f24a4bd391331761bf815e75f9c9a2b613d2c1a1d2239f7bae91f81ea10043:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2MjYxODVhMTk1MDQzOWUzM2QzYTRiZTAwNDU0NDIxZGNjYTI1MzdiMGQ0NDEyMjQ5NTdiNjNmYjRmZjA5ZjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRjYzI1ZjQzY2Q3M2QxM2Q5MWUxNjY3ODNlMDFkMjg0MDZhY2RiY2UwMmNhNDAwZTMzN2IzYmVmZDBhM2UwYWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUzODAzNzkwMzA1Yjk2ZjQwYTkwYjUxMzVjYTE5OWYxMTViMzdlOWJkMGMyMGM1ZDQ2YzhmY2MyMTAyYWQxOTYifQ"
         },
         {
-          "resource": "repo://src/pages/billing/detail/BillingAccount.tsx#L146-L156",
+          "resource": "repo://src/pages/billing/detail/BillingAccount.tsx#L157-L167",
           "version": "repo-lines-v1:sha256:1ab6869f5887bcc031046242ac8cd329c9004df415892f02d6f5cf80a759676d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIxMjEzNzM0YWZlYWRjMTk1YzI2ZGI2NGFkZGVjNjFlYjMyNjJjOGViMDc1ODM1YWEwODkyMzVlZjlkN2JkNTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUxZTM3MjVkYTAwMmI0NmVkOGI0ZGU4ODAwM2FkOTcxMGRjYWYxOGQ1N2M0NzAxZGMzYmVmZjBiMmM1Y2IxM2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI2MjU2MTQ1ZWM5YTg4MTQ3ZDI3NGI2NmM3OTFmMDkyMTk5NWVlOTk2OGRhMGRjYmE4MTI0NTY3OWVmMmJmYjgifQ"
         },
         {
-          "resource": "repo://src/pages/billing/detail/BillingAccount.tsx#L158-L174",
+          "resource": "repo://src/pages/billing/detail/BillingAccount.tsx#L169-L185",
           "version": "repo-lines-v1:sha256:a4c10a34c0574989620b9daf4eed760348b8f083d9268330dadffe7b7357d3df:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRhNjc2OWU2MzIwOGM1MmYxNjgzMTk3NzI2NmYyNzgxN2I0YWE5NzdlZjNjNzIyNTE4YTAxNGIzMDE0NTgxNmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRjYzI1ZjQzY2Q3M2QxM2Q5MWUxNjY3ODNlMDFkMjg0MDZhY2RiY2UwMmNhNDAwZTMzN2IzYmVmZDBhM2UwYWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM4NjcxYzhlMTRhOGIwM2EzNWM2NWNlMDNiOWMzZWU4ZDRkMWE2MmFlODIwMzBlNWM2ODY3ZDZjMWQyNmEyMDgifQ"
         },
         {
-          "resource": "repo://src/pages/billing/detail/BillingAccount.tsx#L176-L192",
+          "resource": "repo://src/pages/billing/detail/BillingAccount.tsx#L187-L203",
           "version": "repo-lines-v1:sha256:81afb30b681e2926b2958ecd409bbe199a47568906e81b0a98c00678f6119192:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5YjA3ODU4MWY2MDhkY2U5OGE3ZTBkMmVjODFmOWY0ZWI4NGNlMDU4YmVkZTlhNTVkODM3ODliOGQxYjU4NTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUxZTM3MjVkYTAwMmI0NmVkOGI0ZGU4ODAwM2FkOTcxMGRjYWYxOGQ1N2M0NzAxZGMzYmVmZjBiMmM1Y2IxM2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ3NWU1NGM2ZDg3NmUwYTRhMjJhMzdkNmFjNWYwOTFhNmVhNjdmZmMzYWI1NjNkMzEwNzhiZWZmMWExM2UxNDkifQ"
         },
         {
-          "resource": "repo://src/pages/billing/detail/BillingAccount.tsx#L96-L117",
-          "version": "repo-lines-v1:sha256:be30816d87ba32988061473859e3deea899f11052fc3c671ee920534488d0dc5:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA2YmEwNDQyNjY3NGIyZTg0ODY2ZTQwYzk2YzVkZjY1ZTI4YWNmOWI5YWNjYzkwMzkyMjZlNTVlN2I5Mjg5NjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUyZmUwMDE4MzYyNzEyOGRlMDRlYWRmNDhmOGE2MzM4MTFlMWU3NDQ2NWU4YjdlNjUxNTY1NDQyZTMzYWY1YjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdjYzlhODgwYjkyMjQ0ODlmNWZlNmRkNGMyZTMwYzRjMDFhNTdmZDQyZGU2OTNjZTMzNjVhNDMyMmNmNWJmZDMifQ"
+          "resource": "repo://src/pages/billing/detail/BillingAccount.tsx#L268-L269",
+          "version": "repo-lines-v1:sha256:56e27c6a6ca9336e80a4a353a56b2cea9cb9d117e53401682e2572a097eafa1e:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTJmOTc4YTViZDRhMjNiNTAyYmJjMTE4ZTdkNDJlMGYzNDY2NTk4ZmIwYzRjMzk0YmY3ZGRkNzMxYzBmZmU2YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmMyOTYxOTNhMDc4ODNhYjRiYTFhNzI1ZjZlYzEwZDVmZjFmNzQ0Y2IyM2ZiYzhhMjVjNGZiZGVkZWE1MDE0NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjEzMGZlM2IyODk5MjkwYWExMGI2ZTA3NTE0ZTA1YTRlYzZhNWRmMTgwMjA5Mjc1ODM1YjEzNTU0ZTZmNWI4NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWY3NTlmZmM4ZWM5ZmJhYzY1NWI2MTAzZTkwNTllNWVhZjk0OWMwYjU1MzRhM2QwYzRhZDM1M2E1YjQ5NjI1YSJ9"
         }
       ]
     },
     {
       "id": "claim_c30ad8ae1c6f4579915ad2a1830766aa",
-      "statement": "BillingAccount.tsx loads three data sets on mount: teams via auth.loadTeams() to find the matching TeamMembership by route param, members via auth.listTeamMembers(), and invitations via auth.listInvitations().",
+      "statement": "BillingAccount.tsx loads three data sets on mount: teams via auth.loadTeams() to find the matching TeamMembership by route param (using the resolved list rather than the auth.teams state, which is empty on direct page open), members via auth.listTeamMembers(), and invitations via auth.listInvitations() which also seeds each invitation's resend cooldown from its createdAt via withLastSends().",
       "evidence": [
         {
-          "resource": "repo://src/pages/billing/detail/BillingAccount.tsx#L57-L79",
-          "version": "repo-lines-v1:sha256:8e23acb46235a1f9b0b5aa14b2706774745384284792fe09a4a3b29756272615:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5NjZmYmZhODg5OThkYTc0NjU2YzUwMTk0OTU2YzI1ZjA4NDk0NTc2NjBjMDA5ZmU2M2QxZTlmYTlkYzkzMWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiOTU2MzYxOGE5MjViZDA1NzI0NzU3OGI1NWQyNDJiMjdjZmM3YjQ2MzgyOWFjNzA3ZTFiNmFjNzRjOTEyMWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZkNmQ0OGUwMGZjZGI4NTdhNDY0NThkMTU0NjMwNDZhYjg3NzZhZDU1YjQ0ZmQzYjY4NThkZWUxNWVjZTdmNjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFkYmVlM2QwMGU5NjNiZTdjM2RhM2JiYzgwMzQwYTMxMWVkNDViNGI5MjEzNzNlZDdmNjA3YjI4ZDY4ZThkNGMifQ"
+          "resource": "repo://src/pages/billing/detail/BillingAccount.tsx#L409-L417",
+          "version": "repo-lines-v1:sha256:e183b999a9a0d476dbfb5bd228f0d68c412def1c3c7dd061a8a3bac5647764b5:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzMyM2Y1NGEwMmFkMGE4OGZiNWQ2Yzg5YTE2Y2YzYjRjMjZiZjExZmNmNDU5YWQwZjM3YWFhN2ZjMjU4YTk1ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDk0ZmMwYzE3M2QxZWMzZmM1MDFkN2RmYTkyODU1MDFjNTI3Y2ZiNDcxMjU4M2RhM2NjMzYxODA1NjZiNGJlMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://src/pages/billing/detail/BillingAccount.tsx#L59-L87",
+          "version": "repo-lines-v1:sha256:88a05e53372c3b110b383c5cd7072edf3f007686451551511426d19636e092a3:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5NjZmYmZhODg5OThkYTc0NjU2YzUwMTk0OTU2YzI1ZjA4NDk0NTc2NjBjMDA5ZmU2M2QxZTlmYTlkYzkzMWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiOTU2MzYxOGE5MjViZDA1NzI0NzU3OGI1NWQyNDJiMjdjZmM3YjQ2MzgyOWFjNzA3ZTFiNmFjNzRjOTEyMWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZkNmQ0OGUwMGZjZGI4NTdhNDY0NThkMTU0NjMwNDZhYjg3NzZhZDU1YjQ0ZmQzYjY4NThkZWUxNWVjZTdmNjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFkYmVlM2QwMGU5NjNiZTdjM2RhM2JiYzgwMzQwYTMxMWVkNDViNGI5MjEzNzNlZDdmNjA3YjI4ZDY4ZThkNGMifQ"
         }
       ]
     },
     {
       "id": "claim_98134a3e23e14f959b9461ed830590d5",
-      "statement": "The invitation system in BillingAccount.tsx shows pending invitations with email, role, creation date, expiry status, and a resend button; resend cooldowns are tracked client-side via resendCooldownsRef with a 5-minute interval enforced by canResend().",
+      "statement": "The invitation system in BillingAccount.tsx shows pending invitations with email, role, creation date, expiry status, and a resend button. Resend cooldowns count down from each invitation's last send time (seeded from createdAt via withLastSends, updated to the click time on successful resend) — not from the user's click — with RESEND_COOLDOWN_MS of 5 minutes enforced by canResend() and a 30-second now interval. A refused resend surfaces the service's own reason in a dismissible error alert; success shows a dismissible success alert naming the address.",
       "evidence": [
         {
-          "resource": "repo://src/pages/billing/detail/BillingAccount.tsx#L293-L331",
-          "version": "repo-lines-v1:sha256:3a03d6bc32ac35b22f9a3c55557ec68124d6f14b2f644d174892ef460e3122b8:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIzNTc5YmQwZWNmMDdjYzdmZTliZDgxZmVjNjg2MTRlNTMxMzIxY2RlOGZjYzBlMTczOWYxNDVlNjk3YmEyNjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc0MjBkNjYxODhlOWMzYzdmOWMxZGEwN2U2ODVlZDVjNDM1YjQwYmQyNmU0OTY4MjgxODc0ZjRhZDhlYjdkNzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZkNmZmYzE4MjQ0N2ZkNjU1OWVmYzExZjdmMGNiMmRjODgyZmVjMWJlZWU1M2Q2MzdhODViNmU5Mjc1OGQ1ZTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQwNWU3N2I4MTI4MDQ2YWQzYmIyOTZhMTMxZThmMWY4NmEyZjJkZTcyOTQzZjBkYjA1ZGMyMmY0MGYwMDA3MzMifQ"
+          "resource": "repo://src/pages/billing/detail/BillingAccount.tsx#L139-L155",
+          "version": "repo-lines-v1:sha256:70f24a4bd391331761bf815e75f9c9a2b613d2c1a1d2239f7bae91f81ea10043:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2MjYxODVhMTk1MDQzOWUzM2QzYTRiZTAwNDU0NDIxZGNjYTI1MzdiMGQ0NDEyMjQ5NTdiNjNmYjRmZjA5ZjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRjYzI1ZjQzY2Q3M2QxM2Q5MWUxNjY3ODNlMDFkMjg0MDZhY2RiY2UwMmNhNDAwZTMzN2IzYmVmZDBhM2UwYWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUzODAzNzkwMzA1Yjk2ZjQwYTkwYjUxMzVjYTE5OWYxMTViMzdlOWJkMGMyMGM1ZDQ2YzhmY2MyMTAyYWQxOTYifQ"
         },
         {
-          "resource": "repo://src/pages/billing/detail/BillingAccount.tsx#L81-L85",
-          "version": "repo-lines-v1:sha256:a0b8286f1a221e929c34aebbac749023b5c0ebbb5bc137b827aa29c5d5095045:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDcyMDQ2MWJjYTIzZGQwZjMzY2NjZDZhM2MxMDY3MTI5MGI5Y2FjODdjMTFmNTkwMzM5NDNkNTEzZDQ4ZjIyZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDJhMmNiMjVhMTIyYjQ0MjIxYTYyMzRlYzY2MGE3YjVmYjdmOWJkZTdiM2I5ZTJiM2M1NTlhMGQ5NmZhYzczOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTY2OWUzZWY4OGQ3N2JiMGIyNzhiMjc1MTk1MjhiOWE0NTg5MGMwYjFkMTE5ZjllMTY5ZWYxNzgxMmQ1ZDhkOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzY4Zjg3NDAyYjZjMWQxMzVmZGVjNDEzYTY3OGFmOGQ2ZTM2MjUzMjM1ZGUxM2VhNjAwNTJlMjgyYTYyZTNhOCJ9"
+          "resource": "repo://src/pages/billing/detail/BillingAccount.tsx#L304-L341",
+          "version": "repo-lines-v1:sha256:8885a17c166f46563b5b259579d39ad279e73257d87ea67e02ad2063ea617c85:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIzNTc5YmQwZWNmMDdjYzdmZTliZDgxZmVjNjg2MTRlNTMxMzIxY2RlOGZjYzBlMTczOWYxNDVlNjk3YmEyNjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjljYjgyNTBiMWYzNTE0ZmRiYzM5MDFmNGRkMmMyNmQ4ZDM0M2M2OTc5ZWQxZjg2NzE0NmQ1ZWQ1YzdkZTVmZjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZkNmZmYzE4MjQ0N2ZkNjU1OWVmYzExZjdmMGNiMmRjODgyZmVjMWJlZWU1M2Q2MzdhODViNmU5Mjc1OGQ1ZTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNiZWNlNWM0NzhlNDg3YjgzYzIxYjFmMTdmZTgyYTQ2MjljOTgyZjQ4MjEyODdiZjgxYzJkZTZhZTk1YTRjMjEifQ"
         },
         {
-          "resource": "repo://src/pages/billing/detail/BillingAccount.tsx#L8-L9",
-          "version": "repo-lines-v1:sha256:a878b3c3b8b52c2dd4bc8185332959e9dc43487e23ad9fb3a0bfc9acecee544d:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWM0Yjc2NjQ3OGVhZWQwMzBiNzM0ZjIwMGU3ZGYwMzAzYWMyODY5MTZhMzljNzc0MGFkNDBhOGY0M2JjZWJmZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzM1ODFkNDZiMWVhMzBhNmM2ZGRlM2Q1MWE3ZDhlOTZhYzEyMGQxZmE2ODlmYTkxODExNWJjNTk4ZDViOTE3NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDVjZGY2ZDExM2FiYWEzOGVlZjk5YjUwMTE0ZGExZjZlM2MzZDQ1YWRiYjU2N2VhMjlhOTBjZmYwMTQ2NDc3OCJ9"
+          "resource": "repo://src/pages/billing/detail/BillingAccount.tsx#L31-L32",
+          "version": "repo-lines-v1:sha256:6eb926282c0a56103219305578fcb32050a7f467e1239b42875e937c6bcd1c41:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2VhNWMzNGViNmY4YWFiNzBhOTI3Y2U2YWNjNzZkMDA4OTc3Y2UyNWUwZDczNmQzOTgxMmFmMDMzNDhhNWM5MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDFkMmRiZTIzMTZhYThkNGI1NjI1NjE0ZjUzZThmN2E0ZjYyZjRkNmM3Njc1MDExMzI5ZjIzZmM4MTcyYjc2MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjdiM2Y4MzZiYWM5NzJmNWQyMDUwZjhlMmQ0NTJiMjg5OWI0MGM0MGMzODYwY2E5YzhiMmFkMjJhZWNlZTAwNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjNjYzY2MGY3Y2MyYWYwY2YxNTIwMjk1YTcxNmIwZjBhNzg1ZmRhMzI3Y2I1ZWYwM2FiZWFlZjdlZmZkOGE2ZCJ9"
+        },
+        {
+          "resource": "repo://src/pages/billing/detail/BillingAccount.tsx#L409-L417",
+          "version": "repo-lines-v1:sha256:e183b999a9a0d476dbfb5bd228f0d68c412def1c3c7dd061a8a3bac5647764b5:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzMyM2Y1NGEwMmFkMGE4OGZiNWQ2Yzg5YTE2Y2YzYjRjMjZiZjExZmNmNDU5YWQwZjM3YWFhN2ZjMjU4YTk1ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDk0ZmMwYzE3M2QxZWMzZmM1MDFkN2RmYTkyODU1MDFjNTI3Y2ZiNDcxMjU4M2RhM2NjMzYxODA1NjZiNGJlMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://src/pages/billing/detail/BillingAccount.tsx#L54-L57",
+          "version": "repo-lines-v1:sha256:f3b52e02df07e8b00fa20f2210720fb513a96e7140da06f392fed3f993981a13:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTk2NmZiZmE4ODk5OGRhNzQ2NTZjNTAxOTQ5NTZjMjVmMDg0OTQ1NzY2MGMwMDlmZTYzZDFlOWZhOWRjOTMxYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmRjNTJmMDhiMzliMDhiMDFjOGQzMDhiZjg4MGIwYmVmMDJmZDFkZmNjOWQ5YWE5M2E0ZDFiNWY0ZDU4YjZjYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDFiMTAwNWRmYzRjYjYyYjAxMzY0NGI4ODVkMGZkZTQ1MmRhYzdmODkxOTg4YTVhNTQ4NDViYjA1Mjg3NTc5NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTgyYzU5YzE5ZWJhMmFhZWNiNjBkM2U2NGI0ZTE2MWY3NzFkZTQzYTU1OTE1NWM1YWVmZDRkYTMyMmE4Mjk2NyJ9"
+        },
+        {
+          "resource": "repo://src/pages/billing/detail/BillingAccount.tsx#L8-L8",
+          "version": "repo-lines-v1:sha256:1c4b766478eaed030b734f200e7df0303ac286916a39c7740ad40a8f43bcebff:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWM0Yjc2NjQ3OGVhZWQwMzBiNzM0ZjIwMGU3ZGYwMzAzYWMyODY5MTZhMzljNzc0MGFkNDBhOGY0M2JjZWJmZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWM0Yjc2NjQ3OGVhZWQwMzBiNzM0ZjIwMGU3ZGYwMzAzYWMyODY5MTZhMzljNzc0MGFkNDBhOGY0M2JjZWJmZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzM1ODFkNDZiMWVhMzBhNmM2ZGRlM2Q1MWE3ZDhlOTZhYzEyMGQxZmE2ODlmYTkxODExNWJjNTk4ZDViOTE3NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjYxNGE4Y2Y3YmI4ZGMyYjczYjc1OWZhNjliNjQzMmIxN2RjNjNiM2Y4YjEzOTQyNDM4NDU5NjJmM2IwMmI0OCJ9"
+        },
+        {
+          "resource": "repo://src/pages/billing/detail/BillingAccount.tsx#L89-L102",
+          "version": "repo-lines-v1:sha256:5a2461850970760f7d3e350480d40fbf2a70b0a666e15330910ae35d88a472ec:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3MjA0NjFiY2EyM2RkMGYzM2NjY2Q2YTNjMTA2NzEyOTBiOWNhYzg3YzExZjU5MDMzOTQzZDUxM2Q0OGYyMmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE2NjllM2VmODhkNzdiYjBiMjc4YjI3NTE5NTI4YjlhNDU4OTBjMGIxZDExOWY5ZTE2OWVmMTc4MTJkNWQ4ZDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEyNmNiYmYxOGU4MDJiODFhMzFhYjMwYjNmMzBjZjcwODRlMzdiZjE5ZjliMjQzZmNjNzkzNzZlYTU0ZTZlZDUifQ"
         }
       ]
     },
@@ -93,11 +117,11 @@
       "statement": "Team deletion in BillingAccount.tsx is owner-only, requires confirmation dialog, calls auth.deleteTeam(), reloads teams, and if other teams remain without an active one, switches to the first; the server enforces that no other members remain before allowing deletion.",
       "evidence": [
         {
-          "resource": "repo://src/pages/billing/detail/BillingAccount.tsx#L176-L192",
+          "resource": "repo://src/pages/billing/detail/BillingAccount.tsx#L187-L203",
           "version": "repo-lines-v1:sha256:81afb30b681e2926b2958ecd409bbe199a47568906e81b0a98c00678f6119192:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5YjA3ODU4MWY2MDhkY2U5OGE3ZTBkMmVjODFmOWY0ZWI4NGNlMDU4YmVkZTlhNTVkODM3ODliOGQxYjU4NTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUxZTM3MjVkYTAwMmI0NmVkOGI0ZGU4ODAwM2FkOTcxMGRjYWYxOGQ1N2M0NzAxZGMzYmVmZjBiMmM1Y2IxM2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ3NWU1NGM2ZDg3NmUwYTRhMjJhMzdkNmFjNWYwOTFhNmVhNjdmZmMzYWI1NjNkMzEwNzhiZWZmMWExM2UxNDkifQ"
         },
         {
-          "resource": "repo://src/pages/billing/detail/BillingAccount.tsx#L368-L387",
+          "resource": "repo://src/pages/billing/detail/BillingAccount.tsx#L382-L401",
           "version": "repo-lines-v1:sha256:2ab1977840ec7deb9d171aa52bf5a04487779532c61f1455232fc01482d54104:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmM2EwZWU2MmJmNWY2NDIwZTA3NjE0MDFiZTdiZTFhODk1ODQ2Nzk1NzliOGViNzA1YmYzOGZmYWExNTEyNmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ5OTAwNTlmNDhjYTU2ZjZiNTBmZGM2OWExNWM3YjdlNjMzY2MxZTEzNjA4ZGFhNTBlZDkyM2JlYjBmNjM2ZmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFhMmYzYzBkNDcyZGU5MTc2YzA3NWFjYzNkN2M0ZDc1YzhjNDU1OWYxZjBkMDIwMjBlYzlhNTcyYTI1YTI4YjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJjNzBkZTZlZmFiODRkOTYyY2E2NWY5Y2NmZTM4ZWQyN2Q5YjI4ZTZkZDIyMTk1ZjZkNGQ5MGZjOGIxMGUzOWUifQ"
         }
       ]
@@ -218,7 +242,7 @@
     }
   ],
   "verification": {
-    "by": "openwiki/0.7.2",
-    "at": "2026-10-20T08:19:28.862Z"
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-05T15:27:38.405Z"
   }
 }
