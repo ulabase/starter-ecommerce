@@ -90,27 +90,23 @@ export default function Product() {
     setItem(null);
     setError(null);
 
-    // One product, asked for as a catalog of one.
+    // One product, read by id under the same permission as the list.
     //
-    // The kit reads the catalog as a list, and there is no separate call for a
-    // single document — which turns out to suit a shop. Fetching `/catalog/{id}`
-    // tells a withdrawn product apart from a hidden one, by answering 404 or
-    // 403, and a shopper should be told the same thing either way: this is not
-    // for sale. An empty list says exactly that and nothing more.
+    // `/catalog/{id}` tells a withdrawn product apart from a hidden one, by
+    // answering 404 or 403, and a shopper should be told the same thing either
+    // way: this is not for sale.
     payments
-      .getCatalog({
-        collection: environment.catalogCollection,
-        filter: { _id: id },
-        pagesize: 1,
+      .getCatalogItem(id, environment.catalogCollection)
+      .then(doc => {
+        if (!cancelled) setItem(doc as ShopItem);
       })
-      .then(docs => {
+      .catch((err: { status?: number; message?: string }) => {
         if (cancelled) return;
-        const doc = (docs as ShopItem[])[0];
-        if (doc) setItem(doc);
-        else setError('That product is not in the catalog. It may have been withdrawn.');
-      })
-      .catch((err: { message?: string }) => {
-        if (!cancelled) setError(err.message ?? 'Could not load the product.');
+        setError(
+          err.status === 404 || err.status === 403
+            ? 'That product is not in the catalog. It may have been withdrawn.'
+            : (err.message ?? 'Could not load the product.')
+        );
       });
 
     return () => {
@@ -143,9 +139,8 @@ export default function Product() {
     payments
       .getCatalog({
         collection: environment.catalogCollection,
-        filter: { category: item.category, _id: { $ne: item._id } },
-        pagesize: 4,
-        sort: 'name',
+        aggregation: environment.catalogAggregation,
+        vars: { category: item.category, exclude: item._id, max: 4 },
       })
       .then(docs => {
         if (!cancelled) setRelated(docs as ShopItem[]);

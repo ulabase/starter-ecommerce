@@ -179,9 +179,13 @@ export default function Shop() {
    * guest and a customer, and the query parameters stop being this page's
    * spelling problem.
    *
-   * What comes back is still the ACL's decision: the permission carries a
-   * readFilter, so products that are not for sale never reach the client
-   * whatever this asks for.
+   * With no category and no search, the plain list: the permission's
+   * readFilter already keeps only what is for sale. With either, the catalog's
+   * aggregation does the narrowing (`ulabase.setup.ts`): the service takes no
+   * ?filter= of the client's own, so this sends only values, and the
+   * pipeline's first stage keeps only what is for sale. Both come in the same
+   * order, the newest id first, so picking a category does not reshuffle the
+   * shop, and the paging is honest: a page is the same page every time.
    */
   useEffect(() => {
     let cancelled = false;
@@ -196,33 +200,32 @@ export default function Shop() {
       setError(null);
     }
 
-    const conditions: Record<string, unknown>[] = [];
-    if (q.category) conditions.push({ category: q.category });
-    // Anchored on neither end: "mug" should find "Enamel mug". `$options: 'i'`
-    // rather than lower-casing the field, which would need an index we do not
-    // control from here.
-    if (q.search) conditions.push({ name: { $regex: escapeRegex(q.search), $options: 'i' } });
-
-    // Sorted, and by name.
-    //
-    // Unsorted meant whatever order the server chose — which came back roughly
-    // Z to A and looked deliberate, because any consistent order does. It also
-    // makes the paging honest: without a sort, "page 2" is only well defined by
-    // luck, and an item can appear on two pages or on none as documents move.
+    // The search is a pattern anchored on neither end, "mug" finds "Enamel mug",
+    // matched without case by the pipeline; escaped here, so what is typed is
+    // text and never a pattern.
     // On a restore the first request covers pages 1..N at once — a scroll of four thousand
     // pixels applied to a freshly loaded first page lands on nothing. Afterwards it is one page
     // at a time as usual, and `page` N+1 with the normal size is exactly the next slice.
     const restoreAll = restoring.current && items === null;
 
+    const page = restoreAll ? 1 : q.page;
+    const pagesize = restoreAll ? PAGE_SIZE * q.page : PAGE_SIZE;
+    const request =
+      q.category || q.search
+        ? {
+            collection: environment.catalogCollection,
+            aggregation: environment.catalogAggregation,
+            vars: {
+              offset: (page - 1) * pagesize,
+              max: pagesize,
+              ...(q.category ? { category: q.category } : {}),
+              ...(q.search ? { q: escapeRegex(q.search) } : {}),
+            },
+          }
+        : { collection: environment.catalogCollection, page, pagesize };
+
     payments
-      .getCatalog({
-        collection: environment.catalogCollection,
-        page: restoreAll ? 1 : q.page,
-        pagesize: restoreAll ? PAGE_SIZE * q.page : PAGE_SIZE,
-        sort: 'name',
-        ...(conditions.length === 1 ? { filter: conditions[0] } : {}),
-        ...(conditions.length > 1 ? { filter: { $and: conditions } } : {}),
-      })
+      .getCatalog(request)
       .then(catalog => catalog as ShopItem[])
       .then((catalog: ShopItem[]) => {
         if (cancelled) return;

@@ -156,11 +156,13 @@ export default function Orders() {
     }
 
     let cancelled = false;
-    // Newest first. The ACL decides which documents come back — the permission
-    // carries a readFilter on the billing account, so this asks for "all
-    // orders" and is answered with the caller's.
+    // Newest first, which is the collection's default order, `_id` descending:
+    // no ?sort=, which the service takes only from a permission with
+    // `mongo.allowFilter`. The ACL decides which documents come back — the
+    // permission carries a readFilter on the billing account, so this asks for
+    // "all orders" and is answered with the caller's.
     auth
-      .api(`/${environment.catalogOrdersCollection}?sort=-_id&pagesize=25`)
+      .api(`/${environment.catalogOrdersCollection}?pagesize=25`)
       .then(res => res.json())
       .then((docs: ShopOrder[]) => {
         if (!cancelled) setOrders(docs);

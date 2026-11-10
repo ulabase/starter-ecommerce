@@ -13,6 +13,11 @@ export const environment = {
    */
   catalogCollection: 'catalog',
   catalogOrdersCollection: 'orders',
+  /**
+   * The aggregation the shop reads its catalog through, declared on the
+   * catalog collection by `ulabase.setup.ts`: the service takes no ?filter=.
+   */
+  catalogAggregation: 'shop',
 
   features: {
     emailRegistration: true,

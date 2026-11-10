@@ -68,6 +68,67 @@ const SHOPPERS = ['$unauthenticated', 'user'];
 const CATALOG = 'catalog';
 const ORDERS = 'orders';
 
+/**
+ * What is for sale: the condition of the catalog's permission and of its aggregation.
+ *
+ * Two shapes qualify. A product with variants carries no top-level
+ * `purchasable`, the flag is on each variant, because that is where the
+ * decision belongs: `{ purchasable: true }` alone hid every one of them, and
+ * the shop showed a catalogue with the T-shirts silently missing. `$ne: false`
+ * rather than `true` on the variant, because the server reads an omitted
+ * `purchasable` as yes: a filter stricter than the rule the checkout applies
+ * hides things it would happily sell.
+ */
+const FOR_SALE = {
+  $or: [
+    { purchasable: true },
+    { variants: { $elemMatch: { purchasable: { $ne: false } } } },
+  ],
+};
+
+/** The name of the catalog's aggregation, the one the shop calls. */
+const SHOP = environment.catalogAggregation;
+
+/**
+ * The shop's reads of the catalog: the list, one product by id, both under the
+ * permission's readFilter, and the aggregation for a category or a search.
+ */
+const CATALOG_PREDICATE = `(path('/${CATALOG}') or path('/${CATALOG}/_aggrs/${SHOP}') or path-template('/${CATALOG}/{docid}')) and method(GET)`;
+
+/**
+ * How the shop reads its catalog when the shopper picks a criterion:
+ * `GET /catalog/_aggrs/shop`. The list with no criterion and one product by id
+ * need no aggregation: the permission's readFilter already says what is for
+ * sale.
+ *
+ * Not `?filter=`: the service nodes take no query of the client's own unless a
+ * permission sets `mongo.allowFilter`, because a free query also questions the
+ * fields a permission hides. The aggregation is the query, written here once;
+ * the shop sends only values, one query parameter each, in JSON.
+ *
+ * Its first stage is `FOR_SALE`, and it has to be: a permission's `readFilter`
+ * does not apply to an aggregation. Every other stage is optional, present
+ * when its variable is: a category, the related products (`exclude` the one
+ * open), a search on the name (`q`, already escaped as a pattern). Sorted as
+ * the plain list is, `_id` descending, RESTHeart's default, so that picking a
+ * category does not reshuffle the shop. `offset` and `max` page it, while
+ * `@skip` and `@limit` are not bound in RESTHeart (#808); no page is longer
+ * than a thousand, which is what a restored scroll asks for at most.
+ */
+const SHOP_AGGREGATION = {
+  uri: SHOP,
+  stages: [
+    { $match: FOR_SALE },
+    { $ifvar: ['category', { $match: { category: { $var: 'category' } } }] },
+    { $ifvar: ['exclude', { $match: { _id: { $ne: { $var: 'exclude' } } } }] },
+    { $ifvar: ['q', { $match: { name: { $regex: { $var: 'q' }, $options: 'i' } } }] },
+    { $sort: { _id: -1 } },
+    { $skip: { $var: ['offset', 0] } },
+    { $limit: { $var: ['max', 24] } },
+    { $limit: 1000 },
+  ],
+};
+
 const origin = APP_ORIGIN.replace(/\/$/, '');
 
 // Stripe substitutes only {CHECKOUT_SESSION_ID}; RESTHeart also
@@ -365,6 +426,20 @@ const permissionGrants = async (service: ServiceClient, id: string, roles: strin
   }
 };
 
+/**
+ * The aggregations declared on the catalog. A collection with no properties yet, as the stripe
+ * initializer leaves it, answers `GET /catalog/_meta` with 404: none, then.
+ */
+const catalogAggregations = async (service: ServiceClient): Promise<{ uri?: string }[]> => {
+  try {
+    const res = await service.fetch(`/${CATALOG}/_meta`);
+    return ((await res.json()) as { aggrs?: { uri?: string }[] }).aggrs ?? [];
+  } catch (err) {
+    if (isApiError(err) && err.status === 404) return [];
+    throw err;
+  }
+};
+
 const install = async (admin: AdminClient, srvId: string, featureId: string) => {
   try {
     await admin.installFeature(srvId, featureId);
@@ -477,35 +552,43 @@ export default defineSetup('Ecommerce', [
     apply: ({ admin, srvId }) => admin.initFeature(srvId, 'stripe', 'products'),
   }),
 
+  step('the catalog answers through its aggregation', {
+    // After the stripe initializer, which creates the collection. Compared in
+    // full, so a pipeline changed here reaches a service set up before; the
+    // other aggregations of the catalog, if the shop's owner added any, stay.
+    async check({ service }) {
+      const current = (await catalogAggregations(service)).find(a => a.uri === SHOP);
+      return JSON.stringify(current) === JSON.stringify(SHOP_AGGREGATION);
+    },
+    async apply({ service }) {
+      const aggrs = await catalogAggregations(service);
+      await service.fetch(`/${CATALOG}`, {
+        method: 'PATCH',
+        body: JSON.stringify({ aggrs: [...aggrs.filter(a => a.uri !== SHOP), SHOP_AGGREGATION] }),
+      });
+    },
+  }),
+
   step('anyone may read the catalog', {
     // Missing, this shows up as an empty shop with no error — which is why the
-    // README had to warn about it in the first place.
-    check: ({ service }) => permissionGrants(service, 'catalog-read-anon', SHOPPERS),
+    // README had to warn about it in the first place. The predicate is
+    // compared too: a service set up before did not grant the aggregation.
+    async check({ service }) {
+      if (!(await permissionGrants(service, 'catalog-read-anon', SHOPPERS))) return false;
+      const res = await service.fetch('/acl/catalog-read-anon');
+      return ((await res.json()) as { predicate?: string }).predicate === CATALOG_PREDICATE;
+    },
     apply: ({ service }) =>
       service.putPermission('catalog-read-anon', {
-        predicate: `(path(/${CATALOG}) or path-template('/${CATALOG}/{docid}')) and method(GET)`,
+        predicate: CATALOG_PREDICATE,
         roles: SHOPPERS,
         priority: 100,
         // Only what is for sale. A catalog document is public the moment this
         // rule exists, so a draft product must not be readable by omission.
-        //
-        // Two shapes qualify, and the filter used to know only one. A product
-        // with variants carries no top-level `purchasable` — the flag is on
-        // each variant, because that is where the decision belongs — so
-        // `{ purchasable: true }` alone hid every one of them, and the shop
-        // showed a catalogue with the T-shirts silently missing.
-        //
-        // `$ne: false` rather than `true` on the variant, because the server
-        // reads an omitted `purchasable` as yes: a filter stricter than the
-        // rule the checkout applies hides things it would happily sell.
-        mongo: {
-          readFilter: {
-            $or: [
-              { purchasable: true },
-              { variants: { $elemMatch: { purchasable: { $ne: false } } } },
-            ],
-          },
-        },
+        // The readFilter guards the list and the document; the aggregation
+        // carries the same condition as its first stage, since a readFilter
+        // does not apply to it.
+        mongo: { readFilter: FOR_SALE },
       }),
   }),
 

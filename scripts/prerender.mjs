@@ -38,11 +38,15 @@ if (!API || !SITE) {
   process.exit(0);
 }
 
-/** Everything the ACL lets an anonymous reader see, which is everything a crawler should. */
+/**
+ * Everything the ACL lets an anonymous reader see, which is everything a crawler should. In the
+ * collection's default order, `_id` descending, which is stable enough to page: the service takes
+ * no ?sort= of the client's own unless a permission sets `mongo.allowFilter`.
+ */
 async function catalog() {
   const items = [];
   for (let page = 1; ; page++) {
-    const res = await fetch(`${API}/${COLLECTION}?page=${page}&pagesize=100&sort=name`);
+    const res = await fetch(`${API}/${COLLECTION}?page=${page}&pagesize=100`);
     if (!res.ok) {
       throw new Error(`GET /${COLLECTION} answered ${res.status}`);
     }
