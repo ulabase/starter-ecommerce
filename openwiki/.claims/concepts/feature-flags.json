@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:e6ba8115ec7d36468539ef31e008de05dad9b9f0e08ba57c739c878da0e356d2",
+  "pageVersion": "sha256:dd01cb6d2de3fbeb9590a5c9708699d9d2b460533f9ebb16998d703547e9662f",
   "claims": [
     {
       "id": "claim_36777a266b5f46efa20fd82cd50b6ace",
-      "statement": "The environment.ts file exports an environment object containing apiUrl, catalogCollection, catalogOrdersCollection, and a features block with boolean flags for emailRegistration, passwordReset, oauthLogin, and teamInvitations.",
+      "statement": "The environment.ts file exports an environment object containing apiUrl, catalogCollection, catalogOrdersCollection, catalogAggregation, and a features block with flags for emailRegistration, passwordReset, oauthLogin, oauthProviders, and teamInvitations.",
       "evidence": [
         {
-          "resource": "repo://src/environments/environment.ts#L1-L24",
-          "version": "repo-lines-v1:sha256:9d363d296d49459fa9e675f684dad49fdae0bed0f32bf0c94170742a3c5885cb:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzMjM4ZDEyYjRkZGZlOTg2NmI3N2M0ZTc4ZWU3NWI4Y2QzZjhlZmM2MjZiMTI2ZmY0NzM2OTU1NGZlY2NlOTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhMWQxYTYzMzkwMjI5Yzc5ODM0N2U4M2EwNDA1NDQxYzk0MDAwMzUyODRhZDE2OGMxYmY2Y2RmMWQ3MGEzNzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+          "resource": "repo://src/environments/environment.ts#L1-L29",
+          "version": "repo-lines-v1:sha256:4df12c2d3f70146ea672a410abb4ed6823950a49a7c29bf75f1b47470e37b0c2:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzMjM4ZDEyYjRkZGZlOTg2NmI3N2M0ZTc4ZWU3NWI4Y2QzZjhlZmM2MjZiMTI2ZmY0NzM2OTU1NGZlY2NlOTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhMWQxYTYzMzkwMjI5Yzc5ODM0N2U4M2EwNDA1NDQxYzk0MDAwMzUyODRhZDE2OGMxYmY2Y2RmMWQ3MGEzNzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
         }
       ]
     },
@@ -31,7 +31,7 @@
       "statement": "apiUrl must point to the tenant service (https://<id>.ulabase.app), NOT https://api.ulabase.com (the admin node), because the admin node serves no tenant collections.",
       "evidence": [
         {
-          "resource": "repo://README.md#L142-L143",
+          "resource": "repo://README.md#L144-L145",
           "version": "repo-lines-v1:sha256:e0bb488f36fa3b23453e9eaddc4d5d9e25f7f414a8f5d9491692bef1fab88704:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmNlNTVjYjQ2ZDI1MGUyNDFkNzIwMmMzNjA1NTRkYTQ3ZmM4Y2NiYWU3NjRlNTA5ZmYzYWI5ZTAyMWIxMDc0OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWQ2NGVhOTc0OWE0OWMwNmY5NjNjMTE5ZGNkZTk4NzFlMmRlYjVmNTE0OGYzYjQ3ZWZhYmE3M2ZmNTIyNTZmMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTIwMDVhODViODFjMjdhMmI2MmQ2OWJjOWIwODVkZWI3NzI4MTFiYmVlMjNiM2JhM2I1MTk3YjgzNTM0ZGNiMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGUyMGUxZDc5ZjVmY2ZjZjcxNTEyMDEzOGRiN2M5ZTZlZjg3NzMwMTE4NWQyMThiYWU2MmExMTU2YTdkNTkxNCJ9"
         },
         {
@@ -83,10 +83,56 @@
           "version": "repo-lines-v1:sha256:51cdd605ace508fcf44ec2eab01cb3d43c6ccc8316b07e3aac802f9eb8812a46:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGYyYTJmOTk2ZjA4ZTY4MGJkMjkyMTM1YTZmYTQ5NzhiZGEyNmU2MDJkODRmMzNjYjFkNTk0Nzc1ZDQzMDRiNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWU3MTEyN2Y3ZjVmMTcxN2I5NmU3ZTk3NjkwYTdkMTgxYTUwNzIzN2ZjYWQxODg0MGJiYjA5MzQwMjJhOTIwYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGI3YzI1YjkwNDYzNTFiNDc4ZTBhYzI5ZjY5YTU3NTY0YWZlNDY4N2JjY2FlYjc1NTlhZDA4YTkwZDIxMjM3MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzBlMDQ1YzUwZjBlY2Y5ZDQ2NDg3NmIwYTJhM2NiZWEzMDg4Y2ZmMTRlZDFjMzIzZTg2YTdjY2JiNjk4ZmY3ZSJ9"
         }
       ]
+    },
+    {
+      "id": "claim_702eb66ddc1a4b7f9c90f63073e64b61",
+      "statement": "catalogAggregation names the aggregation the shop reads its catalog through; shop pages pass it to the kit catalog APIs alongside catalogCollection, and ulabase.setup.ts declares the matching aggregation on the catalog collection because the service takes no ?filter= query of the client's own.",
+      "evidence": [
+        {
+          "resource": "repo://src/environments/environment.ts#L14-L20",
+          "version": "repo-lines-v1:sha256:e23ec29b581e6c7d5a2abc7238acd599576618604ca504d89c95c9e00032d618:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGE5YTdiOTgwYTY1MTY5NmFkNDg1ZDM0MzE2NjFhYzRmMGVmNDdiNzRhMDdjYzc3NGI5Zjk5N2ZmMzNlMTdmMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWY5MDFmZDM0OTYxOWJkZjM1N2EwNGNlYWNiNGMxMDgxNzgwYzcyZDRkMDQ5YjQ2M2ZjZGEyYzc5NGE3Y2Y4NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzM4ODdmMmEyZjY2MzczZGE0NGViNDI5NjU3YmI3OWY1NTA5NDRjMGMwMTRkNzU1Y2U0MWI5YWJiMDQ3N2Y1NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWNkNmQ4NmUwZjk5NDA5YjdlZDc1Nzg2YmI5MjMwNDY4ZmYzMzJmYjk4ZGY0YzYxYjUyZWE1ZmUwMTNlZDFhZCJ9"
+        },
+        {
+          "resource": "repo://src/pages/shop/Product.tsx#L141-L142",
+          "version": "repo-lines-v1:sha256:4a05765cac2349061e68025f71534d2c003eb998713e8582cff0a589e0b7665d:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWU2ZmJkMjIwMjRiNzMyNWNjNjVjNjBlZDc2ZjljNzk1NTVlZTllNTg4NDViZjBjNWExNzdlZjM3MWFiZDliNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzgxOTFmN2UzNzA1ZmEyYjg1ZWZiOWQwMTcyNmFmODAyYTZjYTI5NWYwOGZiOGY2YmE5YWM2NmI5YTVlN2U1ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2I2MzAyZDgzY2VkNzc4ZWU4ZWQ5NDAxYTdlOWI1YjQ4MzI2NzUyYjZiYTBkOWVkY2M5Mjc1NzMxYWU2Y2I3ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWU1Y2E2OWE2OWE3YTQyYWQyNmNiYjQyOGVlNWEzODNlZmQ4ZDE4ODUwODM4YWM0Zjg4Y2M1MTM3MWI5N2RhNCJ9"
+        },
+        {
+          "resource": "repo://src/pages/shop/Shop.tsx#L216-L225",
+          "version": "repo-lines-v1:sha256:d26e694220480db60f1b14a5715f62ea6f252cf2bfb247c8a839fccd1080c343:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMyYmVjODdmZWJkYzU0OTBjMDEzNzNiODE1ZmI5Mzg3YjE3MGM5ZWJiY2NhZTZkZDEwY2NlMWNkMGQ1Mjg2ZmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhmYjUwN2VlNmMxODIyMDYwZTM3MjgzOTE3NWVlYjAzZmVmZWQ5ZjJkMDY3MWQxZjQ3MmZjN2JjYjk1YWRjNzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjliMmNkMDhmMmMxMGQ2OWFjYzc5MTlhNDYxMDI2YzhlMGZjNDE1ZTEyMmY1N2Q1MmFlNjZmNmMxMTc5ZTNhNmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA1YTBlMGZhYzNlOTE4ZWRkNmI1ZTE5NmQ1MWE0M2FiM2IxZTI2NzI2ZmZkMDdkNWMzNmQwMjI4OGFhZTllNWYifQ"
+        },
+        {
+          "resource": "repo://ulabase.setup.ts#L90-L95",
+          "version": "repo-lines-v1:sha256:76430ad3960ff8cc0ffc669d4d67ccb0a3026bac3fb3f4fdba9d633e991b13e1:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2QxMzY2NzE3ZGZhMDMzZWUwOTAyNTViNWVmOTBhZTNiNjQxOTA5MmFkMTZiNzg5OGFiNDUwZTUwMWM3NDE5MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTcyYTQyOTM4MmIyZTE0NzE4ZTBlMzdiMDU3MGE4YTE3MDI5OTFmY2Q4NDk4Y2Q4NDA2MGE4YmY0ZjA1MDE3YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODlhZTU1N2YwNzc5N2JlODczZDhhZGY4MDk4YWFmNzE3M2NmNDU1NzM0NDJlMjMxYjVlNDQxMjE3YjAzZjA5ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDFlNmY0YjBhNWY5YzE4M2IxNzk4NDA5MTk4MzRiMzc5NGI3MTNiZTc4ZTZkOTcyNTYxMTU0NzE4ODAwMWJiMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_8b833c01a15047199b31013ee914c2fc",
+      "statement": "ulabase.setup.ts derives the server's accounts feature toggles from environment.features — registration and verification from emailRegistration, password-reset from passwordReset, invitations from teamInvitations, and oauth from oauthLogin — and writes them into the service's accounts feature config during setup.",
+      "evidence": [
+        {
+          "resource": "repo://ulabase.setup.ts#L35-L49",
+          "version": "repo-lines-v1:sha256:d208b5eefe6d7e1de3fd48d176cca65774a413cb8b7ae3bf81eddf3b94f015ec:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3MGU0ZDk0MmJkYjRkYzg4Y2ZmNzFjM2ZjZTQ5YWM1MDliYTg5MTQzMmU1NWE2YWI2MTAzYmEwYzYxMWQ1NzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhMWQxYTYzMzkwMjI5Yzc5ODM0N2U4M2EwNDA1NDQxYzk0MDAwMzUyODRhZDE2OGMxYmY2Y2RmMWQ3MGEzNzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFjMDZkZDc1N2IwMmQ0ZjBlYzAxOTA1YTE1Mzg1NzE2YmE1ZjlmYmUxNGFlYjYzNzZmZDZiM2E2MmNmNWI0NzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRiZmZmZmQwYTU2YmE5NTg3ZTgwM2I2YTU2NjA2NjBjODgyNWJhOWRkODRlMzIzZjc0MDFlMjZmZmM1NzU2ZWIifQ"
+        },
+        {
+          "resource": "repo://ulabase.setup.ts#L713-L736",
+          "version": "repo-lines-v1:sha256:d316d61c99a605f1efb966ec511248b6d56492e9acc82e07bf5064e4576ae1a7:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlMjI4ODAxYzU5ODQ2ZTg3MTVjMjJhMWQ4Y2I3NmM3OGUwODFmYjk3ZDlmYTk1YjQwODUyOWU2NmE3ODk4YzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhYjgzNzQ3YTFhMDVhMDJlNTY1OGNiYjJjMjNkMGQ5OTAwMDdlMWViMDEwMzRiODFlMTZlNDExZmI0MjEzN2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI2M2YxNzI4MDZlNTI5NjUxOWNiNzc5MTc4OTE4ODViYjNkZGQxZjU1YWJlMGYzMjRmMmM0NmQ2ZDQzYzJkMDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcwMWI1NDVhMGRiMTNkYjkyNzdiNzMwZWE1NTAzYTU2ZTYwMzA1MzVkMTI4ZWZmZDMyYzYyNjM3ODE4MGIwMzIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c854cada690b43a7ae299cb27b6c8c59",
+      "statement": "When oauthLogin is enabled and oauthProviders includes google, ulabase.setup.ts additionally checks and applies Google OAuth client credentials on the service; a server with OAuth enabled but no credentials answers the OAuth redirect with an error.",
+      "evidence": [
+        {
+          "resource": "repo://ulabase.setup.ts#L745-L780",
+          "version": "repo-lines-v1:sha256:8f2a61eb6769e596f894a4ccda7976bac00cf88b82f07d29f507e041d65a0d02:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJmMDMxN2VjODIwZmU3ZjYzNWI1M2RhZTk0NDBkYWEyMTU0ZmQxMDM4OTM4YmM5OTAxMGZkOGVhNTdjMzczODMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUyYzlkYTcwMGM3NjA0ZmRmNjY1MDA2MGNkNzdmMmQwZDU2YTAwNmVmMzljYTNmMTNkMzUxNTQ4ODBhMWI3ZDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA3YTZjMzVlMTVjMzQ5N2U3NDJiYmRmMmRjOThiNjE0ZWI2NDViNmYzYzliZjIyMTczNjg5OTI2NGM0MWFhMDAifQ"
+        }
+      ]
     }
   ],
   "verification": {
-    "by": "openwiki/0.7.2",
-    "at": "2026-10-13T10:18:39.801Z"
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-15T14:45:11.487Z"
   }
 }

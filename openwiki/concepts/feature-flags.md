@@ -4,8 +4,8 @@ title: "Feature Flags and Environment Configuration"
 description: "Explains how environment.ts controls feature availability and how flags gate routes, UI elements, and server-side features."
 tags: ["configuration", "feature-flags", "environment", "routes", "authentication"]
 verified:
-  - by: openwiki/0.7.2
-    at: 2026-10-13T10:18:39.801Z
+  - by: openwiki/0.9.0
+    at: 2026-11-15T14:45:11.487Z
 sources:
   - id: openwiki-source-4e7cd7f381c92e8c5d89f5c1
     resource: repo://NOTES.md
@@ -17,16 +17,20 @@ sources:
     resource: repo://src/ConfigPage.tsx
   - id: openwiki-source-eaae96b81373abab97667f4f
     resource: repo://src/environments/environment.ts
+  - id: openwiki-source-6f3c60c74f4ede9ae7843af8
+    resource: repo://src/pages/shop/Product.tsx
+  - id: openwiki-source-b21d0ca33622d12ef7bc4d82
+    resource: repo://src/pages/shop/Shop.tsx
   - id: openwiki-source-07aa4341cebe71bfc8fd2890
     resource: repo://src/routes.tsx
   - id: openwiki-source-34f568b222540eb11aa44859
     resource: repo://ulabase.setup.ts
-generated: { by: "openwiki/0.7.2", at: "2026-10-13T10:18:39.801Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-15T14:45:11.487Z" }
 ---
 
 # Feature Flags and Environment Configuration
 
-The Ulabase Starter Ecommerce app uses a centralized environment configuration file (`src/environments/environment.ts`) to control which features are available at runtime. This configuration determines the API endpoint, collection names, and which authentication and team management features are enabled.
+The Ulabase Starter Ecommerce app uses a centralized environment configuration file (`src/environments/environment.ts`) to control which features are available at runtime. This configuration determines the API endpoint, collection names, the catalog aggregation, and which authentication and team management features are enabled.
 
 ## Environment Configuration
 
@@ -71,14 +75,17 @@ flowchart TD
 
 *When apiUrl is invalid or empty, the app shows a configuration page instead of the normal application.*
 
-### 2. Collection Names
+### 2. Collection Names and Catalog Aggregation
 
 ```typescript
 catalogCollection: 'catalog',
 catalogOrdersCollection: 'orders',
+catalogAggregation: 'shop',
 ```
 
 These names must match the collection names configured on your Ulabase service. The service uses defaults (`catalog` and `orders`) if not explicitly configured. Collection names are configured per service (`stripeConfig.products.catalog-collection` / `.orders-collection`), and the interceptors match on the *configured* name — so the HTTP path really does change if a deployment renamed them.
+
+`catalogAggregation` names the aggregation the shop reads its catalog through. It is declared on the catalog collection by `ulabase.setup.ts`; the service takes no `?filter=` query of the client's own. The shop pages pass it to the kit's catalog APIs alongside the collection name.
 
 ### 3. Feature Flags
 
@@ -100,7 +107,7 @@ features: {
 - **Purpose**: Enables email/password registration and email verification
 - **Default**: `true`
 - **Routes affected**: `/auth/signup`, `/auth/verify`
-- **UI affected**: Signup links in login page, verification flows
+- **UI affected**: Signup links in login page, the email/password signup form, verification flows
 - **Server requirement**: Must match service's "Sign-up Mgmt → Features → Email Registration" toggle
 
 ### `passwordReset`
@@ -121,6 +128,7 @@ features: {
 ### `oauthProviders`
 - **Purpose**: List of OAuth providers to support
 - **Default**: `['google']`
+- **UI affected**: Rendered by `OAuthButtons` on login and signup pages when `oauthLogin` is enabled
 - **Current limitation**: Only Google is implemented in the starter
 
 ### `teamInvitations`
@@ -214,6 +222,8 @@ Routes are included using JavaScript's spread operator with ternary expressions:
   : []),
 ```
 
+The login and signup pages also read `environment.features` directly to hide their own links and forms — for example the "Forgot password?" and "Create an account" links on login, the email/password form on signup, and the OAuth buttons on both.
+
 ## Server-Client Synchronization
 
 **Critical**: Feature flags in `environment.ts` must match the service's "Sign-up Mgmt → Features" toggles. A mismatch causes silent failures:
@@ -234,6 +244,10 @@ const features = {
   oauth: f.oauthLogin,
 };
 ```
+
+The setup writes this `features` block into the service's `accounts` feature config. `emailRegistration` covers two server flags because offering a signup form without verifying the address is not a mode anyone wants.
+
+When `oauthLogin` is enabled and `oauthProviders` includes `google`, the setup also checks and applies the Google OAuth client credentials (`GOOGLE_CLIENT_ID` / `GOOGLE_CLIENT_SECRET`) on the service. A server with OAuth on and no credentials answers the OAuth redirect with an error, which is worse than not offering the button.
 
 ## Default Configuration
 
@@ -295,6 +309,7 @@ When a feature flag is disabled:
 
 ## Related Documentation
 
-- [Architecture Overview](../architecture/overview.md) - Overall system architecture
-- [Service Setup](./service-setup.md) - How to configure your Ulabase service
-- [Consents Gate](../workflows/consents-gate.md) - How Terms/Privacy acceptance works
+- [Architecture Overview](../architecture/overview.md) — Overall system architecture
+- [Service Setup](./service-setup.md) — How to configure your Ulabase service
+- [Configuration and Deployment](../operations/configuration-and-deployment.md) — Runtime configuration and deployment
+- [Auth and Invitations](../workflows/auth-and-invitations.md) — Authentication and team invitation flows
