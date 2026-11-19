@@ -168,11 +168,11 @@ This filtering is configured server-side in `ulabase.setup.ts` and enforced by t
 
 ## Invitation Acceptance Flow
 
-The `/invitations/accept` route (feature-flagged by `teamInvitations`) handles three scenarios:
+The invitation page (feature-flagged by `teamInvitations`) is served at two paths: the service's invitation email links a new user to `/auth/activate` and an existing user to `/invitations/accept`. It handles three scenarios:
 
 ```mermaid
 flowchart TD
-    A["GET /invitations/accept?email=...&token=..."] --> B["auth.getInvitation(email, token)"]
+    A["GET /auth/activate or /invitations/accept<br/>?email=...&token=..."] --> B["auth.getInvitation(email, token)"]
     B --> C{Valid invitation?}
     C -->|No: 404| D["Show 'invalid or expired'"]
     C -->|Yes| E{isNewUser?}

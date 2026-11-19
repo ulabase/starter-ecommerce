@@ -106,16 +106,17 @@ export const routes: RouteObject[] = [
       ]
     : []),
   ...(teamInvitations
-    ? [
-        {
-          path: 'invitations/accept',
-          element: (
-            <SuspenseWrapper>
-              <Accept />
-            </SuspenseWrapper>
-          ),
-        },
-      ]
+    ? // One page, two paths: the service's invitation email links a new user
+      // to /auth/activate and an existing one to /invitations/accept. No guard
+      // on either: the invitee may be signed out or have no account yet.
+      ['auth/activate', 'invitations/accept'].map(path => ({
+        path,
+        element: (
+          <SuspenseWrapper>
+            <Accept />
+          </SuspenseWrapper>
+        ),
+      }))
     : []),
   // The shop is the front door, and it is outside AuthGuard: a guest must be
   // able to browse, pay, and see their receipt without ever creating an

@@ -95,7 +95,7 @@ src/
 | `/auth/signup` | `PublicGuard` | `emailRegistration \|\| oauthLogin` |
 | `/auth/verify` | `PublicGuard` | `emailRegistration` |
 | `/auth/forgot-password`, `/auth/reset-password` | `PublicGuard` | `passwordReset` |
-| `/invitations/accept` | **none** — works signed-in or out | `teamInvitations` |
+| `/auth/activate`, `/invitations/accept` | **none** — works signed-in or out | `teamInvitations` |
 | `/`, `/product/:id`, `/cart`, `/orders` | **none** — a guest must be able to buy | always |
 | `/app`, `/app/teams`, `/app/teams/new`, `/app/teams/:id`, `/app/account` | `AuthGuard` | always |
 | anything else | — | redirects to `/` |

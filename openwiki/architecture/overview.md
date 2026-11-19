@@ -107,7 +107,7 @@ The application uses React Router with lazy-loaded routes and feature-flag gatin
 
 | Path | Guard | Feature Flag | Purpose |
 |------|-------|--------------|---------|
-| `/invitations/accept` | None | `teamInvitations` | Team invitation acceptance (works signed-in or out) |
+| `/auth/activate`, `/invitations/accept` | None | `teamInvitations` | Team invitation acceptance, one page on two paths: the email links a new user to the first, an existing one to the second (works signed-in or out) |
 
 ### Protected Routes (require authentication)
 

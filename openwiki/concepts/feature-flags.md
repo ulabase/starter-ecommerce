@@ -134,7 +134,7 @@ features: {
 ### `teamInvitations`
 - **Purpose**: Enables team invitation acceptance
 - **Default**: `true`
-- **Routes affected**: `/invitations/accept`
+- **Routes affected**: `/auth/activate`, `/invitations/accept` (the same page: the invitation email links a new user to the first, an existing one to the second)
 - **UI affected**: Invitation acceptance flows
 - **Server requirement**: Must match service's "Sign-up Mgmt → Features → Invitations" toggle
 
@@ -207,18 +207,16 @@ Routes are included using JavaScript's spread operator with ternary expressions:
     ]
   : []),
 
-// Include invitation route if team invitations are enabled
+// Include the invitation page, on both of its paths, if team invitations are enabled
 ...(teamInvitations
-  ? [
-      {
-        path: 'invitations/accept',
-        element: (
-          <SuspenseWrapper>
-            <Accept />
-          </SuspenseWrapper>
-        ),
-      },
-    ]
+  ? ['auth/activate', 'invitations/accept'].map(path => ({
+      path,
+      element: (
+        <SuspenseWrapper>
+          <Accept />
+        </SuspenseWrapper>
+      ),
+    }))
   : []),
 ```
 

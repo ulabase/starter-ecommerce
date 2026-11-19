@@ -73,7 +73,7 @@ Authentication routes are conditionally included based on feature flags in `src/
 | `/auth/verify` | `emailRegistration` | Email verification |
 | `/auth/forgot-password` | `passwordReset` | Password reset initiation |
 | `/auth/reset-password` | `passwordReset` | Password reset completion |
-| `/invitations/accept` | `teamInvitations` | Invitation acceptance |
+| `/auth/activate`, `/invitations/accept` | `teamInvitations` | Invitation acceptance (new user, existing user) |
 
 Routes that don't match their feature flags are excluded from the router entirely. This means:
 - The signup route won't exist if both `emailRegistration` and `oauthLogin` are false
@@ -190,7 +190,7 @@ The `noauthchallenge` parameter prevents the service from returning a 401 challe
 
 ## Invitation Acceptance Flow
 
-The invitation acceptance page (`/invitations/accept`) handles team invitations through three distinct paths based on user state.
+The invitation acceptance page is served at two paths: the service's invitation email links a new user to `/auth/activate` and an existing user to `/invitations/accept`. It handles team invitations through three distinct paths based on user state.
 
 **Route characteristics:**
 - **No guard** - works for both signed-in and signed-out users
